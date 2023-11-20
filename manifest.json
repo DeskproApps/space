@@ -1,26 +1,35 @@
 {
-  "name": "@deskpro-apps/my-app",
-  "title": "My App",
-  "description": "My Deskpro app",
+  "name": "@deskpro-apps/space",
+  "title": "Space",
+  "description": "",
   "version": "0.0.5",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,
   "targets": [{ "target": "ticket_sidebar", "entrypoint": "index.html" }],
+  "entityAssociations": {
+    "linkedSpaceIssue": {
+      "title": "Linked Space Issue",
+      "entity": "ticket",
+      "type": "external_id"
+    }
+  },
   "settings": {
-    "example": {
-      "title": "Example Setting",
-      "description": "Example backend only setting",
+    "space_url": {
+      "title": "Space Instance URL",
+      "description": "Enter the URL of your Space instance, or \"https://<my_company>.jetbrains.space\"",
+      "validationPattern": "^https?:\\/\\/.+\\..+\\w$",
       "type": "string",
-      "isRequired": false,
-      "isBackendOnly": true
+      "isRequired": true,
+      "isBackendOnly": false,
+      "order": 10
     }
   },
   "proxy": {
     "whitelist": [
       {
-        "url": "https://jsonplaceholder.typicode.com/.*",
-        "methods": ["GET"],
+        "url": "__space_url__/.*",
+        "methods": ["GET", "POST"],
         "timeout": 20
       }
     ]
