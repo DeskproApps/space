@@ -1,0 +1,1 @@
+export { SpaceError } from "./SpaceError";

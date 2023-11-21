@@ -5,11 +5,14 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { ErrorBoundary } from "react-error-boundary";
 import { DeskproAppProvider, LoadingSpinner } from "@deskpro/app-sdk";
 import { queryClient } from "./query";
+import { App } from "./App";
+import { ErrorFallback } from "./components";
 import "iframe-resizer/js/iframeResizer.contentWindow.js";
+import "flatpickr/dist/themes/light.css";
+import "tippy.js/dist/tippy.css";
+import "simplebar/dist/simplebar.min.css";
 import "@deskpro/deskpro-ui/dist/deskpro-ui.css";
 import "@deskpro/deskpro-ui/dist/deskpro-custom-icons.css";
-import "./index.css";
-import { App } from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as Element);
 root.render((
@@ -18,7 +21,7 @@ root.render((
       <HashRouter>
         <QueryClientProvider client={queryClient}>
           <Suspense fallback={<LoadingSpinner/>}>
-            <ErrorBoundary fallback={<>here was an error!</>}>
+            <ErrorBoundary FallbackComponent={ErrorFallback}>
               <App />
             </ErrorBoundary>
           </Suspense>
