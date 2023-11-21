@@ -2,7 +2,7 @@
   "name": "@deskpro-apps/space",
   "title": "Space",
   "description": "",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,
@@ -27,11 +27,7 @@
   },
   "proxy": {
     "whitelist": [
-      {
-        "url": "__space_url__/.*",
-        "methods": ["GET", "POST"],
-        "timeout": 20
-      }
+      { "url": "__space_url__/.*", "methods": ["GET", "POST"], "timeout": 20 }
     ]
   }
 }
