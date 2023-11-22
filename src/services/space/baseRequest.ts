@@ -10,7 +10,7 @@ const baseRequest: Request = async (client, {
   url,
   rawUrl,
   data,
-  method = "POST",
+  method = "GET",
   queryParams = {},
   headers: customHeaders,
 }) => {
