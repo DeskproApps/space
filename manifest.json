@@ -2,7 +2,7 @@
   "name": "@deskpro-apps/space",
   "title": "Space",
   "description": "",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,
