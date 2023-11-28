@@ -1,6 +1,9 @@
 {
   "type": "ticket",
-  "settings": {},
+  "settings": {
+    "space_url": "https://space.test",
+    "client_id": "this-is-client-id"
+  },
   "data": {
     "ticket": {
       "id": "215",

@@ -59,7 +59,9 @@ const useLogin = (): Result => {
         request_credentials: "default",
         state: key,
         scope: [
-          "global:Project.View"
+          "global:Project.View",
+          "global:Project.Issues.View",
+          "global:Profile.View",
         ].join(" "),
       })}`);
     }

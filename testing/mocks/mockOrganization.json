@@ -1,0 +1,18 @@
+{
+  "id": "org_record_id",
+  "orgId": "GBjMc1cwWNz",
+  "name": "deskprotest",
+  "slogan": "",
+  "logoId": "ECtYR0C2x5l",
+  "onboardingRequired": false,
+  "allowDomainsEdit": true,
+  "createdAt": 1700481905928,
+  "createdWithNavigationV2": true,
+  "timezone": {
+    "id": "Europe/London"
+  },
+  "orgSize": "N_2_10",
+  "orgIndustry": "SoftwareDevelopment",
+  "sendAnonymousDataAgreementAccepted": null,
+  "marketplaceEnabled": null
+}

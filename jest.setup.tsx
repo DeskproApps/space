@@ -39,7 +39,7 @@ jest.mock("@deskpro/app-sdk", () => ({
   useInitialisedDeskproAppClient: (callback: (param: typeof mockClient) => void) => {
     callback(mockClient);
   },
-  useDeskproLatestAppContext: () => ({ mockContext }),
+  useDeskproLatestAppContext: () => ({ context: mockContext }),
   useDeskproAppTheme: () => ({ theme: lightTheme }),
   proxyFetch: async () => fetch,
   LoadingSpinner: () => <>Loading...</>,

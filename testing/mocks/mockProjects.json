@@ -1,0 +1,38 @@
+{
+  "next": "2",
+  "totalCount": 2,
+  "data": [
+    {
+      "id": "2rOkEs3gWjCg",
+      "key": {
+        "key": "MAIN"
+      },
+      "name": "Deskpro Apps",
+      "private": false,
+      "description": "",
+      "icon": "xUBnP09BScT",
+      "latestRepositoryActivity": null,
+      "createdAt": {
+        "iso": "2023-11-20T12:05:19.787Z",
+        "timestamp": 1700481919787
+      },
+      "archived": false
+    },
+    {
+      "id": "kUysu1ZlRBm",
+      "key": {
+        "key": "DP-SPACE"
+      },
+      "name": "Deskpro Space",
+      "private": false,
+      "description": "",
+      "icon": null,
+      "latestRepositoryActivity": null,
+      "createdAt": {
+        "iso": "2023-11-20T14:42:00.011Z",
+        "timestamp": 1700491320011
+      },
+      "archived": false
+    }
+  ]
+}

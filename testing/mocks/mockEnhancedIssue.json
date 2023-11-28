@@ -1,0 +1,53 @@
+{
+  "id": "3R3ntR3bLJee",
+  "title": "PageBuilder",
+  "number": 7,
+  "key": "MAIN-7",
+  "link": "https://space.test/p/main/issues/7",
+  "createdAt": "2023-11-20T12:44:55.016Z",
+  "dueDate": "2023-12-31",
+  "tags": [
+    {
+      "id": "16QR6Q2GkAIU",
+      "archived": false,
+      "projectId": "2rOkEs3gWjCg",
+      "parent": null,
+      "name": "app-builder"
+    },
+    {
+      "id": "2FUnnV1iyO8m",
+      "archived": false,
+      "projectId": "2rOkEs3gWjCg",
+      "parent": null,
+      "name": "test"
+    },
+    {
+      "id": "jQ1rf0wjTms",
+      "archived": false,
+      "projectId": "2rOkEs3gWjCg",
+      "parent": null,
+      "name": "dev"
+    }
+  ],
+  "assignee": {
+    "id": "2wwNis4MCPQv",
+    "username": "zpawn",
+    "name": {
+      "firstName": "ilia",
+      "lastName": "makarov"
+    }
+  },
+  "project": {
+    "id": "2rOkEs3gWjCg",
+    "name": "Deskpro Apps",
+    "key": "MAIN",
+    "link": "https://space.test/p/main"
+  },
+  "status": {
+    "id": "1NOYKF1rKX9x",
+    "archived": false,
+    "name": "In progress",
+    "resolved": false,
+    "color": "882e72"
+  }
+}

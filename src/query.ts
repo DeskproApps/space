@@ -13,6 +13,12 @@ const queryClient = new QueryClient({
 });
 
 const QueryKey = {
+  PROJECTS: "projects",
+  ISSUES: "issues",
+  ISSUE: "issue",
+  ISSUE_STATUSES: "issue_statuses",
+  ISSUE_TAGS: "issue_tags",
+  PROJECT_MEMBERS: "project_members",
 }
 
 export { queryClient, QueryKey };
