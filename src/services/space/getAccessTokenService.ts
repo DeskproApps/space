@@ -1,5 +1,6 @@
 import { baseRequest } from "./baseRequest";
 import { getQueryParams } from "../../utils";
+import { placeholders } from "../../constants";
 import type { IDeskproClient } from "@deskpro/app-sdk";
 import type { AccessToken } from "./types";
 
@@ -14,7 +15,7 @@ const getAccessTokenService = (
   data.append("redirect_uri", redirectUri);
 
   return baseRequest<AccessToken>(client, {
-    url: "/oauth/token",
+    rawUrl: `${placeholders.URL}/oauth/token`,
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",

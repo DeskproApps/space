@@ -1,0 +1,34 @@
+import type { FC } from "react";
+
+const SpaceLogo: FC = () => (
+  <svg width="75px" height="75px" viewBox="0 0 75 75" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient x1="45.0779784%" y1="-1.37333333%" x2="55.5175102%" y2="97.5866667%" id="linearGradient-1">
+        <stop stopColor="#FCF84A" offset="0%"/>
+        <stop stopColor="#ABE682" offset="32%"/>
+        <stop stopColor="#36CDD2" offset="79%"/>
+        <stop stopColor="#07C3F2" offset="100%"/>
+      </linearGradient>
+      <linearGradient x1="-2.93034899%" y1="38.9742938%" x2="100.471212%" y2="62.0873393%" id="linearGradient-2">
+        <stop stopColor="#3BEA62" offset="0%"/>
+        <stop stopColor="#087CFA" offset="100%"/>
+      </linearGradient>
+      <linearGradient x1="-3.37023771%" y1="71.8053871%" x2="111.738847%" y2="15.3940641%" id="linearGradient-3">
+        <stop stopColor="#009AE5" offset="0%"/>
+        <stop stopColor="#0490DD" offset="18%"/>
+        <stop stopColor="#1073C6" offset="49%"/>
+        <stop stopColor="#2346A1" offset="89%"/>
+        <stop stopColor="#293896" offset="100%"/>
+      </linearGradient>
+    </defs>
+    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+      <g fillRule="nonzero">
+        <path d="M13.58,75 C40.2672619,72.67463 63.683706,56.2808316 75,32 C60.9720235,11.9533111 38.0474022,0.00951617349 13.58,-2.13162821e-14 C11.4,-2.13162821e-14 9.21,0.09 7.02,0.29 C-4.29544905,24.5772799 -1.79481582,53.0562904 13.58,75 L13.58,75 Z" id="Path" fill="url(#linearGradient-1)"/>
+        <path d="M7.09,0.29 C23.0556544,6.78328011 36.7725234,17.8061366 46.55,31.9999983 L75,31.9999983 C61.0159774,11.9448771 38.1091475,-0.00521344572 13.66,-1.70514188e-06 C11.48,-1.70514188e-06 9.29,0.0966666667 7.09,0.29 L7.09,0.29 Z" id="Path" fill="url(#linearGradient-2)"/>
+        <path d="M46.56,32 C43.13,54.63 13.58,75 13.58,75 C40.44,72.45 64,56.35 75,32 L46.56,32 Z" id="Path" fill="url(#linearGradient-3)"/>
+      </g>
+    </g>
+  </svg>
+);
+
+export { SpaceLogo };

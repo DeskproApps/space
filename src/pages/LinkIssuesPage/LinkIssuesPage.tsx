@@ -1,7 +1,71 @@
-import { useSetTitle, useRegisterElements } from "../../hooks";
+import { useMemo, useState, useCallback, useEffect } from "react";
+import get from "lodash/get";
+import size from "lodash/size";
+import cloneDeep from "lodash/cloneDeep";
+import { useNavigate } from "react-router-dom";
+import { useDebouncedCallback } from "use-debounce";
+import {
+  LoadingSpinner,
+  useDeskproAppClient,
+  useDeskproLatestAppContext,
+} from "@deskpro/app-sdk";
+import { setEntityService } from "../../services/deskpro";
+import {
+  useSetTitle,
+  useAsyncError,
+  useRegisterElements,
+} from "../../hooks";
+import { useSearch } from "./hooks";
+import { LinkIssues } from "../../components";
 import type { FC } from "react";
+import type { Maybe, TicketContext, IssueType } from "../../types";
+import type { Project } from "../../services/space/types";
 
 const LinkIssuesPage: FC = () => {
+  const navigate = useNavigate();
+  const { client } = useDeskproAppClient();
+  const { context } = useDeskproLatestAppContext() as { context: TicketContext };
+  const { asyncErrorHandler } = useAsyncError();
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [projectId, setProjectId] = useState<Maybe<Project["id"]>>(null);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [selectedIssues, setSelectedIssues] = useState<IssueType[]>([]);
+  const { issues, projects, isLoading } = useSearch(projectId, searchQuery);
+  const ticketId = useMemo(() => get(context, ["data", "ticket", "id"]), [context]);
+
+  const onChangeSelectedIssue = useCallback((issue: IssueType) => {
+    let newSelectedIssues = cloneDeep(selectedIssues);
+
+    if (selectedIssues.some((selectedIssue) => issue.id === selectedIssue.id)) {
+      newSelectedIssues = selectedIssues.filter((selectedCard) => {
+        return selectedCard.id !== issue.id;
+      });
+    } else {
+      newSelectedIssues.push(issue);
+    }
+
+    setSelectedIssues(newSelectedIssues);
+  }, [selectedIssues]);
+
+  const onChangeSearchQuery = useDebouncedCallback(setSearchQuery, 1000);
+
+  const onCancel = useCallback(() => navigate("/home"), [navigate]);
+
+  const onLinkIssues = useCallback(() => {
+    if (!client || !ticketId || !size(selectedIssues)) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    Promise.all([
+      ...selectedIssues.map((issue) => setEntityService(client, ticketId, issue.id)),
+    ])
+      .then(() => navigate("/home"))
+      .catch(asyncErrorHandler)
+      .finally(() => setIsSubmitting(false));
+  }, [client, navigate, ticketId, selectedIssues, asyncErrorHandler]);
+
   useSetTitle("Link Issue");
 
   useRegisterElements(({ registerElement }) => {
@@ -12,8 +76,31 @@ const LinkIssuesPage: FC = () => {
     });
   });
 
+  useEffect(() => {
+    if (size(projects)) {
+      setProjectId(get(projects, [0, "id"]));
+    }
+  }, [projects]);
+
+  if (!size(projects)) {
+    return (
+      <LoadingSpinner/>
+    );
+  }
+
   return (
-    <>LinkIssuesPage</>
+    <LinkIssues
+      issues={issues}
+      projects={projects}
+      isLoading={isLoading}
+      onChangeSearchQuery={onChangeSearchQuery}
+      onChangeProject={setProjectId}
+      isSubmitting={isSubmitting}
+      onCancel={onCancel}
+      selectedIssues={selectedIssues}
+      onLinkIssues={onLinkIssues}
+      onChangeSelectedIssue={onChangeSelectedIssue}
+    />
   );
 };
 
