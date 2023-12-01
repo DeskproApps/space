@@ -1,23 +1,21 @@
 import { baseRequest } from "./baseRequest";
-import type { IDeskproClient } from "@deskpro/app-sdk";
-import type { Pagination, Issue, IssueQueryParams } from "./types";
-
-type Params = {
-  q?: IssueQueryParams["query"],
-};
+import { IDeskproClient } from "@deskpro/app-sdk";
+import { fields } from "../../constants";
+import type { Issue } from "./types";
 
 const getIssuesService = (
   client: IDeskproClient,
-  projectId: string,
-  params?: Params,
-) => {
-  return baseRequest<Pagination<Issue>>(client, {
-    url: `/projects/${projectId}/planning/issues`,
+  issueIds: Array<Issue["id"]>,
+): Promise<Issue[]> => {
+  return baseRequest(client, {
+    url: `/issues/get-by-ids`,
+    method: "POST",
     queryParams: {
-      sorting: "TITLE",
-      descending: "false",
-      ...(!params?.q ? {} : { query: params.q }),
+      $fields: fields.ISSUE,
     },
+    data: JSON.stringify({
+      "issueIdentifiers": issueIds.map((issueId) => `id:${issueId}`),
+    }),
   });
 };
 

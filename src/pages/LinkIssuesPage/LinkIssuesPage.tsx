@@ -18,8 +18,8 @@ import {
 import { useSearch } from "./hooks";
 import { LinkIssues } from "../../components";
 import type { FC } from "react";
-import type { Maybe, TicketContext, IssueType } from "../../types";
-import type { Project } from "../../services/space/types";
+import type { Maybe, TicketContext } from "../../types";
+import type { Project, Issue } from "../../services/space/types";
 
 const LinkIssuesPage: FC = () => {
   const navigate = useNavigate();
@@ -29,11 +29,11 @@ const LinkIssuesPage: FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [projectId, setProjectId] = useState<Maybe<Project["id"]>>(null);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [selectedIssues, setSelectedIssues] = useState<IssueType[]>([]);
+  const [selectedIssues, setSelectedIssues] = useState<Issue[]>([]);
   const { issues, projects, isLoading } = useSearch(projectId, searchQuery);
   const ticketId = useMemo(() => get(context, ["data", "ticket", "id"]), [context]);
 
-  const onChangeSelectedIssue = useCallback((issue: IssueType) => {
+  const onChangeSelectedIssue = useCallback((issue: Issue) => {
     let newSelectedIssues = cloneDeep(selectedIssues);
 
     if (selectedIssues.some((selectedIssue) => issue.id === selectedIssue.id)) {

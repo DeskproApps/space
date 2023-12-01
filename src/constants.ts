@@ -24,3 +24,32 @@ export const placeholders = {
 
 /** Space */
 export const BASE_URL = `${placeholders.URL}`;
+
+const PROJECT_FIELDS = ["id", "name", "key(key)"];
+
+const TAG_FIELDS = ["id", "archived", "name", "projectId", "parent"];
+
+const ASSIGNEE_FIELDS = ["id", "avatar", "username", "name(lastName,firstName)"];
+
+const STATUS_FIELDS = ["id", "archived", "color", "name", "resolved"];
+
+const ISSUES_FIELDS = [
+  "id",
+  "title",
+  "number",
+  "creationTime",
+  "dueDate",
+  "projectId",
+  `projectRef(${PROJECT_FIELDS.join(",")})`,
+  `tags(${TAG_FIELDS.join(",")})`,
+  `assignee(${ASSIGNEE_FIELDS.join(",")})`,
+  `status(${STATUS_FIELDS.join(",")})`,
+];
+
+export const fields = {
+  ISSUE: ISSUES_FIELDS.join(","),
+  PROJECT: PROJECT_FIELDS.join(","),
+  TAG: TAG_FIELDS.join(","),
+  ASSIGNEE: ASSIGNEE_FIELDS.join(","),
+  STATUS: STATUS_FIELDS.join(","),
+};

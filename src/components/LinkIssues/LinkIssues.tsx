@@ -2,20 +2,19 @@ import { HorizontalDivider } from "@deskpro/app-sdk";
 import { Container } from "../common";
 import { Filters, Buttons, Issues } from "./blocks";
 import type { FC } from "react";
-import type { IssueType } from "../../types";
-import type { Project } from "../../services/space/types";
+import type { Issue, Project } from "../../services/space/types";
 
 export type Props = {
   isLoading: boolean,
   isSubmitting: boolean,
-  issues: IssueType[],
+  issues: Issue[],
   projects: Project[],
   onCancel: () => void,
   onLinkIssues: () => void,
-  selectedIssues: IssueType[],
+  selectedIssues: Issue[],
   onChangeSearchQuery: (search: string) => void,
   onChangeProject: (projectId: Project["id"]) => void,
-  onChangeSelectedIssue: (issue: IssueType) => void,
+  onChangeSelectedIssue: (issue: Issue) => void,
 };
 
 const LinkIssues: FC<Props> = ({

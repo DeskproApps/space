@@ -21,7 +21,7 @@ describe("utils", () => {
         const issueLink = getIssueLink(
           mockContext.settings,
           mockProjects.data[0] as never,
-          mockIssues.data[1] as never,
+          mockIssues[0] as never,
         );
         expect(issueLink).toBe("https://space.test/p/main/issues/7");
       });
@@ -30,7 +30,7 @@ describe("utils", () => {
         expect(getIssueLink()).toBeUndefined();
         expect(getIssueLink(mockContext.settings)).toBeUndefined();
         expect(getIssueLink(null, mockProjects.data[0] as never)).toBeUndefined();
-        expect(getIssueLink(null, null, mockIssues.data[1] as never)).toBeUndefined();
+        expect(getIssueLink(null, null, mockIssues[1] as never)).toBeUndefined();
       });
     });
   });

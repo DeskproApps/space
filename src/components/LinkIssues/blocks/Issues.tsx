@@ -4,13 +4,13 @@ import { LoadingSpinner, HorizontalDivider } from "@deskpro/app-sdk";
 import { NoFoundIssues, Card } from "../../common";
 import { IssueItem } from "../../IssueItem";
 import type { FC } from "react";
-import type { IssueType } from "../../../types";
+import type { Issue } from "../../../services/space/types";
 
 export type Props = {
   isLoading: boolean,
-  issues: IssueType[],
-  selectedIssues: IssueType[],
-  onChangeSelectedIssue: (issue: IssueType) => void,
+  issues: Issue[],
+  selectedIssues: Issue[],
+  onChangeSelectedIssue: (issue: Issue) => void,
 };
 
 const Issues: FC<Props> = ({

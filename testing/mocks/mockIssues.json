@@ -1,103 +1,99 @@
-{
-  "next": "2",
-  "totalCount": 2,
-  "data": [
-    {
-      "id": "bhGmc1elmIv",
-      "archived": false,
-      "projectId": "2rOkEs3gWjCg",
-      "projectRef": {
-        "id": "2rOkEs3gWjCg"
+[
+  {
+    "id": "3R3ntR3bLJee",
+    "projectId": "2rOkEs3gWjCg",
+    "projectRef": {
+      "id": "2rOkEs3gWjCg",
+      "key": {
+        "key": "MAIN"
       },
-      "trackerRef": {
-        "id": "9wsqu1enJmW"
-      },
-      "number": 8,
-      "createdBy": {
-        "name": "zpawn",
-        "details": {
-          "className": "CUserPrincipalDetails",
-          "user": {
-            "id": "2wwNis4MCPQv"
-          }
-        }
-      },
-      "creationTime": {
-        "iso": "2023-11-20T12:45:48.117Z",
-        "timestamp": 1700484348117
-      },
-      "assignee": {
-        "id": "3vsk2Z3bsDx6"
-      },
-      "status": {
-        "id": "3nuoYD3PXgjA"
-      },
-      "dueDate": null,
-      "externalEntityInfo": null,
-      "tags": [],
-      "title": "AppBuilder",
-      "attachmentsCount": 0,
-      "subItemsCount": 5,
-      "doneSubItemsCount": 1,
-      "commentsCount": 0,
-      "deletedBy": null,
-      "deletedTime": null
+      "name": "Deskpro Apps"
     },
-    {
-      "id": "3R3ntR3bLJee",
+    "number": 7,
+    "creationTime": {
+      "iso": "2023-11-20T12:44:55.016Z",
+      "timestamp": 1700484295016
+    },
+    "assignee": {
+      "id": "2wwNis4MCPQv",
+      "username": "zpawn",
+      "name": {
+        "firstName": "ilia",
+        "lastName": "makarov"
+      },
+      "avatar": "3nieV74ZGeCh"
+    },
+    "status": {
+      "id": "1NOYKF1rKX9x",
       "archived": false,
-      "projectId": "2rOkEs3gWjCg",
-      "projectRef": {
-        "id": "2rOkEs3gWjCg"
+      "name": "In progress",
+      "resolved": false,
+      "color": "882e72"
+    },
+    "dueDate": {
+      "iso": "2023-12-31",
+      "year": 2023,
+      "month": 12,
+      "day": 31
+    },
+    "tags": [
+      {
+        "id": "16QR6Q2GkAIU",
+        "archived": false,
+        "projectId": "2rOkEs3gWjCg",
+        "parent": null,
+        "name": "app-builder"
       },
-      "trackerRef": {
-        "id": "9wsqu1enJmW"
+      {
+        "id": "2FUnnV1iyO8m",
+        "archived": false,
+        "projectId": "2rOkEs3gWjCg",
+        "parent": null,
+        "name": "test"
       },
-      "number": 7,
-      "createdBy": {
-        "name": "zpawn",
-        "details": {
-          "className": "CUserPrincipalDetails",
-          "user": {
-            "id": "2wwNis4MCPQv"
-          }
-        }
+      {
+        "id": "jQ1rf0wjTms",
+        "archived": false,
+        "projectId": "2rOkEs3gWjCg",
+        "parent": null,
+        "name": "dev"
+      }
+    ],
+    "title": "PageBuilder"
+  },
+  {
+    "id": "bhGmc1elmIv",
+    "projectId": "2rOkEs3gWjCg",
+    "projectRef": {
+      "id": "2rOkEs3gWjCg",
+      "key": {
+        "key": "MAIN"
       },
-      "creationTime": {
-        "iso": "2023-11-20T12:44:55.016Z",
-        "timestamp": 1700484295016
+      "name": "Deskpro Apps"
+    },
+    "number": 8,
+    "creationTime": {
+      "iso": "2023-11-20T12:45:48.117Z",
+      "timestamp": 1700484348117
+    },
+    "assignee": {
+      "id": "3vsk2Z3bsDx6",
+      "username": "davidtestacc0401",
+      "name": {
+        "firstName": "David",
+        "lastName": "Test"
       },
-      "assignee": {
-        "id": "2wwNis4MCPQv"
-      },
-      "status": {
-        "id": "1NOYKF1rKX9x"
-      },
-      "dueDate": {
-        "iso": "2023-12-31",
-        "year": 2023,
-        "month": 12,
-        "day": 31
-      },
-      "externalEntityInfo": null,
-      "tags": [
-        {
-          "id": "16QR6Q2GkAIU"
-        },
-        {
-          "id": "2FUnnV1iyO8m"
-        },
-        {
-          "id": "jQ1rf0wjTms"
-        }
-      ],
-      "title": "PageBuilder",
-      "attachmentsCount": 0,
-      "subItemsCount": 4,
-      "doneSubItemsCount": 1,
-      "commentsCount": 0,
-      "deletedBy": null,
-      "deletedTime": null
-    }
-  ]
-}
+      "avatar": null
+    },
+    "status": {
+      "id": "3nuoYD3PXgjA",
+      "archived": false,
+      "name": "Open",
+      "resolved": false,
+      "color": "1965b0"
+    },
+    "dueDate": null,
+    "tags": [],
+    "title": "AppBuilder"
+  }
+]
