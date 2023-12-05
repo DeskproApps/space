@@ -17,9 +17,12 @@ export const DEFAULT_ERROR = "There was an error!";
 
 export const ACCESS_TOKEN_PATH = "oauth2/access_token";
 
+export const REFRESH_TOKEN_PATH = "oauth2/refresh_token";
+
 export const placeholders = {
   URL: "__space_url__",
   ACCESS_TOKEN: `[user[${ACCESS_TOKEN_PATH}]]`,
+  REFRESH_TOKEN: `[user[${REFRESH_TOKEN_PATH}]]`,
 };
 
 /** Space */

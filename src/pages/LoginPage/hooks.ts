@@ -9,8 +9,8 @@ import {
   useInitialisedDeskproAppClient,
 } from "@deskpro/app-sdk";
 import {
-  getEntityListService,
-  setAccessTokenService,
+    getEntityListService,
+    setAccessTokenService, setRefreshTokenService,
 } from "../../services/deskpro";
 import {
   getAccessTokenService,
@@ -56,6 +56,7 @@ const useLogin = (): Result => {
         response_type: "code",
         redirect_uri: callback.callbackUrl,
         client_id: clientId,
+        access_type: "offline",
         request_credentials: "default",
         state: key,
         scope: SCOPES.join(" "),
@@ -73,7 +74,10 @@ const useLogin = (): Result => {
 
     callback.poll()
       .then(({ token }) => getAccessTokenService(client, token, callback.callbackUrl))
-      .then(({ access_token }) => setAccessTokenService(client, access_token))
+      .then(({ access_token, refresh_token }) => Promise.all([
+          setAccessTokenService(client, access_token),
+          setRefreshTokenService(client, refresh_token),
+        ]))
       .then(() => getOrganizationService(client))
       .then((org) => !get(org, ["id"])
         ? Promise.reject()

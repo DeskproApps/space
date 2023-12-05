@@ -1,21 +1,14 @@
 import { baseRequest } from "./baseRequest";
-import { getQueryParams } from "../../utils";
 import { placeholders } from "../../constants";
+import { getQueryParams } from "../../utils";
 import type { IDeskproClient } from "@deskpro/app-sdk";
-import type { AccessToken } from "./types";
 
-const getAccessTokenService = (
-  client: IDeskproClient,
-  code: string,
-  redirectUri: string,
-) => {
+const refreshAccessTokenService = (client: IDeskproClient) => {
   const data = new FormData();
-  data.append("grant_type", "authorization_code");
-  data.append("code", code);
-  data.append("redirect_uri", redirectUri);
-  data.append("access_type", "offline");
+  data.append("grant_type", "refresh_token");
+  data.append("refresh_token", placeholders.REFRESH_TOKEN);
 
-  return baseRequest<AccessToken>(client, {
+  return baseRequest(client, {
     rawUrl: `${placeholders.URL}/oauth/token`,
     method: "POST",
     headers: {
@@ -26,4 +19,4 @@ const getAccessTokenService = (
   });
 };
 
-export { getAccessTokenService };
+export { refreshAccessTokenService };

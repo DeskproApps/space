@@ -1,5 +1,6 @@
 export { SpaceError } from "./SpaceError";
 export { getAccessTokenService } from "./getAccessTokenService";
+export { refreshAccessTokenService } from "./refreshAccessTokenService";
 export { getOrganizationService } from "./getOrganizationService";
 export { getIssuesService } from "./getIssuesService";
 export { searchIssuesService } from "./searchIssuesService";
