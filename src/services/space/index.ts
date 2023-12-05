@@ -4,3 +4,4 @@ export { getOrganizationService } from "./getOrganizationService";
 export { getIssuesService } from "./getIssuesService";
 export { searchIssuesService } from "./searchIssuesService";
 export { getProjectsService } from "./getProjectsService";
+export { getIssueMessagesService } from "./getIssueMessagesService";

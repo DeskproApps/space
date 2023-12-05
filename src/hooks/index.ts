@@ -6,3 +6,5 @@ export { useLogout } from "./useLogout";
 export { useExternalLinks } from "./useExternalLinks";
 export { useLinkedIssues } from "./useLinkedIssues";
 export { useIssues } from "./useIssues";
+export { useIssue } from "./useIssue";
+export { useUnlinkIssue } from "./useUnlinkIssue";

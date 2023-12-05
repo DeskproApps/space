@@ -20,6 +20,7 @@ const QueryKey = {
   ISSUE_TAGS: "issue_tags",
   PROJECT_MEMBERS: "project_members",
   LINKED_ISSUES: "linked_issues",
+  ISSUE_MESSAGES: "issue_messages",
 }
 
 export { queryClient, QueryKey };

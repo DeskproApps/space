@@ -25,31 +25,56 @@ export const placeholders = {
 /** Space */
 export const BASE_URL = `${placeholders.URL}`;
 
-const PROJECT_FIELDS = ["id", "name", "key(key)"];
+export const PROJECT_FIELDS = ["id", "name", "key(key)"];
 
-const TAG_FIELDS = ["id", "archived", "name", "projectId", "parent"];
+export const TAG_FIELDS = ["id", "archived", "name", "projectId", "parent"];
 
-const ASSIGNEE_FIELDS = ["id", "avatar", "username", "name(lastName,firstName)"];
+export const USER_FIELDS = ["id", "avatar", "username", "name(lastName,firstName)"];
 
-const STATUS_FIELDS = ["id", "archived", "color", "name", "resolved"];
+export const STATUS_FIELDS = ["id", "archived", "color", "name", "resolved"];
 
-const ISSUES_FIELDS = [
+export const COMMENT_FIELDS = [
+  "id",
+  "text",
+  "created",
+  "details",
+  `author(name,details(user(${USER_FIELDS.join(",")})))`,
+];
+
+export const MESSAGE_FIELDS = [`messages(${COMMENT_FIELDS.join(",")})`];
+
+export const SIMPLE_ISSUE_FIELDS = [
+  "id",
+  "title",
+  `status(${STATUS_FIELDS.join(",")})`,
+];
+
+export const SUB_ITEM_FIELDS = [
+  "id",
+  "name",
+  `root(children(id,simpleText,simpleDone,issue(${SIMPLE_ISSUE_FIELDS.join(",")})))`,
+];
+
+export const ISSUE_FIELDS = [
   "id",
   "title",
   "number",
   "creationTime",
   "dueDate",
   "projectId",
+  "description",
+  `parents(id,title,number,projectRef(${PROJECT_FIELDS.join(",")}))`,
   `projectRef(${PROJECT_FIELDS.join(",")})`,
   `tags(${TAG_FIELDS.join(",")})`,
-  `assignee(${ASSIGNEE_FIELDS.join(",")})`,
+  `assignee(${USER_FIELDS.join(",")})`,
   `status(${STATUS_FIELDS.join(",")})`,
+  `subItemsList(${SUB_ITEM_FIELDS.join(",")})`,
 ];
 
 export const fields = {
-  ISSUE: ISSUES_FIELDS.join(","),
+  ISSUE: ISSUE_FIELDS.join(","),
   PROJECT: PROJECT_FIELDS.join(","),
   TAG: TAG_FIELDS.join(","),
-  ASSIGNEE: ASSIGNEE_FIELDS.join(","),
+  ASSIGNEE: USER_FIELDS.join(","),
   STATUS: STATUS_FIELDS.join(","),
 };

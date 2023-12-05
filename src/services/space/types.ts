@@ -37,6 +37,12 @@ export type MemberOnProject = components["schemas"]["ParticipantOnProject"];
 
 export type Member = components["schemas"]["TD_MemberProfile"];
 
+export type IssueSubItem = components["schemas"]["PlanItem"];
+
+export type Messages = components["schemas"]["GetMessagesResponse"]
+
+export type IssueComment = components["schemas"]["ChannelItemRecord"];
+
 export type DateAt = {
   iso: string,
   day: number,

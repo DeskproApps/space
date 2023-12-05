@@ -30,6 +30,6 @@ describe("useExternalLinks", () => {
     const { result } = renderExternalLinksHook();
     const link = result.current.getIssueLink(mockIssues[0] as never);
 
-    expect(link).toBe("https://space.test/p/main/issues/7");
+    expect(link).toBe("https://space.test/p/main/issues/8");
   });
 });

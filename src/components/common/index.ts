@@ -9,3 +9,7 @@ export { Card } from "./Card";
 export { Status } from "./Status";
 export { DeskproTickets } from "./DeskproTickets";
 export { Tag, Tags } from "./Tag";
+export { Markdown } from "./Markdown";
+export { Parent, Parents } from "./Parent";
+export { SubItem } from "./SubItem";
+export { Comment } from "./Comment";

@@ -13,6 +13,7 @@ import {
 import { useExternalLinks } from "../../hooks";
 import { nbsp } from "../../constants";
 import { format } from "../../utils/date";
+import { getIssueKey, getFullName } from "../../utils";
 import { SpaceLogo, Status, DeskproTickets, Tags } from "../common";
 import type { FC, MouseEvent } from "react";
 import type { Issue } from "../../services/space/types";
@@ -26,14 +27,7 @@ const IssueItem: FC<Props> = ({ issue, onClickTitle }) => {
   const { getIssueLink, getProjectLink } = useExternalLinks();
   const issueLink = getIssueLink(issue);
   const projectLink = getProjectLink(get(issue, ["projectRef"]));
-  const fullName = useMemo(() => {
-    const name = [
-      get(issue, ["assignee", "name", "firstName"]),
-      get(issue, ["assignee", "name", "lastName"]),
-    ].filter(Boolean);
-
-    return size(name) ? name.join(" ") : get(issue, ["assignee", "username"]);
-  }, [issue]);
+  const fullName = useMemo(() => getFullName(get(issue, ["assignee"])), [issue]);
 
   const onClick = useCallback((e: MouseEvent) => {
     e.preventDefault();
@@ -64,7 +58,7 @@ const IssueItem: FC<Props> = ({ issue, onClickTitle }) => {
           </P5>
         )}
         rightLabel="Issue ID"
-        rightText={`${issue.projectRef.key.key}-T-${issue.number}`}
+        rightText={getIssueKey(issue)}
       />
       <TwoProperties
         leftLabel="Status"
@@ -86,9 +80,7 @@ const IssueItem: FC<Props> = ({ issue, onClickTitle }) => {
       {Boolean(fullName) && (
         <Property
           label="Assignee"
-          text={(
-            <Member name={fullName}/>
-          )}
+          text={<Member name={fullName}/>}
         />
       )}
     </>

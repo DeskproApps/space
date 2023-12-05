@@ -2,7 +2,7 @@ import { isForm } from "../isForm";
 
 describe("utils", () => {
   describe("isForm", () => {
-    test("should navigate payload", () => {
+    test("should form", () => {
       const form = new FormData();
       form.append("grant_type", "authorization_code");
       form.append("client_id", "123456");
