@@ -7,14 +7,14 @@
 export interface paths {
   "/absences": {
     /**
-     * Get all absences 
+     * Get all absences
      * @description {
      *   "text": "Search absences. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all absences 
+       * Get all absences
        * @description {
        *   "text": "Search absences. Parameters are applied as 'AND' filters."
        * }
@@ -50,14 +50,14 @@ export interface paths {
       };
     };
     /**
-     * Create absence 
+     * Create absence
      * @description {
      *   "text": "Create an absence for a given profile (member)"
      * }
      */
     post: {
       /**
-       * Create absence 
+       * Create absence
        * @description {
        *   "text": "Create an absence for a given profile (member)"
        * }
@@ -98,14 +98,14 @@ export interface paths {
   };
   "/absences/{id}/approve": {
     /**
-     * Approve absence 
+     * Approve absence
      * @description {
      *   "text": "Approve/unapprove an existing absence. Setting approve to true will approve the absence, false will remove the approval."
      * }
      */
     post: {
       /**
-       * Approve absence 
+       * Approve absence
        * @description {
        *   "text": "Approve/unapprove an existing absence. Setting approve to true will approve the absence, false will remove the approval."
        * }
@@ -131,14 +131,14 @@ export interface paths {
   };
   "/absences/member:{member}": {
     /**
-     * Get all absences by member 
+     * Get all absences by member
      * @description {
      *   "text": "Get absences for a given profile ID"
      * }
      */
     get: {
       /**
-       * Get all absences by member 
+       * Get all absences by member
        * @description {
        *   "text": "Get absences for a given profile ID"
        * }
@@ -164,14 +164,14 @@ export interface paths {
   };
   "/absences/{id}": {
     /**
-     * Get absence 
+     * Get absence
      * @description {
      *   "text": "Get an absence"
      * }
      */
     get: {
       /**
-       * Get absence 
+       * Get absence
        * @description {
        *   "text": "Get an absence"
        * }
@@ -195,14 +195,14 @@ export interface paths {
       };
     };
     /**
-     * Delete absence 
+     * Delete absence
      * @description {
      *   "text": "Archive/restore an existing absence. Setting delete to true will archive the absence, false will restore it."
      * }
      */
     delete: {
       /**
-       * Delete absence 
+       * Delete absence
        * @description {
        *   "text": "Archive/restore an existing absence. Setting delete to true will archive the absence, false will restore it."
        * }
@@ -222,14 +222,14 @@ export interface paths {
       };
     };
     /**
-     * Update absence 
+     * Update absence
      * @description {
      *   "text": "Update an existing absence. Optional parameters will be ignored when not specified and updated otherwise."
      * }
      */
     patch: {
       /**
-       * Update absence 
+       * Update absence
        * @description {
        *   "text": "Update an existing absence. Optional parameters will be ignored when not specified and updated otherwise."
        * }
@@ -272,14 +272,14 @@ export interface paths {
   };
   "/absences/{id}/delete-approval": {
     /**
-     * Delete absence approval 
+     * Delete absence approval
      * @description {
      *   "text": "Delete approval for a given absence"
      * }
      */
     delete: {
       /**
-       * Delete absence approval 
+       * Delete absence approval
        * @description {
        *   "text": "Delete approval for a given absence"
        * }
@@ -298,14 +298,14 @@ export interface paths {
   };
   "/absences/absence-reasons": {
     /**
-     * Get all absence reasons 
+     * Get all absence reasons
      * @description {
      *   "text": "Get available absence reasons"
      * }
      */
     get: {
       /**
-       * Get all absence reasons 
+       * Get all absence reasons
        * @description {
        *   "text": "Get available absence reasons"
        * }
@@ -327,14 +327,14 @@ export interface paths {
       };
     };
     /**
-     * Create absence reason 
+     * Create absence reason
      * @description {
      *   "text": "Create a new absence reason"
      * }
      */
     post: {
       /**
-       * Create absence reason 
+       * Create absence reason
        * @description {
        *   "text": "Create a new absence reason"
        * }
@@ -369,14 +369,14 @@ export interface paths {
   };
   "/absences/absence-reasons/{id}": {
     /**
-     * Get absence reason 
+     * Get absence reason
      * @description {
      *   "text": "Get an absence reason"
      * }
      */
     get: {
       /**
-       * Get absence reason 
+       * Get absence reason
        * @description {
        *   "text": "Get an absence reason"
        * }
@@ -400,14 +400,14 @@ export interface paths {
       };
     };
     /**
-     * Delete absence reason 
+     * Delete absence reason
      * @description {
      *   "text": "Archive/restore an existing absence reason. Setting delete to true will archive the absence reason, false will restore it."
      * }
      */
     delete: {
       /**
-       * Delete absence reason 
+       * Delete absence reason
        * @description {
        *   "text": "Archive/restore an existing absence reason. Setting delete to true will archive the absence reason, false will restore it."
        * }
@@ -427,14 +427,14 @@ export interface paths {
       };
     };
     /**
-     * Update absence reason 
+     * Update absence reason
      * @description {
      *   "text": "Update an existing absence reason"
      * }
      */
     patch: {
       /**
-       * Update absence reason 
+       * Update absence reason
        * @description {
        *   "text": "Update an existing absence reason"
        * }
@@ -472,14 +472,14 @@ export interface paths {
   };
   "/administration/support": {
     /**
-     * Create support 
+     * Create support
      * @description {
      *   "text": "Create a profile for support"
      * }
      */
     post: {
       /**
-       * Create support 
+       * Create support
        * @description {
        *   "text": "Create a profile for support"
        * }
@@ -632,14 +632,14 @@ export interface paths {
   };
   "/applications": {
     /**
-     * Create application 
+     * Create application
      * @description {
      *   "text": "Creates a new application. Marketplace application cannot be installed using this endpoint.\n\nTo create a multi-org application (and connect application server to the current Space instance), pass `connectToSpace = true`. Learn more about multi-org applications in the [documentation](https://www.jetbrains.com/help/space/distribute-your-application.html)."
      * }
      */
     post: {
       /**
-       * Create application 
+       * Create application
        * @description {
        *   "text": "Creates a new application. Marketplace application cannot be installed using this endpoint.\n\nTo create a multi-org application (and connect application server to the current Space instance), pass `connectToSpace = true`. Learn more about multi-org applications in the [documentation](https://www.jetbrains.com/help/space/distribute-your-application.html)."
        * }
@@ -697,14 +697,14 @@ export interface paths {
   };
   "/applications/error-message": {
     /**
-     * Set error message 
+     * Set error message
      * @description {
      *   "text": "Provide error message to display on application page in Space UI. Provide `null` message to remove it."
      * }
      */
     post: {
       /**
-       * Set error message 
+       * Set error message
        * @description {
        *   "text": "Provide error message to display on application page in Space UI. Provide `null` message to remove it."
        * }
@@ -725,14 +725,14 @@ export interface paths {
   };
   "/applications/report-application-as-healthy": {
     /**
-     * Report application as healthy 
+     * Report application as healthy
      * @description {
      *   "text": "Application may periodically call this api method to notify Space that it is functioning properly. This is mandatory for applications that connect external issue trackers."
      * }
      */
     post: {
       /**
-       * Report application as healthy 
+       * Report application as healthy
        * @description {
        *   "text": "Application may periodically call this api method to notify Space that it is functioning properly. This is mandatory for applications that connect external issue trackers."
        * }
@@ -746,14 +746,14 @@ export interface paths {
   };
   "/applications/{application}/force-remove": {
     /**
-     * Force-remove application 
+     * Force-remove application
      * @description {
      *   "text": "Removes the application that has previously failed to respond with code 200 to `ApplicationUninstalledPayload` request, without sending additional `ApplicationUninstalledPayload` requests. The application is archived and its access terminated."
      * }
      */
     post: {
       /**
-       * Force-remove application 
+       * Force-remove application
        * @description {
        *   "text": "Removes the application that has previously failed to respond with code 200 to `ApplicationUninstalledPayload` request, without sending additional `ApplicationUninstalledPayload` requests. The application is archived and its access terminated."
        * }
@@ -841,14 +841,14 @@ export interface paths {
       };
     };
     /**
-     * Delete application 
+     * Delete application
      * @description {
      *   "text": "Removes specified application. If the application is connected (installed from Marketplace or through an install link), Space sends `ApplicationUninstalledPayload` to the application's server. The application is only actually deleted when the application server responds or when the `ApplicationUninstalledPayload` request times out multiple times.\n\nThis API method does not wait until the `ApplicationUninstalledPayload` request is finished and instead returns immediately. Consequently, the application may still be active right after this API method call.\n\nIf sending `ApplicationUninstalledPayload` has failed at least one time, a user may choose to force-remove the application. In this case the access for the application is terminated and it can no longer make requests. "
      * }
      */
     delete: {
       /**
-       * Delete application 
+       * Delete application
        * @description {
        *   "text": "Removes specified application. If the application is connected (installed from Marketplace or through an install link), Space sends `ApplicationUninstalledPayload` to the application's server. The application is only actually deleted when the application server responds or when the `ApplicationUninstalledPayload` request times out multiple times.\n\nThis API method does not wait until the `ApplicationUninstalledPayload` request is finished and instead returns immediately. Consequently, the application may still be active right after this API method call.\n\nIf sending `ApplicationUninstalledPayload` has failed at least one time, a user may choose to force-remove the application. In this case the access for the application is terminated and it can no longer make requests. "
        * }
@@ -865,14 +865,14 @@ export interface paths {
       };
     };
     /**
-     * Update application 
+     * Update application
      * @description {
      *   "text": "Update existing application. Multi-org applications (created with the parameter `connectToSpace = true` or installed from JetBrains Marketplace) can only be updated by the application itself. Learn more about multi-org applications in the [documentation](https://www.jetbrains.com/help/space/distribute-your-application.html)."
      * }
      */
     patch: {
       /**
-       * Update application 
+       * Update application
        * @description {
        *   "text": "Update existing application. Multi-org applications (created with the parameter `connectToSpace = true` or installed from JetBrains Marketplace) can only be updated by the application itself. Learn more about multi-org applications in the [documentation](https://www.jetbrains.com/help/space/distribute-your-application.html)."
        * }
@@ -969,14 +969,14 @@ export interface paths {
   };
   "/applications/{application}/public-keys": {
     /**
-     * Public Keys 
+     * Public Keys
      * @description {
      *   "text": "Returns list of public keys in JWKS format. If message signature is successfully verified with any of the returned public keys, the message can be considered authentic."
      * }
      */
     get: {
       /**
-       * Public Keys 
+       * Public Keys
        * @description {
        *   "text": "Returns list of public keys in JWKS format. If message signature is successfully verified with any of the returned public keys, the message can be considered authentic."
        * }
@@ -999,14 +999,14 @@ export interface paths {
   };
   "/applications/ui-extensions": {
     /**
-     * Set UI extensions 
+     * Set UI extensions
      * @description {
      *   "text": "Set UI extensions supported by the calling application in specified context. Only the application itself can set its extensions."
      * }
      */
     patch: {
       /**
-       * Set UI extensions 
+       * Set UI extensions
        * @description {
        *   "text": "Set UI extensions supported by the calling application in specified context. Only the application itself can set its extensions."
        * }
@@ -1028,14 +1028,14 @@ export interface paths {
   };
   "/applications/authorizations/authorized-applications": {
     /**
-     * Get applications authorized in context 
+     * Get applications authorized in context
      * @description {
      *   "text": "List applications authorized in specified context"
      * }
      */
     get: {
       /**
-       * Get applications authorized in context 
+       * Get applications authorized in context
        * @description {
        *   "text": "List applications authorized in specified context"
        * }
@@ -1059,14 +1059,14 @@ export interface paths {
   };
   "/applications/parameters": {
     /**
-     * Get all parameters 
+     * Get all parameters
      * @description {
      *   "text": "Return all application parameters. Only accessible with an app token, not a user token."
      * }
      */
     get: {
       /**
-       * Get all parameters 
+       * Get all parameters
        * @description {
        *   "text": "Return all application parameters. Only accessible with an app token, not a user token."
        * }
@@ -1089,14 +1089,14 @@ export interface paths {
   };
   "/applications/parameters/{key}": {
     /**
-     * Get parameter 
+     * Get parameter
      * @description {
      *   "text": "Get application parameter by key. Only accessible with an app token, not a user token."
      * }
      */
     get: {
       /**
-       * Get parameter 
+       * Get parameter
        * @description {
        *   "text": "Get application parameter by key. Only accessible with an app token, not a user token."
        * }
@@ -1117,14 +1117,14 @@ export interface paths {
       };
     };
     /**
-     * Remove parameter 
+     * Remove parameter
      * @description {
      *   "text": "Remove application parameter by key. Only accessible with an app token, not a user token."
      * }
      */
     delete: {
       /**
-       * Remove parameter 
+       * Remove parameter
        * @description {
        *   "text": "Remove application parameter by key. Only accessible with an app token, not a user token."
        * }
@@ -1141,14 +1141,14 @@ export interface paths {
       };
     };
     /**
-     * Set parameter 
+     * Set parameter
      * @description {
      *   "text": "Set application parameter by key. Only accessible with an app token, not a user token. There is a limit of 100 app parameters per app. The key cannot be longer than 64 characters. The value cannot be longer than 1000 characters."
      * }
      */
     patch: {
       /**
-       * Set parameter 
+       * Set parameter
        * @description {
        *   "text": "Set application parameter by key. Only accessible with an app token, not a user token. There is a limit of 100 app parameters per app. The key cannot be longer than 64 characters. The value cannot be longer than 1000 characters."
        * }
@@ -1174,14 +1174,14 @@ export interface paths {
   };
   "/applications/parameters/profile": {
     /**
-     * Get all profile parameters 
+     * Get all profile parameters
      * @description {
      *   "text": "Return all profile parameters, profile and application are derived from the access token. Only accessible with a user token, issued to an application."
      * }
      */
     get: {
       /**
-       * Get all profile parameters 
+       * Get all profile parameters
        * @description {
        *   "text": "Return all profile parameters, profile and application are derived from the access token. Only accessible with a user token, issued to an application."
        * }
@@ -1204,14 +1204,14 @@ export interface paths {
   };
   "/applications/parameters/profile/{key}": {
     /**
-     * Get profile parameter 
+     * Get profile parameter
      * @description {
      *   "text": "Get profile parameter by key, profile and application are derived from the access token. Only accessible with a user token, issued to an application."
      * }
      */
     get: {
       /**
-       * Get profile parameter 
+       * Get profile parameter
        * @description {
        *   "text": "Get profile parameter by key, profile and application are derived from the access token. Only accessible with a user token, issued to an application."
        * }
@@ -1232,14 +1232,14 @@ export interface paths {
       };
     };
     /**
-     * Remove profile parameter 
+     * Remove profile parameter
      * @description {
      *   "text": "Remove profile parameter by key, profile and application are derived from the access token. Only accessible with a user token, issued to an application."
      * }
      */
     delete: {
       /**
-       * Remove profile parameter 
+       * Remove profile parameter
        * @description {
        *   "text": "Remove profile parameter by key, profile and application are derived from the access token. Only accessible with a user token, issued to an application."
        * }
@@ -1256,14 +1256,14 @@ export interface paths {
       };
     };
     /**
-     * Set profile parameter 
+     * Set profile parameter
      * @description {
      *   "text": "Set profile parameter by key, profile and application are derived from the access token. Only accessible with a user token, issued to an application. There is a limit of 100 app parameters per app per profile. The key cannot be longer than 64 characters. The value cannot be longer than 1000 characters."
      * }
      */
     patch: {
       /**
-       * Set profile parameter 
+       * Set profile parameter
        * @description {
        *   "text": "Set profile parameter by key, profile and application are derived from the access token. Only accessible with a user token, issued to an application. There is a limit of 100 app parameters per app per profile. The key cannot be longer than 64 characters. The value cannot be longer than 1000 characters."
        * }
@@ -1289,14 +1289,14 @@ export interface paths {
   };
   "/applications/unfurls/domains": {
     /**
-     * Update unfurled domains 
+     * Update unfurled domains
      * @description {
      *   "text": "Update list of domains for unfurling by the application. Method is to be called by the application providing unfurls."
      * }
      */
     patch: {
       /**
-       * Update unfurled domains 
+       * Update unfurled domains
        * @description {
        *   "text": "Update list of domains for unfurling by the application. Method is to be called by the application providing unfurls."
        * }
@@ -1317,14 +1317,14 @@ export interface paths {
   };
   "/applications/unfurls/patterns": {
     /**
-     * Update unfurled patterns 
+     * Update unfurled patterns
      * @description {
      *   "text": "Update list of external ID prefixes for unfurling by the application. Method is to be called by the application providing unfurls."
      * }
      */
     patch: {
       /**
-       * Update unfurled patterns 
+       * Update unfurled patterns
        * @description {
        *   "text": "Update list of external ID prefixes for unfurling by the application. Method is to be called by the application providing unfurls."
        * }
@@ -1345,14 +1345,14 @@ export interface paths {
   };
   "/applications/unfurls/queue/content": {
     /**
-     * Post unfurls content 
+     * Post unfurls content
      * @description {
      *   "text": "Provide Space with unfurls content. Method is to be called by the application providing unfurls."
      * }
      */
     post: {
       /**
-       * Post unfurls content 
+       * Post unfurls content
        * @description {
        *   "text": "Provide Space with unfurls content. Method is to be called by the application providing unfurls."
        * }
@@ -1382,14 +1382,14 @@ export interface paths {
   };
   "/applications/unfurls/queue/request-external-auth": {
     /**
-     * Request external system authentication 
+     * Request external system authentication
      * @description {
      *   "text": "Request user to authenticate in external system to provide unfurls from it. Method is to be called by the application providing unfurls."
      * }
      */
     post: {
       /**
-       * Request external system authentication 
+       * Request external system authentication
        * @description {
        *   "text": "Request user to authenticate in external system to provide unfurls from it. Method is to be called by the application providing unfurls."
        * }
@@ -1411,14 +1411,14 @@ export interface paths {
   };
   "/applications/unfurls/queue/reset-external-auth-requests": {
     /**
-     * Clear external system authentication requests 
+     * Clear external system authentication requests
      * @description {
      *   "text": "Clear all external system authentication requests for the specified user. Method is to be called by the application providing unfurls."
      * }
      */
     post: {
       /**
-       * Clear external system authentication requests 
+       * Clear external system authentication requests
        * @description {
        *   "text": "Clear all external system authentication requests for the specified user. Method is to be called by the application providing unfurls."
        * }
@@ -1439,14 +1439,14 @@ export interface paths {
   };
   "/applications/unfurls/queue": {
     /**
-     * Get unfurl queue items 
+     * Get unfurl queue items
      * @description {
      *   "text": "Get links for unfurling by the application. Method is to be called by the application providing unfurls."
      * }
      */
     get: {
       /**
-       * Get unfurl queue items 
+       * Get unfurl queue items
        * @description {
        *   "text": "Get links for unfurling by the application. Method is to be called by the application providing unfurls."
        * }
@@ -1471,14 +1471,14 @@ export interface paths {
   };
   "/applications/{application}/authorizations/authorized-contexts": {
     /**
-     * Get all authorized contexts 
+     * Get all authorized contexts
      * @description {
      *   "text": "List authorized contexts of an application"
      * }
      */
     get: {
       /**
-       * Get all authorized contexts 
+       * Get all authorized contexts
        * @description {
        *   "text": "List authorized contexts of an application"
        * }
@@ -1504,14 +1504,14 @@ export interface paths {
   };
   "/applications/{application}/authorizations/authorized-rights": {
     /**
-     * Get all authorized rights 
+     * Get all authorized rights
      * @description {
      *   "text": "List authorized rights of an application in specified context"
      * }
      */
     get: {
       /**
-       * Get all authorized rights 
+       * Get all authorized rights
        * @description {
        *   "text": "List authorized rights of an application in specified context"
        * }
@@ -1536,14 +1536,14 @@ export interface paths {
       };
     };
     /**
-     * Delete authorized right 
+     * Delete authorized right
      * @description {
      *   "text": "Remove application authorization in specified context"
      * }
      */
     delete: {
       /**
-       * Delete authorized right 
+       * Delete authorized right
        * @description {
        *   "text": "Remove application authorization in specified context"
        * }
@@ -1563,14 +1563,14 @@ export interface paths {
       };
     };
     /**
-     * Update authorized right 
+     * Update authorized right
      * @description {
      *   "text": "Generic method for editing authorized right status in given context."
      * }
      */
     patch: {
       /**
-       * Update authorized right 
+       * Update authorized right
        * @description {
        *   "text": "Generic method for editing authorized right status in given context."
        * }
@@ -1599,14 +1599,14 @@ export interface paths {
   };
   "/applications/{application}/authorizations/authorized-rights/request-rights": {
     /**
-     * Request Rights 
+     * Request Rights
      * @description {
      *   "text": "Request rights for an application in specified context"
      * }
      */
     patch: {
       /**
-       * Request Rights 
+       * Request Rights
        * @description {
        *   "text": "Request rights for an application in specified context"
        * }
@@ -1635,14 +1635,14 @@ export interface paths {
   };
   "/applications/{application}/authorizations/required-rights": {
     /**
-     * Get all required rights 
+     * Get all required rights
      * @description {
      *   "text": "List required rights for an application"
      * }
      */
     get: {
       /**
-       * Get all required rights 
+       * Get all required rights
        * @description {
        *   "text": "List required rights for an application"
        * }
@@ -1666,14 +1666,14 @@ export interface paths {
       };
     };
     /**
-     * Update required right 
+     * Update required right
      * @description {
      *   "text": "Update list of required rights for an application"
      * }
      */
     patch: {
       /**
-       * Update required right 
+       * Update required right
        * @description {
        *   "text": "Update list of required rights for an application"
        * }
@@ -1830,14 +1830,14 @@ export interface paths {
   };
   "/applications/{application}/permanent-tokens": {
     /**
-     * Get all permanent tokens 
+     * Get all permanent tokens
      * @description {
      *   "text": "Get permanent tokens used to access the current organization by the given application"
      * }
      */
     get: {
       /**
-       * Get all permanent tokens 
+       * Get all permanent tokens
        * @description {
        *   "text": "Get permanent tokens used to access the current organization by the given application"
        * }
@@ -1868,14 +1868,14 @@ export interface paths {
       };
     };
     /**
-     * Create permanent token 
+     * Create permanent token
      * @description {
      *   "text": "Create a permanent token for the given application that can be used to access the current organization"
      * }
      */
     post: {
       /**
-       * Create permanent token 
+       * Create permanent token
        * @description {
        *   "text": "Create a permanent token for the given application that can be used to access the current organization"
        * }
@@ -1914,14 +1914,14 @@ export interface paths {
   };
   "/applications/{application}/permanent-tokens/{tokenId}": {
     /**
-     * Delete permanent token 
+     * Delete permanent token
      * @description {
      *   "text": "Delete a personal token used to access the current organization"
      * }
      */
     delete: {
       /**
-       * Delete permanent token 
+       * Delete permanent token
        * @description {
        *   "text": "Delete a personal token used to access the current organization"
        * }
@@ -1939,14 +1939,14 @@ export interface paths {
       };
     };
     /**
-     * Update permanent token 
+     * Update permanent token
      * @description {
      *   "text": "Update an existing personal token used to access the current organization. The permanent token's name and/or scope can be updated."
      * }
      */
     patch: {
       /**
-       * Update permanent token 
+       * Update permanent token
        * @description {
        *   "text": "Update an existing personal token used to access the current organization. The permanent token's name and/or scope can be updated."
        * }
@@ -1976,14 +1976,14 @@ export interface paths {
   };
   "/applications/{application}/permanent-tokens/current": {
     /**
-     * Delete current permanent token 
+     * Delete current permanent token
      * @description {
      *   "text": "Delete personal token of the given application"
      * }
      */
     delete: {
       /**
-       * Delete current permanent token 
+       * Delete current permanent token
        * @description {
        *   "text": "Delete personal token of the given application"
        * }
@@ -2100,14 +2100,14 @@ export interface paths {
   };
   "/applications/{application}/ui-extensions": {
     /**
-     * Get UI extensions 
+     * Get UI extensions
      * @description {
      *   "text": "Get UI extensions supported by the application in specified context. Omit contextIdentifier to get UI extensions in all contexts"
      * }
      */
     get: {
       /**
-       * Get UI extensions 
+       * Get UI extensions
        * @description {
        *   "text": "Get UI extensions supported by the application in specified context. Omit contextIdentifier to get UI extensions in all contexts"
        * }
@@ -2134,14 +2134,14 @@ export interface paths {
   };
   "/applications/{application}/ui-extensions/disable-for-everybody": {
     /**
-     * Disable application UI 
+     * Disable application UI
      * @description {
      *   "text": "Disable application UI for everybody in specified context. Requires Superadmin right for global context, AdminProject for project context, AdminChannel for channel context. Users will still be able to enable application UI individually."
      * }
      */
     patch: {
       /**
-       * Disable application UI 
+       * Disable application UI
        * @description {
        *   "text": "Disable application UI for everybody in specified context. Requires Superadmin right for global context, AdminProject for project context, AdminChannel for channel context. Users will still be able to enable application UI individually."
        * }
@@ -2167,14 +2167,14 @@ export interface paths {
   };
   "/applications/{application}/ui-extensions/disable-for-me": {
     /**
-     * Disable application UI for me 
+     * Disable application UI for me
      * @description {
      *   "text": "Disable application UI in specified context for the current user"
      * }
      */
     patch: {
       /**
-       * Disable application UI for me 
+       * Disable application UI for me
        * @description {
        *   "text": "Disable application UI in specified context for the current user"
        * }
@@ -2200,14 +2200,14 @@ export interface paths {
   };
   "/applications/{application}/ui-extensions/enable-for-everybody": {
     /**
-     * Enable application UI 
+     * Enable application UI
      * @description {
      *   "text": "Enable application UI for everybody in specified context. Requires Superadmin right for global context, AdminProject for project context, AdminChannel for channel context. Users will still be able to disable application UI individually."
      * }
      */
     patch: {
       /**
-       * Enable application UI 
+       * Enable application UI
        * @description {
        *   "text": "Enable application UI for everybody in specified context. Requires Superadmin right for global context, AdminProject for project context, AdminChannel for channel context. Users will still be able to disable application UI individually."
        * }
@@ -2233,14 +2233,14 @@ export interface paths {
   };
   "/applications/{application}/ui-extensions/enable-for-me": {
     /**
-     * Enable application UI for me 
+     * Enable application UI for me
      * @description {
      *   "text": "Enable application UI in specified context for the current user"
      * }
      */
     patch: {
       /**
-       * Enable application UI for me 
+       * Enable application UI for me
        * @description {
        *   "text": "Enable application UI in specified context for the current user"
        * }
@@ -2266,14 +2266,14 @@ export interface paths {
   };
   "/applications/{application}/unfurl-domains/authorize": {
     /**
-     * Authorize unfurled domains 
+     * Authorize unfurled domains
      * @description {
      *   "text": "Authorize domains for unfurling by the application"
      * }
      */
     post: {
       /**
-       * Authorize unfurled domains 
+       * Authorize unfurled domains
        * @description {
        *   "text": "Authorize domains for unfurling by the application"
        * }
@@ -2300,14 +2300,14 @@ export interface paths {
   };
   "/applications/{application}/unfurl-domains": {
     /**
-     * Get all unfurl domains 
+     * Get all unfurl domains
      * @description {
      *   "text": "List domains for unfurling by the application"
      * }
      */
     get: {
       /**
-       * Get all unfurl domains 
+       * Get all unfurl domains
        * @description {
        *   "text": "List domains for unfurling by the application"
        * }
@@ -2333,14 +2333,14 @@ export interface paths {
   };
   "/applications/{application}/unfurl-patterns/authorize": {
     /**
-     * Authorize unfurled patterns 
+     * Authorize unfurled patterns
      * @description {
      *   "text": "Authorize patterns for unfurling by the application"
      * }
      */
     post: {
       /**
-       * Authorize unfurled patterns 
+       * Authorize unfurled patterns
        * @description {
        *   "text": "Authorize patterns for unfurling by the application"
        * }
@@ -2367,14 +2367,14 @@ export interface paths {
   };
   "/applications/{application}/unfurl-patterns": {
     /**
-     * Get all unfurl patterns 
+     * Get all unfurl patterns
      * @description {
      *   "text": "List patterns for unfurling by the application"
      * }
      */
     get: {
       /**
-       * Get all unfurl patterns 
+       * Get all unfurl patterns
        * @description {
        *   "text": "List patterns for unfurling by the application"
        * }
@@ -2436,14 +2436,14 @@ export interface paths {
   };
   "/applications/{application}/webhooks": {
     /**
-     * Get all webhooks 
+     * Get all webhooks
      * @description {
      *   "text": "Get application webhooks"
      * }
      */
     get: {
       /**
-       * Get all webhooks 
+       * Get all webhooks
        * @description {
        *   "text": "Get application webhooks"
        * }
@@ -2476,14 +2476,14 @@ export interface paths {
       };
     };
     /**
-     * Create webhook 
+     * Create webhook
      * @description {
      *   "text": "Create application webhook"
      * }
      */
     post: {
       /**
-       * Create webhook 
+       * Create webhook
        * @description {
        *   "text": "Create application webhook"
        * }
@@ -2528,14 +2528,14 @@ export interface paths {
   };
   "/applications/{application}/webhooks/{webhookId}": {
     /**
-     * Post webhook 
+     * Post webhook
      * @description {
      *   "text": "Restore archived application webhook"
      * }
      */
     post: {
       /**
-       * Post webhook 
+       * Post webhook
        * @description {
        *   "text": "Restore archived application webhook"
        * }
@@ -2553,14 +2553,14 @@ export interface paths {
       };
     };
     /**
-     * Delete webhook 
+     * Delete webhook
      * @description {
      *   "text": "Archive application webhook"
      * }
      */
     delete: {
       /**
-       * Delete webhook 
+       * Delete webhook
        * @description {
        *   "text": "Archive application webhook"
        * }
@@ -2578,14 +2578,14 @@ export interface paths {
       };
     };
     /**
-     * Update webhook 
+     * Update webhook
      * @description {
      *   "text": "Update application webhook"
      * }
      */
     patch: {
       /**
-       * Update webhook 
+       * Update webhook
        * @description {
        *   "text": "Update application webhook"
        * }
@@ -2725,14 +2725,14 @@ export interface paths {
   };
   "/applications/{application}/webhooks/{webhookId}/subscriptions": {
     /**
-     * Get all subscriptions 
+     * Get all subscriptions
      * @description {
      *   "text": "Get webhook subscriptions"
      * }
      */
     get: {
       /**
-       * Get all subscriptions 
+       * Get all subscriptions
        * @description {
        *   "text": "Get webhook subscriptions"
        * }
@@ -2757,14 +2757,14 @@ export interface paths {
       };
     };
     /**
-     * Create subscription 
+     * Create subscription
      * @description {
      *   "text": "Add webhook subscription"
      * }
      */
     post: {
       /**
-       * Create subscription 
+       * Create subscription
        * @description {
        *   "text": "Add webhook subscription"
        * }
@@ -2799,14 +2799,14 @@ export interface paths {
   };
   "/applications/{application}/webhooks/{webhookId}/subscriptions/{subscriptionId}/request-missing-rights": {
     /**
-     * Request Missing Rights 
+     * Request Missing Rights
      * @description {
      *   "text": "Ensures that all permissions required for this subscription are requested in the corresponding permission role"
      * }
      */
     post: {
       /**
-       * Request Missing Rights 
+       * Request Missing Rights
        * @description {
        *   "text": "Ensures that all permissions required for this subscription are requested in the corresponding permission role"
        * }
@@ -2827,14 +2827,14 @@ export interface paths {
   };
   "/applications/{application}/webhooks/{webhookId}/subscriptions/{subscriptionId}": {
     /**
-     * Delete subscription 
+     * Delete subscription
      * @description {
      *   "text": "Delete webhook subscription"
      * }
      */
     delete: {
       /**
-       * Delete subscription 
+       * Delete subscription
        * @description {
        *   "text": "Delete webhook subscription"
        * }
@@ -2853,14 +2853,14 @@ export interface paths {
       };
     };
     /**
-     * Update subscription 
+     * Update subscription
      * @description {
      *   "text": "Update webhook subscription"
      * }
      */
     patch: {
       /**
-       * Update subscription 
+       * Update subscription
        * @description {
        *   "text": "Update webhook subscription"
        * }
@@ -2897,14 +2897,14 @@ export interface paths {
   };
   "/auth-modules": {
     /**
-     * Get all auth modules 
+     * Get all auth modules
      * @description {
      *   "text": "Get all authentication modules"
      * }
      */
     get: {
       /**
-       * Get all auth modules 
+       * Get all auth modules
        * @description {
        *   "text": "Get all authentication modules"
        * }
@@ -2926,14 +2926,14 @@ export interface paths {
       };
     };
     /**
-     * Create auth module 
+     * Create auth module
      * @description {
      *   "text": "Create a new authentication module. Settings are specific to the type of authentication module being created."
      * }
      */
     post: {
       /**
-       * Create auth module 
+       * Create auth module
        * @description {
        *   "text": "Create a new authentication module. Settings are specific to the type of authentication module being created."
        * }
@@ -2967,14 +2967,14 @@ export interface paths {
   };
   "/auth-modules/reorder": {
     /**
-     * Reorder authentication modules 
+     * Reorder authentication modules
      * @description {
      *   "text": "Define the order of authentication modules. This affects the order of the federated authentication module buttons on the sign-in page."
      * }
      */
     post: {
       /**
-       * Reorder authentication modules 
+       * Reorder authentication modules
        * @description {
        *   "text": "Define the order of authentication modules. This affects the order of the federated authentication module buttons on the sign-in page."
        * }
@@ -2995,14 +2995,14 @@ export interface paths {
   };
   "/auth-modules/{id}/saml-metadata": {
     /**
-     * SAML metadata 
+     * SAML metadata
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * SAML metadata 
+       * SAML metadata
        * @description {
        *   "text": ""
        * }
@@ -3040,14 +3040,14 @@ export interface paths {
   };
   "/auth-modules/discover-oidc": {
     /**
-     * Discover OIDC 
+     * Discover OIDC
      * @description {
      *   "text": "Automatically discovers the endpoints for the OpenID Connect provider via discovery document"
      * }
      */
     get: {
       /**
-       * Discover OIDC 
+       * Discover OIDC
        * @description {
        *   "text": "Automatically discovers the endpoints for the OpenID Connect provider via discovery document"
        * }
@@ -3071,14 +3071,14 @@ export interface paths {
   };
   "/auth-modules/key:{key}": {
     /**
-     * Get auth module by key 
+     * Get auth module by key
      * @description {
      *   "text": "Get an existing authentication module"
      * }
      */
     get: {
       /**
-       * Get auth module by key 
+       * Get auth module by key
        * @description {
        *   "text": "Get an existing authentication module"
        * }
@@ -3104,14 +3104,14 @@ export interface paths {
   };
   "/auth-modules/{id}": {
     /**
-     * Delete auth module 
+     * Delete auth module
      * @description {
      *   "text": "Delete an existing authentication module"
      * }
      */
     delete: {
       /**
-       * Delete auth module 
+       * Delete auth module
        * @description {
        *   "text": "Delete an existing authentication module"
        * }
@@ -3128,14 +3128,14 @@ export interface paths {
       };
     };
     /**
-     * Update auth module 
+     * Update auth module
      * @description {
      *   "text": "Update an existing authentication module. Optional parameters will be ignored when not specified and updated otherwise."
      * }
      */
     patch: {
       /**
-       * Update auth module 
+       * Update auth module
        * @description {
        *   "text": "Update an existing authentication module. Optional parameters will be ignored when not specified and updated otherwise."
        * }
@@ -3165,14 +3165,14 @@ export interface paths {
   };
   "/auth-modules/config": {
     /**
-     * Get config 
+     * Get config
      * @description {
      *   "text": "Get authentication configuration"
      * }
      */
     get: {
       /**
-       * Get config 
+       * Get config
        * @description {
        *   "text": "Get authentication configuration"
        * }
@@ -3193,14 +3193,14 @@ export interface paths {
       };
     };
     /**
-     * Put config 
+     * Put config
      * @description {
      *   "text": "Set authentication configuration"
      * }
      */
     put: {
       /**
-       * Put config 
+       * Put config
        * @description {
        *   "text": "Set authentication configuration"
        * }
@@ -3224,14 +3224,14 @@ export interface paths {
       };
     };
     /**
-     * Delete config 
+     * Delete config
      * @description {
      *   "text": "Reset authentication configuration to default"
      * }
      */
     delete: {
       /**
-       * Delete config 
+       * Delete config
        * @description {
        *   "text": "Reset authentication configuration to default"
        * }
@@ -3254,14 +3254,14 @@ export interface paths {
   };
   "/auth-modules/test/built-in": {
     /**
-     * Test built-in settings 
+     * Test built-in settings
      * @description {
      *   "text": "For a username/password combination, test built-in authentication with updated settings"
      * }
      */
     post: {
       /**
-       * Test built-in settings 
+       * Test built-in settings
        * @description {
        *   "text": "For a username/password combination, test built-in authentication with updated settings"
        * }
@@ -3293,14 +3293,14 @@ export interface paths {
   };
   "/auth-modules/test/ldap": {
     /**
-     * Test LDAP settings 
+     * Test LDAP settings
      * @description {
      *   "text": "For a username/password combination, test LDAP authentication with updated settings"
      * }
      */
     post: {
       /**
-       * Test LDAP settings 
+       * Test LDAP settings
        * @description {
        *   "text": "For a username/password combination, test LDAP authentication with updated settings"
        * }
@@ -3332,14 +3332,14 @@ export interface paths {
   };
   "/auth-modules/throttled-logins": {
     /**
-     * Get throttled logins 
+     * Get throttled logins
      * @description {
      *   "text": "Returns logins that are currently subjected to rate limits when logging in to Space"
      * }
      */
     get: {
       /**
-       * Get throttled logins 
+       * Get throttled logins
        * @description {
        *   "text": "Returns logins that are currently subjected to rate limits when logging in to Space"
        * }
@@ -3368,14 +3368,14 @@ export interface paths {
       };
     };
     /**
-     * Reset throttling status 
+     * Reset throttling status
      * @description {
      *   "text": "Resets the counter that tracks failed login attempts for the account with the specified logins. The member who use these accounts are no longer blocked from attempting to log in to Space."
      * }
      */
     delete: {
       /**
-       * Reset throttling status 
+       * Reset throttling status
        * @description {
        *   "text": "Resets the counter that tracks failed login attempts for the account with the specified logins. The member who use these accounts are no longer blocked from attempting to log in to Space."
        * }
@@ -3394,14 +3394,14 @@ export interface paths {
   };
   "/auth-modules/throttled-logins/org-status": {
     /**
-     * Get organization throttling status 
+     * Get organization throttling status
      * @description {
      *   "text": "Returns date and time until which the organization are throttled"
      * }
      */
     get: {
       /**
-       * Get organization throttling status 
+       * Get organization throttling status
        * @description {
        *   "text": "Returns date and time until which the organization are throttled"
        * }
@@ -3422,14 +3422,14 @@ export interface paths {
       };
     };
     /**
-     * Reset organization throttling 
+     * Reset organization throttling
      * @description {
      *   "text": "Resets date and time until which the organization are throttled"
      * }
      */
     delete: {
       /**
-       * Reset organization throttling 
+       * Reset organization throttling
        * @description {
        *   "text": "Resets date and time until which the organization are throttled"
        * }
@@ -3443,14 +3443,14 @@ export interface paths {
   };
   "/auth-modules/usages": {
     /**
-     * Get all usages 
+     * Get all usages
      * @description {
      *   "text": "Retrieve a list of authentication module usage count"
      * }
      */
     get: {
       /**
-       * Get all usages 
+       * Get all usages
        * @description {
        *   "text": "Retrieve a list of authentication module usage count"
        * }
@@ -3473,14 +3473,14 @@ export interface paths {
   };
   "/auth-modules/{id}/logins/{identifier}/change": {
     /**
-     * Change password 
+     * Change password
      * @description {
      *   "text": "Change password for a given authentication module (id) and profile (identifier)"
      * }
      */
     post: {
       /**
-       * Change password 
+       * Change password
        * @description {
        *   "text": "Change password for a given authentication module (id) and profile (identifier)"
        * }
@@ -3508,14 +3508,14 @@ export interface paths {
   };
   "/auth-modules/{id}/logins/{identifier}/reset": {
     /**
-     * Reset password 
+     * Reset password
      * @description {
      *   "text": "Request a password reset for a given authentication module (id) and profile (identifier)"
      * }
      */
     post: {
       /**
-       * Reset password 
+       * Reset password
        * @description {
        *   "text": "Request a password reset for a given authentication module (id) and profile (identifier)"
        * }
@@ -3535,14 +3535,14 @@ export interface paths {
   };
   "/auth-modules/{id}/logins/{identifier}": {
     /**
-     * Delete login 
+     * Delete login
      * @description {
      *   "text": "Detach a profile login from an authentication module. The id parameter refers to the authentication module, the identifier parameter refers to the login."
      * }
      */
     delete: {
       /**
-       * Delete login 
+       * Delete login
        * @description {
        *   "text": "Detach a profile login from an authentication module. The id parameter refers to the authentication module, the identifier parameter refers to the login."
        * }
@@ -3641,14 +3641,14 @@ export interface paths {
   };
   "/billing-admin/reports/{billingPeriod}": {
     /**
-     * Get billing report 
+     * Get billing report
      * @description {
      *   "text": "Returns a billing report for the given billing period"
      * }
      */
     get: {
       /**
-       * Get billing report 
+       * Get billing report
        * @description {
        *   "text": "Returns a billing report for the given billing period"
        * }
@@ -3674,14 +3674,14 @@ export interface paths {
   };
   "/billing-admin/reports/today": {
     /**
-     * Get billing report for today 
+     * Get billing report for today
      * @description {
      *   "text": "Returns a billing report for today"
      * }
      */
     get: {
       /**
-       * Get billing report for today 
+       * Get billing report for today
        * @description {
        *   "text": "Returns a billing report for today"
        * }
@@ -3705,14 +3705,14 @@ export interface paths {
   };
   "/blog": {
     /**
-     * Get all blog posts 
+     * Get all blog posts
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get all blog posts 
+       * Get all blog posts
        * @description {
        *   "text": ""
        * }
@@ -3747,14 +3747,14 @@ export interface paths {
       };
     };
     /**
-     * Publish blog post 
+     * Publish blog post
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Publish blog post 
+       * Publish blog post
        * @description {
        *   "text": ""
        * }
@@ -3789,14 +3789,14 @@ export interface paths {
   };
   "/blog/import": {
     /**
-     * Import blog posts 
+     * Import blog posts
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Import blog posts 
+       * Import blog posts
        * @description {
        *   "text": ""
        * }
@@ -3827,14 +3827,14 @@ export interface paths {
   };
   "/blog/stats": {
     /**
-     * Get stats 
+     * Get stats
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get stats 
+       * Get stats
        * @description {
        *   "text": ""
        * }
@@ -3862,14 +3862,14 @@ export interface paths {
   };
   "/blog/alias:{alias}": {
     /**
-     * Get blog post by alias 
+     * Get blog post by alias
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get blog post by alias 
+       * Get blog post by alias
        * @description {
        *   "text": ""
        * }
@@ -3895,14 +3895,14 @@ export interface paths {
   };
   "/blog/external-id:{id}": {
     /**
-     * Get blog post by external ID 
+     * Get blog post by external ID
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get blog post by external ID 
+       * Get blog post by external ID
        * @description {
        *   "text": ""
        * }
@@ -3928,14 +3928,14 @@ export interface paths {
   };
   "/blog/{id}": {
     /**
-     * Get blog post 
+     * Get blog post
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get blog post 
+       * Get blog post
        * @description {
        *   "text": ""
        * }
@@ -3959,14 +3959,14 @@ export interface paths {
       };
     };
     /**
-     * Unpublish blog post 
+     * Unpublish blog post
      * @description {
      *   "text": ""
      * }
      */
     delete: {
       /**
-       * Unpublish blog post 
+       * Unpublish blog post
        * @description {
        *   "text": ""
        * }
@@ -3983,14 +3983,14 @@ export interface paths {
       };
     };
     /**
-     * Update blog post 
+     * Update blog post
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Update blog post 
+       * Update blog post
        * @description {
        *   "text": ""
        * }
@@ -4028,14 +4028,14 @@ export interface paths {
   };
   "/calendars/absence-events": {
     /**
-     * Get all absence events 
+     * Get all absence events
      * @description {
      *   "text": "Get/search absences. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all absence events 
+       * Get all absence events
        * @description {
        *   "text": "Get/search absences. Parameters are applied as 'AND' filters."
        * }
@@ -4063,14 +4063,14 @@ export interface paths {
   };
   "/calendars/birthday-events": {
     /**
-     * Get all birthday events 
+     * Get all birthday events
      * @description {
      *   "text": "Get/search birthdays. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all birthday events 
+       * Get all birthday events
        * @description {
        *   "text": "Get/search birthdays. Parameters are applied as 'AND' filters."
        * }
@@ -4098,14 +4098,14 @@ export interface paths {
   };
   "/calendars/birthday-events/starred": {
     /**
-     * Get all starred birthday events 
+     * Get all starred birthday events
      * @description {
      *   "text": "Get/search birthdays in a specific time period for starred profiles."
      * }
      */
     get: {
       /**
-       * Get all starred birthday events 
+       * Get all starred birthday events
        * @description {
        *   "text": "Get/search birthdays in a specific time period for starred profiles."
        * }
@@ -4130,14 +4130,14 @@ export interface paths {
   };
   "/calendars/event-participations/{id}": {
     /**
-     * Update event participation 
+     * Update event participation
      * @description {
      *   "text": "Update RSVP / calendar event participation status for a calendar event attached to an article"
      * }
      */
     patch: {
       /**
-       * Update event participation 
+       * Update event participation
        * @description {
        *   "text": "Update RSVP / calendar event participation status for a calendar event attached to an article"
        * }
@@ -4170,14 +4170,14 @@ export interface paths {
   };
   "/calendars/events": {
     /**
-     * Get all events 
+     * Get all events
      * @description {
      *   "text": "Get calendar events attached to an article in a specific time period"
      * }
      */
     get: {
       /**
-       * Get all events 
+       * Get all events
        * @description {
        *   "text": "Get calendar events attached to an article in a specific time period"
        * }
@@ -4202,14 +4202,14 @@ export interface paths {
   };
   "/calendars/events/{id}": {
     /**
-     * Get event 
+     * Get event
      * @description {
      *   "text": "Get a calendar event attached to an article"
      * }
      */
     get: {
       /**
-       * Get event 
+       * Get event
        * @description {
        *   "text": "Get a calendar event attached to an article"
        * }
@@ -4235,14 +4235,14 @@ export interface paths {
   };
   "/calendars/holidays": {
     /**
-     * Get all holidays 
+     * Get all holidays
      * @description {
      *   "text": "Get/search holidays. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all holidays 
+       * Get all holidays
        * @description {
        *   "text": "Get/search holidays. Parameters are applied as 'AND' filters."
        * }
@@ -4271,14 +4271,14 @@ export interface paths {
   };
   "/calendars/meetings": {
     /**
-     * Get all meetings 
+     * Get all meetings
      * @description {
      *   "text": "Search meetings by name, location, time period and other parameters. Parameters are applied as 'AND' filters while values in lists of locations, profiles and teams have 'OR' semantics."
      * }
      */
     get: {
       /**
-       * Get all meetings 
+       * Get all meetings
        * @description {
        *   "text": "Search meetings by name, location, time period and other parameters. Parameters are applied as 'AND' filters while values in lists of locations, profiles and teams have 'OR' semantics."
        * }
@@ -4320,14 +4320,14 @@ export interface paths {
       };
     };
     /**
-     * Create meeting 
+     * Create meeting
      * @description {
      *   "text": "Create a meeting"
      * }
      */
     post: {
       /**
-       * Create meeting 
+       * Create meeting
        * @description {
        *   "text": "Create a meeting"
        * }
@@ -4379,14 +4379,14 @@ export interface paths {
   };
   "/calendars/meetings/next-occurrence": {
     /**
-     * Get next meeting occurrence 
+     * Get next meeting occurrence
      * @description {
      *   "text": "Search for the next meeting occurrence that starts after the provided time point or after the current time if it is not specified"
      * }
      */
     get: {
       /**
-       * Get next meeting occurrence 
+       * Get next meeting occurrence
        * @description {
        *   "text": "Search for the next meeting occurrence that starts after the provided time point or after the current time if it is not specified"
        * }
@@ -4411,14 +4411,14 @@ export interface paths {
   };
   "/calendars/meetings/occurrences": {
     /**
-     * Get meeting occurrences for period 
+     * Get meeting occurrences for period
      * @description {
      *   "text": "Search for occurrences of a meeting that start in the provided time interval. Interval limits are inclusive, response is limited by the first 1_000 results by default."
      * }
      */
     get: {
       /**
-       * Get meeting occurrences for period 
+       * Get meeting occurrences for period
        * @description {
        *   "text": "Search for occurrences of a meeting that start in the provided time interval. Interval limits are inclusive, response is limited by the first 1_000 results by default."
        * }
@@ -4445,14 +4445,14 @@ export interface paths {
   };
   "/calendars/meetings/occurrences-by-meeting": {
     /**
-     * Get meeting occurrences for period for multiple meetings 
+     * Get meeting occurrences for period for multiple meetings
      * @description {
      *   "text": "Search for occurrences of a meeting that start in the provided time interval. Interval limits are inclusive, response is limited by the first 1_000 results by default (per meeting)."
      * }
      */
     get: {
       /**
-       * Get meeting occurrences for period for multiple meetings 
+       * Get meeting occurrences for period for multiple meetings
        * @description {
        *   "text": "Search for occurrences of a meeting that start in the provided time interval. Interval limits are inclusive, response is limited by the first 1_000 results by default (per meeting)."
        * }
@@ -4521,12 +4521,12 @@ export interface paths {
   };
   "/calendars/meetings/profile-participation": {
     /**
-     * Get profile participation statuses for meetings 
+     * Get profile participation statuses for meetings
      * @deprecated
      */
     get: {
       /**
-       * Get profile participation statuses for meetings 
+       * Get profile participation statuses for meetings
        * @deprecated
        */
       parameters: {
@@ -4618,14 +4618,14 @@ export interface paths {
       };
     };
     /**
-     * Update meeting 
+     * Update meeting
      * @description {
      *   "text": "Patch a meeting. Only not-null parameters and not empty diffs will be applied."
      * }
      */
     patch: {
       /**
-       * Update meeting 
+       * Update meeting
        * @description {
        *   "text": "Patch a meeting. Only not-null parameters and not empty diffs will be applied."
        * }
@@ -4720,14 +4720,14 @@ export interface paths {
   };
   "/calendars/meetings/{id}/participation-status": {
     /**
-     * Update profile participation status 
+     * Update profile participation status
      * @description {
      *   "text": "Update profile participation status for a meeting"
      * }
      */
     patch: {
       /**
-       * Update profile participation status 
+       * Update profile participation status
        * @description {
        *   "text": "Update profile participation status for a meeting"
        * }
@@ -4765,14 +4765,14 @@ export interface paths {
   };
   "/calendars/membership-events": {
     /**
-     * Get all membership events 
+     * Get all membership events
      * @description {
      *   "text": "Get/search membership events. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all membership events 
+       * Get all membership events
        * @description {
        *   "text": "Get/search membership events. Parameters are applied as 'AND' filters."
        * }
@@ -4800,14 +4800,14 @@ export interface paths {
   };
   "/calendars/non-working-days-events": {
     /**
-     * Get all non working days events 
+     * Get all non working days events
      * @description {
      *   "text": "Get/search non-working day events. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all non working days events 
+       * Get all non working days events
        * @description {
        *   "text": "Get/search non-working day events. Parameters are applied as 'AND' filters."
        * }
@@ -4895,16 +4895,16 @@ export interface paths {
   };
   "/chats/channels/dm": {
     /**
-     * Get or create direct messages channel 
-     * @deprecated 
+     * Get or create direct messages channel
+     * @deprecated
      * @description {
      *   "text": "Create or get a direct messages channel with a profile"
      * }
      */
     post: {
       /**
-       * Get or create direct messages channel 
-       * @deprecated 
+       * Get or create direct messages channel
+       * @deprecated
        * @description {
        *   "text": "Create or get a direct messages channel with a profile"
        * }
@@ -4934,14 +4934,14 @@ export interface paths {
   };
   "/chats/channels/is-name-free": {
     /**
-     * Is name free? 
+     * Is name free?
      * @description {
      *   "text": "Check whether a channel name is available. Returns true when the channel name can be used to create a new channel, false otherwise."
      * }
      */
     post: {
       /**
-       * Is name free? 
+       * Is name free?
        * @description {
        *   "text": "Check whether a channel name is available. Returns true when the channel name can be used to create a new channel, false otherwise."
        * }
@@ -4966,14 +4966,14 @@ export interface paths {
   };
   "/chats/channels/{channel}/restore-archived": {
     /**
-     * Restore archived channel 
+     * Restore archived channel
      * @description {
      *   "text": "Restore an archived channel and allow new messages to be added again."
      * }
      */
     post: {
       /**
-       * Restore archived channel 
+       * Restore archived channel
        * @description {
        *   "text": "Restore an archived channel and allow new messages to be added again."
        * }
@@ -5047,14 +5047,14 @@ export interface paths {
       };
     };
     /**
-     * Delete channel 
+     * Delete channel
      * @description {
      *   "text": "Delete a channel. No one will be able to view this channel or its threads. This action cannot be undone."
      * }
      */
     delete: {
       /**
-       * Delete channel 
+       * Delete channel
        * @description {
        *   "text": "Delete a channel. No one will be able to view this channel or its threads. This action cannot be undone."
        * }
@@ -5073,14 +5073,14 @@ export interface paths {
   };
   "/chats/channels/{channel}/archive": {
     /**
-     * Archive channel 
+     * Archive channel
      * @description {
      *   "text": "Archive a channel and reject new messages being added. It is still possible to view messages from an archived channel. It is possible to restore the channel later."
      * }
      */
     delete: {
       /**
-       * Archive channel 
+       * Archive channel
        * @description {
        *   "text": "Archive a channel and reject new messages being added. It is still possible to view messages from an archived channel. It is possible to restore the channel later."
        * }
@@ -5581,14 +5581,14 @@ export interface paths {
   };
   "/chats/messages/delete-message": {
     /**
-     * Delete message 
+     * Delete message
      * @description {
      *   "text": "Delete a message from a channel."
      * }
      */
     post: {
       /**
-       * Delete message 
+       * Delete message
        * @description {
        *   "text": "Delete a message from a channel."
        * }
@@ -5610,14 +5610,14 @@ export interface paths {
   };
   "/chats/messages/edit-message": {
     /**
-     * Edit message 
+     * Edit message
      * @description {
      *   "text": "Edit an existing message. Message content can be a string, or a block with one or several sections of information."
      * }
      */
     post: {
       /**
-       * Edit message 
+       * Edit message
        * @description {
        *   "text": "Edit an existing message. Message content can be a string, or a block with one or several sections of information."
        * }
@@ -5643,14 +5643,14 @@ export interface paths {
   };
   "/chats/messages/import": {
     /**
-     * Import messages 
+     * Import messages
      * @description {
      *   "text": "This API method is intended to be used only by applications. The `createdAtUtc` and `editedAtUtc` parameters are Unix epoch timestamps in *milliseconds*."
      * }
      */
     post: {
       /**
-       * Import messages 
+       * Import messages
        * @description {
        *   "text": "This API method is intended to be used only by applications. The `createdAtUtc` and `editedAtUtc` parameters are Unix epoch timestamps in *milliseconds*."
        * }
@@ -5674,12 +5674,12 @@ export interface paths {
   };
   "/chats/messages/send": {
     /**
-     * Send text message 
+     * Send text message
      * @deprecated
      */
     post: {
       /**
-       * Send text message 
+       * Send text message
        * @deprecated
        */
       parameters?: {
@@ -5711,14 +5711,14 @@ export interface paths {
   };
   "/chats/messages/send-message": {
     /**
-     * Send message 
+     * Send message
      * @description {
      *   "text": "Send a message to a channel, thread, member, issue, code review, etc. Message content can be a string, or a block with one or several sections of information."
      * }
      */
     post: {
       /**
-       * Send message 
+       * Send message
        * @description {
        *   "text": "Send a message to a channel, thread, member, issue, code review, etc. Message content can be a string, or a block with one or several sections of information."
        * }
@@ -5755,14 +5755,14 @@ export interface paths {
   };
   "/chats/messages": {
     /**
-     * Get channel messages 
+     * Get channel messages
      * @description {
      *   "text": "Retrieve a batch of messages from a channel. Messages are divided into batches by providing `sorting`, `startFromDate` and `batchSize` parameters. If the retrieved number of messages is less than `batchSize`, there are currently no more messages to return. Return data also contains next value for `startFromDate` as well as the `orgLimitReached` flag indicating whether part of messages could not be retrieved because of organization plan limitation."
      * }
      */
     get: {
       /**
-       * Get channel messages 
+       * Get channel messages
        * @description {
        *   "text": "Retrieve a batch of messages from a channel. Messages are divided into batches by providing `sorting`, `startFromDate` and `batchSize` parameters. If the retrieved number of messages is less than `batchSize`, there are currently no more messages to return. Return data also contains next value for `startFromDate` as well as the `orgLimitReached` flag indicating whether part of messages could not be retrieved because of organization plan limitation."
        * }
@@ -5879,14 +5879,14 @@ export interface paths {
   };
   "/chats/messages/sync-batch": {
     /**
-     * Get sync batch 
+     * Get sync batch
      * @description {
      *   "text": "Get messages in specified channel for synchronization with third-party system. Messages with etag greater than specified value are returned, in the order of creation and updates. Use etag value \"0\" to start retrieving all messages in the channel. To get the current etag value, use \"Get current sync batch etag\" method. Read more in the [documentation](https://www.jetbrains.com/help/space/sync-api.html)."
      * }
      */
     get: {
       /**
-       * Get sync batch 
+       * Get sync batch
        * @description {
        *   "text": "Get messages in specified channel for synchronization with third-party system. Messages with etag greater than specified value are returned, in the order of creation and updates. Use etag value \"0\" to start retrieving all messages in the channel. To get the current etag value, use \"Get current sync batch etag\" method. Read more in the [documentation](https://www.jetbrains.com/help/space/sync-api.html)."
        * }
@@ -5915,14 +5915,14 @@ export interface paths {
   };
   "/chats/messages/sync-batch/current-etag": {
     /**
-     * Get current sync etag 
+     * Get current sync etag
      * @description {
      *   "text": "Get current sync etag for given channel. You can use the returned etag to retrieve updates starting from this point through \"Get sync batch\" method. To retrieve all records instead, use \"0\" as the starting etag value. Read more in the [documentation](https://www.jetbrains.com/help/space/sync-api.html)."
      * }
      */
     get: {
       /**
-       * Get current sync etag 
+       * Get current sync etag
        * @description {
        *   "text": "Get current sync etag for given channel. You can use the returned etag to retrieve updates starting from this point through \"Get sync batch\" method. To retrieve all records instead, use \"0\" as the starting etag value. Read more in the [documentation](https://www.jetbrains.com/help/space/sync-api.html)."
        * }
@@ -5945,14 +5945,14 @@ export interface paths {
   };
   "/checklists/{checklist}/items": {
     /**
-     * Create plan item 
+     * Create plan item
      * @description {
      *   "text": "Create plan item as the last element of the top level in a checklist if parent plan item is null, or as the last child if parent plan item is provided."
      * }
      */
     post: {
       /**
-       * Create plan item 
+       * Create plan item
        * @description {
        *   "text": "Create plan item as the last element of the top level in a checklist if parent plan item is null, or as the last child if parent plan item is provided."
        * }
@@ -5986,14 +5986,14 @@ export interface paths {
   };
   "/checklists/{checklist}/items/{planItem}/move": {
     /**
-     * Move plan item 
+     * Move plan item
      * @description {
      *   "text": "Move plan item in a checklist"
      * }
      */
     post: {
       /**
-       * Move plan item 
+       * Move plan item
        * @description {
        *   "text": "Move plan item in a checklist"
        * }
@@ -6028,14 +6028,14 @@ export interface paths {
   };
   "/checklists/{checklist}/items/{planItem}": {
     /**
-     * Get plan item 
+     * Get plan item
      * @description {
      *   "text": "Get plan item by its identifier in a checklist"
      * }
      */
     get: {
       /**
-       * Get plan item 
+       * Get plan item
        * @description {
        *   "text": "Get plan item by its identifier in a checklist"
        * }
@@ -6060,14 +6060,14 @@ export interface paths {
       };
     };
     /**
-     * Delete plan item 
+     * Delete plan item
      * @description {
      *   "text": "Delete plan item and its children from a checklist"
      * }
      */
     delete: {
       /**
-       * Delete plan item 
+       * Delete plan item
        * @description {
        *   "text": "Delete plan item and its children from a checklist"
        * }
@@ -6085,14 +6085,14 @@ export interface paths {
       };
     };
     /**
-     * Update plan item 
+     * Update plan item
      * @description {
      *   "text": "Update plan item in a checklist"
      * }
      */
     patch: {
       /**
-       * Update plan item 
+       * Update plan item
        * @description {
        *   "text": "Update plan item in a checklist"
        * }
@@ -6127,16 +6127,16 @@ export interface paths {
   };
   "/custom-fields/extended-types": {
     /**
-     * Get all extended types 
-     * @deprecated 
+     * Get all extended types
+     * @deprecated
      * @description {
      *   "text": "Get all types that support custom fields"
      * }
      */
     get: {
       /**
-       * Get all extended types 
-       * @deprecated 
+       * Get all extended types
+       * @deprecated
        * @description {
        *   "text": "Get all types that support custom fields"
        * }
@@ -6160,16 +6160,16 @@ export interface paths {
   };
   "/custom-fields/{typeKey}/all-values": {
     /**
-     * Get all values 
-     * @deprecated 
+     * Get all values
+     * @deprecated
      * @description {
      *   "text": "Get all custom field values for a type. Optionally, extendedEntityIds can be used to get data for one or more entity IDs."
      * }
      */
     get: {
       /**
-       * Get all values 
-       * @deprecated 
+       * Get all values
+       * @deprecated
        * @description {
        *   "text": "Get all custom field values for a type. Optionally, extendedEntityIds can be used to get data for one or more entity IDs."
        * }
@@ -6204,16 +6204,16 @@ export interface paths {
   };
   "/custom-fields/{typeKey}/enum-values/{customFieldId}": {
     /**
-     * Get all enum values 
-     * @deprecated 
+     * Get all enum values
+     * @deprecated
      * @description {
      *   "text": "Get a page of options for custom field of `Select from options` type with `Open-ended` flag set"
      * }
      */
     get: {
       /**
-       * Get all enum values 
-       * @deprecated 
+       * Get all enum values
+       * @deprecated
        * @description {
        *   "text": "Get a page of options for custom field of `Select from options` type with `Open-ended` flag set"
        * }
@@ -6250,16 +6250,16 @@ export interface paths {
       };
     };
     /**
-     * Create enum value 
-     * @deprecated 
+     * Create enum value
+     * @deprecated
      * @description {
      *   "text": "Add new option to custom field of `Select from options` type. Options can only be added via this API call if custom field has the `Open-ended` flag set. Returns saved records."
      * }
      */
     post: {
       /**
-       * Create enum value 
-       * @deprecated 
+       * Create enum value
+       * @deprecated
        * @description {
        *   "text": "Add new option to custom field of `Select from options` type. Options can only be added via this API call if custom field has the `Open-ended` flag set. Returns saved records."
        * }
@@ -6294,16 +6294,16 @@ export interface paths {
   };
   "/custom-fields/{typeKey}/fields": {
     /**
-     * Get all fields 
-     * @deprecated 
+     * Get all fields
+     * @deprecated
      * @description {
      *   "text": "Get custom fields for a type"
      * }
      */
     get: {
       /**
-       * Get all fields 
-       * @deprecated 
+       * Get all fields
+       * @deprecated
        * @description {
        *   "text": "Get custom fields for a type"
        * }
@@ -6329,16 +6329,16 @@ export interface paths {
       };
     };
     /**
-     * Create field 
-     * @deprecated 
+     * Create field
+     * @deprecated
      * @description {
      *   "text": "Create custom field for a type"
      * }
      */
     post: {
       /**
-       * Create field 
-       * @deprecated 
+       * Create field
+       * @deprecated
        * @description {
        *   "text": "Create custom field for a type"
        * }
@@ -6381,16 +6381,16 @@ export interface paths {
   };
   "/custom-fields/{typeKey}/fields/reorder": {
     /**
-     * Reorder fields 
-     * @deprecated 
+     * Reorder fields
+     * @deprecated
      * @description {
      *   "text": "Re-order custom fields. Pass IDs of the custom fields in the order you wish the custom fields to be."
      * }
      */
     post: {
       /**
-       * Reorder fields 
-       * @deprecated 
+       * Reorder fields
+       * @deprecated
        * @description {
        *   "text": "Re-order custom fields. Pass IDs of the custom fields in the order you wish the custom fields to be."
        * }
@@ -6417,16 +6417,16 @@ export interface paths {
   };
   "/custom-fields/{typeKey}/fields/{id}/archive": {
     /**
-     * Archive field 
-     * @deprecated 
+     * Archive field
+     * @deprecated
      * @description {
      *   "text": "Archive a custom field for a type"
      * }
      */
     post: {
       /**
-       * Archive field 
-       * @deprecated 
+       * Archive field
+       * @deprecated
        * @description {
        *   "text": "Archive a custom field for a type"
        * }
@@ -6453,16 +6453,16 @@ export interface paths {
   };
   "/custom-fields/{typeKey}/fields/{id}/restore": {
     /**
-     * Restore field 
-     * @deprecated 
+     * Restore field
+     * @deprecated
      * @description {
      *   "text": "Restore custom field for a type"
      * }
      */
     post: {
       /**
-       * Restore field 
-       * @deprecated 
+       * Restore field
+       * @deprecated
        * @description {
        *   "text": "Restore custom field for a type"
        * }
@@ -6489,16 +6489,16 @@ export interface paths {
   };
   "/custom-fields/{typeKey}/fields/{id}": {
     /**
-     * Delete field 
-     * @deprecated 
+     * Delete field
+     * @deprecated
      * @description {
      *   "text": "Remove custom field for a type"
      * }
      */
     delete: {
       /**
-       * Delete field 
-       * @deprecated 
+       * Delete field
+       * @deprecated
        * @description {
        *   "text": "Remove custom field for a type"
        * }
@@ -6519,16 +6519,16 @@ export interface paths {
       };
     };
     /**
-     * Update field 
-     * @deprecated 
+     * Update field
+     * @deprecated
      * @description {
      *   "text": "Update custom field for a type. Optional parameters will be ignored when not specified and updated otherwise."
      * }
      */
     patch: {
       /**
-       * Update field 
-       * @deprecated 
+       * Update field
+       * @deprecated
        * @description {
        *   "text": "Update custom field for a type. Optional parameters will be ignored when not specified and updated otherwise."
        * }
@@ -6565,12 +6565,12 @@ export interface paths {
   };
   "/custom-fields/{typeKey}/fields/{id}/filter-values": {
     /**
-     * Get all filter values 
+     * Get all filter values
      * @deprecated
      */
     get: {
       /**
-       * Get all filter values 
+       * Get all filter values
        * @deprecated
        */
       parameters: {
@@ -6604,16 +6604,16 @@ export interface paths {
   };
   "/custom-fields/{typeKey}/{entityId}/values": {
     /**
-     * Get value 
-     * @deprecated 
+     * Get value
+     * @deprecated
      * @description {
      *   "text": "Get custom field value for a type and entity ID"
      * }
      */
     get: {
       /**
-       * Get value 
-       * @deprecated 
+       * Get value
+       * @deprecated
        * @description {
        *   "text": "Get custom field value for a type and entity ID"
        * }
@@ -6639,16 +6639,16 @@ export interface paths {
       };
     };
     /**
-     * Update value 
-     * @deprecated 
+     * Update value
+     * @deprecated
      * @description {
      *   "text": "Update custom field value(s) for a type and entity ID"
      * }
      */
     patch: {
       /**
-       * Update value 
-       * @deprecated 
+       * Update value
+       * @deprecated
        * @description {
        *   "text": "Update custom field value(s) for a type and entity ID"
        * }
@@ -6766,14 +6766,14 @@ export interface paths {
   };
   "/custom-fields-v2/{entityType}/fields": {
     /**
-     * Get custom fields 
+     * Get custom fields
      * @description {
      *   "text": "Get all configured custom fields for an entity type"
      * }
      */
     get: {
       /**
-       * Get custom fields 
+       * Get custom fields
        * @description {
        *   "text": "Get all configured custom fields for an entity type"
        * }
@@ -6839,14 +6839,14 @@ export interface paths {
   };
   "/custom-fields-v2/{entityType}/fields/reorder": {
     /**
-     * Reorder custom fields 
+     * Reorder custom fields
      * @description {
      *   "text": "Re-order custom fields. Pass identifiers of the custom fields in the order you wish the custom fields to be."
      * }
      */
     post: {
       /**
-       * Reorder custom fields 
+       * Reorder custom fields
        * @description {
        *   "text": "Re-order custom fields. Pass identifiers of the custom fields in the order you wish the custom fields to be."
        * }
@@ -6906,14 +6906,14 @@ export interface paths {
   };
   "/custom-fields-v2/{entityType}/fields/{customField}": {
     /**
-     * Get single custom field 
+     * Get single custom field
      * @description {
      *   "text": "Get configured custom field"
      * }
      */
     get: {
       /**
-       * Get single custom field 
+       * Get single custom field
        * @description {
        *   "text": "Get configured custom field"
        * }
@@ -6982,14 +6982,14 @@ export interface paths {
   };
   "/custom-fields-v2/{entityType}/fields/{customField}/enum-values": {
     /**
-     * Get enum values 
+     * Get enum values
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get enum values 
+       * Get enum values
        * @description {
        *   "text": ""
        * }
@@ -7078,14 +7078,14 @@ export interface paths {
   };
   "/custom-fields-v2/{entityType}/fields/{customField}/enum-values/bulk-update": {
     /**
-     * Bulk update enum values 
+     * Bulk update enum values
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Bulk update enum values 
+       * Bulk update enum values
        * @description {
        *   "text": ""
        * }
@@ -7130,14 +7130,14 @@ export interface paths {
   };
   "/emojis/add": {
     /**
-     * Add emoji 
+     * Add emoji
      * @description {
      *   "text": "Add custom emoji"
      * }
      */
     post: {
       /**
-       * Add emoji 
+       * Add emoji
        * @description {
        *   "text": "Add custom emoji"
        * }
@@ -7159,14 +7159,14 @@ export interface paths {
   };
   "/emojis/delete": {
     /**
-     * Delete emoji 
+     * Delete emoji
      * @description {
      *   "text": "Delete an emoji by name"
      * }
      */
     post: {
       /**
-       * Delete emoji 
+       * Delete emoji
        * @description {
        *   "text": "Delete an emoji by name"
        * }
@@ -7187,14 +7187,14 @@ export interface paths {
   };
   "/emojis/record-usage": {
     /**
-     * Record emojis usage 
+     * Record emojis usage
      * @description {
      *   "text": "Record emojis usage and update frequently used list"
      * }
      */
     post: {
       /**
-       * Record emojis usage 
+       * Record emojis usage
        * @description {
        *   "text": "Record emojis usage and update frequently used list"
        * }
@@ -7215,14 +7215,14 @@ export interface paths {
   };
   "/emojis/exists": {
     /**
-     * Check if emoji exists 
+     * Check if emoji exists
      * @description {
      *   "text": "Check whether a given emoji name exists"
      * }
      */
     get: {
       /**
-       * Check if emoji exists 
+       * Check if emoji exists
        * @description {
        *   "text": "Check whether a given emoji name exists"
        * }
@@ -7245,14 +7245,14 @@ export interface paths {
   };
   "/emojis/frequently-used": {
     /**
-     * Get frequently used emojis 
+     * Get frequently used emojis
      * @description {
      *   "text": "List frequently used emojis"
      * }
      */
     get: {
       /**
-       * Get frequently used emojis 
+       * Get frequently used emojis
        * @description {
        *   "text": "List frequently used emojis"
        * }
@@ -7270,14 +7270,14 @@ export interface paths {
   };
   "/emojis/search": {
     /**
-     * Search emoji 
+     * Search emoji
      * @description {
      *   "text": "Search for emoji"
      * }
      */
     get: {
       /**
-       * Search emoji 
+       * Search emoji
        * @description {
        *   "text": "Search for emoji"
        * }
@@ -7309,14 +7309,14 @@ export interface paths {
   };
   "/emojis/sync-batch": {
     /**
-     * Get sync batch 
+     * Get sync batch
      * @description {
      *   "text": "Get custom emojis for synchronization with third-party system. Custom emojis with etag greater than specified value are returned. Read more in the [documentation](https://www.jetbrains.com/help/space/sync-api.html)."
      * }
      */
     get: {
       /**
-       * Get sync batch 
+       * Get sync batch
        * @description {
        *   "text": "Get custom emojis for synchronization with third-party system. Custom emojis with etag greater than specified value are returned. Read more in the [documentation](https://www.jetbrains.com/help/space/sync-api.html)."
        * }
@@ -7344,14 +7344,14 @@ export interface paths {
   };
   "/external-issues/default-issue-status-for-mr-merge": {
     /**
-     * Set default target issue status for merge request merge 
+     * Set default target issue status for merge request merge
      * @description {
      *   "text": "Set default status to move external issues to when linked merge request is merged in Space"
      * }
      */
     post: {
       /**
-       * Set default target issue status for merge request merge 
+       * Set default target issue status for merge request merge
        * @description {
        *   "text": "Set default status to move external issues to when linked merge request is merged in Space"
        * }
@@ -7375,14 +7375,14 @@ export interface paths {
   };
   "/external-issues/issue-content": {
     /**
-     * Post external issue data 
+     * Post external issue data
      * @description {
      *   "text": "Provide information about an issue from external issue tracker"
      * }
      */
     post: {
       /**
-       * Post external issue data 
+       * Post external issue data
        * @description {
        *   "text": "Provide information about an issue from external issue tracker"
        * }
@@ -7404,14 +7404,14 @@ export interface paths {
   };
   "/external-issues/issue-statuses": {
     /**
-     * Provide all possible statuses for external issues 
+     * Provide all possible statuses for external issues
      * @description {
      *   "text": "Provide Space with all possible statuses for external issues for a given project"
      * }
      */
     post: {
       /**
-       * Provide all possible statuses for external issues 
+       * Provide all possible statuses for external issues
        * @description {
        *   "text": "Provide Space with all possible statuses for external issues for a given project"
        * }
@@ -7433,14 +7433,14 @@ export interface paths {
   };
   "/external-issues/mark-issues-as-deleted": {
     /**
-     * Mark external issues as deleted 
+     * Mark external issues as deleted
      * @description {
      *   "text": "Notify Space about issues that were deleted in external issue tracker"
      * }
      */
     post: {
       /**
-       * Mark external issues as deleted 
+       * Mark external issues as deleted
        * @description {
        *   "text": "Notify Space about issues that were deleted in external issue tracker"
        * }
@@ -7462,14 +7462,14 @@ export interface paths {
   };
   "/external-issues/events-queue": {
     /**
-     * Get external issue event queue items 
+     * Get external issue event queue items
      * @description {
      *   "text": "Fetch events about external issues from Space"
      * }
      */
     get: {
       /**
-       * Get external issue event queue items 
+       * Get external issue event queue items
        * @description {
        *   "text": "Fetch events about external issues from Space"
        * }
@@ -7556,14 +7556,14 @@ export interface paths {
   };
   "/external-issues/issues/{issuePrefix}/{issueId}/code-reviews": {
     /**
-     * Link code reviews to external issue 
+     * Link code reviews to external issue
      * @description {
      *   "text": "Add code review links to an existing issue in a project"
      * }
      */
     post: {
       /**
-       * Link code reviews to external issue 
+       * Link code reviews to external issue
        * @description {
        *   "text": "Add code review links to an existing issue in a project"
        * }
@@ -7589,14 +7589,14 @@ export interface paths {
       };
     };
     /**
-     * Unlink code reviews from external issue 
+     * Unlink code reviews from external issue
      * @description {
      *   "text": "Remove code review links from an existing issue in a project"
      * }
      */
     delete: {
       /**
-       * Unlink code reviews from external issue 
+       * Unlink code reviews from external issue
        * @description {
        *   "text": "Remove code review links from an existing issue in a project"
        * }
@@ -7620,14 +7620,14 @@ export interface paths {
   };
   "/external-issues/issues/{issuePrefix}/{issueId}/commits": {
     /**
-     * Link commits to external issue 
+     * Link commits to external issue
      * @description {
      *   "text": "Add commit links to an existing issue in a project"
      * }
      */
     post: {
       /**
-       * Link commits to external issue 
+       * Link commits to external issue
        * @description {
        *   "text": "Add commit links to an existing issue in a project"
        * }
@@ -7654,14 +7654,14 @@ export interface paths {
       };
     };
     /**
-     * Unlink commits from external issue 
+     * Unlink commits from external issue
      * @description {
      *   "text": "Remove commit links from an existing issue in a project"
      * }
      */
     delete: {
       /**
-       * Unlink commits from external issue 
+       * Unlink commits from external issue
        * @description {
        *   "text": "Remove commit links from an existing issue in a project"
        * }
@@ -7686,7 +7686,7 @@ export interface paths {
   };
   "/external-link-patterns": {
     /**
-     * Get all external link patterns 
+     * Get all external link patterns
      * @description {
      *   "text": "List all prefixes to be automatically expanded to external links",
      *   "helpTopic": "external-links.html"
@@ -7694,7 +7694,7 @@ export interface paths {
      */
     get: {
       /**
-       * Get all external link patterns 
+       * Get all external link patterns
        * @description {
        *   "text": "List all prefixes to be automatically expanded to external links",
        *   "helpTopic": "external-links.html"
@@ -7716,7 +7716,7 @@ export interface paths {
       };
     };
     /**
-     * Create external link pattern 
+     * Create external link pattern
      * @description {
      *   "text": "Add a prefix to be expanded to external links",
      *   "helpTopic": "external-links.html"
@@ -7724,7 +7724,7 @@ export interface paths {
      */
     post: {
       /**
-       * Create external link pattern 
+       * Create external link pattern
        * @description {
        *   "text": "Add a prefix to be expanded to external links",
        *   "helpTopic": "external-links.html"
@@ -7745,7 +7745,7 @@ export interface paths {
       };
     };
     /**
-     * Delete external link pattern 
+     * Delete external link pattern
      * @description {
      *   "text": "Delete prefix for expanding to external links",
      *   "helpTopic": "external-links.html"
@@ -7753,7 +7753,7 @@ export interface paths {
      */
     delete: {
       /**
-       * Delete external link pattern 
+       * Delete external link pattern
        * @description {
        *   "text": "Delete prefix for expanding to external links",
        *   "helpTopic": "external-links.html"
@@ -7773,14 +7773,14 @@ export interface paths {
   };
   "/http-api-model": {
     /**
-     * Get HTTP API model 
+     * Get HTTP API model
      * @description {
      *   "text": "Get the HTTP API model that describes the available HTTP APIs"
      * }
      */
     get: {
       /**
-       * Get HTTP API model 
+       * Get HTTP API model
        * @description {
        *   "text": "Get the HTTP API model that describes the available HTTP APIs"
        * }
@@ -7803,14 +7803,14 @@ export interface paths {
   };
   "/issues/get-by-ids": {
     /**
-     * Get issues by identifiers 
+     * Get issues by identifiers
      * @description {
      *   "text": "Retrieve list of issues by identifiers. Issues can belong to different projects. Up to 100 issues can be retrieved within a single request. See also [Get all issues](/extensions/httpApiPlayground?resource=projects_xxx_planning_issues&endpoint=rest_query) (`/projects/{project}/planning/issues`)"
      * }
      */
     post: {
       /**
-       * Get issues by identifiers 
+       * Get issues by identifiers
        * @description {
        *   "text": "Retrieve list of issues by identifiers. Issues can belong to different projects. Up to 100 issues can be retrieved within a single request. See also [Get all issues](/extensions/httpApiPlayground?resource=projects_xxx_planning_issues&endpoint=rest_query) (`/projects/{project}/planning/issues`)"
        * }
@@ -7841,14 +7841,14 @@ export interface paths {
   };
   "/issues": {
     /**
-     * Get issue 
+     * Get issue
      * @description {
      *   "text": "Retrieve an issue by its identifier"
      * }
      */
     get: {
       /**
-       * Get issue 
+       * Get issue
        * @description {
        *   "text": "Retrieve an issue by its identifier"
        * }
@@ -7872,14 +7872,14 @@ export interface paths {
   };
   "/notifications": {
     /**
-     * Get all notifications 
+     * Get all notifications
      * @description {
      *   "text": "List all subscription subjects"
      * }
      */
     get: {
       /**
-       * Get all notifications 
+       * Get all notifications
        * @description {
        *   "text": "List all subscription subjects"
        * }
@@ -7902,14 +7902,14 @@ export interface paths {
   };
   "/notifications/channel-subscriptions": {
     /**
-     * Get all channel subscriptions 
+     * Get all channel subscriptions
      * @description {
      *   "text": "List subscriptions for a channel"
      * }
      */
     get: {
       /**
-       * Get all channel subscriptions 
+       * Get all channel subscriptions
        * @description {
        *   "text": "List subscriptions for a channel"
        * }
@@ -7931,14 +7931,14 @@ export interface paths {
       };
     };
     /**
-     * Create channel subscription 
+     * Create channel subscription
      * @description {
      *   "text": "Add subscription for a channel"
      * }
      */
     post: {
       /**
-       * Create channel subscription 
+       * Create channel subscription
        * @description {
        *   "text": "Add subscription for a channel"
        * }
@@ -7970,14 +7970,14 @@ export interface paths {
   };
   "/notifications/channel-subscriptions/{id}/request-missing-rights": {
     /**
-     * Request Missing Rights 
+     * Request Missing Rights
      * @description {
      *   "text": "Ensures that all permissions required for this subscription are requested in the corresponding permission role"
      * }
      */
     post: {
       /**
-       * Request Missing Rights 
+       * Request Missing Rights
        * @description {
        *   "text": "Ensures that all permissions required for this subscription are requested in the corresponding permission role"
        * }
@@ -7996,14 +7996,14 @@ export interface paths {
   };
   "/notifications/channel-subscriptions/{id}": {
     /**
-     * Delete channel subscription 
+     * Delete channel subscription
      * @description {
      *   "text": "Delete channel subscription"
      * }
      */
     delete: {
       /**
-       * Delete channel subscription 
+       * Delete channel subscription
        * @description {
        *   "text": "Delete channel subscription"
        * }
@@ -8020,14 +8020,14 @@ export interface paths {
       };
     };
     /**
-     * Update channel subscription 
+     * Update channel subscription
      * @description {
      *   "text": "Update subscription for a channel"
      * }
      */
     patch: {
       /**
-       * Update channel subscription 
+       * Update channel subscription
        * @description {
        *   "text": "Update subscription for a channel"
        * }
@@ -8062,14 +8062,14 @@ export interface paths {
   };
   "/notifications/personal-custom-subscriptions": {
     /**
-     * Get all personal custom subscriptions 
+     * Get all personal custom subscriptions
      * @description {
      *   "text": "List personal custom subscriptions"
      * }
      */
     get: {
       /**
-       * Get all personal custom subscriptions 
+       * Get all personal custom subscriptions
        * @description {
        *   "text": "List personal custom subscriptions"
        * }
@@ -8091,14 +8091,14 @@ export interface paths {
       };
     };
     /**
-     * Create personal custom subscription 
+     * Create personal custom subscription
      * @description {
      *   "text": "Create personal custom subscription"
      * }
      */
     post: {
       /**
-       * Create personal custom subscription 
+       * Create personal custom subscription
        * @description {
        *   "text": "Create personal custom subscription"
        * }
@@ -8131,14 +8131,14 @@ export interface paths {
   };
   "/notifications/personal-custom-subscriptions/{id}": {
     /**
-     * Delete personal custom subscription 
+     * Delete personal custom subscription
      * @description {
      *   "text": "Delete personal custom subscription"
      * }
      */
     delete: {
       /**
-       * Delete personal custom subscription 
+       * Delete personal custom subscription
        * @description {
        *   "text": "Delete personal custom subscription"
        * }
@@ -8155,14 +8155,14 @@ export interface paths {
       };
     };
     /**
-     * Update personal custom subscription 
+     * Update personal custom subscription
      * @description {
      *   "text": "Create personal custom subscription"
      * }
      */
     patch: {
       /**
-       * Update personal custom subscription 
+       * Update personal custom subscription
        * @description {
        *   "text": "Create personal custom subscription"
        * }
@@ -8198,14 +8198,14 @@ export interface paths {
   };
   "/notifications/personal-subscriptions/update-personal-subscription-subject": {
     /**
-     * Update personal subscription subject 
+     * Update personal subscription subject
      * @description {
      *   "text": "Update personal subscription settings for a member"
      * }
      */
     post: {
       /**
-       * Update personal subscription subject 
+       * Update personal subscription subject
        * @description {
        *   "text": "Update personal subscription settings for a member"
        * }
@@ -8229,14 +8229,14 @@ export interface paths {
   };
   "/notifications/personal-subscriptions/update-personal-subscription-target": {
     /**
-     * Update personal subscription target 
+     * Update personal subscription target
      * @description {
      *   "text": "Update personal subscription settings for a member"
      * }
      */
     post: {
       /**
-       * Update personal subscription target 
+       * Update personal subscription target
        * @description {
        *   "text": "Update personal subscription settings for a member"
        * }
@@ -8260,14 +8260,14 @@ export interface paths {
   };
   "/notifications/personal-subscriptions/all-personal-subscription-targets": {
     /**
-     * All personal subscription targets 
+     * All personal subscription targets
      * @description {
      *   "text": "List all personal subscription targets"
      * }
      */
     get: {
       /**
-       * All personal subscription targets 
+       * All personal subscription targets
        * @description {
        *   "text": "List all personal subscription targets"
        * }
@@ -8290,14 +8290,14 @@ export interface paths {
   };
   "/notifications/personal-subscriptions/personal-subscription-settings": {
     /**
-     * Get personal subscription settings 
+     * Get personal subscription settings
      * @description {
      *   "text": "Get personal subscription settings for a member"
      * }
      */
     get: {
       /**
-       * Get personal subscription settings 
+       * Get personal subscription settings
        * @description {
        *   "text": "Get personal subscription settings for a member"
        * }
@@ -8322,14 +8322,14 @@ export interface paths {
   };
   "/notifications/private-feeds": {
     /**
-     * Get all private feeds 
+     * Get all private feeds
      * @description {
      *   "text": "List personal feeds for a member"
      * }
      */
     get: {
       /**
-       * Get all private feeds 
+       * Get all private feeds
        * @description {
        *   "text": "List personal feeds for a member"
        * }
@@ -8351,14 +8351,14 @@ export interface paths {
       };
     };
     /**
-     * Create private feed 
+     * Create private feed
      * @description {
      *   "text": "Create personal feed for member"
      * }
      */
     post: {
       /**
-       * Create private feed 
+       * Create private feed
        * @description {
        *   "text": "Create personal feed for member"
        * }
@@ -8391,14 +8391,14 @@ export interface paths {
   };
   "/notifications/private-feeds/{id}": {
     /**
-     * Delete private feed 
+     * Delete private feed
      * @description {
      *   "text": "Delete personal feed for member"
      * }
      */
     delete: {
       /**
-       * Delete private feed 
+       * Delete private feed
        * @description {
        *   "text": "Delete personal feed for member"
        * }
@@ -8415,14 +8415,14 @@ export interface paths {
       };
     };
     /**
-     * Update private feed 
+     * Update private feed
      * @description {
      *   "text": "Update personal feed for a member"
      * }
      */
     patch: {
       /**
-       * Update private feed 
+       * Update private feed
        * @description {
        *   "text": "Update personal feed for a member"
        * }
@@ -8579,14 +8579,14 @@ export interface paths {
   };
   "/permission-roles/create": {
     /**
-     * Create role 
+     * Create role
      * @description {
      *   "text": "Create new custom permission role in specified permission context"
      * }
      */
     post: {
       /**
-       * Create role 
+       * Create role
        * @description {
        *   "text": "Create new custom permission role in specified permission context"
        * }
@@ -8617,14 +8617,14 @@ export interface paths {
   };
   "/permission-roles/get": {
     /**
-     * Get roles 
+     * Get roles
      * @description {
      *   "text": "List all permission roles in permission context"
      * }
      */
     post: {
       /**
-       * Get roles 
+       * Get roles
        * @description {
        *   "text": "List all permission roles in permission context"
        * }
@@ -8654,14 +8654,14 @@ export interface paths {
   };
   "/permission-roles/{roleId}/reset-role-permissions-to-default": {
     /**
-     * Reset role permissions to default 
+     * Reset role permissions to default
      * @description {
      *   "text": "Reset permissions for the role to the standard ones. Only applicable to roles with PermissionRoleType = PREDEFINED, not applicable to custom roles."
      * }
      */
     post: {
       /**
-       * Reset role permissions to default 
+       * Reset role permissions to default
        * @description {
        *   "text": "Reset permissions for the role to the standard ones. Only applicable to roles with PermissionRoleType = PREDEFINED, not applicable to custom roles."
        * }
@@ -8680,14 +8680,14 @@ export interface paths {
   };
   "/permission-roles/{roleId}": {
     /**
-     * Delete role 
+     * Delete role
      * @description {
      *   "text": "Delete custom permission role"
      * }
      */
     delete: {
       /**
-       * Delete role 
+       * Delete role
        * @description {
        *   "text": "Delete custom permission role"
        * }
@@ -8704,14 +8704,14 @@ export interface paths {
       };
     };
     /**
-     * Update role 
+     * Update role
      * @description {
      *   "text": "Update custom permission role name"
      * }
      */
     patch: {
       /**
-       * Update role 
+       * Update role
        * @description {
        *   "text": "Update custom permission role name"
        * }
@@ -8737,14 +8737,14 @@ export interface paths {
   };
   "/permission-roles/{roleId}/2-fa-requirement": {
     /**
-     * Get 2FA requirement 
+     * Get 2FA requirement
      * @description {
      *   "text": "Get 2FA requirement for permission role"
      * }
      */
     get: {
       /**
-       * Get 2FA requirement 
+       * Get 2FA requirement
        * @description {
        *   "text": "Get 2FA requirement for permission role"
        * }
@@ -8768,14 +8768,14 @@ export interface paths {
       };
     };
     /**
-     * Set 2FA requirement 
+     * Set 2FA requirement
      * @description {
      *   "text": "Set 2FA requirement for permission role"
      * }
      */
     patch: {
       /**
-       * Set 2FA requirement 
+       * Set 2FA requirement
        * @description {
        *   "text": "Set 2FA requirement for permission role"
        * }
@@ -8801,14 +8801,14 @@ export interface paths {
   };
   "/permission-roles/{roleId}/permissions": {
     /**
-     * Get role permissions 
+     * Get role permissions
      * @description {
      *   "text": "Get role permissions"
      * }
      */
     get: {
       /**
-       * Get role permissions 
+       * Get role permissions
        * @description {
        *   "text": "Get role permissions"
        * }
@@ -8832,14 +8832,14 @@ export interface paths {
       };
     };
     /**
-     * Grant role permissions 
+     * Grant role permissions
      * @description {
      *   "text": "Grant permissions to the specified role. You can get the list of all permissions applicable to the role using \"Get all\" method."
      * }
      */
     post: {
       /**
-       * Grant role permissions 
+       * Grant role permissions
        * @description {
        *   "text": "Grant permissions to the specified role. You can get the list of all permissions applicable to the role using \"Get all\" method."
        * }
@@ -8863,14 +8863,14 @@ export interface paths {
       };
     };
     /**
-     * Revoke role permissions 
+     * Revoke role permissions
      * @description {
      *   "text": "Revoke permissions from the specified role."
      * }
      */
     delete: {
       /**
-       * Revoke role permissions 
+       * Revoke role permissions
        * @description {
        *   "text": "Revoke permissions from the specified role."
        * }
@@ -8892,14 +8892,14 @@ export interface paths {
   };
   "/permission-roles/{roleId}/profiles/{profile}": {
     /**
-     * Add role member 
+     * Add role member
      * @description {
      *   "text": "Assign permission role to the profile"
      * }
      */
     post: {
       /**
-       * Add role member 
+       * Add role member
        * @description {
        *   "text": "Assign permission role to the profile"
        * }
@@ -8917,14 +8917,14 @@ export interface paths {
       };
     };
     /**
-     * Remove role member 
+     * Remove role member
      * @description {
      *   "text": "Remove permission role from the profile"
      * }
      */
     delete: {
       /**
-       * Remove role member 
+       * Remove role member
        * @description {
        *   "text": "Remove permission role from the profile"
        * }
@@ -8944,14 +8944,14 @@ export interface paths {
   };
   "/permission-roles/{roleId}/profiles": {
     /**
-     * Get role members 
+     * Get role members
      * @description {
      *   "text": "Get list of profiles with the specified role"
      * }
      */
     get: {
       /**
-       * Get role members 
+       * Get role members
        * @description {
        *   "text": "Get list of profiles with the specified role"
        * }
@@ -8977,14 +8977,14 @@ export interface paths {
   };
   "/permission-roles/{roleId}/teams/{team}": {
     /**
-     * Add role team 
+     * Add role team
      * @description {
      *   "text": "Assign permission role to the team"
      * }
      */
     post: {
       /**
-       * Add role team 
+       * Add role team
        * @description {
        *   "text": "Assign permission role to the team"
        * }
@@ -9002,14 +9002,14 @@ export interface paths {
       };
     };
     /**
-     * Remove role team 
+     * Remove role team
      * @description {
      *   "text": "Remove permission role from the team"
      * }
      */
     delete: {
       /**
-       * Remove role team 
+       * Remove role team
        * @description {
        *   "text": "Remove permission role from the team"
        * }
@@ -9029,14 +9029,14 @@ export interface paths {
   };
   "/permission-roles/{roleId}/teams": {
     /**
-     * Get role teams 
+     * Get role teams
      * @description {
      *   "text": "Get list of teams with the specified role"
      * }
      */
     get: {
       /**
-       * Get role teams 
+       * Get role teams
        * @description {
        *   "text": "Get list of teams with the specified role"
        * }
@@ -9086,14 +9086,14 @@ export interface paths {
   };
   "/permissions": {
     /**
-     * Get all permissions 
+     * Get all permissions
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get all permissions 
+       * Get all permissions
        * @description {
        *   "text": ""
        * }
@@ -9116,14 +9116,14 @@ export interface paths {
   };
   "/projects": {
     /**
-     * Get all projects 
+     * Get all projects
      * @description {
      *   "text": "Get/search all projects. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all projects 
+       * Get all projects
        * @description {
        *   "text": "Get/search all projects. Parameters are applied as 'AND' filters."
        * }
@@ -9154,14 +9154,14 @@ export interface paths {
       };
     };
     /**
-     * Create project 
+     * Create project
      * @description {
      *   "text": "Create a new project"
      * }
      */
     post: {
       /**
-       * Create project 
+       * Create project
        * @description {
        *   "text": "Create a new project"
        * }
@@ -9198,16 +9198,16 @@ export interface paths {
   };
   "/projects/collaborator:{profile}": {
     /**
-     * Get all projects by collaborator 
-     * @deprecated 
+     * Get all projects by collaborator
+     * @deprecated
      * @description {
      *   "text": "Get all projects in which given user is a collaborator"
      * }
      */
     get: {
       /**
-       * Get all projects by collaborator 
-       * @deprecated 
+       * Get all projects by collaborator
+       * @deprecated
        * @description {
        *   "text": "Get all projects in which given user is a collaborator"
        * }
@@ -9240,14 +9240,14 @@ export interface paths {
   };
   "/projects/member:{member}": {
     /**
-     * Get all projects by member 
+     * Get all projects by member
      * @description {
      *   "text": "Get all projects for a member"
      * }
      */
     get: {
       /**
-       * Get all projects by member 
+       * Get all projects by member
        * @description {
        *   "text": "Get all projects for a member"
        * }
@@ -9280,14 +9280,14 @@ export interface paths {
   };
   "/projects/right-code:{rightCode}": {
     /**
-     * Get all projects with right 
+     * Get all projects with right
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get all projects with right 
+       * Get all projects with right
        * @description {
        *   "text": ""
        * }
@@ -9323,14 +9323,14 @@ export interface paths {
   };
   "/projects/right-unique-code:{right}": {
     /**
-     * Get all projects with right code 
+     * Get all projects with right code
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get all projects with right code 
+       * Get all projects with right code
        * @description {
        *   "text": ""
        * }
@@ -9367,14 +9367,14 @@ export interface paths {
   };
   "/projects/team:{team}": {
     /**
-     * Get all projects by team 
+     * Get all projects by team
      * @description {
      *   "text": "Get all projects for a team"
      * }
      */
     get: {
       /**
-       * Get all projects by team 
+       * Get all projects by team
        * @description {
        *   "text": "Get all projects for a team"
        * }
@@ -9407,14 +9407,14 @@ export interface paths {
   };
   "/projects/{project}": {
     /**
-     * Get project 
+     * Get project
      * @description {
      *   "text": "Get project by ID or project key"
      * }
      */
     get: {
       /**
-       * Get project 
+       * Get project
        * @description {
        *   "text": "Get project by ID or project key"
        * }
@@ -9438,14 +9438,14 @@ export interface paths {
       };
     };
     /**
-     * Delete project 
+     * Delete project
      * @description {
      *   "text": "Delete a project"
      * }
      */
     delete: {
       /**
-       * Delete project 
+       * Delete project
        * @description {
        *   "text": "Delete a project"
        * }
@@ -9462,14 +9462,14 @@ export interface paths {
       };
     };
     /**
-     * Update project 
+     * Update project
      * @description {
      *   "text": "Update an existing project. Optional parameters will be ignored when not specified and updated otherwise."
      * }
      */
     patch: {
       /**
-       * Update project 
+       * Update project
        * @description {
        *   "text": "Update an existing project. Optional parameters will be ignored when not specified and updated otherwise."
        * }
@@ -9643,14 +9643,14 @@ export interface paths {
   };
   "/projects/automation/graph-executions/{id}/stop": {
     /**
-     * Stop execution 
+     * Stop execution
      * @description {
      *   "text": "Stop execution by ExecutionId"
      * }
      */
     post: {
       /**
-       * Stop execution 
+       * Stop execution
        * @description {
        *   "text": "Stop execution by ExecutionId"
        * }
@@ -9692,16 +9692,16 @@ export interface paths {
   };
   "/projects/automation/job-executions/current": {
     /**
-     * Get current 
-     * @deprecated 
+     * Get current
+     * @deprecated
      * @description {
      *   "text": "Returns the job execution associated to the currently authenticated principal. This endpoint can only be used with the credentials provided to an Automation job."
      * }
      */
     get: {
       /**
-       * Get current 
-       * @deprecated 
+       * Get current
+       * @deprecated
        * @description {
        *   "text": "Returns the job execution associated to the currently authenticated principal. This endpoint can only be used with the credentials provided to an Automation job."
        * }
@@ -9861,14 +9861,14 @@ export interface paths {
   };
   "/projects/automation/subscriptions/legacy-channels": {
     /**
-     * Delete legacy channels 
+     * Delete legacy channels
      * @description {
      *   "text": "Delete the legacy subscription channels matching the given filters (applied as AND). If no filter is provided, all subscription channels corresponding to unsubscribed jobs for the logged in user are deleted."
      * }
      */
     delete: {
       /**
-       * Delete legacy channels 
+       * Delete legacy channels
        * @description {
        *   "text": "Delete the legacy subscription channels matching the given filters (applied as AND). If no filter is provided, all subscription channels corresponding to unsubscribed jobs for the logged in user are deleted."
        * }
@@ -9889,14 +9889,14 @@ export interface paths {
   };
   "/projects/params/{id}": {
     /**
-     * Delete param 
+     * Delete param
      * @description {
      *   "text": "Delete a project parameter"
      * }
      */
     delete: {
       /**
-       * Delete param 
+       * Delete param
        * @description {
        *   "text": "Delete a project parameter"
        * }
@@ -9913,14 +9913,14 @@ export interface paths {
       };
     };
     /**
-     * Update param 
+     * Update param
      * @description {
      *   "text": "Update a project parameter"
      * }
      */
     patch: {
       /**
-       * Update param 
+       * Update param
        * @description {
        *   "text": "Update a project parameter"
        * }
@@ -9947,14 +9947,14 @@ export interface paths {
   };
   "/projects/params/default-bundle": {
     /**
-     * Get all default bundle 
+     * Get all default bundle
      * @description {
      *   "text": "List project parameters in a parameter bundle"
      * }
      */
     get: {
       /**
-       * Get all default bundle 
+       * Get all default bundle
        * @description {
        *   "text": "List project parameters in a parameter bundle"
        * }
@@ -9983,14 +9983,14 @@ export interface paths {
       };
     };
     /**
-     * Create default bundle 
+     * Create default bundle
      * @description {
      *   "text": "Create a new project parameter in the default parameter bundle"
      * }
      */
     post: {
       /**
-       * Create default bundle 
+       * Create default bundle
        * @description {
        *   "text": "Create a new project parameter in the default parameter bundle"
        * }
@@ -10018,16 +10018,16 @@ export interface paths {
   };
   "/projects/params/in-default-bundle": {
     /**
-     * Get all in default bundle 
-     * @deprecated 
+     * Get all in default bundle
+     * @deprecated
      * @description {
      *   "text": "List project parameters in a parameter bundle"
      * }
      */
     get: {
       /**
-       * Get all in default bundle 
-       * @deprecated 
+       * Get all in default bundle
+       * @deprecated
        * @description {
        *   "text": "List project parameters in a parameter bundle"
        * }
@@ -10056,12 +10056,12 @@ export interface paths {
       };
     };
     /**
-     * Create in default bundle 
+     * Create in default bundle
      * @deprecated
      */
     post: {
       /**
-       * Create in default bundle 
+       * Create in default bundle
        * @deprecated
        */
       requestBody: {
@@ -10086,14 +10086,14 @@ export interface paths {
   };
   "/projects/planning/boards/{board}": {
     /**
-     * Get board 
+     * Get board
      * @description {
      *   "text": "Get a board by identifier"
      * }
      */
     get: {
       /**
-       * Get board 
+       * Get board
        * @description {
        *   "text": "Get a board by identifier"
        * }
@@ -10117,14 +10117,14 @@ export interface paths {
       };
     };
     /**
-     * Delete board 
+     * Delete board
      * @description {
      *   "text": "Delete an existing board. This operation can be performed by board owners or other members who are granted permission to manage boards in a project."
      * }
      */
     delete: {
       /**
-       * Delete board 
+       * Delete board
        * @description {
        *   "text": "Delete an existing board. This operation can be performed by board owners or other members who are granted permission to manage boards in a project."
        * }
@@ -10141,14 +10141,14 @@ export interface paths {
       };
     };
     /**
-     * Update board 
+     * Update board
      * @description {
      *   "text": "Update an existing board. This operation can be performed by board owners or other members who are granted permission to manage boards in a project."
      * }
      */
     patch: {
       /**
-       * Update board 
+       * Update board
        * @description {
        *   "text": "Update an existing board. This operation can be performed by board owners or other members who are granted permission to manage boards in a project."
        * }
@@ -10181,14 +10181,14 @@ export interface paths {
   };
   "/projects/planning/boards/sprints": {
     /**
-     * Create sprint 
+     * Create sprint
      * @description {
      *   "text": "Create a new sprint in a board. This operation can be performed by board owners or other members who are granted permission to manage boards in a project."
      * }
      */
     post: {
       /**
-       * Create sprint 
+       * Create sprint
        * @description {
        *   "text": "Create a new sprint in a board. This operation can be performed by board owners or other members who are granted permission to manage boards in a project."
        * }
@@ -10225,14 +10225,14 @@ export interface paths {
   };
   "/projects/planning/boards/sprints/{sprint}/launch": {
     /**
-     * Launch planned sprint 
+     * Launch planned sprint
      * @description {
      *   "text": "Launch a planned sprint. This operation can be performed by board owners or other members who are granted permission to manage boards in a project."
      * }
      */
     post: {
       /**
-       * Launch planned sprint 
+       * Launch planned sprint
        * @description {
        *   "text": "Launch a planned sprint. This operation can be performed by board owners or other members who are granted permission to manage boards in a project."
        * }
@@ -10260,14 +10260,14 @@ export interface paths {
   };
   "/projects/planning/boards/sprints/{sprint}": {
     /**
-     * Update sprint 
+     * Update sprint
      * @description {
      *   "text": "Update an existing sprint in a board. This operation can be performed by board owners or other members who are granted permission to manage boards in a project."
      * }
      */
     patch: {
       /**
-       * Update sprint 
+       * Update sprint
        * @description {
        *   "text": "Update an existing sprint in a board. This operation can be performed by board owners or other members who are granted permission to manage boards in a project."
        * }
@@ -10299,14 +10299,14 @@ export interface paths {
   };
   "/projects/planning/boards/sprints/{sprint}/archive": {
     /**
-     * Archive sprint 
+     * Archive sprint
      * @description {
      *   "text": "Archive closed or planned sprint. This operation can be performed by board owners or other members who are granted permission to manage boards in a project."
      * }
      */
     delete: {
       /**
-       * Archive sprint 
+       * Archive sprint
        * @description {
        *   "text": "Archive closed or planned sprint. This operation can be performed by board owners or other members who are granted permission to manage boards in a project."
        * }
@@ -10325,14 +10325,14 @@ export interface paths {
   };
   "/projects/planning/boards/sprints/{sprint}/issues/{issue}": {
     /**
-     * Add issue to sprint 
+     * Add issue to sprint
      * @description {
      *   "text": "Add an existing issue in a project to a sprint"
      * }
      */
     post: {
       /**
-       * Add issue to sprint 
+       * Add issue to sprint
        * @description {
        *   "text": "Add an existing issue in a project to a sprint"
        * }
@@ -10350,14 +10350,14 @@ export interface paths {
       };
     };
     /**
-     * Remove issue from sprint 
+     * Remove issue from sprint
      * @description {
      *   "text": "Remove an existing issue in a project from a sprint."
      * }
      */
     delete: {
       /**
-       * Remove issue from sprint 
+       * Remove issue from sprint
        * @description {
        *   "text": "Remove an existing issue in a project from a sprint."
        * }
@@ -10377,14 +10377,14 @@ export interface paths {
   };
   "/projects/planning/boards/sprints/{sprint}/issues": {
     /**
-     * Get all issues in sprint 
+     * Get all issues in sprint
      * @description {
      *   "text": "Fetch issues from an existing non-archived sprint"
      * }
      */
     get: {
       /**
-       * Get all issues in sprint 
+       * Get all issues in sprint
        * @description {
        *   "text": "Fetch issues from an existing non-archived sprint"
        * }
@@ -10418,14 +10418,14 @@ export interface paths {
   };
   "/projects/planning/boards/{board}/issues/{issue}": {
     /**
-     * Add issue to board 
+     * Add issue to board
      * @description {
      *   "text": "Add an existing issue in a project to a board or its current sprint"
      * }
      */
     post: {
       /**
-       * Add issue to board 
+       * Add issue to board
        * @description {
        *   "text": "Add an existing issue in a project to a board or its current sprint"
        * }
@@ -10443,14 +10443,14 @@ export interface paths {
       };
     };
     /**
-     * Remove issue from board 
+     * Remove issue from board
      * @description {
      *   "text": "Remove an existing issue in a project from a board or all of its sprints"
      * }
      */
     delete: {
       /**
-       * Remove issue from board 
+       * Remove issue from board
        * @description {
        *   "text": "Remove an existing issue in a project from a board or all of its sprints"
        * }
@@ -10470,14 +10470,14 @@ export interface paths {
   };
   "/projects/planning/boards/{board}/issues": {
     /**
-     * Get all issues on board 
+     * Get all issues on board
      * @description {
      *   "text": "Fetch issues from the board across all its non-archived sprints"
      * }
      */
     get: {
       /**
-       * Get all issues on board 
+       * Get all issues on board
        * @description {
        *   "text": "Fetch issues from the board across all its non-archived sprints"
        * }
@@ -10510,14 +10510,14 @@ export interface paths {
   };
   "/projects/private-projects/{project}/request-access": {
     /**
-     * Request access to project 
+     * Request access to project
      * @description {
      *   "text": "Request access to a project"
      * }
      */
     post: {
       /**
-       * Request access to project 
+       * Request access to project
        * @description {
        *   "text": "Request access to a project"
        * }
@@ -10536,14 +10536,14 @@ export interface paths {
   };
   "/projects/private-projects": {
     /**
-     * Get all private projects 
+     * Get all private projects
      * @description {
      *   "text": "List private projects in the current organization"
      * }
      */
     get: {
       /**
-       * Get all private projects 
+       * Get all private projects
        * @description {
        *   "text": "List private projects in the current organization"
        * }
@@ -10566,14 +10566,14 @@ export interface paths {
   };
   "/projects/repositories/find": {
     /**
-     * Find Repositories 
+     * Find Repositories
      * @description {
      *   "text": "Find repositories by name substring."
      * }
      */
     get: {
       /**
-       * Find Repositories 
+       * Find Repositories
        * @description {
        *   "text": "Find repositories by name substring."
        * }
@@ -10604,14 +10604,14 @@ export interface paths {
   };
   "/projects/responsibilities": {
     /**
-     * Add responsibility 
+     * Add responsibility
      * @description {
      *   "text": "Add a responsibility for a given subject ID"
      * }
      */
     post: {
       /**
-       * Add responsibility 
+       * Add responsibility
        * @description {
        *   "text": "Add a responsibility for a given subject ID"
        * }
@@ -10638,14 +10638,14 @@ export interface paths {
   };
   "/projects/responsibilities/{responsibilityId}": {
     /**
-     * Delete responsibility 
+     * Delete responsibility
      * @description {
      *   "text": "Delete an existing responsibility"
      * }
      */
     delete: {
       /**
-       * Delete responsibility 
+       * Delete responsibility
        * @description {
        *   "text": "Delete an existing responsibility"
        * }
@@ -10662,14 +10662,14 @@ export interface paths {
       };
     };
     /**
-     * Update responsibility 
+     * Update responsibility
      * @description {
      *   "text": "Edit an existing responsibility"
      * }
      */
     patch: {
       /**
-       * Update responsibility 
+       * Update responsibility
        * @description {
        *   "text": "Edit an existing responsibility"
        * }
@@ -10696,14 +10696,14 @@ export interface paths {
   };
   "/projects/responsibilities/subjects/{subjectId}": {
     /**
-     * Delete responsibility subject 
+     * Delete responsibility subject
      * @description {
      *   "text": "Delete an existing responsibility subject for a given project ID"
      * }
      */
     delete: {
       /**
-       * Delete responsibility subject 
+       * Delete responsibility subject
        * @description {
        *   "text": "Delete an existing responsibility subject for a given project ID"
        * }
@@ -10725,14 +10725,14 @@ export interface paths {
   };
   "/projects/secrets/{id}": {
     /**
-     * Delete secret 
+     * Delete secret
      * @description {
      *   "text": "Delete an existing project secret"
      * }
      */
     delete: {
       /**
-       * Delete secret 
+       * Delete secret
        * @description {
        *   "text": "Delete an existing project secret"
        * }
@@ -10749,14 +10749,14 @@ export interface paths {
       };
     };
     /**
-     * Update secret 
+     * Update secret
      * @description {
      *   "text": "Update an existing project secret"
      * }
      */
     patch: {
       /**
-       * Update secret 
+       * Update secret
        * @description {
        *   "text": "Update an existing project secret"
        * }
@@ -10786,14 +10786,14 @@ export interface paths {
   };
   "/projects/secrets/default-bundle": {
     /**
-     * Get all default bundle 
+     * Get all default bundle
      * @description {
      *   "text": "List project secrets in a parameter bundle"
      * }
      */
     get: {
       /**
-       * Get all default bundle 
+       * Get all default bundle
        * @description {
        *   "text": "List project secrets in a parameter bundle"
        * }
@@ -10822,14 +10822,14 @@ export interface paths {
       };
     };
     /**
-     * Create default bundle 
+     * Create default bundle
      * @description {
      *   "text": "Create a new project secret. The secret value should be provided either as a base64-encoded value in [valueBase64], or as a reference to another secret in [secretReference]."
      * }
      */
     post: {
       /**
-       * Create default bundle 
+       * Create default bundle
        * @description {
        *   "text": "Create a new project secret. The secret value should be provided either as a base64-encoded value in [valueBase64], or as a reference to another secret in [secretReference]."
        * }
@@ -10859,12 +10859,12 @@ export interface paths {
   };
   "/projects/secrets/in-default-bundle": {
     /**
-     * Get all in default bundle 
+     * Get all in default bundle
      * @deprecated
      */
     get: {
       /**
-       * Get all in default bundle 
+       * Get all in default bundle
        * @deprecated
        */
       parameters: {
@@ -10891,12 +10891,12 @@ export interface paths {
       };
     };
     /**
-     * Create in default bundle 
+     * Create in default bundle
      * @deprecated
      */
     post: {
       /**
-       * Create in default bundle 
+       * Create in default bundle
        * @deprecated
        */
       requestBody: {
@@ -10922,14 +10922,14 @@ export interface paths {
   };
   "/projects/tags/track-access": {
     /**
-     * Track tag access 
+     * Track tag access
      * @description {
      *   "text": "Track a tag has been accessed"
      * }
      */
     post: {
       /**
-       * Track tag access 
+       * Track tag access
        * @description {
        *   "text": "Track a tag has been accessed"
        * }
@@ -10950,14 +10950,14 @@ export interface paths {
   };
   "/projects/tags": {
     /**
-     * Get all tags 
+     * Get all tags
      * @description {
      *   "text": "List all tags, mapped to the number of projects they are used in"
      * }
      */
     get: {
       /**
-       * Get all tags 
+       * Get all tags
        * @description {
        *   "text": "List all tags, mapped to the number of projects they are used in"
        * }
@@ -10980,14 +10980,14 @@ export interface paths {
   };
   "/projects/vault": {
     /**
-     * Get vault 
+     * Get vault
      * @description {
      *   "text": "Get an existing Vault connections for project"
      * }
      */
     get: {
       /**
-       * Get vault 
+       * Get vault
        * @description {
        *   "text": "Get an existing Vault connections for project"
        * }
@@ -11009,14 +11009,14 @@ export interface paths {
       };
     };
     /**
-     * Create vault 
+     * Create vault
      * @description {
      *   "text": "Create a new Vault connection for the project. Vault's AppRole Secret Id must be provided as base64 encoded string"
      * }
      */
     post: {
       /**
-       * Create vault 
+       * Create vault
        * @description {
        *   "text": "Create a new Vault connection for the project. Vault's AppRole Secret Id must be provided as base64 encoded string"
        * }
@@ -11048,14 +11048,14 @@ export interface paths {
   };
   "/projects/vault/{id}": {
     /**
-     * Delete vault 
+     * Delete vault
      * @description {
      *   "text": "Delete an existing Vault connection"
      * }
      */
     delete: {
       /**
-       * Delete vault 
+       * Delete vault
        * @description {
        *   "text": "Delete an existing Vault connection"
        * }
@@ -11072,14 +11072,14 @@ export interface paths {
       };
     };
     /**
-     * Update vault 
+     * Update vault
      * @description {
      *   "text": "Update an existing Vault connection"
      * }
      */
     patch: {
       /**
-       * Update vault 
+       * Update vault
        * @description {
        *   "text": "Update an existing Vault connection"
        * }
@@ -11111,14 +11111,14 @@ export interface paths {
   };
   "/projects/{project}/access/admins": {
     /**
-     * Get all admins 
+     * Get all admins
      * @description {
      *   "text": "Returns the list of all project administrators"
      * }
      */
     get: {
       /**
-       * Get all admins 
+       * Get all admins
        * @description {
        *   "text": "Returns the list of all project administrators"
        * }
@@ -11144,14 +11144,14 @@ export interface paths {
   };
   "/projects/{project}/access/admins/profiles": {
     /**
-     * Add administrator 
+     * Add administrator
      * @description {
      *   "text": "Add a member as administrator to a project"
      * }
      */
     post: {
       /**
-       * Add administrator 
+       * Add administrator
        * @description {
        *   "text": "Add a member as administrator to a project"
        * }
@@ -11177,14 +11177,14 @@ export interface paths {
   };
   "/projects/{project}/access/admins/profiles/{profile}": {
     /**
-     * Remove administrator 
+     * Remove administrator
      * @description {
      *   "text": "Remove a member as administrator from a project"
      * }
      */
     delete: {
       /**
-       * Remove administrator 
+       * Remove administrator
        * @description {
        *   "text": "Remove a member as administrator from a project"
        * }
@@ -11204,14 +11204,14 @@ export interface paths {
   };
   "/projects/{project}/access/admins/teams": {
     /**
-     * Add Administrators team 
+     * Add Administrators team
      * @description {
      *   "text": "Add a team as administrators to a project"
      * }
      */
     post: {
       /**
-       * Add Administrators team 
+       * Add Administrators team
        * @description {
        *   "text": "Add a team as administrators to a project"
        * }
@@ -11237,14 +11237,14 @@ export interface paths {
   };
   "/projects/{project}/access/admins/teams/{teamId}": {
     /**
-     * Remove Administrators team 
+     * Remove Administrators team
      * @description {
      *   "text": "Remove a team as administrators from a project"
      * }
      */
     delete: {
       /**
-       * Remove Administrators team 
+       * Remove Administrators team
        * @description {
        *   "text": "Remove a team as administrators from a project"
        * }
@@ -11264,12 +11264,12 @@ export interface paths {
   };
   "/projects/{project}/access/collaborators": {
     /**
-     * Get all collaborators' profiles 
+     * Get all collaborators' profiles
      * @deprecated
      */
     get: {
       /**
-       * Get all collaborators' profiles 
+       * Get all collaborators' profiles
        * @deprecated
        */
       parameters: {
@@ -11293,12 +11293,12 @@ export interface paths {
   };
   "/projects/{project}/access/collaborators/profiles": {
     /**
-     * Get all individual collaborators 
+     * Get all individual collaborators
      * @deprecated
      */
     get: {
       /**
-       * Get all individual collaborators 
+       * Get all individual collaborators
        * @deprecated
        */
       parameters: {
@@ -11320,12 +11320,12 @@ export interface paths {
       };
     };
     /**
-     * Add a collaborator 
+     * Add a collaborator
      * @deprecated
      */
     post: {
       /**
-       * Add a collaborator 
+       * Add a collaborator
        * @deprecated
        */
       parameters: {
@@ -11347,12 +11347,12 @@ export interface paths {
       };
     };
     /**
-     * Remove a collaborator 
+     * Remove a collaborator
      * @deprecated
      */
     delete: {
       /**
-       * Remove a collaborator 
+       * Remove a collaborator
        * @deprecated
        */
       parameters: {
@@ -11372,12 +11372,12 @@ export interface paths {
   };
   "/projects/{project}/access/collaborators/teams": {
     /**
-     * Get all collaborators' teams 
+     * Get all collaborators' teams
      * @deprecated
      */
     get: {
       /**
-       * Get all collaborators' teams 
+       * Get all collaborators' teams
        * @deprecated
        */
       parameters: {
@@ -11399,12 +11399,12 @@ export interface paths {
       };
     };
     /**
-     * Add a collaborators' team 
+     * Add a collaborators' team
      * @deprecated
      */
     post: {
       /**
-       * Add a collaborators' team 
+       * Add a collaborators' team
        * @deprecated
        */
       parameters: {
@@ -11426,12 +11426,12 @@ export interface paths {
       };
     };
     /**
-     * Remove a collaborators' team 
+     * Remove a collaborators' team
      * @deprecated
      */
     delete: {
       /**
-       * Remove a collaborators' team 
+       * Remove a collaborators' team
        * @deprecated
        */
       parameters: {
@@ -11451,14 +11451,14 @@ export interface paths {
   };
   "/projects/{project}/access/member-profiles": {
     /**
-     * Get all member profiles 
+     * Get all member profiles
      * @description {
      *   "text": "Get project members for a given project key"
      * }
      */
     get: {
       /**
-       * Get all member profiles 
+       * Get all member profiles
        * @description {
        *   "text": "Get project members for a given project key"
        * }
@@ -11493,14 +11493,14 @@ export interface paths {
   };
   "/projects/{project}/access/members/profiles": {
     /**
-     * Add member 
+     * Add member
      * @description {
      *   "text": "Add a member to a project"
      * }
      */
     post: {
       /**
-       * Add member 
+       * Add member
        * @description {
        *   "text": "Add a member to a project"
        * }
@@ -11526,14 +11526,14 @@ export interface paths {
   };
   "/projects/{project}/access/members/profiles/{profile}": {
     /**
-     * Remove member 
+     * Remove member
      * @description {
      *   "text": "Remove a member from a project"
      * }
      */
     delete: {
       /**
-       * Remove member 
+       * Remove member
        * @description {
        *   "text": "Remove a member from a project"
        * }
@@ -11553,14 +11553,14 @@ export interface paths {
   };
   "/projects/{project}/access/members/teams/{teamId}": {
     /**
-     * Remove team 
+     * Remove team
      * @description {
      *   "text": "Remove a team from a project"
      * }
      */
     delete: {
       /**
-       * Remove team 
+       * Remove team
        * @description {
        *   "text": "Remove a team from a project"
        * }
@@ -11580,14 +11580,14 @@ export interface paths {
   };
   "/projects/{project}/access/viewers": {
     /**
-     * Organization profiles that can view the project 
+     * Organization profiles that can view the project
      * @description {
      *   "text": "Get organization members who can view a project"
      * }
      */
     get: {
       /**
-       * Organization profiles that can view the project 
+       * Organization profiles that can view the project
        * @description {
        *   "text": "Get organization members who can view a project"
        * }
@@ -11622,12 +11622,12 @@ export interface paths {
   };
   "/projects/{project}/automation/deployment-targets": {
     /**
-     * Get all deployment targets 
+     * Get all deployment targets
      * @deprecated
      */
     get: {
       /**
-       * Get all deployment targets 
+       * Get all deployment targets
        * @deprecated
        */
       parameters: {
@@ -12050,14 +12050,14 @@ export interface paths {
   };
   "/projects/{project}/automation/graph-executions": {
     /**
-     * Get all graph executions 
+     * Get all graph executions
      * @description {
      *   "text": "Search executions. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all graph executions 
+       * Get all graph executions
        * @description {
        *   "text": "Search executions. Parameters are applied as 'AND' filters."
        * }
@@ -12094,14 +12094,14 @@ export interface paths {
   };
   "/projects/{project}/automation/jobs/{jobId}/start": {
     /**
-     * Start job 
+     * Start job
      * @description {
      *   "text": "Start job. Returns ExecutionId, see projects/automation/graph-executions/{id}."
      * }
      */
     post: {
       /**
-       * Start job 
+       * Start job
        * @description {
        *   "text": "Start job. Returns ExecutionId, see projects/automation/graph-executions/{id}."
        * }
@@ -12137,14 +12137,14 @@ export interface paths {
   };
   "/projects/{project}/automation/jobs": {
     /**
-     * Get all jobs 
+     * Get all jobs
      * @description {
      *   "text": "List jobs. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all jobs 
+       * Get all jobs
        * @description {
        *   "text": "List jobs. Parameters are applied as 'AND' filters."
        * }
@@ -12251,14 +12251,14 @@ export interface paths {
   };
   "/projects/{project}/code-reviews/merge-requests": {
     /**
-     * Create merge request 
+     * Create merge request
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Create merge request 
+       * Create merge request
        * @description {
        *   "text": ""
        * }
@@ -12296,14 +12296,14 @@ export interface paths {
   };
   "/projects/{project}/code-reviews": {
     /**
-     * Get all code reviews 
+     * Get all code reviews
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get all code reviews 
+       * Get all code reviews
        * @description {
        *   "text": ""
        * }
@@ -12345,14 +12345,14 @@ export interface paths {
   };
   "/projects/{project}/code-reviews/{reviewId}": {
     /**
-     * Get code review 
+     * Get code review
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get code review 
+       * Get code review
        * @description {
        *   "text": ""
        * }
@@ -12379,14 +12379,14 @@ export interface paths {
   };
   "/projects/{project}/code-reviews/{reviewId}/details": {
     /**
-     * Get review details 
+     * Get review details
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get review details 
+       * Get review details
        * @description {
        *   "text": ""
        * }
@@ -12413,14 +12413,14 @@ export interface paths {
   };
   "/projects/{project}/code-reviews/{reviewId}/files": {
     /**
-     * Get the modified files in code review 
+     * Get the modified files in code review
      * @description {
      *   "text": "List files changed in commits under code review"
      * }
      */
     get: {
       /**
-       * Get the modified files in code review 
+       * Get the modified files in code review
        * @description {
        *   "text": "List files changed in commits under code review"
        * }
@@ -12454,14 +12454,14 @@ export interface paths {
   };
   "/projects/{project}/code-reviews/{reviewId}/merge-files": {
     /**
-     * Get the Merge Request files 
+     * Get the Merge Request files
      * @description {
      *   "text": "List files in merge request which will be merged into target branch"
      * }
      */
     get: {
       /**
-       * Get the Merge Request files 
+       * Get the Merge Request files
        * @description {
        *   "text": "List files in merge request which will be merged into target branch"
        * }
@@ -12495,14 +12495,14 @@ export interface paths {
   };
   "/projects/{project}/code-reviews/{reviewId}/suggested-reviewers": {
     /**
-     * Get suggested reviewers 
+     * Get suggested reviewers
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get suggested reviewers 
+       * Get suggested reviewers
        * @description {
        *   "text": ""
        * }
@@ -12529,14 +12529,14 @@ export interface paths {
   };
   "/projects/{project}/code-reviews/{reviewId}/description": {
     /**
-     * Edit review description 
+     * Edit review description
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Edit review description 
+       * Edit review description
        * @description {
        *   "text": ""
        * }
@@ -12563,14 +12563,14 @@ export interface paths {
   };
   "/projects/{project}/code-reviews/{reviewId}/make-read-only": {
     /**
-     * Make review read-only 
+     * Make review read-only
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Make review read-only 
+       * Make review read-only
        * @description {
        *   "text": ""
        * }
@@ -12590,14 +12590,14 @@ export interface paths {
   };
   "/projects/{project}/code-reviews/{reviewId}/state": {
     /**
-     * Edit review state 
+     * Edit review state
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Edit review state 
+       * Edit review state
        * @description {
        *   "text": ""
        * }
@@ -12624,14 +12624,14 @@ export interface paths {
   };
   "/projects/{project}/code-reviews/{reviewId}/title": {
     /**
-     * Edit review title 
+     * Edit review title
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Edit review title 
+       * Edit review title
        * @description {
        *   "text": ""
        * }
@@ -12724,14 +12724,14 @@ export interface paths {
   };
   "/projects/{project}/code-reviews/code-discussions": {
     /**
-     * Create code discussion 
+     * Create code discussion
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Create code discussion 
+       * Create code discussion
        * @description {
        *   "text": ""
        * }
@@ -12938,14 +12938,14 @@ export interface paths {
   };
   "/projects/{project}/code-reviews/{reviewId}/participants/{user}": {
     /**
-     * Add review participant 
+     * Add review participant
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Add review participant 
+       * Add review participant
        * @description {
        *   "text": ""
        * }
@@ -12972,14 +12972,14 @@ export interface paths {
       };
     };
     /**
-     * Remove review participant 
+     * Remove review participant
      * @description {
      *   "text": ""
      * }
      */
     delete: {
       /**
-       * Remove review participant 
+       * Remove review participant
        * @description {
        *   "text": ""
        * }
@@ -13003,14 +13003,14 @@ export interface paths {
   };
   "/projects/{project}/code-reviews/{reviewId}/revisions": {
     /**
-     * Add revisions to review 
+     * Add revisions to review
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Add revisions to review 
+       * Add revisions to review
        * @description {
        *   "text": ""
        * }
@@ -13035,14 +13035,14 @@ export interface paths {
       };
     };
     /**
-     * Remove revisions from review 
+     * Remove revisions from review
      * @description {
      *   "text": ""
      * }
      */
     delete: {
       /**
-       * Remove revisions from review 
+       * Remove revisions from review
        * @description {
        *   "text": ""
        * }
@@ -13150,14 +13150,14 @@ export interface paths {
   };
   "/projects/{project}/documents": {
     /**
-     * Create document 
+     * Create document
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Create document 
+       * Create document
        * @description {
        *   "text": ""
        * }
@@ -13193,14 +13193,14 @@ export interface paths {
   };
   "/projects/{project}/documents/{documentId}": {
     /**
-     * Get document 
+     * Get document
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get document 
+       * Get document
        * @description {
        *   "text": ""
        * }
@@ -13225,14 +13225,14 @@ export interface paths {
       };
     };
     /**
-     * Archive document 
+     * Archive document
      * @description {
      *   "text": ""
      * }
      */
     delete: {
       /**
-       * Archive document 
+       * Archive document
        * @description {
        *   "text": ""
        * }
@@ -13250,14 +13250,14 @@ export interface paths {
       };
     };
     /**
-     * Update document 
+     * Update document
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Update document 
+       * Update document
        * @description {
        *   "text": ""
        * }
@@ -13293,14 +13293,14 @@ export interface paths {
   };
   "/projects/{project}/documents/folders": {
     /**
-     * Create folder 
+     * Create folder
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Create folder 
+       * Create folder
        * @description {
        *   "text": ""
        * }
@@ -13334,14 +13334,14 @@ export interface paths {
   };
   "/projects/{project}/documents/folders/{folder}": {
     /**
-     * Get folder 
+     * Get folder
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get folder 
+       * Get folder
        * @description {
        *   "text": ""
        * }
@@ -13366,14 +13366,14 @@ export interface paths {
       };
     };
     /**
-     * Archive folder 
+     * Archive folder
      * @description {
      *   "text": ""
      * }
      */
     delete: {
       /**
-       * Archive folder 
+       * Archive folder
        * @description {
        *   "text": ""
        * }
@@ -13391,14 +13391,14 @@ export interface paths {
       };
     };
     /**
-     * Rename folder 
+     * Rename folder
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Rename folder 
+       * Rename folder
        * @description {
        *   "text": ""
        * }
@@ -13425,14 +13425,14 @@ export interface paths {
   };
   "/projects/{project}/documents/folders/{folder}/access": {
     /**
-     * Folder own access permissions 
+     * Folder own access permissions
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Folder own access permissions 
+       * Folder own access permissions
        * @description {
        *   "text": ""
        * }
@@ -13457,14 +13457,14 @@ export interface paths {
       };
     };
     /**
-     * Update folder access permissions 
+     * Update folder access permissions
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Update folder access permissions 
+       * Update folder access permissions
        * @description {
        *   "text": ""
        * }
@@ -13493,14 +13493,14 @@ export interface paths {
   };
   "/projects/{project}/documents/folders/{folder}/documents": {
     /**
-     * List documents in folder 
+     * List documents in folder
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * List documents in folder 
+       * List documents in folder
        * @description {
        *   "text": ""
        * }
@@ -13537,14 +13537,14 @@ export interface paths {
   };
   "/projects/{project}/documents/folders/{folder}/introduction/{documentId}": {
     /**
-     * Add folder introduction 
+     * Add folder introduction
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Add folder introduction 
+       * Add folder introduction
        * @description {
        *   "text": ""
        * }
@@ -13565,14 +13565,14 @@ export interface paths {
   };
   "/projects/{project}/documents/folders/{folder}/introduction": {
     /**
-     * Remove folder introduction 
+     * Remove folder introduction
      * @description {
      *   "text": ""
      * }
      */
     delete: {
       /**
-       * Remove folder introduction 
+       * Remove folder introduction
        * @description {
        *   "text": ""
        * }
@@ -13592,14 +13592,14 @@ export interface paths {
   };
   "/projects/{project}/documents/folders/{folder}/move": {
     /**
-     * Move folder 
+     * Move folder
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Move folder 
+       * Move folder
        * @description {
        *   "text": ""
        * }
@@ -13633,14 +13633,14 @@ export interface paths {
   };
   "/projects/{project}/documents/folders/{folder}/search": {
     /**
-     * Search documents and folders 
+     * Search documents and folders
      * @description {
      *   "text": "Executes search for project documents and folders in specified folder"
      * }
      */
     get: {
       /**
-       * Search documents and folders 
+       * Search documents and folders
        * @description {
        *   "text": "Executes search for project documents and folders in specified folder"
        * }
@@ -13677,14 +13677,14 @@ export interface paths {
   };
   "/projects/{project}/documents/folders/{folder}/subfolders": {
     /**
-     * List subfolders 
+     * List subfolders
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * List subfolders 
+       * List subfolders
        * @description {
        *   "text": ""
        * }
@@ -13721,14 +13721,14 @@ export interface paths {
   };
   "/projects/{project}/documents/{documentId}/access": {
     /**
-     * Document own access permissions 
+     * Document own access permissions
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Document own access permissions 
+       * Document own access permissions
        * @description {
        *   "text": ""
        * }
@@ -13753,14 +13753,14 @@ export interface paths {
       };
     };
     /**
-     * Update document access permissions 
+     * Update document access permissions
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Update document access permissions 
+       * Update document access permissions
        * @description {
        *   "text": ""
        * }
@@ -13789,14 +13789,14 @@ export interface paths {
   };
   "/projects/{project}/documents/{documentId}/copy": {
     /**
-     * Copy document 
+     * Copy document
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Copy document 
+       * Copy document
        * @description {
        *   "text": ""
        * }
@@ -13831,14 +13831,14 @@ export interface paths {
   };
   "/projects/{project}/documents/{documentId}/delete-forever": {
     /**
-     * Delete document forever 
+     * Delete document forever
      * @description {
      *   "text": ""
      * }
      */
     delete: {
       /**
-       * Delete document forever 
+       * Delete document forever
        * @description {
        *   "text": ""
        * }
@@ -13858,14 +13858,14 @@ export interface paths {
   };
   "/projects/{project}/documents/{documentId}/move": {
     /**
-     * Move document 
+     * Move document
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Move document 
+       * Move document
        * @description {
        *   "text": ""
        * }
@@ -13899,14 +13899,14 @@ export interface paths {
   };
   "/projects/{project}/documents/{documentId}/unarchive": {
     /**
-     * Unarchive document 
+     * Unarchive document
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Unarchive document 
+       * Unarchive document
        * @description {
        *   "text": ""
        * }
@@ -13933,14 +13933,14 @@ export interface paths {
   };
   "/projects/{project}/feature-pins": {
     /**
-     * Update feature pin 
+     * Update feature pin
      * @description {
      *   "text": "Update list of project items pinned for the project by default"
      * }
      */
     patch: {
       /**
-       * Update feature pin 
+       * Update feature pin
        * @description {
        *   "text": "Update list of project items pinned for the project by default"
        * }
@@ -13966,14 +13966,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories": {
     /**
-     * Get repositories 
+     * Get repositories
      * @description {
      *   "text": "Gets a list of package repositories for a given project ID"
      * }
      */
     get: {
       /**
-       * Get repositories 
+       * Get repositories
        * @description {
        *   "text": "Gets a list of package repositories for a given project ID"
        * }
@@ -13999,14 +13999,14 @@ export interface paths {
       };
     };
     /**
-     * Create new repository 
+     * Create new repository
      * @description {
      *   "text": "Creates a new package repository for a given project ID"
      * }
      */
     post: {
       /**
-       * Create new repository 
+       * Create new repository
        * @description {
        *   "text": "Creates a new package repository for a given project ID"
        * }
@@ -14047,14 +14047,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}": {
     /**
-     * Get repository 
+     * Get repository
      * @description {
      *   "text": "Gets a package repository for a given project ID by type and name"
      * }
      */
     get: {
       /**
-       * Get repository 
+       * Get repository
        * @description {
        *   "text": "Gets a package repository for a given project ID by type and name"
        * }
@@ -14079,14 +14079,14 @@ export interface paths {
       };
     };
     /**
-     * Delete repository 
+     * Delete repository
      * @description {
      *   "text": "Removes package repository for a given project ID"
      * }
      */
     delete: {
       /**
-       * Delete repository 
+       * Delete repository
        * @description {
        *   "text": "Removes package repository for a given project ID"
        * }
@@ -14104,14 +14104,14 @@ export interface paths {
       };
     };
     /**
-     * Update repository 
+     * Update repository
      * @description {
      *   "text": "Updates package repository settings for a given project ID"
      * }
      */
     patch: {
       /**
-       * Update repository 
+       * Update repository
        * @description {
        *   "text": "Updates package repository settings for a given project ID"
        * }
@@ -14142,14 +14142,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}/access": {
     /**
-     * Get repository own access 
+     * Get repository own access
      * @description {
      *   "text": "Updates package repository settings for a given project ID"
      * }
      */
     get: {
       /**
-       * Get repository own access 
+       * Get repository own access
        * @description {
        *   "text": "Updates package repository settings for a given project ID"
        * }
@@ -14174,14 +14174,14 @@ export interface paths {
       };
     };
     /**
-     * Update repository own access 
+     * Update repository own access
      * @description {
      *   "text": "Updates package repository settings for a given project ID"
      * }
      */
     patch: {
       /**
-       * Update repository own access 
+       * Update repository own access
        * @description {
        *   "text": "Updates package repository settings for a given project ID"
        * }
@@ -14209,14 +14209,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}/cleanup": {
     /**
-     * Cleanup repository 
+     * Cleanup repository
      * @description {
      *   "text": "Cleanup specified package repository"
      * }
      */
     post: {
       /**
-       * Cleanup repository 
+       * Cleanup repository
        * @description {
        *   "text": "Cleanup specified package repository"
        * }
@@ -14250,14 +14250,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}/cleanup/dry": {
     /**
-     * Dry run repository cleanup 
+     * Dry run repository cleanup
      * @description {
      *   "text": "Dry run of cleanup for specified package repository"
      * }
      */
     post: {
       /**
-       * Dry run repository cleanup 
+       * Dry run repository cleanup
        * @description {
        *   "text": "Dry run of cleanup for specified package repository"
        * }
@@ -14291,14 +14291,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}/connections": {
     /**
-     * Get all remote repositories 
+     * Get all remote repositories
      * @description {
      *   "text": "Gets a list of remote package repositories for given project"
      * }
      */
     get: {
       /**
-       * Get all remote repositories 
+       * Get all remote repositories
        * @description {
        *   "text": "Gets a list of remote package repositories for given project"
        * }
@@ -14325,14 +14325,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}/connections/{connectionId}/publish": {
     /**
-     * Get list of publishing to remote repository 
+     * Get list of publishing to remote repository
      * @description {
      *   "text": "Get list of publishing to remote repository"
      * }
      */
     get: {
       /**
-       * Get list of publishing to remote repository 
+       * Get list of publishing to remote repository
        * @description {
        *   "text": "Get list of publishing to remote repository"
        * }
@@ -14365,14 +14365,14 @@ export interface paths {
       };
     };
     /**
-     * Publish packages to remote repository 
+     * Publish packages to remote repository
      * @description {
      *   "text": "Publishes packages to remote repository"
      * }
      */
     post: {
       /**
-       * Publish packages to remote repository 
+       * Publish packages to remote repository
        * @description {
        *   "text": "Publishes packages to remote repository"
        * }
@@ -14404,14 +14404,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}/files": {
     /**
-     * Get list of files 
+     * Get list of files
      * @description {
      *   "text": "Gets a list of repository files for a given project ID in parent folder"
      * }
      */
     get: {
       /**
-       * Get list of files 
+       * Get list of files
        * @description {
        *   "text": "Gets a list of repository files for a given project ID in parent folder"
        * }
@@ -14439,14 +14439,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}/files/name:{filePath}": {
     /**
-     * Get file details 
+     * Get file details
      * @description {
      *   "text": "Gets a details for repository file for a given project ID"
      * }
      */
     get: {
       /**
-       * Get file details 
+       * Get file details
        * @description {
        *   "text": "Gets a details for repository file for a given project ID"
        * }
@@ -14472,14 +14472,14 @@ export interface paths {
       };
     };
     /**
-     * Delete file 
+     * Delete file
      * @description {
      *   "text": "Removes a file in repository for a given project ID"
      * }
      */
     delete: {
       /**
-       * Delete file 
+       * Delete file
        * @description {
        *   "text": "Removes a file in repository for a given project ID"
        * }
@@ -14500,14 +14500,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}/files/folder:{folderPath}": {
     /**
-     * Delete folder 
+     * Delete folder
      * @description {
      *   "text": "Removes a folder in repository for a given project ID"
      * }
      */
     delete: {
       /**
-       * Delete folder 
+       * Delete folder
        * @description {
        *   "text": "Removes a folder in repository for a given project ID"
        * }
@@ -14528,14 +14528,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}/packages": {
     /**
-     * Get all packages 
+     * Get all packages
      * @description {
      *   "text": "Gets a list of repository packages for a given project ID"
      * }
      */
     get: {
       /**
-       * Get all packages 
+       * Get all packages
        * @description {
        *   "text": "Gets a list of repository packages for a given project ID"
        * }
@@ -14571,14 +14571,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}/packages/name:{packageName}": {
     /**
-     * Delete package 
+     * Delete package
      * @description {
      *   "text": "Removes all package versions in repository for a given project ID"
      * }
      */
     delete: {
       /**
-       * Delete package 
+       * Delete package
        * @description {
        *   "text": "Removes all package versions in repository for a given project ID"
        * }
@@ -14599,14 +14599,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}/packages/name:{packageName}/metadata": {
     /**
-     * Get package metadata 
+     * Get package metadata
      * @description {
      *   "text": "Get package metadata in repository for a given project ID"
      * }
      */
     get: {
       /**
-       * Get package metadata 
+       * Get package metadata
        * @description {
        *   "text": "Get package metadata in repository for a given project ID"
        * }
@@ -14632,14 +14632,14 @@ export interface paths {
       };
     };
     /**
-     * Report package  metadata 
+     * Report package  metadata
      * @description {
      *   "text": "Update a package metadata in repository for a given project ID"
      * }
      */
     put: {
       /**
-       * Report package  metadata 
+       * Report package  metadata
        * @description {
        *   "text": "Update a package metadata in repository for a given project ID"
        * }
@@ -14667,14 +14667,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}/packages/name:{packageName}/metadata/version:{packageVersion}": {
     /**
-     * Report package version metadata 
+     * Report package version metadata
      * @description {
      *   "text": "Report a package version metadata in repository for a given project ID"
      * }
      */
     put: {
       /**
-       * Report package version metadata 
+       * Report package version metadata
        * @description {
        *   "text": "Report a package version metadata in repository for a given project ID"
        * }
@@ -14704,14 +14704,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}/packages/name:{packageName}/versions": {
     /**
-     * Get all package versions 
+     * Get all package versions
      * @description {
      *   "text": "Gets a list of repository package versions for a given project ID"
      * }
      */
     get: {
       /**
-       * Get all package versions 
+       * Get all package versions
        * @description {
        *   "text": "Gets a list of repository package versions for a given project ID"
        * }
@@ -14751,14 +14751,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}/packages/name:{packageName}/versions/version:{packageVersion}": {
     /**
-     * Get package version details 
+     * Get package version details
      * @description {
      *   "text": "Gets a details for repository package version for a given project ID"
      * }
      */
     get: {
       /**
-       * Get package version details 
+       * Get package version details
        * @description {
        *   "text": "Gets a details for repository package version for a given project ID"
        * }
@@ -14785,14 +14785,14 @@ export interface paths {
       };
     };
     /**
-     * Delete package version 
+     * Delete package version
      * @description {
      *   "text": "Removes a package version in repository for a given project ID"
      * }
      */
     delete: {
       /**
-       * Delete package version 
+       * Delete package version
        * @description {
        *   "text": "Removes a package version in repository for a given project ID"
        * }
@@ -14814,14 +14814,14 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/{repository}/url": {
     /**
-     * Get repository URL 
+     * Get repository URL
      * @description {
      *   "text": "Gets a package repository URL for a given project ID"
      * }
      */
     get: {
       /**
-       * Get repository URL 
+       * Get repository URL
        * @description {
        *   "text": "Gets a package repository URL for a given project ID"
        * }
@@ -14845,16 +14845,16 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/type:{type}/repository:{repositoryName}/packages": {
     /**
-     * Get all packages 
-     * @deprecated 
+     * Get all packages
+     * @deprecated
      * @description {
      *   "text": "Gets a list of repository packages for a given project ID"
      * }
      */
     get: {
       /**
-       * Get all packages 
-       * @deprecated 
+       * Get all packages
+       * @deprecated
        * @description {
        *   "text": "Gets a list of repository packages for a given project ID"
        * }
@@ -14890,16 +14890,16 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/type:{type}/repository:{repositoryName}/packages/name:{packageName}/versions": {
     /**
-     * Get all package versions 
-     * @deprecated 
+     * Get all package versions
+     * @deprecated
      * @description {
      *   "text": "Gets a list of repository package versions for a given project ID"
      * }
      */
     get: {
       /**
-       * Get all package versions 
-       * @deprecated 
+       * Get all package versions
+       * @deprecated
        * @description {
        *   "text": "Gets a list of repository package versions for a given project ID"
        * }
@@ -14938,16 +14938,16 @@ export interface paths {
   };
   "/projects/{project}/packages/repositories/type:{type}/repository:{repositoryName}/packages/name:{packageName}/versions/version:{packageVersion}": {
     /**
-     * Get package version details 
-     * @deprecated 
+     * Get package version details
+     * @deprecated
      * @description {
      *   "text": "Gets a details for repository package version for a given project ID"
      * }
      */
     get: {
       /**
-       * Get package version details 
-       * @deprecated 
+       * Get package version details
+       * @deprecated
        * @description {
        *   "text": "Gets a details for repository package version for a given project ID"
        * }
@@ -14975,16 +14975,16 @@ export interface paths {
       };
     };
     /**
-     * Delete package version 
-     * @deprecated 
+     * Delete package version
+     * @deprecated
      * @description {
      *   "text": "Removes a package version in repository for a given project ID"
      * }
      */
     delete: {
       /**
-       * Delete package version 
-       * @deprecated 
+       * Delete package version
+       * @deprecated
        * @description {
        *   "text": "Removes a package version in repository for a given project ID"
        * }
@@ -15007,14 +15007,14 @@ export interface paths {
   };
   "/projects/{project}/packages/search": {
     /**
-     * Find packages in repository 
+     * Find packages in repository
      * @description {
      *   "text": "Executes a package search for a given project ID"
      * }
      */
     get: {
       /**
-       * Find packages in repository 
+       * Find packages in repository
        * @description {
        *   "text": "Executes a package search for a given project ID"
        * }
@@ -15050,14 +15050,14 @@ export interface paths {
   };
   "/projects/{project}/packages/types": {
     /**
-     * Get all types 
+     * Get all types
      * @description {
      *   "text": "Returns a list of available repository types."
      * }
      */
     get: {
       /**
-       * Get all types 
+       * Get all types
        * @description {
        *   "text": "Returns a list of available repository types."
        * }
@@ -15083,14 +15083,14 @@ export interface paths {
   };
   "/projects/{project}/people/members/update": {
     /**
-     * Update participant roles 
+     * Update participant roles
      * @description {
      *   "text": "Adds or removes project participant roles"
      * }
      */
     post: {
       /**
-       * Update participant roles 
+       * Update participant roles
        * @description {
        *   "text": "Adds or removes project participant roles"
        * }
@@ -15118,14 +15118,14 @@ export interface paths {
   };
   "/projects/{project}/people/members": {
     /**
-     * Get all participants 
+     * Get all participants
      * @description {
      *   "text": "Returns all project participants"
      * }
      */
     get: {
       /**
-       * Get all participants 
+       * Get all participants
        * @description {
        *   "text": "Returns all project participants"
        * }
@@ -15160,14 +15160,14 @@ export interface paths {
   };
   "/projects/{project}/people/members/by-ids": {
     /**
-     * Get participants by profiles 
+     * Get participants by profiles
      * @description {
      *   "text": "Returns project participants by provided profiles"
      * }
      */
     get: {
       /**
-       * Get participants by profiles 
+       * Get participants by profiles
        * @description {
        *   "text": "Returns project participants by provided profiles"
        * }
@@ -15194,14 +15194,14 @@ export interface paths {
   };
   "/projects/{project}/people/members/{profile}": {
     /**
-     * Remove participant 
+     * Remove participant
      * @description {
      *   "text": "Removes participant"
      * }
      */
     delete: {
       /**
-       * Remove participant 
+       * Remove participant
        * @description {
        *   "text": "Removes participant"
        * }
@@ -15221,14 +15221,14 @@ export interface paths {
   };
   "/projects/{project}/people/teams/update": {
     /**
-     * Update participant roles 
+     * Update participant roles
      * @description {
      *   "text": "Adds or removes project team participant roles"
      * }
      */
     post: {
       /**
-       * Update participant roles 
+       * Update participant roles
        * @description {
        *   "text": "Adds or removes project team participant roles"
        * }
@@ -15256,14 +15256,14 @@ export interface paths {
   };
   "/projects/{project}/people/teams": {
     /**
-     * Get all participants 
+     * Get all participants
      * @description {
      *   "text": "Returns all project participant teams"
      * }
      */
     get: {
       /**
-       * Get all participants 
+       * Get all participants
        * @description {
        *   "text": "Returns all project participant teams"
        * }
@@ -15298,14 +15298,14 @@ export interface paths {
   };
   "/projects/{project}/people/teams/by-ids": {
     /**
-     * Get participants by teams 
+     * Get participants by teams
      * @description {
      *   "text": "Returns project participant teams by provided teams"
      * }
      */
     get: {
       /**
-       * Get participants by teams 
+       * Get participants by teams
        * @description {
        *   "text": "Returns project participant teams by provided teams"
        * }
@@ -15332,14 +15332,14 @@ export interface paths {
   };
   "/projects/{project}/people/teams/{team}": {
     /**
-     * Remove participant 
+     * Remove participant
      * @description {
      *   "text": "Removes participant"
      * }
      */
     delete: {
       /**
-       * Remove participant 
+       * Remove participant
        * @description {
        *   "text": "Removes participant"
        * }
@@ -15359,14 +15359,14 @@ export interface paths {
   };
   "/projects/{project}/personal-feature-pins": {
     /**
-     * Update personal feature pin 
+     * Update personal feature pin
      * @description {
      *   "text": "Update list of project items pinned for the project personally for you"
      * }
      */
     patch: {
       /**
-       * Update personal feature pin 
+       * Update personal feature pin
        * @description {
        *   "text": "Update list of project items pinned for the project personally for you"
        * }
@@ -15392,14 +15392,14 @@ export interface paths {
   };
   "/projects/{project}/planning/boards": {
     /**
-     * Get all boards 
+     * Get all boards
      * @description {
      *   "text": "Search existing boards in a project"
      * }
      */
     get: {
       /**
-       * Get all boards 
+       * Get all boards
        * @description {
        *   "text": "Search existing boards in a project"
        * }
@@ -15431,14 +15431,14 @@ export interface paths {
       };
     };
     /**
-     * Create board 
+     * Create board
      * @description {
      *   "text": "Create a new issue board in a project. The user will become the owner of the board."
      * }
      */
     post: {
       /**
-       * Create board 
+       * Create board
        * @description {
        *   "text": "Create a new issue board in a project. The user will become the owner of the board."
        * }
@@ -15472,14 +15472,14 @@ export interface paths {
   };
   "/projects/{project}/planning/boards/sprints": {
     /**
-     * Get all sprints 
+     * Get all sprints
      * @description {
      *   "text": "Search existing sprints in a project"
      * }
      */
     get: {
       /**
-       * Get all sprints 
+       * Get all sprints
        * @description {
        *   "text": "Search existing sprints in a project"
        * }
@@ -15514,14 +15514,14 @@ export interface paths {
   };
   "/projects/{project}/planning/boards/starred": {
     /**
-     * Get all starred boards 
+     * Get all starred boards
      * @description {
      *   "text": "Get all starred boards in a project"
      * }
      */
     get: {
       /**
-       * Get all starred boards 
+       * Get all starred boards
        * @description {
        *   "text": "Get all starred boards in a project"
        * }
@@ -15547,16 +15547,16 @@ export interface paths {
   };
   "/projects/{project}/planning/boards/{board}/archive": {
     /**
-     * Archive board 
-     * @deprecated 
+     * Archive board
+     * @deprecated
      * @description {
      *   "text": "Archive an existing board. This operation can be performed by board owners or other members who are granted permission to manage boards in a project."
      * }
      */
     delete: {
       /**
-       * Archive board 
-       * @deprecated 
+       * Archive board
+       * @deprecated
        * @description {
        *   "text": "Archive an existing board. This operation can be performed by board owners or other members who are granted permission to manage boards in a project."
        * }
@@ -15576,16 +15576,16 @@ export interface paths {
   };
   "/projects/{project}/planning/checklists": {
     /**
-     * Get all checklists 
-     * @deprecated 
+     * Get all checklists
+     * @deprecated
      * @description {
      *   "text": "Search existing checklists in a project"
      * }
      */
     get: {
       /**
-       * Get all checklists 
-       * @deprecated 
+       * Get all checklists
+       * @deprecated
        * @description {
        *   "text": "Search existing checklists in a project"
        * }
@@ -15619,16 +15619,16 @@ export interface paths {
       };
     };
     /**
-     * Create checklist 
-     * @deprecated 
+     * Create checklist
+     * @deprecated
      * @description {
      *   "text": "Create a new checklist in a project"
      * }
      */
     post: {
       /**
-       * Create checklist 
-       * @deprecated 
+       * Create checklist
+       * @deprecated
        * @description {
        *   "text": "Create a new checklist in a project"
        * }
@@ -15661,16 +15661,16 @@ export interface paths {
   };
   "/projects/{project}/planning/checklists/import": {
     /**
-     * Import checklist 
-     * @deprecated 
+     * Import checklist
+     * @deprecated
      * @description {
      *   "text": "Create a new checklist in a project using tab indented lines as checkable items.\nThe items with the same indent level will be placed one under the other.\nAn issue URL will be converted into the corresponding issue."
      * }
      */
     post: {
       /**
-       * Import checklist 
-       * @deprecated 
+       * Import checklist
+       * @deprecated
        * @description {
        *   "text": "Create a new checklist in a project using tab indented lines as checkable items.\nThe items with the same indent level will be placed one under the other.\nAn issue URL will be converted into the corresponding issue."
        * }
@@ -15704,14 +15704,14 @@ export interface paths {
   };
   "/projects/{project}/planning/checklists/{checklistId}/import": {
     /**
-     * Import checklist lines 
+     * Import checklist lines
      * @description {
      *   "text": "Tab indented lines are converted into checkable items following the same rules as in Import Checklist.\nThe result is placed inside of the specified project checklist."
      * }
      */
     post: {
       /**
-       * Import checklist lines 
+       * Import checklist lines
        * @description {
        *   "text": "Tab indented lines are converted into checkable items following the same rules as in Import Checklist.\nThe result is placed inside of the specified project checklist."
        * }
@@ -15740,16 +15740,16 @@ export interface paths {
   };
   "/projects/{project}/planning/checklists/{checklistId}": {
     /**
-     * Delete checklist 
-     * @deprecated 
+     * Delete checklist
+     * @deprecated
      * @description {
      *   "text": "Delete an existing checklist in a project"
      * }
      */
     delete: {
       /**
-       * Delete checklist 
-       * @deprecated 
+       * Delete checklist
+       * @deprecated
        * @description {
        *   "text": "Delete an existing checklist in a project"
        * }
@@ -15767,16 +15767,16 @@ export interface paths {
       };
     };
     /**
-     * Update checklist 
-     * @deprecated 
+     * Update checklist
+     * @deprecated
      * @description {
      *   "text": "Update an existing checklist in a project"
      * }
      */
     patch: {
       /**
-       * Update checklist 
-       * @deprecated 
+       * Update checklist
+       * @deprecated
        * @description {
        *   "text": "Update an existing checklist in a project"
        * }
@@ -15807,16 +15807,16 @@ export interface paths {
   };
   "/projects/{project}/planning/checklists/starred": {
     /**
-     * Get all starred checklists 
-     * @deprecated 
+     * Get all starred checklists
+     * @deprecated
      * @description {
      *   "text": "Get all starred checklists in a project"
      * }
      */
     get: {
       /**
-       * Get all starred checklists 
-       * @deprecated 
+       * Get all starred checklists
+       * @deprecated
        * @description {
        *   "text": "Get all starred checklists in a project"
        * }
@@ -15842,14 +15842,14 @@ export interface paths {
   };
   "/projects/{project}/planning/checklists/{checklistId}/full-checklist-tree": {
     /**
-     * Get full checklist tree 
+     * Get full checklist tree
      * @description {
      *   "text": "Get the content of a checklist in a project"
      * }
      */
     get: {
       /**
-       * Get full checklist tree 
+       * Get full checklist tree
        * @description {
        *   "text": "Get the content of a checklist in a project"
        * }
@@ -15876,14 +15876,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues": {
     /**
-     * Get all issues 
+     * Get all issues
      * @description {
      *   "text": "Search existing issues in a project. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all issues 
+       * Get all issues
        * @description {
        *   "text": "Search existing issues in a project. Parameters are applied as 'AND' filters."
        * }
@@ -15936,14 +15936,14 @@ export interface paths {
       };
     };
     /**
-     * Create issue 
+     * Create issue
      * @description {
      *   "text": "Create a new issue in a project"
      * }
      */
     post: {
       /**
-       * Create issue 
+       * Create issue
        * @description {
        *   "text": "Create a new issue in a project"
        * }
@@ -15992,14 +15992,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/import": {
     /**
-     * Import issues 
+     * Import issues
      * @description {
      *   "text": "Import issues in a project"
      * }
      */
     post: {
       /**
-       * Import issues 
+       * Import issues
        * @description {
        *   "text": "Import issues in a project"
        * }
@@ -16039,14 +16039,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/{issueId}/restore": {
     /**
-     * Restore issue 
+     * Restore issue
      * @description {
      *   "text": "Restore an issue in a project"
      * }
      */
     post: {
       /**
-       * Restore issue 
+       * Restore issue
        * @description {
        *   "text": "Restore an issue in a project"
        * }
@@ -16066,14 +16066,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/{issueId}/toggle-resolved": {
     /**
-     * Toggle issue resolved status 
+     * Toggle issue resolved status
      * @description {
      *   "text": "Toggle status of an existing issue between resolved and unresolved"
      * }
      */
     post: {
       /**
-       * Toggle issue resolved status 
+       * Toggle issue resolved status
        * @description {
        *   "text": "Toggle status of an existing issue between resolved and unresolved"
        * }
@@ -16100,14 +16100,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/sync-batch": {
     /**
-     * Get sync batch 
+     * Get sync batch
      * @description {
      *   "text": "Get issues in specified project for synchronization with third-party system. Issues with etag greater than specified value are returned. Read more in the [documentation](https://www.jetbrains.com/help/space/sync-api.html)."
      * }
      */
     get: {
       /**
-       * Get sync batch 
+       * Get sync batch
        * @description {
        *   "text": "Get issues in specified project for synchronization with third-party system. Issues with etag greater than specified value are returned. Read more in the [documentation](https://www.jetbrains.com/help/space/sync-api.html)."
        * }
@@ -16138,14 +16138,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/number:{number}": {
     /**
-     * Get issue by number 
+     * Get issue by number
      * @description {
      *   "text": "Find an existing issue by a given number in a project"
      * }
      */
     get: {
       /**
-       * Get issue by number 
+       * Get issue by number
        * @description {
        *   "text": "Find an existing issue by a given number in a project"
        * }
@@ -16174,14 +16174,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/{issueId}": {
     /**
-     * Get issue 
+     * Get issue
      * @description {
      *   "text": "Retrieve issue by identifier. To retrieve multiple issues at once, use [Get issues by identifiers](/extensions/httpApiPlayground?resource=issues&parent-resource=issues&endpoint=http_post_get-by-ids) (`/issues/get-by-ids`)"
      * }
      */
     get: {
       /**
-       * Get issue 
+       * Get issue
        * @description {
        *   "text": "Retrieve issue by identifier. To retrieve multiple issues at once, use [Get issues by identifiers](/extensions/httpApiPlayground?resource=issues&parent-resource=issues&endpoint=http_post_get-by-ids) (`/issues/get-by-ids`)"
        * }
@@ -16207,14 +16207,14 @@ export interface paths {
       };
     };
     /**
-     * Delete issue 
+     * Delete issue
      * @description {
      *   "text": "Delete an issue from a project"
      * }
      */
     delete: {
       /**
-       * Delete issue 
+       * Delete issue
        * @description {
        *   "text": "Delete an issue from a project"
        * }
@@ -16232,14 +16232,14 @@ export interface paths {
       };
     };
     /**
-     * Update issue 
+     * Update issue
      * @description {
      *   "text": "Update an existing issue in a project"
      * }
      */
     patch: {
       /**
-       * Update issue 
+       * Update issue
        * @description {
        *   "text": "Update an existing issue in a project"
        * }
@@ -16275,14 +16275,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/fields/order": {
     /**
-     * Get issue field order 
+     * Get issue field order
      * @description {
      *   "text": "Query order for built-in issue fields"
      * }
      */
     get: {
       /**
-       * Get issue field order 
+       * Get issue field order
        * @description {
        *   "text": "Query order for built-in issue fields"
        * }
@@ -16307,14 +16307,14 @@ export interface paths {
       };
     };
     /**
-     * Set issue field order 
+     * Set issue field order
      * @description {
      *   "text": "Query order for built-in issue fields"
      * }
      */
     patch: {
       /**
-       * Set issue field order 
+       * Set issue field order
        * @description {
        *   "text": "Query order for built-in issue fields"
        * }
@@ -16340,14 +16340,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/fields/visibility": {
     /**
-     * Get issue field visibility 
+     * Get issue field visibility
      * @description {
      *   "text": "Query visibility for built-in issue fields"
      * }
      */
     get: {
       /**
-       * Get issue field visibility 
+       * Get issue field visibility
        * @description {
        *   "text": "Query visibility for built-in issue fields"
        * }
@@ -16371,14 +16371,14 @@ export interface paths {
       };
     };
     /**
-     * Update issue field visibility 
+     * Update issue field visibility
      * @description {
      *   "text": "Set visibility for a built-in issue field"
      * }
      */
     patch: {
       /**
-       * Update issue field visibility 
+       * Update issue field visibility
        * @description {
        *   "text": "Set visibility for a built-in issue field"
        * }
@@ -16405,14 +16405,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/statuses": {
     /**
-     * Get all issue statuses 
+     * Get all issue statuses
      * @description {
      *   "text": "Get all existing issue statuses in a project"
      * }
      */
     get: {
       /**
-       * Get all issue statuses 
+       * Get all issue statuses
        * @description {
        *   "text": "Get all existing issue statuses in a project"
        * }
@@ -16436,14 +16436,14 @@ export interface paths {
       };
     };
     /**
-     * Update issue statuses list 
+     * Update issue statuses list
      * @description {
      *   "text": "Configure issue statuses in a project. The list must contain at least one resolved and one unresolved status."
      * }
      */
     patch: {
       /**
-       * Update issue statuses list 
+       * Update issue statuses list
        * @description {
        *   "text": "Configure issue statuses in a project. The list must contain at least one resolved and one unresolved status."
        * }
@@ -16469,14 +16469,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/statuses/auto-update-on-merge-request-merge": {
     /**
-     * Get auto update target issue status for merge request merge 
+     * Get auto update target issue status for merge request merge
      * @description {
      *   "text": "Get target issue status for auto updating issues on linked merge request merge"
      * }
      */
     get: {
       /**
-       * Get auto update target issue status for merge request merge 
+       * Get auto update target issue status for merge request merge
        * @description {
        *   "text": "Get target issue status for auto updating issues on linked merge request merge"
        * }
@@ -16500,14 +16500,14 @@ export interface paths {
       };
     };
     /**
-     * Set auto update target issue status for merge request merge 
+     * Set auto update target issue status for merge request merge
      * @description {
      *   "text": "Set target issue status for auto updating issues on linked merge request merge"
      * }
      */
     patch: {
       /**
-       * Set auto update target issue status for merge request merge 
+       * Set auto update target issue status for merge request merge
        * @description {
        *   "text": "Set target issue status for auto updating issues on linked merge request merge"
        * }
@@ -16533,14 +16533,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/statuses/distribution": {
     /**
-     * Get issue status distribution 
+     * Get issue status distribution
      * @description {
      *   "text": "Get all existing issue statuses with their usage, number of existing issues, in a project"
      * }
      */
     get: {
       /**
-       * Get issue status distribution 
+       * Get issue status distribution
        * @description {
        *   "text": "Get all existing issue statuses with their usage, number of existing issues, in a project"
        * }
@@ -16566,14 +16566,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/{issueId}/attachment": {
     /**
-     * Add attachment 
+     * Add attachment
      * @description {
      *   "text": "Add attachment to an existing issue in a project"
      * }
      */
     post: {
       /**
-       * Add attachment 
+       * Add attachment
        * @description {
        *   "text": "Add attachment to an existing issue in a project"
        * }
@@ -16600,14 +16600,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/{issueId}/attachment/{attachmentId}": {
     /**
-     * Remove attachment 
+     * Remove attachment
      * @description {
      *   "text": "Remove attachment from an existing issue in a project"
      * }
      */
     delete: {
       /**
-       * Remove attachment 
+       * Remove attachment
        * @description {
        *   "text": "Remove attachment from an existing issue in a project"
        * }
@@ -16628,14 +16628,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/{issueId}/attachments": {
     /**
-     * Add attachments 
+     * Add attachments
      * @description {
      *   "text": "Add attachments to an existing issue in a project"
      * }
      */
     post: {
       /**
-       * Add attachments 
+       * Add attachments
        * @description {
        *   "text": "Add attachments to an existing issue in a project"
        * }
@@ -16660,14 +16660,14 @@ export interface paths {
       };
     };
     /**
-     * Remove attachments 
+     * Remove attachments
      * @description {
      *   "text": "Remove attachments from an existing issue in a project"
      * }
      */
     delete: {
       /**
-       * Remove attachments 
+       * Remove attachments
        * @description {
        *   "text": "Remove attachments from an existing issue in a project"
        * }
@@ -16690,14 +16690,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/{issueId}/branches": {
     /**
-     * Add branch links 
+     * Add branch links
      * @description {
      *   "text": "Add branch links to an existing issue in a project"
      * }
      */
     post: {
       /**
-       * Add branch links 
+       * Add branch links
        * @description {
        *   "text": "Add branch links to an existing issue in a project"
        * }
@@ -16723,14 +16723,14 @@ export interface paths {
       };
     };
     /**
-     * Remove branch links 
+     * Remove branch links
      * @description {
      *   "text": "Remove branch links from an existing issue in a project"
      * }
      */
     delete: {
       /**
-       * Remove branch links 
+       * Remove branch links
        * @description {
        *   "text": "Remove branch links from an existing issue in a project"
        * }
@@ -16754,14 +16754,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/{issueId}/checklists/{checklistId}": {
     /**
-     * Add issue checklist 
+     * Add issue checklist
      * @description {
      *   "text": "Add the checklist to an existing issue in a project"
      * }
      */
     post: {
       /**
-       * Add issue checklist 
+       * Add issue checklist
        * @description {
        *   "text": "Add the checklist to an existing issue in a project"
        * }
@@ -16780,14 +16780,14 @@ export interface paths {
       };
     };
     /**
-     * Remove issue checklist 
+     * Remove issue checklist
      * @description {
      *   "text": "Remove the checklist from an existing issue in a project"
      * }
      */
     delete: {
       /**
-       * Remove issue checklist 
+       * Remove issue checklist
        * @description {
        *   "text": "Remove the checklist from an existing issue in a project"
        * }
@@ -16808,14 +16808,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/{issueId}/code-reviews": {
     /**
-     * Add code review links 
+     * Add code review links
      * @description {
      *   "text": "Add code review links to an existing issue in a project"
      * }
      */
     post: {
       /**
-       * Add code review links 
+       * Add code review links
        * @description {
        *   "text": "Add code review links to an existing issue in a project"
        * }
@@ -16840,14 +16840,14 @@ export interface paths {
       };
     };
     /**
-     * Remove code review links 
+     * Remove code review links
      * @description {
      *   "text": "Remove code review links from an existing issue in a project"
      * }
      */
     delete: {
       /**
-       * Remove code review links 
+       * Remove code review links
        * @description {
        *   "text": "Remove code review links from an existing issue in a project"
        * }
@@ -16870,16 +16870,16 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/{issueId}/comments/import": {
     /**
-     * Import issue comment history 
-     * @deprecated 
+     * Import issue comment history
+     * @deprecated
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Import issue comment history 
-       * @deprecated 
+       * Import issue comment history
+       * @deprecated
        * @description {
        *   "text": ""
        * }
@@ -16910,14 +16910,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/{issueId}/commits": {
     /**
-     * Add commit links 
+     * Add commit links
      * @description {
      *   "text": "Add commit links to an existing issue in a project"
      * }
      */
     post: {
       /**
-       * Add commit links 
+       * Add commit links
        * @description {
        *   "text": "Add commit links to an existing issue in a project"
        * }
@@ -16943,14 +16943,14 @@ export interface paths {
       };
     };
     /**
-     * Remove commit links 
+     * Remove commit links
      * @description {
      *   "text": "Remove commit links from an existing issue in a project"
      * }
      */
     delete: {
       /**
-       * Remove commit links 
+       * Remove commit links
        * @description {
        *   "text": "Remove commit links from an existing issue in a project"
        * }
@@ -16974,14 +16974,14 @@ export interface paths {
   };
   "/projects/{project}/planning/issues/{issueId}/tags/{tagId}": {
     /**
-     * Add issue tag 
+     * Add issue tag
      * @description {
      *   "text": "Add an existing tag to an issue in a project"
      * }
      */
     post: {
       /**
-       * Add issue tag 
+       * Add issue tag
        * @description {
        *   "text": "Add an existing tag to an issue in a project"
        * }
@@ -17000,14 +17000,14 @@ export interface paths {
       };
     };
     /**
-     * Remove issue tag 
+     * Remove issue tag
      * @description {
      *   "text": "Remove an existing tag from an issue in a project"
      * }
      */
     delete: {
       /**
-       * Remove issue tag 
+       * Remove issue tag
        * @description {
        *   "text": "Remove an existing tag from an issue in a project"
        * }
@@ -17028,14 +17028,14 @@ export interface paths {
   };
   "/projects/{project}/planning/tags": {
     /**
-     * Get all hierarchical tags 
+     * Get all hierarchical tags
      * @description {
      *   "text": "Search existing tags in a project"
      * }
      */
     get: {
       /**
-       * Get all hierarchical tags 
+       * Get all hierarchical tags
        * @description {
        *   "text": "Search existing tags in a project"
        * }
@@ -17067,14 +17067,14 @@ export interface paths {
       };
     };
     /**
-     * Create hierarchical tag 
+     * Create hierarchical tag
      * @description {
      *   "text": "Create a new hierarchical tag in a project"
      * }
      */
     post: {
       /**
-       * Create hierarchical tag 
+       * Create hierarchical tag
        * @description {
        *   "text": "Create a new hierarchical tag in a project"
        * }
@@ -17703,14 +17703,14 @@ export interface paths {
   };
   "/projects/{project}/repositories/{repository}/merge-preview-status": {
     /**
-     * Preview merge branches result 
+     * Preview merge branches result
      * @description {
      *   "text": "Dry run merge source branch into target without modifying the repository. Please note that conflicting status is based on per-file analysis, so it may not be accurate on too diverged branches."
      * }
      */
     get: {
       /**
-       * Preview merge branches result 
+       * Preview merge branches result
        * @description {
        *   "text": "Dry run merge source branch into target without modifying the repository. Please note that conflicting status is based on per-file analysis, so it may not be accurate on too diverged branches."
        * }
@@ -17875,14 +17875,14 @@ export interface paths {
   };
   "/projects/{project}/repositories/{repository}/revisions/{revision}/external-checks": {
     /**
-     * Get external checks for a commit 
+     * Get external checks for a commit
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get external checks for a commit 
+       * Get external checks for a commit
        * @description {
        *   "text": ""
        * }
@@ -17908,14 +17908,14 @@ export interface paths {
       };
     };
     /**
-     * Report external check status 
+     * Report external check status
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Report external check status 
+       * Report external check status
        * @description {
        *   "text": ""
        * }
@@ -17999,14 +17999,14 @@ export interface paths {
   };
   "/projects/{project}/responsibilities/scheme": {
     /**
-     * Get project responsibility scheme 
+     * Get project responsibility scheme
      * @description {
      *   "text": "Get the responsibilities schema for a given project ID"
      * }
      */
     get: {
       /**
-       * Get project responsibility scheme 
+       * Get project responsibility scheme
        * @description {
        *   "text": "Get the responsibilities schema for a given project ID"
        * }
@@ -18032,14 +18032,14 @@ export interface paths {
   };
   "/projects/{project}/responsibilities/subjects": {
     /**
-     * Add responsibility subject 
+     * Add responsibility subject
      * @description {
      *   "text": "Add a responsibility subject for a given project ID"
      * }
      */
     post: {
       /**
-       * Add responsibility subject 
+       * Add responsibility subject
        * @description {
        *   "text": "Add a responsibility subject for a given project ID"
        * }
@@ -18069,14 +18069,14 @@ export interface paths {
   };
   "/projects/{project}/responsibilities/subjects/{subjectId}": {
     /**
-     * Edit responsibility subject 
+     * Edit responsibility subject
      * @description {
      *   "text": "Update an existing responsibility subject for a given project ID"
      * }
      */
     patch: {
       /**
-       * Edit responsibility subject 
+       * Edit responsibility subject
        * @description {
        *   "text": "Update an existing responsibility subject for a given project ID"
        * }
@@ -18103,14 +18103,14 @@ export interface paths {
   };
   "/projects/{project}/responsibilities/{responsibilityId}/assignees/{profileId}": {
     /**
-     * Assign responsible 
+     * Assign responsible
      * @description {
      *   "text": "Assign a responsible person for a given project ID and responsibility ID"
      * }
      */
     post: {
       /**
-       * Assign responsible 
+       * Assign responsible
        * @description {
        *   "text": "Assign a responsible person for a given project ID and responsibility ID"
        * }
@@ -18136,14 +18136,14 @@ export interface paths {
       };
     };
     /**
-     * Remove responsible 
+     * Remove responsible
      * @description {
      *   "text": "Remove a responsible person for a given project ID and responsibility ID"
      * }
      */
     delete: {
       /**
-       * Remove responsible 
+       * Remove responsible
        * @description {
        *   "text": "Remove a responsible person for a given project ID and responsibility ID"
        * }
@@ -18167,14 +18167,14 @@ export interface paths {
   };
   "/public-holidays/calendars": {
     /**
-     * Get all calendars 
+     * Get all calendars
      * @description {
      *   "text": "Get all public holiday calendars"
      * }
      */
     get: {
       /**
-       * Get all calendars 
+       * Get all calendars
        * @description {
        *   "text": "Get all public holiday calendars"
        * }
@@ -18202,14 +18202,14 @@ export interface paths {
       };
     };
     /**
-     * Create calendar 
+     * Create calendar
      * @description {
      *   "text": "Create a public holiday calendar for a location"
      * }
      */
     post: {
       /**
-       * Create calendar 
+       * Create calendar
        * @description {
        *   "text": "Create a public holiday calendar for a location"
        * }
@@ -18240,14 +18240,14 @@ export interface paths {
   };
   "/public-holidays/calendars/import": {
     /**
-     * Import calendar 
+     * Import calendar
      * @description {
      *   "text": "Import holidays in a public holiday calendar, using an attachment (.ics format) as the source"
      * }
      */
     post: {
       /**
-       * Import calendar 
+       * Import calendar
        * @description {
        *   "text": "Import holidays in a public holiday calendar, using an attachment (.ics format) as the source"
        * }
@@ -18273,14 +18273,14 @@ export interface paths {
   };
   "/public-holidays/calendars/{id}": {
     /**
-     * Delete calendar 
+     * Delete calendar
      * @description {
      *   "text": "Delete a public holiday calendar"
      * }
      */
     delete: {
       /**
-       * Delete calendar 
+       * Delete calendar
        * @description {
        *   "text": "Delete a public holiday calendar"
        * }
@@ -18297,14 +18297,14 @@ export interface paths {
       };
     };
     /**
-     * Update calendar 
+     * Update calendar
      * @description {
      *   "text": "Update an existing public holiday calendar"
      * }
      */
     patch: {
       /**
-       * Update calendar 
+       * Update calendar
        * @description {
        *   "text": "Update an existing public holiday calendar"
        * }
@@ -18338,14 +18338,14 @@ export interface paths {
   };
   "/public-holidays/holidays": {
     /**
-     * Get all holidays 
+     * Get all holidays
      * @description {
      *   "text": "Get/search all holidays in a public holiday calendar. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all holidays 
+       * Get all holidays
        * @description {
        *   "text": "Get/search all holidays in a public holiday calendar. Parameters are applied as 'AND' filters."
        * }
@@ -18377,14 +18377,14 @@ export interface paths {
       };
     };
     /**
-     * Create holiday 
+     * Create holiday
      * @description {
      *   "text": "Add a holiday to a public holiday calendar and specify if it is a working day or not"
      * }
      */
     post: {
       /**
-       * Create holiday 
+       * Create holiday
        * @description {
        *   "text": "Add a holiday to a public holiday calendar and specify if it is a working day or not"
        * }
@@ -18420,14 +18420,14 @@ export interface paths {
   };
   "/public-holidays/holidays/{id}": {
     /**
-     * Delete holiday 
+     * Delete holiday
      * @description {
      *   "text": "Delete a holiday from a public holiday calendar"
      * }
      */
     delete: {
       /**
-       * Delete holiday 
+       * Delete holiday
        * @description {
        *   "text": "Delete a holiday from a public holiday calendar"
        * }
@@ -18444,14 +18444,14 @@ export interface paths {
       };
     };
     /**
-     * Update holiday 
+     * Update holiday
      * @description {
      *   "text": "Update a holiday in a public holiday calendar. Optional parameters will be ignored when not specified and updated otherwise."
      * }
      */
     patch: {
       /**
-       * Update holiday 
+       * Update holiday
        * @description {
        *   "text": "Update a holiday in a public holiday calendar. Optional parameters will be ignored when not specified and updated otherwise."
        * }
@@ -18489,14 +18489,14 @@ export interface paths {
   };
   "/public-holidays/holidays/profile-holidays": {
     /**
-     * Get all profile holidays 
+     * Get all profile holidays
      * @description {
      *   "text": "Get holidays observed in the location(s) of the current profile during the selected period"
      * }
      */
     get: {
       /**
-       * Get all profile holidays 
+       * Get all profile holidays
        * @description {
        *   "text": "Get holidays observed in the location(s) of the current profile during the selected period"
        * }
@@ -18523,14 +18523,14 @@ export interface paths {
   };
   "/public-holidays/holidays/related-holidays": {
     /**
-     * Get all related holidays 
+     * Get all related holidays
      * @description {
      *   "text": "Search related holidays in all public holiday calendars, during the selected period"
      * }
      */
     get: {
       /**
-       * Get all related holidays 
+       * Get all related holidays
        * @description {
        *   "text": "Search related holidays in all public holiday calendars, during the selected period"
        * }
@@ -18671,14 +18671,14 @@ export interface paths {
   };
   "/rich-text/parse-markdown": {
     /**
-     * Parse Markdown 
+     * Parse Markdown
      * @description {
      *   "text": "Parses [Space markdown syntax](https://www.jetbrains.com/help/space/markdown-syntax.html) into a tree presentation"
      * }
      */
     post: {
       /**
-       * Parse Markdown 
+       * Parse Markdown
        * @description {
        *   "text": "Parses [Space markdown syntax](https://www.jetbrains.com/help/space/markdown-syntax.html) into a tree presentation"
        * }
@@ -18709,16 +18709,16 @@ export interface paths {
   };
   "/team-directory/calendar-events": {
     /**
-     * Get all calendar events 
-     * @deprecated 
+     * Get all calendar events
+     * @deprecated
      * @description {
      *   "text": "Get calendar events attached to an article in a specific time period"
      * }
      */
     get: {
       /**
-       * Get all calendar events 
-       * @deprecated 
+       * Get all calendar events
+       * @deprecated
        * @description {
        *   "text": "Get calendar events attached to an article in a specific time period"
        * }
@@ -18743,16 +18743,16 @@ export interface paths {
   };
   "/team-directory/calendar-events/{id}": {
     /**
-     * Get calendar event 
-     * @deprecated 
+     * Get calendar event
+     * @deprecated
      * @description {
      *   "text": "Get a calendar event attached to an article"
      * }
      */
     get: {
       /**
-       * Get calendar event 
-       * @deprecated 
+       * Get calendar event
+       * @deprecated
        * @description {
        *   "text": "Get a calendar event attached to an article"
        * }
@@ -18778,16 +18778,16 @@ export interface paths {
   };
   "/team-directory/calendar-events/absence-events": {
     /**
-     * Get all absence events 
-     * @deprecated 
+     * Get all absence events
+     * @deprecated
      * @description {
      *   "text": "Get/search absences. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all absence events 
-       * @deprecated 
+       * Get all absence events
+       * @deprecated
        * @description {
        *   "text": "Get/search absences. Parameters are applied as 'AND' filters."
        * }
@@ -18815,16 +18815,16 @@ export interface paths {
   };
   "/team-directory/calendar-events/birthday-events": {
     /**
-     * Get all birthday events 
-     * @deprecated 
+     * Get all birthday events
+     * @deprecated
      * @description {
      *   "text": "Get/search birthdays. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all birthday events 
-       * @deprecated 
+       * Get all birthday events
+       * @deprecated
        * @description {
        *   "text": "Get/search birthdays. Parameters are applied as 'AND' filters."
        * }
@@ -18852,16 +18852,16 @@ export interface paths {
   };
   "/team-directory/calendar-events/birthday-events/starred": {
     /**
-     * Get all starred birthday events 
-     * @deprecated 
+     * Get all starred birthday events
+     * @deprecated
      * @description {
      *   "text": "Get/search birthdays in a specific time period for starred profiles."
      * }
      */
     get: {
       /**
-       * Get all starred birthday events 
-       * @deprecated 
+       * Get all starred birthday events
+       * @deprecated
        * @description {
        *   "text": "Get/search birthdays in a specific time period for starred profiles."
        * }
@@ -18886,16 +18886,16 @@ export interface paths {
   };
   "/team-directory/calendar-events/holidays": {
     /**
-     * Get all holidays 
-     * @deprecated 
+     * Get all holidays
+     * @deprecated
      * @description {
      *   "text": "Get/search holidays. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all holidays 
-       * @deprecated 
+       * Get all holidays
+       * @deprecated
        * @description {
        *   "text": "Get/search holidays. Parameters are applied as 'AND' filters."
        * }
@@ -18924,16 +18924,16 @@ export interface paths {
   };
   "/team-directory/calendar-events/meeting-participations/{id}": {
     /**
-     * Update meeting participation 
-     * @deprecated 
+     * Update meeting participation
+     * @deprecated
      * @description {
      *   "text": "Update RSVP / calendar event participation status for a calendar event attached to an article"
      * }
      */
     patch: {
       /**
-       * Update meeting participation 
-       * @deprecated 
+       * Update meeting participation
+       * @deprecated
        * @description {
        *   "text": "Update RSVP / calendar event participation status for a calendar event attached to an article"
        * }
@@ -18966,16 +18966,16 @@ export interface paths {
   };
   "/team-directory/calendar-events/membership-events": {
     /**
-     * Get all membership events 
-     * @deprecated 
+     * Get all membership events
+     * @deprecated
      * @description {
      *   "text": "Get/search membership events. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all membership events 
-       * @deprecated 
+       * Get all membership events
+       * @deprecated
        * @description {
        *   "text": "Get/search membership events. Parameters are applied as 'AND' filters."
        * }
@@ -19003,16 +19003,16 @@ export interface paths {
   };
   "/team-directory/calendar-events/non-working-days-events": {
     /**
-     * Get all non working days events 
-     * @deprecated 
+     * Get all non working days events
+     * @deprecated
      * @description {
      *   "text": "Get/search non-working day events. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all non working days events 
-       * @deprecated 
+       * Get all non working days events
+       * @deprecated
        * @description {
        *   "text": "Get/search non-working day events. Parameters are applied as 'AND' filters."
        * }
@@ -19041,14 +19041,14 @@ export interface paths {
   };
   "/team-directory/invitation-links": {
     /**
-     * Get all invitation links 
+     * Get all invitation links
      * @description {
      *   "text": "Get organization-wide invitation links"
      * }
      */
     get: {
       /**
-       * Get all invitation links 
+       * Get all invitation links
        * @description {
        *   "text": "Get organization-wide invitation links"
        * }
@@ -19079,14 +19079,14 @@ export interface paths {
       };
     };
     /**
-     * Create invitation link 
+     * Create invitation link
      * @description {
      *   "text": "Create an organization-wide invitation link"
      * }
      */
     post: {
       /**
-       * Create invitation link 
+       * Create invitation link
        * @description {
        *   "text": "Create an organization-wide invitation link"
        * }
@@ -19128,14 +19128,14 @@ export interface paths {
   };
   "/team-directory/invitation-links/{invitationLinkId}": {
     /**
-     * Delete invitation link 
+     * Delete invitation link
      * @description {
      *   "text": "Delete currently active organization-wide invitation link"
      * }
      */
     delete: {
       /**
-       * Delete invitation link 
+       * Delete invitation link
        * @description {
        *   "text": "Delete currently active organization-wide invitation link"
        * }
@@ -19152,14 +19152,14 @@ export interface paths {
       };
     };
     /**
-     * Update invitation link 
+     * Update invitation link
      * @description {
      *   "text": "Update an organization-wide invitation link"
      * }
      */
     patch: {
       /**
-       * Update invitation link 
+       * Update invitation link
        * @description {
        *   "text": "Update an organization-wide invitation link"
        * }
@@ -19193,14 +19193,14 @@ export interface paths {
   };
   "/team-directory/invitations": {
     /**
-     * Get all invitations 
+     * Get all invitations
      * @description {
      *   "text": "Get a list of invitations"
      * }
      */
     get: {
       /**
-       * Get all invitations 
+       * Get all invitations
        * @description {
        *   "text": "Get a list of invitations"
        * }
@@ -19231,14 +19231,14 @@ export interface paths {
       };
     };
     /**
-     * Create invitation 
+     * Create invitation
      * @description {
      *   "text": "Create an invitation to join the current organization. Optionally, the team and/or role to join when accepting the invitation can be specified."
      * }
      */
     post: {
       /**
-       * Create invitation 
+       * Create invitation
        * @description {
        *   "text": "Create an invitation to join the current organization. Optionally, the team and/or role to join when accepting the invitation can be specified."
        * }
@@ -19275,14 +19275,14 @@ export interface paths {
   };
   "/team-directory/invitations/{id}": {
     /**
-     * Delete invitation 
+     * Delete invitation
      * @description {
      *   "text": "Delete an invitation. Deleted invitations can no longer be used to join the organization."
      * }
      */
     delete: {
       /**
-       * Delete invitation 
+       * Delete invitation
        * @description {
        *   "text": "Delete an invitation. Deleted invitations can no longer be used to join the organization."
        * }
@@ -19299,14 +19299,14 @@ export interface paths {
       };
     };
     /**
-     * Update invitation 
+     * Update invitation
      * @description {
      *   "text": "Update an invitation. Optional parameters will be ignored when not specified and updated otherwise."
      * }
      */
     patch: {
       /**
-       * Update invitation 
+       * Update invitation
        * @description {
        *   "text": "Update an invitation. Optional parameters will be ignored when not specified and updated otherwise."
        * }
@@ -19338,14 +19338,14 @@ export interface paths {
   };
   "/team-directory/languages": {
     /**
-     * Get all languages 
+     * Get all languages
      * @description {
      *   "text": "Get all languages"
      * }
      */
     get: {
       /**
-       * Get all languages 
+       * Get all languages
        * @description {
        *   "text": "Get all languages"
        * }
@@ -19368,14 +19368,14 @@ export interface paths {
   };
   "/team-directory/location-equipment-types": {
     /**
-     * Get all location equipment types 
+     * Get all location equipment types
      * @description {
      *   "text": "Get all equipment types"
      * }
      */
     get: {
       /**
-       * Get all location equipment types 
+       * Get all location equipment types
        * @description {
        *   "text": "Get all equipment types"
        * }
@@ -19399,14 +19399,14 @@ export interface paths {
   };
   "/team-directory/location-equipment-types/name:{name}": {
     /**
-     * Delete location equipment type by name 
+     * Delete location equipment type by name
      * @description {
      *   "text": "Archive/restore location equipment type. Setting delete to true will archive the equipment type, false will restore it."
      * }
      */
     delete: {
       /**
-       * Delete location equipment type by name 
+       * Delete location equipment type by name
        * @description {
        *   "text": "Archive/restore location equipment type. Setting delete to true will archive the equipment type, false will restore it."
        * }
@@ -19428,14 +19428,14 @@ export interface paths {
   };
   "/team-directory/location-map-member-points": {
     /**
-     * Get all location map member points 
+     * Get all location map member points
      * @description {
      *   "text": "Get members on a map for a location ID"
      * }
      */
     get: {
       /**
-       * Get all location map member points 
+       * Get all location map member points
        * @description {
        *   "text": "Get members on a map for a location ID"
        * }
@@ -19465,14 +19465,14 @@ export interface paths {
       };
     };
     /**
-     * Create location map member point 
+     * Create location map member point
      * @description {
      *   "text": "Mark member location on a map"
      * }
      */
     post: {
       /**
-       * Create location map member point 
+       * Create location map member point
        * @description {
        *   "text": "Mark member location on a map"
        * }
@@ -19507,14 +19507,14 @@ export interface paths {
   };
   "/team-directory/location-map-member-points/{locationPointId}": {
     /**
-     * Delete location map member point 
+     * Delete location map member point
      * @description {
      *   "text": "Delete member location from a map"
      * }
      */
     delete: {
       /**
-       * Delete location map member point 
+       * Delete location map member point
        * @description {
        *   "text": "Delete member location from a map"
        * }
@@ -19534,14 +19534,14 @@ export interface paths {
       };
     };
     /**
-     * Update location map member point 
+     * Update location map member point
      * @description {
      *   "text": "Update member location on a map"
      * }
      */
     patch: {
       /**
-       * Update location map member point 
+       * Update location map member point
        * @description {
        *   "text": "Update member location on a map"
        * }
@@ -19577,14 +19577,14 @@ export interface paths {
   };
   "/team-directory/locations": {
     /**
-     * Get all locations 
+     * Get all locations
      * @description {
      *   "text": "Get/search all locations. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all locations 
+       * Get all locations
        * @description {
        *   "text": "Get/search all locations. Parameters are applied as 'AND' filters."
        * }
@@ -19608,14 +19608,14 @@ export interface paths {
       };
     };
     /**
-     * Create location 
+     * Create location
      * @description {
      *   "text": "Create a location"
      * }
      */
     post: {
       /**
-       * Create location 
+       * Create location
        * @description {
        *   "text": "Create a location"
        * }
@@ -19656,14 +19656,14 @@ export interface paths {
   };
   "/team-directory/locations/restore": {
     /**
-     * Restore multiple locations 
+     * Restore multiple locations
      * @description {
      *   "text": "Restore one or more archived locations"
      * }
      */
     post: {
       /**
-       * Restore multiple locations 
+       * Restore multiple locations
        * @description {
        *   "text": "Restore one or more archived locations"
        * }
@@ -19693,14 +19693,14 @@ export interface paths {
   };
   "/team-directory/locations/{id}/restore": {
     /**
-     * Restore location 
+     * Restore location
      * @description {
      *   "text": "Restore an archived location"
      * }
      */
     post: {
       /**
-       * Restore location 
+       * Restore location
        * @description {
        *   "text": "Restore an archived location"
        * }
@@ -19726,14 +19726,14 @@ export interface paths {
   };
   "/team-directory/locations/{id}": {
     /**
-     * Get location 
+     * Get location
      * @description {
      *   "text": "Get a location by ID"
      * }
      */
     get: {
       /**
-       * Get location 
+       * Get location
        * @description {
        *   "text": "Get a location by ID"
        * }
@@ -19757,14 +19757,14 @@ export interface paths {
       };
     };
     /**
-     * Archive location 
+     * Archive location
      * @description {
      *   "text": "Archive a location"
      * }
      */
     delete: {
       /**
-       * Archive location 
+       * Archive location
        * @description {
        *   "text": "Archive a location"
        * }
@@ -19788,14 +19788,14 @@ export interface paths {
       };
     };
     /**
-     * Update location 
+     * Update location
      * @description {
      *   "text": "Update a location. Optional parameters will be ignored when null and updated otherwise."
      * }
      */
     patch: {
       /**
-       * Update location 
+       * Update location
        * @description {
        *   "text": "Update a location. Optional parameters will be ignored when null and updated otherwise."
        * }
@@ -19841,14 +19841,14 @@ export interface paths {
   };
   "/team-directory/locations/{id}/map": {
     /**
-     * Get map 
+     * Get map
      * @description {
      *   "text": "Get map for a location ID"
      * }
      */
     get: {
       /**
-       * Get map 
+       * Get map
        * @description {
        *   "text": "Get map for a location ID"
        * }
@@ -19872,14 +19872,14 @@ export interface paths {
       };
     };
     /**
-     * Update map 
+     * Update map
      * @description {
      *   "text": "Update the map for a location"
      * }
      */
     patch: {
       /**
-       * Update map 
+       * Update map
        * @description {
        *   "text": "Update the map for a location"
        * }
@@ -19912,14 +19912,14 @@ export interface paths {
   };
   "/team-directory/locations-with-timezone": {
     /**
-     * Get all locations with timezone 
+     * Get all locations with timezone
      * @description {
      *   "text": "Get all locations with their time zone"
      * }
      */
     get: {
       /**
-       * Get all locations with timezone 
+       * Get all locations with timezone
        * @description {
        *   "text": "Get all locations with their time zone"
        * }
@@ -19942,14 +19942,14 @@ export interface paths {
   };
   "/team-directory/member-locations": {
     /**
-     * Get all member locations 
+     * Get all member locations
      * @description {
      *   "text": "Get/search member locations. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all member locations 
+       * Get all member locations
        * @description {
        *   "text": "Get/search member locations. Parameters are applied as 'AND' filters."
        * }
@@ -19982,14 +19982,14 @@ export interface paths {
       };
     };
     /**
-     * Create member location 
+     * Create member location
      * @description {
      *   "text": "Add a member location, optionally from/until a given date"
      * }
      */
     post: {
       /**
-       * Create member location 
+       * Create member location
        * @description {
        *   "text": "Add a member location, optionally from/until a given date"
        * }
@@ -20025,14 +20025,14 @@ export interface paths {
   };
   "/team-directory/member-locations/{memberLocationId}": {
     /**
-     * Get member location 
+     * Get member location
      * @description {
      *   "text": "Get a member location by its ID"
      * }
      */
     get: {
       /**
-       * Get member location 
+       * Get member location
        * @description {
        *   "text": "Get a member location by its ID"
        * }
@@ -20056,14 +20056,14 @@ export interface paths {
       };
     };
     /**
-     * Delete member location 
+     * Delete member location
      * @description {
      *   "text": "Archive/unarchive a member location. Setting delete to true will archive the member location, false will restore it."
      * }
      */
     delete: {
       /**
-       * Delete member location 
+       * Delete member location
        * @description {
        *   "text": "Archive/unarchive a member location. Setting delete to true will archive the member location, false will restore it."
        * }
@@ -20083,14 +20083,14 @@ export interface paths {
       };
     };
     /**
-     * Update member location 
+     * Update member location
      * @description {
      *   "text": "Update member location. Optional parameters will be ignored when null and updated otherwise."
      * }
      */
     patch: {
       /**
-       * Update member location 
+       * Update member location
        * @description {
        *   "text": "Update member location. Optional parameters will be ignored when null and updated otherwise."
        * }
@@ -20127,14 +20127,14 @@ export interface paths {
   };
   "/team-directory/membership-events": {
     /**
-     * Get all membership events 
+     * Get all membership events
      * @description {
      *   "text": "Get/search membership events. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all membership events 
+       * Get all membership events
        * @description {
        *   "text": "Get/search membership events. Parameters are applied as 'AND' filters."
        * }
@@ -20167,14 +20167,14 @@ export interface paths {
   };
   "/team-directory/memberships": {
     /**
-     * Get all memberships 
+     * Get all memberships
      * @description {
      *   "text": "Get/search team memberships. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all memberships 
+       * Get all memberships
        * @description {
        *   "text": "Get/search team memberships. Parameters are applied as 'AND' filters."
        * }
@@ -20212,14 +20212,14 @@ export interface paths {
       };
     };
     /**
-     * Create membership 
+     * Create membership
      * @description {
      *   "text": "Create a team membership"
      * }
      */
     post: {
       /**
-       * Create membership 
+       * Create membership
        * @description {
        *   "text": "Create a team membership"
        * }
@@ -20262,14 +20262,14 @@ export interface paths {
   };
   "/team-directory/memberships/sync-batch": {
     /**
-     * Get sync batch 
+     * Get sync batch
      * @description {
      *   "text": "Get memberships for synchronization with third-party system. Memberships with etag greater than specified value are returned. Read more in the [documentation](https://www.jetbrains.com/help/space/sync-api.html)."
      * }
      */
     get: {
       /**
-       * Get sync batch 
+       * Get sync batch
        * @description {
        *   "text": "Get memberships for synchronization with third-party system. Memberships with etag greater than specified value are returned. Read more in the [documentation](https://www.jetbrains.com/help/space/sync-api.html)."
        * }
@@ -20297,14 +20297,14 @@ export interface paths {
   };
   "/team-directory/memberships/{membershipId}": {
     /**
-     * Get membership 
+     * Get membership
      * @description {
      *   "text": "Get a single membership by its identifier"
      * }
      */
     get: {
       /**
-       * Get membership 
+       * Get membership
        * @description {
        *   "text": "Get a single membership by its identifier"
        * }
@@ -20328,14 +20328,14 @@ export interface paths {
       };
     };
     /**
-     * Delete membership 
+     * Delete membership
      * @description {
      *   "text": "Archive/unarchive a team membership. Setting delete to true will archive the membership, false will restore it."
      * }
      */
     delete: {
       /**
-       * Delete membership 
+       * Delete membership
        * @description {
        *   "text": "Archive/unarchive a team membership. Setting delete to true will archive the membership, false will restore it."
        * }
@@ -20355,14 +20355,14 @@ export interface paths {
       };
     };
     /**
-     * Update membership 
+     * Update membership
      * @description {
      *   "text": "Update a team membership. Optional parameters will be ignored when null and updated otherwise."
      * }
      */
     patch: {
       /**
-       * Update membership 
+       * Update membership
        * @description {
        *   "text": "Update a team membership. Optional parameters will be ignored when null and updated otherwise."
        * }
@@ -20405,14 +20405,14 @@ export interface paths {
   };
   "/team-directory/memberships/{membershipId}/revoke": {
     /**
-     * Revoke membership 
+     * Revoke membership
      * @description {
      *   "text": "Revoke a team membership to end at a given date/time"
      * }
      */
     delete: {
       /**
-       * Revoke membership 
+       * Revoke membership
        * @description {
        *   "text": "Revoke a team membership to end at a given date/time"
        * }
@@ -20434,14 +20434,14 @@ export interface paths {
   };
   "/team-directory/memberships/manager-candidates": {
     /**
-     * Get manager candidate 
+     * Get manager candidate
      * @description {
      *   "text": "Query profiles that can be a manager"
      * }
      */
     get: {
       /**
-       * Get manager candidate 
+       * Get manager candidate
        * @description {
        *   "text": "Query profiles that can be a manager"
        * }
@@ -20474,14 +20474,14 @@ export interface paths {
   };
   "/team-directory/memberships/requests": {
     /**
-     * Get all requests 
+     * Get all requests
      * @description {
      *   "text": "Get/search all membership requests. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all requests 
+       * Get all requests
        * @description {
        *   "text": "Get/search all membership requests. Parameters are applied as 'AND' filters."
        * }
@@ -20516,14 +20516,14 @@ export interface paths {
   };
   "/team-directory/memberships/requests/{membershipRequestId}": {
     /**
-     * Delete request 
+     * Delete request
      * @description {
      *   "text": "Delete a team membership request"
      * }
      */
     delete: {
       /**
-       * Delete request 
+       * Delete request
        * @description {
        *   "text": "Delete a team membership request"
        * }
@@ -20547,14 +20547,14 @@ export interface paths {
       };
     };
     /**
-     * Update request 
+     * Update request
      * @description {
      *   "text": "Approve/reject a team membership request. Setting approved to true will approve the membership request, false will reject it."
      * }
      */
     patch: {
       /**
-       * Update request 
+       * Update request
        * @description {
        *   "text": "Approve/reject a team membership request. Setting approved to true will approve the membership request, false will reject it."
        * }
@@ -20580,14 +20580,14 @@ export interface paths {
   };
   "/team-directory/memberships/{membershipId}/request-revoke": {
     /**
-     * Request membership revocation 
+     * Request membership revocation
      * @description {
      *   "text": "Request a team membership to end at a given date/time. Will need approval."
      * }
      */
     patch: {
       /**
-       * Request membership revocation 
+       * Request membership revocation
        * @description {
        *   "text": "Request a team membership to end at a given date/time. Will need approval."
        * }
@@ -20614,14 +20614,14 @@ export interface paths {
   };
   "/team-directory/profiles": {
     /**
-     * Get all profiles 
+     * Get all profiles
      * @description {
      *   "text": "Get/search all profiles. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all profiles 
+       * Get all profiles
        * @description {
        *   "text": "Get/search all profiles. Parameters are applied as 'AND' filters."
        * }
@@ -20660,14 +20660,14 @@ export interface paths {
       };
     };
     /**
-     * Create profile 
+     * Create profile
      * @description {
      *   "text": "Create a profile"
      * }
      */
     post: {
       /**
-       * Create profile 
+       * Create profile
        * @description {
        *   "text": "Create a profile"
        * }
@@ -20729,14 +20729,14 @@ export interface paths {
   };
   "/team-directory/profiles/email:{email}": {
     /**
-     * Get profile by email 
+     * Get profile by email
      * @description {
      *   "text": "Get profile information by email address"
      * }
      */
     get: {
       /**
-       * Get profile by email 
+       * Get profile by email
        * @description {
        *   "text": "Get profile information by email address"
        * }
@@ -20763,14 +20763,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}": {
     /**
-     * Get profile 
+     * Get profile
      * @description {
      *   "text": "Get profile information"
      * }
      */
     get: {
       /**
-       * Get profile 
+       * Get profile
        * @description {
        *   "text": "Get profile information"
        * }
@@ -20794,14 +20794,14 @@ export interface paths {
       };
     };
     /**
-     * Delete profile 
+     * Delete profile
      * @description {
      *   "text": "Delete a profile"
      * }
      */
     delete: {
       /**
-       * Delete profile 
+       * Delete profile
        * @description {
        *   "text": "Delete a profile"
        * }
@@ -20825,14 +20825,14 @@ export interface paths {
       };
     };
     /**
-     * Update profile 
+     * Update profile
      * @description {
      *   "text": "Update a profile. Optional parameters will be ignored when null and updated otherwise."
      * }
      */
     patch: {
       /**
-       * Update profile 
+       * Update profile
        * @description {
        *   "text": "Update a profile. Optional parameters will be ignored when null and updated otherwise."
        * }
@@ -20886,14 +20886,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/is-team-member": {
     /**
-     * Check if profile is team member 
+     * Check if profile is team member
      * @description {
      *   "text": "Check if a user profile is a member of one or more teams"
      * }
      */
     get: {
       /**
-       * Check if profile is team member 
+       * Check if profile is team member
        * @description {
        *   "text": "Check if a user profile is a member of one or more teams"
        * }
@@ -20919,14 +20919,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/convert-to-guest": {
     /**
-     * Convert organization member into guest user 
+     * Convert organization member into guest user
      * @description {
      *   "text": "Convert to guest profile"
      * }
      */
     patch: {
       /**
-       * Convert organization member into guest user 
+       * Convert organization member into guest user
        * @description {
        *   "text": "Convert to guest profile"
        * }
@@ -20960,14 +20960,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/convert-to-member": {
     /**
-     * Convert guest user into organization member 
+     * Convert guest user into organization member
      * @description {
      *   "text": "Convert to organization member"
      * }
      */
     patch: {
       /**
-       * Convert guest user into organization member 
+       * Convert guest user into organization member
        * @description {
        *   "text": "Convert to organization member"
        * }
@@ -21000,14 +21000,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/reactivate": {
     /**
-     * Reactivate user profile 
+     * Reactivate user profile
      * @description {
      *   "text": "Reactivate a user profile"
      * }
      */
     patch: {
       /**
-       * Reactivate user profile 
+       * Reactivate user profile
        * @description {
        *   "text": "Reactivate a user profile"
        * }
@@ -21041,14 +21041,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/restore": {
     /**
-     * Restore suspended user profile 
+     * Restore suspended user profile
      * @description {
      *   "text": "Restore a suspended user profile"
      * }
      */
     patch: {
       /**
-       * Restore suspended user profile 
+       * Restore suspended user profile
        * @description {
        *   "text": "Restore a suspended user profile"
        * }
@@ -21074,14 +21074,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/suspend": {
     /**
-     * Suspend user profile 
+     * Suspend user profile
      * @description {
      *   "text": "Suspend a user profile"
      * }
      */
     patch: {
       /**
-       * Suspend user profile 
+       * Suspend user profile
        * @description {
        *   "text": "Suspend a user profile"
        * }
@@ -21115,14 +21115,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/deactivate": {
     /**
-     * Deactivate user profile 
+     * Deactivate user profile
      * @description {
      *   "text": "Deactivate a user profile"
      * }
      */
     delete: {
       /**
-       * Deactivate user profile 
+       * Deactivate user profile
        * @description {
        *   "text": "Deactivate a user profile"
        * }
@@ -21149,14 +21149,14 @@ export interface paths {
   };
   "/team-directory/profiles/authentication-sessions/{owner}": {
     /**
-     * Get all authentication sessions 
+     * Get all authentication sessions
      * @description {
      *   "text": "Get the current authentication sessions for a given profile ID"
      * }
      */
     get: {
       /**
-       * Get all authentication sessions 
+       * Get all authentication sessions
        * @description {
        *   "text": "Get the current authentication sessions for a given profile ID"
        * }
@@ -21182,14 +21182,14 @@ export interface paths {
   };
   "/team-directory/profiles/authentication-sessions/{owner}/{sessionId}": {
     /**
-     * Terminate own authentication session 
+     * Terminate own authentication session
      * @description {
      *   "text": "Terminate an existing authentication session. Doing so will close the session and log out."
      * }
      */
     delete: {
       /**
-       * Terminate own authentication session 
+       * Terminate own authentication session
        * @description {
        *   "text": "Terminate an existing authentication session. Doing so will close the session and log out."
        * }
@@ -21253,14 +21253,14 @@ export interface paths {
   };
   "/team-directory/profiles/favorites": {
     /**
-     * Add to favorites 
+     * Add to favorites
      * @description {
      *   "text": "Add an entity with the given `id` and of the given `kind` to favorites. For profiles this operation is called “follow” in the user interface."
      * }
      */
     post: {
       /**
-       * Add to favorites 
+       * Add to favorites
        * @description {
        *   "text": "Add an entity with the given `id` and of the given `kind` to favorites. For profiles this operation is called “follow” in the user interface."
        * }
@@ -21282,14 +21282,14 @@ export interface paths {
   };
   "/team-directory/profiles/favorites/deployment-targets": {
     /**
-     * Get favorite deployment targets 
+     * Get favorite deployment targets
      * @description {
      *   "text": "IDs of favorite deployment targets"
      * }
      */
     get: {
       /**
-       * Get favorite deployment targets 
+       * Get favorite deployment targets
        * @description {
        *   "text": "IDs of favorite deployment targets"
        * }
@@ -21307,14 +21307,14 @@ export interface paths {
   };
   "/team-directory/profiles/favorites/documents": {
     /**
-     * Get favorite documents 
+     * Get favorite documents
      * @description {
      *   "text": "IDs of favorite documents"
      * }
      */
     get: {
       /**
-       * Get favorite documents 
+       * Get favorite documents
        * @description {
        *   "text": "IDs of favorite documents"
        * }
@@ -21332,14 +21332,14 @@ export interface paths {
   };
   "/team-directory/profiles/favorites/jobs": {
     /**
-     * Get favorite jobs 
+     * Get favorite jobs
      * @description {
      *   "text": "IDs of favorite jobs"
      * }
      */
     get: {
       /**
-       * Get favorite jobs 
+       * Get favorite jobs
        * @description {
        *   "text": "IDs of favorite jobs"
        * }
@@ -21357,14 +21357,14 @@ export interface paths {
   };
   "/team-directory/profiles/favorites/locations": {
     /**
-     * Get favorite locations 
+     * Get favorite locations
      * @description {
      *   "text": "Favorite locations"
      * }
      */
     get: {
       /**
-       * Get favorite locations 
+       * Get favorite locations
        * @description {
        *   "text": "Favorite locations"
        * }
@@ -21387,14 +21387,14 @@ export interface paths {
   };
   "/team-directory/profiles/favorites/profiles": {
     /**
-     * Get followed profiles 
+     * Get followed profiles
      * @description {
      *   "text": "Followed profiles"
      * }
      */
     get: {
       /**
-       * Get followed profiles 
+       * Get followed profiles
        * @description {
        *   "text": "Followed profiles"
        * }
@@ -21417,14 +21417,14 @@ export interface paths {
   };
   "/team-directory/profiles/favorites/projects": {
     /**
-     * Get favorite projects 
+     * Get favorite projects
      * @description {
      *   "text": "Favorite projects"
      * }
      */
     get: {
       /**
-       * Get favorite projects 
+       * Get favorite projects
        * @description {
        *   "text": "Favorite projects"
        * }
@@ -21447,14 +21447,14 @@ export interface paths {
   };
   "/team-directory/profiles/favorites/repositories": {
     /**
-     * Get favorite repositories 
+     * Get favorite repositories
      * @description {
      *   "text": "IDs of favorite code repositories"
      * }
      */
     get: {
       /**
-       * Get favorite repositories 
+       * Get favorite repositories
        * @description {
        *   "text": "IDs of favorite code repositories"
        * }
@@ -21472,14 +21472,14 @@ export interface paths {
   };
   "/team-directory/profiles/favorites/teams": {
     /**
-     * Get favorite teams 
+     * Get favorite teams
      * @description {
      *   "text": "Favorite teams"
      * }
      */
     get: {
       /**
-       * Get favorite teams 
+       * Get favorite teams
        * @description {
        *   "text": "Favorite teams"
        * }
@@ -21502,14 +21502,14 @@ export interface paths {
   };
   "/team-directory/profiles/favorites/{id}": {
     /**
-     * Remove from favorites 
+     * Remove from favorites
      * @description {
      *   "text": "Remove an entity with the given `id` and of the given `kind` from favorites. For profiles this operation is called “unfollow” in the user interface."
      * }
      */
     delete: {
       /**
-       * Remove from favorites 
+       * Remove from favorites
        * @description {
        *   "text": "Remove an entity with the given `id` and of the given `kind` from favorites. For profiles this operation is called “unfollow” in the user interface."
        * }
@@ -21531,14 +21531,14 @@ export interface paths {
   };
   "/team-directory/profiles/grammar-dictionary": {
     /**
-     * Get the personal dictionary entries 
+     * Get the personal dictionary entries
      * @description {
      *   "text": "This endpoint will return user's personal grammar dictionary entries"
      * }
      */
     get: {
       /**
-       * Get the personal dictionary entries 
+       * Get the personal dictionary entries
        * @description {
        *   "text": "This endpoint will return user's personal grammar dictionary entries"
        * }
@@ -21563,14 +21563,14 @@ export interface paths {
   };
   "/team-directory/profiles/grammar-dictionary/add": {
     /**
-     * Add the entry to the personal dictionary 
+     * Add the entry to the personal dictionary
      * @description {
      *   "text": "This endpoint will try to add an entry to the user's personal grammar dictionary and return true if the value is valid for dictionary, were not present before and then added and false otherwise."
      * }
      */
     post: {
       /**
-       * Add the entry to the personal dictionary 
+       * Add the entry to the personal dictionary
        * @description {
        *   "text": "This endpoint will try to add an entry to the user's personal grammar dictionary and return true if the value is valid for dictionary, were not present before and then added and false otherwise."
        * }
@@ -21597,14 +21597,14 @@ export interface paths {
   };
   "/team-directory/profiles/grammar-dictionary/remove": {
     /**
-     * Remove the entry from the personal dictionary 
+     * Remove the entry from the personal dictionary
      * @description {
      *   "text": "This endpoint will try to remove an entry from the user's personal grammar dictionary and return true if the value was present and removed and false otherwise."
      * }
      */
     delete: {
       /**
-       * Remove the entry from the personal dictionary 
+       * Remove the entry from the personal dictionary
        * @description {
        *   "text": "This endpoint will try to remove an entry from the user's personal grammar dictionary and return true if the value was present and removed and false otherwise."
        * }
@@ -21629,14 +21629,14 @@ export interface paths {
   };
   "/team-directory/profiles/oauth-consents/{owner}": {
     /**
-     * Get OAuth consents 
+     * Get OAuth consents
      * @description {
      *   "text": "Get all OAuth consents for a given profile ID"
      * }
      */
     get: {
       /**
-       * Get OAuth consents 
+       * Get OAuth consents
        * @description {
        *   "text": "Get all OAuth consents for a given profile ID"
        * }
@@ -21662,14 +21662,14 @@ export interface paths {
   };
   "/team-directory/profiles/oauth-consents/me/refresh-tokens/self": {
     /**
-     * Delete self 
+     * Delete self
      * @description {
      *   "text": "Remove caller's own refresh token. This will require the client to re-authenticate."
      * }
      */
     delete: {
       /**
-       * Delete self 
+       * Delete self
        * @description {
        *   "text": "Remove caller's own refresh token. This will require the client to re-authenticate."
        * }
@@ -21683,14 +21683,14 @@ export interface paths {
   };
   "/team-directory/profiles/oauth-consents/{owner}/applications/{application}": {
     /**
-     * Delete application 
+     * Delete application
      * @description {
      *   "text": "Remove a previously approved application"
      * }
      */
     delete: {
       /**
-       * Delete application 
+       * Delete application
        * @description {
        *   "text": "Remove a previously approved application"
        * }
@@ -21710,14 +21710,14 @@ export interface paths {
   };
   "/team-directory/profiles/oauth-consents/{owner}/approved-scopes/{id}": {
     /**
-     * Delete approved scope 
+     * Delete approved scope
      * @description {
      *   "text": "Remove a previously approved scope"
      * }
      */
     delete: {
       /**
-       * Delete approved scope 
+       * Delete approved scope
        * @description {
        *   "text": "Remove a previously approved scope"
        * }
@@ -21737,14 +21737,14 @@ export interface paths {
   };
   "/team-directory/profiles/oauth-consents/{owner}/internal-applications/{clientId}": {
     /**
-     * Delete internal application 
+     * Delete internal application
      * @description {
      *   "text": "Remove a previously approved internal application"
      * }
      */
     delete: {
       /**
-       * Delete internal application 
+       * Delete internal application
        * @description {
        *   "text": "Remove a previously approved internal application"
        * }
@@ -21764,14 +21764,14 @@ export interface paths {
   };
   "/team-directory/profiles/oauth-consents/{owner}/refresh-tokens/{id}": {
     /**
-     * Delete refresh token 
+     * Delete refresh token
      * @description {
      *   "text": "Remove a refresh token. This will require the client to re-authenticate."
      * }
      */
     delete: {
       /**
-       * Delete refresh token 
+       * Delete refresh token
        * @description {
        *   "text": "Remove a refresh token. This will require the client to re-authenticate."
        * }
@@ -21835,14 +21835,14 @@ export interface paths {
   };
   "/team-directory/profiles/working-days": {
     /**
-     * Query all working days 
+     * Query all working days
      * @description {
      *   "text": "Returns pairs of profiles and their working days. If several working days settings are defined for the same profile then several pairs are returned."
      * }
      */
     get: {
       /**
-       * Query all working days 
+       * Query all working days
        * @description {
        *   "text": "Returns pairs of profiles and their working days. If several working days settings are defined for the same profile then several pairs are returned."
        * }
@@ -21875,14 +21875,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/2-fa/requirements": {
     /**
-     * Two-factor authentication requirements 
+     * Two-factor authentication requirements
      * @description {
      *   "text": "Get two-factor authentication requirements for a given profile ID. The response indicates whether two-factor authentication is required by participation in some permission roles."
      * }
      */
     get: {
       /**
-       * Two-factor authentication requirements 
+       * Two-factor authentication requirements
        * @description {
        *   "text": "Get two-factor authentication requirements for a given profile ID. The response indicates whether two-factor authentication is required by participation in some permission roles."
        * }
@@ -21908,14 +21908,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/2-fa/status": {
     /**
-     * Two-factor authentication status 
+     * Two-factor authentication status
      * @description {
      *   "text": "Get two-factor authentication status for a given profile ID. The response indicates whether two-factor authentication is active, not active, or not set up yet."
      * }
      */
     get: {
       /**
-       * Two-factor authentication status 
+       * Two-factor authentication status
        * @description {
        *   "text": "Get two-factor authentication status for a given profile ID. The response indicates whether two-factor authentication is active, not active, or not set up yet."
        * }
@@ -21938,14 +21938,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/2-fa/totp": {
     /**
-     * Set up TOTP two-factor authentication 
+     * Set up TOTP two-factor authentication
      * @description {
      *   "text": "Set up two-factor authentication using TOTP (Time-based One-time Password) for a given profile ID. The response will return a QR code (base64 encoded) that can be scanned with an app to setup two-factor authentication. The code that the app generates has to be confirmed in Space to enable TOTP."
      * }
      */
     post: {
       /**
-       * Set up TOTP two-factor authentication 
+       * Set up TOTP two-factor authentication
        * @description {
        *   "text": "Set up two-factor authentication using TOTP (Time-based One-time Password) for a given profile ID. The response will return a QR code (base64 encoded) that can be scanned with an app to setup two-factor authentication. The code that the app generates has to be confirmed in Space to enable TOTP."
        * }
@@ -21969,14 +21969,14 @@ export interface paths {
       };
     };
     /**
-     * Delete current TOTP two-factor authentication settings 
+     * Delete current TOTP two-factor authentication settings
      * @description {
      *   "text": "Remove two-factor authentication settings for a given profile ID. Previously generated TOTP (Time-based One-time Password) are rendered invalid."
      * }
      */
     delete: {
       /**
-       * Delete current TOTP two-factor authentication settings 
+       * Delete current TOTP two-factor authentication settings
        * @description {
        *   "text": "Remove two-factor authentication settings for a given profile ID. Previously generated TOTP (Time-based One-time Password) are rendered invalid."
        * }
@@ -21996,14 +21996,14 @@ export interface paths {
       };
     };
     /**
-     * Update TOTP two-factor authentication settings 
+     * Update TOTP two-factor authentication settings
      * @description {
      *   "text": "Enable/disable two-factor authentication settings for a given profile ID"
      * }
      */
     patch: {
       /**
-       * Update TOTP two-factor authentication settings 
+       * Update TOTP two-factor authentication settings
        * @description {
        *   "text": "Enable/disable two-factor authentication settings for a given profile ID"
        * }
@@ -22031,14 +22031,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/2-fa/totp/confirm": {
     /**
-     * Confirm TOTP two-factor authentication settings 
+     * Confirm TOTP two-factor authentication settings
      * @description {
      *   "text": "Confirm two-factor authentication for a given profile ID using a TOTP (Time-based One-time Password) code from an app."
      * }
      */
     post: {
       /**
-       * Confirm TOTP two-factor authentication settings 
+       * Confirm TOTP two-factor authentication settings
        * @description {
        *   "text": "Confirm two-factor authentication for a given profile ID using a TOTP (Time-based One-time Password) code from an app."
        * }
@@ -22167,16 +22167,16 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/checklists": {
     /**
-     * Create checklist 
-     * @deprecated 
+     * Create checklist
+     * @deprecated
      * @description {
      *   "text": "Create a new checklist associated with the profile"
      * }
      */
     post: {
       /**
-       * Create checklist 
-       * @deprecated 
+       * Create checklist
+       * @deprecated
        * @description {
        *   "text": "Create a new checklist associated with the profile"
        * }
@@ -22209,16 +22209,16 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/checklists/import": {
     /**
-     * Import checklist 
-     * @deprecated 
+     * Import checklist
+     * @deprecated
      * @description {
      *   "text": "Create a new checklist associated with the profile using tab indented lines as checkable items.\nThe items with the same indent level will be placed one under the other.\nAn issue URL will be converted into the corresponding issue."
      * }
      */
     post: {
       /**
-       * Import checklist 
-       * @deprecated 
+       * Import checklist
+       * @deprecated
        * @description {
        *   "text": "Create a new checklist associated with the profile using tab indented lines as checkable items.\nThe items with the same indent level will be placed one under the other.\nAn issue URL will be converted into the corresponding issue."
        * }
@@ -22252,14 +22252,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/checklists/{checklistId}/import": {
     /**
-     * Import checklist lines 
+     * Import checklist lines
      * @description {
      *   "text": "Tab indented lines are converted into checkable items following the same rules as in Import Checklist.\nThe result is placed inside of the specified personal checklist."
      * }
      */
     post: {
       /**
-       * Import checklist lines 
+       * Import checklist lines
        * @description {
        *   "text": "Tab indented lines are converted into checkable items following the same rules as in Import Checklist.\nThe result is placed inside of the specified personal checklist."
        * }
@@ -22288,16 +22288,16 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/checklists/{checklistId}": {
     /**
-     * Delete checklist 
-     * @deprecated 
+     * Delete checklist
+     * @deprecated
      * @description {
      *   "text": "Delete an existing checklist associated with the profile"
      * }
      */
     delete: {
       /**
-       * Delete checklist 
-       * @deprecated 
+       * Delete checklist
+       * @deprecated
        * @description {
        *   "text": "Delete an existing checklist associated with the profile"
        * }
@@ -22315,16 +22315,16 @@ export interface paths {
       };
     };
     /**
-     * Update checklist 
-     * @deprecated 
+     * Update checklist
+     * @deprecated
      * @description {
      *   "text": "Update an existing checklist associated with the profile"
      * }
      */
     patch: {
       /**
-       * Update checklist 
-       * @deprecated 
+       * Update checklist
+       * @deprecated
        * @description {
        *   "text": "Update an existing checklist associated with the profile"
        * }
@@ -22352,14 +22352,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/checklists/{checklistId}/full-checklist-tree": {
     /**
-     * Get full checklist tree 
+     * Get full checklist tree
      * @description {
      *   "text": "Get the content of a checklist associated with the profile"
      * }
      */
     get: {
       /**
-       * Get full checklist tree 
+       * Get full checklist tree
        * @description {
        *   "text": "Get the content of a checklist associated with the profile"
        * }
@@ -22386,14 +22386,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents": {
     /**
-     * Create document 
+     * Create document
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Create document 
+       * Create document
        * @description {
        *   "text": ""
        * }
@@ -22429,14 +22429,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents/{documentId}": {
     /**
-     * Get document 
+     * Get document
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get document 
+       * Get document
        * @description {
        *   "text": ""
        * }
@@ -22461,14 +22461,14 @@ export interface paths {
       };
     };
     /**
-     * Archive document 
+     * Archive document
      * @description {
      *   "text": ""
      * }
      */
     delete: {
       /**
-       * Archive document 
+       * Archive document
        * @description {
        *   "text": ""
        * }
@@ -22486,14 +22486,14 @@ export interface paths {
       };
     };
     /**
-     * Update document 
+     * Update document
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Update document 
+       * Update document
        * @description {
        *   "text": ""
        * }
@@ -22529,14 +22529,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents/folders": {
     /**
-     * Create folder 
+     * Create folder
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Create folder 
+       * Create folder
        * @description {
        *   "text": ""
        * }
@@ -22570,14 +22570,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents/folders/{folder}": {
     /**
-     * Get folder 
+     * Get folder
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get folder 
+       * Get folder
        * @description {
        *   "text": ""
        * }
@@ -22602,14 +22602,14 @@ export interface paths {
       };
     };
     /**
-     * Archive folder 
+     * Archive folder
      * @description {
      *   "text": ""
      * }
      */
     delete: {
       /**
-       * Archive folder 
+       * Archive folder
        * @description {
        *   "text": ""
        * }
@@ -22627,14 +22627,14 @@ export interface paths {
       };
     };
     /**
-     * Rename folder 
+     * Rename folder
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Rename folder 
+       * Rename folder
        * @description {
        *   "text": ""
        * }
@@ -22661,14 +22661,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents/folders/{folder}/access": {
     /**
-     * Folder own access permissions 
+     * Folder own access permissions
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Folder own access permissions 
+       * Folder own access permissions
        * @description {
        *   "text": ""
        * }
@@ -22693,14 +22693,14 @@ export interface paths {
       };
     };
     /**
-     * Update folder access permissions 
+     * Update folder access permissions
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Update folder access permissions 
+       * Update folder access permissions
        * @description {
        *   "text": ""
        * }
@@ -22729,14 +22729,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents/folders/{folder}/documents": {
     /**
-     * List documents in folder 
+     * List documents in folder
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * List documents in folder 
+       * List documents in folder
        * @description {
        *   "text": ""
        * }
@@ -22773,14 +22773,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents/folders/{folder}/introduction/{documentId}": {
     /**
-     * Add folder introduction 
+     * Add folder introduction
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Add folder introduction 
+       * Add folder introduction
        * @description {
        *   "text": ""
        * }
@@ -22801,14 +22801,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents/folders/{folder}/introduction": {
     /**
-     * Remove folder introduction 
+     * Remove folder introduction
      * @description {
      *   "text": ""
      * }
      */
     delete: {
       /**
-       * Remove folder introduction 
+       * Remove folder introduction
        * @description {
        *   "text": ""
        * }
@@ -22828,14 +22828,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents/folders/{folder}/move": {
     /**
-     * Move folder 
+     * Move folder
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Move folder 
+       * Move folder
        * @description {
        *   "text": ""
        * }
@@ -22869,14 +22869,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents/folders/{folder}/search": {
     /**
-     * Search documents and folders 
+     * Search documents and folders
      * @description {
      *   "text": "Executes search for personal documents and folders in specified folder"
      * }
      */
     get: {
       /**
-       * Search documents and folders 
+       * Search documents and folders
        * @description {
        *   "text": "Executes search for personal documents and folders in specified folder"
        * }
@@ -22913,14 +22913,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents/folders/{folder}/subfolders": {
     /**
-     * List subfolders 
+     * List subfolders
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * List subfolders 
+       * List subfolders
        * @description {
        *   "text": ""
        * }
@@ -22957,14 +22957,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents/{documentId}/access": {
     /**
-     * Document own access permissions 
+     * Document own access permissions
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Document own access permissions 
+       * Document own access permissions
        * @description {
        *   "text": ""
        * }
@@ -22989,14 +22989,14 @@ export interface paths {
       };
     };
     /**
-     * Update document access permissions 
+     * Update document access permissions
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Update document access permissions 
+       * Update document access permissions
        * @description {
        *   "text": ""
        * }
@@ -23025,14 +23025,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents/{documentId}/copy": {
     /**
-     * Copy document 
+     * Copy document
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Copy document 
+       * Copy document
        * @description {
        *   "text": ""
        * }
@@ -23067,14 +23067,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents/{documentId}/delete-forever": {
     /**
-     * Delete document forever 
+     * Delete document forever
      * @description {
      *   "text": ""
      * }
      */
     delete: {
       /**
-       * Delete document forever 
+       * Delete document forever
        * @description {
        *   "text": ""
        * }
@@ -23094,14 +23094,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents/{documentId}/move": {
     /**
-     * Move document 
+     * Move document
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Move document 
+       * Move document
        * @description {
        *   "text": ""
        * }
@@ -23135,14 +23135,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/documents/{documentId}/unarchive": {
     /**
-     * Unarchive document 
+     * Unarchive document
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Unarchive document 
+       * Unarchive document
        * @description {
        *   "text": ""
        * }
@@ -23169,14 +23169,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/gpg-keys": {
     /**
-     * List public GPG keys 
+     * List public GPG keys
      * @description {
      *   "text": "List GPG public keys associated with a profile"
      * }
      */
     get: {
       /**
-       * List public GPG keys 
+       * List public GPG keys
        * @description {
        *   "text": "List GPG public keys associated with a profile"
        * }
@@ -23272,16 +23272,16 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/leads": {
     /**
-     * Get all leads 
-     * @deprecated 
+     * Get all leads
+     * @deprecated
      * @description {
      *   "text": "Get team leads for a given profile ID"
      * }
      */
     get: {
       /**
-       * Get all leads 
-       * @deprecated 
+       * Get all leads
+       * @deprecated
        * @description {
        *   "text": "Get team leads for a given profile ID"
        * }
@@ -23328,14 +23328,14 @@ export interface paths {
       };
     };
     /**
-     * Update nav bar menu item 
+     * Update nav bar menu item
      * @description {
      *   "text": "Toggle visibility for a given navigation bar item"
      * }
      */
     patch: {
       /**
-       * Update nav bar menu item 
+       * Update nav bar menu item
        * @description {
        *   "text": "Toggle visibility for a given navigation bar item"
        * }
@@ -23362,14 +23362,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/nav-bar-projects": {
     /**
-     * Get all nav bar projects 
+     * Get all nav bar projects
      * @description {
      *   "text": "Add a project to the navigation bar"
      * }
      */
     get: {
       /**
-       * Get all nav bar projects 
+       * Get all nav bar projects
        * @description {
        *   "text": "Add a project to the navigation bar"
        * }
@@ -23393,14 +23393,14 @@ export interface paths {
       };
     };
     /**
-     * Create nav bar project 
+     * Create nav bar project
      * @description {
      *   "text": "Add a project to the navigation bar"
      * }
      */
     post: {
       /**
-       * Create nav bar project 
+       * Create nav bar project
        * @description {
        *   "text": "Add a project to the navigation bar"
        * }
@@ -23426,14 +23426,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/nav-bar-projects/{project}": {
     /**
-     * Delete nav bar project 
+     * Delete nav bar project
      * @description {
      *   "text": "Remove a project from the navigation bar"
      * }
      */
     delete: {
       /**
-       * Delete nav bar project 
+       * Delete nav bar project
        * @description {
        *   "text": "Remove a project from the navigation bar"
        * }
@@ -23453,14 +23453,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/notification-settings": {
     /**
-     * Get Space global notification settings for a profile 
+     * Get Space global notification settings for a profile
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get Space global notification settings for a profile 
+       * Get Space global notification settings for a profile
        * @description {
        *   "text": ""
        * }
@@ -23484,14 +23484,14 @@ export interface paths {
       };
     };
     /**
-     * Set Space global notification settings for a profile 
+     * Set Space global notification settings for a profile
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Set Space global notification settings for a profile 
+       * Set Space global notification settings for a profile
        * @description {
        *   "text": ""
        * }
@@ -23521,14 +23521,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/permanent-tokens": {
     /**
-     * Get all permanent tokens 
+     * Get all permanent tokens
      * @description {
      *   "text": "Get personal tokens used to access the current organization for the given profile"
      * }
      */
     get: {
       /**
-       * Get all permanent tokens 
+       * Get all permanent tokens
        * @description {
        *   "text": "Get personal tokens used to access the current organization for the given profile"
        * }
@@ -23559,14 +23559,14 @@ export interface paths {
       };
     };
     /**
-     * Create permanent token 
+     * Create permanent token
      * @description {
      *   "text": "Create a personal token for the given profile that can be used to access the current organization"
      * }
      */
     post: {
       /**
-       * Create permanent token 
+       * Create permanent token
        * @description {
        *   "text": "Create a personal token for the given profile that can be used to access the current organization"
        * }
@@ -23605,14 +23605,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/permanent-tokens/{tokenId}": {
     /**
-     * Delete permanent token 
+     * Delete permanent token
      * @description {
      *   "text": "Delete a specific personal token used to access the current organization"
      * }
      */
     delete: {
       /**
-       * Delete permanent token 
+       * Delete permanent token
        * @description {
        *   "text": "Delete a specific personal token used to access the current organization"
        * }
@@ -23630,14 +23630,14 @@ export interface paths {
       };
     };
     /**
-     * Update permanent token 
+     * Update permanent token
      * @description {
      *   "text": "Update an existing personal token used to access the current organization. The name and/or scope of the personal token can be updated."
      * }
      */
     patch: {
       /**
-       * Update permanent token 
+       * Update permanent token
        * @description {
        *   "text": "Update an existing personal token used to access the current organization. The name and/or scope of the personal token can be updated."
        * }
@@ -23667,14 +23667,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/permanent-tokens/current": {
     /**
-     * Delete current permanent token 
+     * Delete current permanent token
      * @description {
      *   "text": "Delete personal token of the given profile"
      * }
      */
     delete: {
       /**
-       * Delete current permanent token 
+       * Delete current permanent token
        * @description {
        *   "text": "Delete personal token of the given profile"
        * }
@@ -23693,14 +23693,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/settings": {
     /**
-     * Get Space personalization data for a profile 
+     * Get Space personalization data for a profile
      * @description {
      *   "text": "This endpoint will return profile information and Space personalisation data such as projects in the navigation bar, etc."
      * }
      */
     get: {
       /**
-       * Get Space personalization data for a profile 
+       * Get Space personalization data for a profile
        * @description {
        *   "text": "This endpoint will return profile information and Space personalisation data such as projects in the navigation bar, etc."
        * }
@@ -23724,14 +23724,14 @@ export interface paths {
       };
     };
     /**
-     * Set Space personalization data for a profile 
+     * Set Space personalization data for a profile
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Set Space personalization data for a profile 
+       * Set Space personalization data for a profile
        * @description {
        *   "text": ""
        * }
@@ -23767,14 +23767,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/spoken-languages": {
     /**
-     * Get all spoken languages 
+     * Get all spoken languages
      * @description {
      *   "text": "Get spoken language of a profile"
      * }
      */
     get: {
       /**
-       * Get all spoken languages 
+       * Get all spoken languages
        * @description {
        *   "text": "Get spoken language of a profile"
        * }
@@ -23798,14 +23798,14 @@ export interface paths {
       };
     };
     /**
-     * Create spoken language 
+     * Create spoken language
      * @description {
      *   "text": "Update spoken language for a profile. Optionally, firstName and lastName can be specified to add a localized name to the profile."
      * }
      */
     post: {
       /**
-       * Create spoken language 
+       * Create spoken language
        * @description {
        *   "text": "Update spoken language for a profile. Optionally, firstName and lastName can be specified to add a localized name to the profile."
        * }
@@ -23840,14 +23840,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/spoken-languages/{language}": {
     /**
-     * Delete spoken language 
+     * Delete spoken language
      * @description {
      *   "text": "Delete spoken language for a profile"
      * }
      */
     delete: {
       /**
-       * Delete spoken language 
+       * Delete spoken language
        * @description {
        *   "text": "Delete spoken language for a profile"
        * }
@@ -23867,14 +23867,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/ssh-keys": {
     /**
-     * Get all SSH keys 
+     * Get all SSH keys
      * @description {
      *   "text": "List SSH public keys associated with the profile"
      * }
      */
     get: {
       /**
-       * Get all SSH keys 
+       * Get all SSH keys
        * @description {
        *   "text": "List SSH public keys associated with the profile"
        * }
@@ -23898,14 +23898,14 @@ export interface paths {
       };
     };
     /**
-     * Associate SSH key with profile 
+     * Associate SSH key with profile
      * @description {
      *   "text": "Associate an SSH public key with the profile"
      * }
      */
     post: {
       /**
-       * Associate SSH key with profile 
+       * Associate SSH key with profile
        * @description {
        *   "text": "Associate an SSH public key with the profile"
        * }
@@ -23933,14 +23933,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/ssh-keys/{fingerprint}": {
     /**
-     * Remove association between SSH key and profile 
+     * Remove association between SSH key and profile
      * @description {
      *   "text": "Remove association between the profile and the SSH public key"
      * }
      */
     delete: {
       /**
-       * Remove association between SSH key and profile 
+       * Remove association between SSH key and profile
        * @description {
        *   "text": "Remove association between the profile and the SSH public key"
        * }
@@ -23960,14 +23960,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/timezone": {
     /**
-     * Get timezone 
+     * Get timezone
      * @description {
      *   "text": "Get profile timezone. Returns profile's working hours timezone, location timezone or device timezone, whichever is present first in this list."
      * }
      */
     get: {
       /**
-       * Get timezone 
+       * Get timezone
        * @description {
        *   "text": "Get profile timezone. Returns profile's working hours timezone, location timezone or device timezone, whichever is present first in this list."
        * }
@@ -23993,14 +23993,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/working-days": {
     /**
-     * Query working days for a profile 
+     * Query working days for a profile
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Query working days for a profile 
+       * Query working days for a profile
        * @description {
        *   "text": ""
        * }
@@ -24031,14 +24031,14 @@ export interface paths {
       };
     };
     /**
-     * Add working days 
+     * Add working days
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Add working days 
+       * Add working days
        * @description {
        *   "text": ""
        * }
@@ -24075,14 +24075,14 @@ export interface paths {
   };
   "/team-directory/profiles/{profile}/working-days/{workingDaysId}": {
     /**
-     * Delete working days 
+     * Delete working days
      * @description {
      *   "text": ""
      * }
      */
     delete: {
       /**
-       * Delete working days 
+       * Delete working days
        * @description {
        *   "text": ""
        * }
@@ -24100,14 +24100,14 @@ export interface paths {
       };
     };
     /**
-     * Update working days 
+     * Update working days
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Update working days 
+       * Update working days
        * @description {
        *   "text": ""
        * }
@@ -24145,14 +24145,14 @@ export interface paths {
   };
   "/team-directory/roles": {
     /**
-     * Get all roles 
+     * Get all roles
      * @description {
      *   "text": "Get/search all roles. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all roles 
+       * Get all roles
        * @description {
        *   "text": "Get/search all roles. Parameters are applied as 'AND' filters."
        * }
@@ -24175,14 +24175,14 @@ export interface paths {
       };
     };
     /**
-     * Create role 
+     * Create role
      * @description {
      *   "text": "Create a role"
      * }
      */
     post: {
       /**
-       * Create role 
+       * Create role
        * @description {
        *   "text": "Create a role"
        * }
@@ -24213,14 +24213,14 @@ export interface paths {
   };
   "/team-directory/roles/{id}/restore": {
     /**
-     * Restore role 
+     * Restore role
      * @description {
      *   "text": "Restore an archived role"
      * }
      */
     post: {
       /**
-       * Restore role 
+       * Restore role
        * @description {
        *   "text": "Restore an archived role"
        * }
@@ -24246,14 +24246,14 @@ export interface paths {
   };
   "/team-directory/roles/{id}": {
     /**
-     * Get role 
+     * Get role
      * @description {
      *   "text": "Get a role by ID"
      * }
      */
     get: {
       /**
-       * Get role 
+       * Get role
        * @description {
        *   "text": "Get a role by ID"
        * }
@@ -24277,14 +24277,14 @@ export interface paths {
       };
     };
     /**
-     * Archive role 
+     * Archive role
      * @description {
      *   "text": "Archive a role"
      * }
      */
     delete: {
       /**
-       * Archive role 
+       * Archive role
        * @description {
        *   "text": "Archive a role"
        * }
@@ -24301,14 +24301,14 @@ export interface paths {
       };
     };
     /**
-     * Update role 
+     * Update role
      * @description {
      *   "text": "Update a role. Optional parameters will be ignored when null and updated otherwise."
      * }
      */
     patch: {
       /**
-       * Update role 
+       * Update role
        * @description {
        *   "text": "Update a role. Optional parameters will be ignored when null and updated otherwise."
        * }
@@ -24342,14 +24342,14 @@ export interface paths {
   };
   "/team-directory/stats": {
     /**
-     * Get all stats 
+     * Get all stats
      * @description {
      *   "text": "Get statistics of total members, as well as members per location, role, and team. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all stats 
+       * Get all stats
        * @description {
        *   "text": "Get statistics of total members, as well as members per location, role, and team. Parameters are applied as 'AND' filters."
        * }
@@ -24375,14 +24375,14 @@ export interface paths {
   };
   "/team-directory/teams": {
     /**
-     * Get all teams 
+     * Get all teams
      * @description {
      *   "text": "Get or search all teams. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all teams 
+       * Get all teams
        * @description {
        *   "text": "Get or search all teams. Parameters are applied as 'AND' filters."
        * }
@@ -24412,14 +24412,14 @@ export interface paths {
       };
     };
     /**
-     * Create team 
+     * Create team
      * @description {
      *   "text": "Create a new team"
      * }
      */
     post: {
       /**
-       * Create team 
+       * Create team
        * @description {
        *   "text": "Create a new team"
        * }
@@ -24455,14 +24455,14 @@ export interface paths {
   };
   "/team-directory/teams/{id}/cancel-disbanding": {
     /**
-     * Cancel team disbanding 
+     * Cancel team disbanding
      * @description {
      *   "text": "Cancel disbanding a team and restore its members"
      * }
      */
     post: {
       /**
-       * Cancel team disbanding 
+       * Cancel team disbanding
        * @description {
        *   "text": "Cancel disbanding a team and restore its members"
        * }
@@ -24481,14 +24481,14 @@ export interface paths {
   };
   "/team-directory/teams/{id}/restore": {
     /**
-     * Restore team 
+     * Restore team
      * @description {
      *   "text": "Restore an archived team"
      * }
      */
     post: {
       /**
-       * Restore team 
+       * Restore team
        * @description {
        *   "text": "Restore an archived team"
        * }
@@ -24514,14 +24514,14 @@ export interface paths {
   };
   "/team-directory/teams/sync-batch": {
     /**
-     * Get sync batch 
+     * Get sync batch
      * @description {
      *   "text": "Get teams for synchronization with third-party system. Teams with etag greater than specified value are returned. Read more in the [documentation](https://www.jetbrains.com/help/space/sync-api.html)."
      * }
      */
     get: {
       /**
-       * Get sync batch 
+       * Get sync batch
        * @description {
        *   "text": "Get teams for synchronization with third-party system. Teams with etag greater than specified value are returned. Read more in the [documentation](https://www.jetbrains.com/help/space/sync-api.html)."
        * }
@@ -24549,14 +24549,14 @@ export interface paths {
   };
   "/team-directory/teams/{id}": {
     /**
-     * Get team 
+     * Get team
      * @description {
      *   "text": "Get a team by ID"
      * }
      */
     get: {
       /**
-       * Get team 
+       * Get team
        * @description {
        *   "text": "Get a team by ID"
        * }
@@ -24580,14 +24580,14 @@ export interface paths {
       };
     };
     /**
-     * Archive team 
+     * Archive team
      * @description {
      *   "text": "Archive a team"
      * }
      */
     delete: {
       /**
-       * Archive team 
+       * Archive team
        * @description {
        *   "text": "Archive a team"
        * }
@@ -24611,14 +24611,14 @@ export interface paths {
       };
     };
     /**
-     * Update team 
+     * Update team
      * @description {
      *   "text": "Update a team"
      * }
      */
     patch: {
       /**
-       * Update team 
+       * Update team
        * @description {
        *   "text": "Update a team"
        * }
@@ -24657,14 +24657,14 @@ export interface paths {
   };
   "/team-directory/teams/{id}/disband": {
     /**
-     * Disband team 
+     * Disband team
      * @description {
      *   "text": "Disband a team"
      * }
      */
     delete: {
       /**
-       * Disband team 
+       * Disband team
        * @description {
        *   "text": "Disband a team"
        * }
@@ -24690,14 +24690,14 @@ export interface paths {
   };
   "/team-directory/teams/{id}/direct-members": {
     /**
-     * Get all direct members 
+     * Get all direct members
      * @description {
      *   "text": "Get or search direct members of a given team"
      * }
      */
     get: {
       /**
-       * Get all direct members 
+       * Get all direct members
        * @description {
        *   "text": "Get or search direct members of a given team"
        * }
@@ -24731,14 +24731,14 @@ export interface paths {
   };
   "/time-tracking/items": {
     /**
-     * Get all items 
+     * Get all items
      * @description {
      *   "text": "Get items for subject"
      * }
      */
     get: {
       /**
-       * Get all items 
+       * Get all items
        * @description {
        *   "text": "Get items for subject"
        * }
@@ -24767,14 +24767,14 @@ export interface paths {
       };
     };
     /**
-     * Create item 
+     * Create item
      * @description {
      *   "text": "Create work item."
      * }
      */
     post: {
       /**
-       * Create item 
+       * Create item
        * @description {
        *   "text": "Create work item."
        * }
@@ -24810,14 +24810,14 @@ export interface paths {
   };
   "/time-tracking/items/{itemId}": {
     /**
-     * Delete item 
+     * Delete item
      * @description {
      *   "text": "Delete single work item"
      * }
      */
     delete: {
       /**
-       * Delete item 
+       * Delete item
        * @description {
        *   "text": "Delete single work item"
        * }
@@ -24834,14 +24834,14 @@ export interface paths {
       };
     };
     /**
-     * Update item 
+     * Update item
      * @description {
      *   "text": "Update a single work item."
      * }
      */
     patch: {
       /**
-       * Update item 
+       * Update item
        * @description {
        *   "text": "Update a single work item."
        * }
@@ -24872,14 +24872,14 @@ export interface paths {
   };
   "/todo": {
     /**
-     * Get all to-do items 
+     * Get all to-do items
      * @description {
      *   "text": "Get all To-Do items that match given parameters. Parameters are applied as 'AND' filters."
      * }
      */
     get: {
       /**
-       * Get all to-do items 
+       * Get all to-do items
        * @description {
        *   "text": "Get all To-Do items that match given parameters. Parameters are applied as 'AND' filters."
        * }
@@ -24910,14 +24910,14 @@ export interface paths {
       };
     };
     /**
-     * Create to-do item 
+     * Create to-do item
      * @description {
      *   "text": "Create a new To-Do item, with an optional due date"
      * }
      */
     post: {
       /**
-       * Create to-do item 
+       * Create to-do item
        * @description {
        *   "text": "Create a new To-Do item, with an optional due date"
        * }
@@ -24949,14 +24949,14 @@ export interface paths {
   };
   "/todo/{id}": {
     /**
-     * Delete to-do item 
+     * Delete to-do item
      * @description {
      *   "text": "Delete an existing To-Do item"
      * }
      */
     delete: {
       /**
-       * Delete to-do item 
+       * Delete to-do item
        * @description {
        *   "text": "Delete an existing To-Do item"
        * }
@@ -24973,14 +24973,14 @@ export interface paths {
       };
     };
     /**
-     * Update to-do item 
+     * Update to-do item
      * @description {
      *   "text": "Update an existing To-Do item. Optional parameters will be ignored when not specified and updated otherwise."
      * }
      */
     patch: {
       /**
-       * Update to-do item 
+       * Update to-do item
        * @description {
        *   "text": "Update an existing To-Do item. Optional parameters will be ignored when not specified and updated otherwise."
        * }
@@ -25009,14 +25009,14 @@ export interface paths {
   };
   "/trusted-certificates": {
     /**
-     * Get all trusted certificates 
+     * Get all trusted certificates
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get all trusted certificates 
+       * Get all trusted certificates
        * @description {
        *   "text": ""
        * }
@@ -25037,14 +25037,14 @@ export interface paths {
       };
     };
     /**
-     * Create trusted certificate 
+     * Create trusted certificate
      * @description {
      *   "text": ""
      * }
      */
     post: {
       /**
-       * Create trusted certificate 
+       * Create trusted certificate
        * @description {
        *   "text": ""
        * }
@@ -25076,14 +25076,14 @@ export interface paths {
   };
   "/trusted-certificates/info": {
     /**
-     * Get certificate info 
+     * Get certificate info
      * @description {
      *   "text": ""
      * }
      */
     get: {
       /**
-       * Get certificate info 
+       * Get certificate info
        * @description {
        *   "text": ""
        * }
@@ -25107,14 +25107,14 @@ export interface paths {
   };
   "/trusted-certificates/{id}": {
     /**
-     * Delete trusted certificate 
+     * Delete trusted certificate
      * @description {
      *   "text": ""
      * }
      */
     delete: {
       /**
-       * Delete trusted certificate 
+       * Delete trusted certificate
        * @description {
        *   "text": ""
        * }
@@ -25131,14 +25131,14 @@ export interface paths {
       };
     };
     /**
-     * Update trusted certificate 
+     * Update trusted certificate
      * @description {
      *   "text": ""
      * }
      */
     patch: {
       /**
-       * Update trusted certificate 
+       * Update trusted certificate
        * @description {
        *   "text": ""
        * }
@@ -25167,14 +25167,14 @@ export interface paths {
   };
   "/unfurls/block-unfurl": {
     /**
-     * Block link unfurling 
+     * Block link unfurling
      * @description {
      *   "text": "Block link unfurling"
      * }
      */
     post: {
       /**
-       * Block link unfurling 
+       * Block link unfurling
        * @description {
        *   "text": "Block link unfurling"
        * }
@@ -25196,14 +25196,14 @@ export interface paths {
   };
   "/unfurls/block-unfurl-global": {
     /**
-     * Block link unfurling for organization 
+     * Block link unfurling for organization
      * @description {
      *   "text": "Block link unfurling for organization"
      * }
      */
     post: {
       /**
-       * Block link unfurling for organization 
+       * Block link unfurling for organization
        * @description {
        *   "text": "Block link unfurling for organization"
        * }
@@ -25247,14 +25247,14 @@ export interface paths {
   };
   "/unfurls/unblock-unfurl": {
     /**
-     * Unblock link unfurling 
+     * Unblock link unfurling
      * @description {
      *   "text": "Unblock link unfurling"
      * }
      */
     post: {
       /**
-       * Unblock link unfurling 
+       * Unblock link unfurling
        * @description {
        *   "text": "Unblock link unfurling"
        * }
@@ -25276,14 +25276,14 @@ export interface paths {
   };
   "/unfurls/unblock-unfurl-global": {
     /**
-     * Unblock link unfurling for organization 
+     * Unblock link unfurling for organization
      * @description {
      *   "text": "Unblock link unfurling for organization"
      * }
      */
     post: {
       /**
-       * Unblock link unfurling for organization 
+       * Unblock link unfurling for organization
        * @description {
        *   "text": "Unblock link unfurling for organization"
        * }
@@ -25332,14 +25332,14 @@ export interface paths {
   };
   "/uploads": {
     /**
-     * Create upload 
+     * Create upload
      * @description {
      *   "text": "Request a URL that can be used to upload an attachment.\nAn attachment can be uploaded to the URL that is returned, by making a PUT request that has a proper content-type header and the attachment data as the request body. The PUT request returns a string that is an id of the uploaded attachment. The attachment id can be passed to other API methods where this attachment needs to be used. Attachments are available for download at `/d/{attachmentId}`.\nThe 'storagePrefix' parameter can be one of file, maps, emoji or attachments.\nThe 'mediaType' parameter can be omitted for all uploads. For image uploads that need to be resized automatically for specific use, such as chat stickers or emoji, use one of `chat-image-attachment`, `chat-sticker`, `emoji`."
      * }
      */
     post: {
       /**
-       * Create upload 
+       * Create upload
        * @description {
        *   "text": "Request a URL that can be used to upload an attachment.\nAn attachment can be uploaded to the URL that is returned, by making a PUT request that has a proper content-type header and the attachment data as the request body. The PUT request returns a string that is an id of the uploaded attachment. The attachment id can be passed to other API methods where this attachment needs to be used. Attachments are available for download at `/d/{attachmentId}`.\nThe 'storagePrefix' parameter can be one of file, maps, emoji or attachments.\nThe 'mediaType' parameter can be omitted for all uploads. For image uploads that need to be resized automatically for specific use, such as chat stickers or emoji, use one of `chat-image-attachment`, `chat-sticker`, `emoji`."
        * }
@@ -25365,14 +25365,14 @@ export interface paths {
   };
   "/uploads/chat/public-url/{channel}/{message}/{attachmentId}": {
     /**
-     * Get public url 
+     * Get public url
      * @description {
      *   "text": "Returns a URL that can be used to access attachment file without authentication"
      * }
      */
     get: {
       /**
-       * Get public url 
+       * Get public url
        * @description {
        *   "text": "Returns a URL that can be used to access attachment file without authentication"
        * }
@@ -25397,14 +25397,14 @@ export interface paths {
   };
   "/uploads/image/{id}": {
     /**
-     * Get image attachment metadata 
+     * Get image attachment metadata
      * @description {
      *   "text": "Get meta information for a previously uploaded image"
      * }
      */
     get: {
       /**
-       * Get image attachment metadata 
+       * Get image attachment metadata
        * @description {
        *   "text": "Get meta information for a previously uploaded image"
        * }

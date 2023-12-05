@@ -1,7 +1,11 @@
-import { useSetTitle, useRegisterElements } from "../../hooks";
+import { LoadingSpinner } from "@deskpro/app-sdk";
+import { useSetTitle, useRegisterElements, useLinkedIssues } from "../../hooks";
+import { Home } from "../../components";
 import type { FC } from "react";
 
 const HomePage: FC = () => {
+  const { issues, isLoading } = useLinkedIssues();
+
   useSetTitle("Space");
 
   useRegisterElements(({ registerElement }) => {
@@ -21,8 +25,14 @@ const HomePage: FC = () => {
     });
   });
 
+  if (isLoading) {
+    return (
+      <LoadingSpinner/>
+    );
+  }
+
   return (
-    <>HomePage</>
+    <Home issues={issues} />
   );
 };
 

@@ -1,11 +1,11 @@
 import size from "lodash/size";
 import { NoFound } from "./NoFound";
 import type { FC, ReactNode } from "react";
-import type { IssueType } from "../../../types";
+import type { Issue } from "../../../services/space/types";
 
 export type Props = {
-  issues: IssueType[],
-  children?: (issues: IssueType[]) => ReactNode,
+  issues: Issue[],
+  children?: (issues: Issue[]) => ReactNode,
 }
 
 const NoFoundIssues: FC<Props> = ({ children, issues }) => (

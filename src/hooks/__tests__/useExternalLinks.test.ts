@@ -28,7 +28,7 @@ describe("useExternalLinks", () => {
   test("should return issue link", () => {
     (getProjectsService as jest.Mock).mockResolvedValueOnce(mockProjects);
     const { result } = renderExternalLinksHook();
-    const link = result.current.getIssueLink(mockIssues.data[1] as never);
+    const link = result.current.getIssueLink(mockIssues[0] as never);
 
     expect(link).toBe("https://space.test/p/main/issues/7");
   });

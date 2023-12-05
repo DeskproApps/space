@@ -1,15 +1,11 @@
 import { cleanup } from "@testing-library/react";
-import { enhanceIssue } from "../../../../utils";
-import { render, mockContext, mockIssues } from "../../../../../testing";
+import { render, mockIssues } from "../../../../../testing";
 import { Issues } from "../Issues";
 import type { Props } from "../Issues";
 
 const renderIssues = (props?: Partial<Props>) => render((
   <Issues
-    issues={props?.issues || [
-      enhanceIssue(mockContext.settings, mockIssues.data[0] as never),
-      enhanceIssue(mockContext.settings, mockIssues.data[1] as never),
-    ]}
+    issues={props?.issues || mockIssues as never[]}
     isLoading={props?.isLoading || false}
     selectedIssues={props?.selectedIssues || []}
     onChangeSelectedIssue={props?.onChangeSelectedIssue || jest.fn()}

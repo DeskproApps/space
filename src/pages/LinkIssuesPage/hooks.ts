@@ -1,71 +1,42 @@
 import { useMemo } from "react";
 import get from "lodash/get";
+import map from "lodash/map";
+import { useQueryWithClient } from "@deskpro/app-sdk";
 import {
-  useQueryWithClient,
-  useDeskproLatestAppContext,
-} from "@deskpro/app-sdk";
-import {
-  getTagsServices,
-  getIssuesService,
   getProjectsService,
-  getIssueStatusesService,
-  getProjectMembersService,
+  searchIssuesService,
 } from "../../services/space";
+import { useIssues } from "../../hooks";
 import { QueryKey } from "../../query";
-import { enhanceIssue } from "../../utils";
-import type { Maybe, IssueType } from "../../types";
+import type { Maybe } from "../../types";
 import type { Project, Issue } from "../../services/space/types";
 
-type UseSearch = (projectId?: Maybe<Project["id"]>, q?: string) => {
+export type Result = {
   isLoading: boolean,
   projects: Project[],
-  issues: IssueType[],
+  issues: Issue[],
 };
 
-const useSearch: UseSearch = (projectId, q) => {
-  const { context } = useDeskproLatestAppContext();
-  const settings = useMemo(() => get(context, ["settings"]), [context]);
+type UseSearch = (projectId?: Maybe<Project["id"]>, q?: string) => Result;
 
+const useSearch: UseSearch = (projectId, q) => {
   const projects = useQueryWithClient([QueryKey.PROJECTS], getProjectsService);
 
-  const fetchIssues = useQueryWithClient(
+  const searchIssues = useQueryWithClient(
     [QueryKey.ISSUES, projectId as string, q as string],
-    (client) => getIssuesService(client, projectId as Project["id"], { q }),
+    (client) => searchIssuesService(client, projectId as Project["id"], { q }),
     { enabled: Boolean(projectId) && Boolean(q) },
   );
+  const issueIds = useMemo(() => {
+    return map(get(searchIssues.data, ["data"], []) || [], "id");
+  }, [searchIssues.data]);
 
-  const members = useQueryWithClient(
-    [QueryKey.PROJECT_MEMBERS, projectId as Project["id"]],
-    (client) => getProjectMembersService(client, projectId as Project["id"]),
-    { enabled: Boolean(projectId) },
-  );
-
-  const statuses = useQueryWithClient(
-    [QueryKey.ISSUE_STATUSES, projectId as Project["id"]],
-    (client) => getIssueStatusesService(client, projectId as Project["id"]),
-    { enabled: Boolean(projectId) },
-  );
-
-  const fetchTags = useQueryWithClient(
-    [QueryKey.ISSUE_TAGS, projectId as Project["id"]],
-    (client) => getTagsServices(client, projectId as Project["id"]),
-    { enabled: Boolean(projectId) },
-  );
-
-  const issues = (get(fetchIssues, ["data", "data"], []) || [])
-    .map((issue: Issue) => enhanceIssue(
-      settings,
-      issue,
-      get(projects, ["data", "data"]) || [],
-      get(fetchTags, ["data", "data"]) || [],
-      get(members, ["data", "data"]) || [],
-      get(statuses, ["data"]) || [],
-    ));
+  const issues = useIssues(issueIds);
 
   return {
-    isLoading: fetchIssues.isLoading && Boolean(q),
+    isLoading: [searchIssues, issues].some(({ isLoading }) => isLoading) && Boolean(q),
     projects: get(projects, ["data", "data"]) || [],
-    issues,
+    issues: issues.issues,
   };
 };
 

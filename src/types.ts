@@ -1,14 +1,7 @@
 import type { To, ParamKeyValuePair } from "react-router-dom";
 import type { DropdownValueType } from "@deskpro/deskpro-ui";
 import type { Context, IDeskproClient, V2ProxyRequestInitBody } from "@deskpro/app-sdk";
-import type {
-  Issue,
-  Member,
-  Project,
-  Response,
-  IssueTag,
-  IssueStatus,
-} from "./services/space/types";
+import type { Response } from "./services/space/types";
 
 /** Common types */
 export type Maybe<T> = T | undefined | null;
@@ -66,18 +59,3 @@ export type EventPayload =
 ;
 
 /** Space */
-export type ProjectType = Pick<Project, "id"|"name"> & {
-  key: Project["key"]["key"],
-  link?: Maybe<string>,
-};
-
-export type IssueType = Pick<Issue, "id"|"title"|"number"> & {
-  link?: Maybe<string>,
-  key?: Maybe<string>,
-  project?: Maybe<ProjectType>,
-  status?: Maybe<IssueStatus>,
-  createdAt?: Maybe<DateTime>,
-  dueDate?: Maybe<DateTime>,
-  tags: Maybe<IssueTag[]>,
-  assignee?: Maybe<Member>,
-};

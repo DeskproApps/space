@@ -2,12 +2,12 @@ import size from "lodash/size";
 import { Stack } from "@deskpro/deskpro-ui";
 import { Button } from "../../common";
 import type { FC } from "react";
-import type { IssueType } from "../../../types";
+import type { Issue } from "../../../services/space/types";
 
 export type Props = {
   isSubmitting: boolean,
   onCancel: () => void,
-  selectedIssues: IssueType[],
+  selectedIssues: Issue[],
   onLinkIssues: () => void,
 };
 

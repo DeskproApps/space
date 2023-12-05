@@ -10,18 +10,22 @@ import {
   Property,
   TwoProperties,
 } from "@deskpro/app-sdk";
+import { useExternalLinks } from "../../hooks";
 import { nbsp } from "../../constants";
 import { format } from "../../utils/date";
 import { SpaceLogo, Status, DeskproTickets, Tags } from "../common";
 import type { FC, MouseEvent } from "react";
-import type { IssueType } from "../../types";
+import type { Issue } from "../../services/space/types";
 
 export type Props = {
-  issue: IssueType,
+  issue: Issue,
   onClickTitle?: () => void,
 };
 
 const IssueItem: FC<Props> = ({ issue, onClickTitle }) => {
+  const { getIssueLink, getProjectLink } = useExternalLinks();
+  const issueLink = getIssueLink(issue);
+  const projectLink = getProjectLink(get(issue, ["projectRef"]));
   const fullName = useMemo(() => {
     const name = [
       get(issue, ["assignee", "name", "firstName"]),
@@ -44,23 +48,23 @@ const IssueItem: FC<Props> = ({ issue, onClickTitle }) => {
           : (<Link href="#" onClick={onClick}>{get(issue, ["title"])}</Link>)
         }
         marginBottom={10}
-        {...(!issue.link ? {} : { icon: <SpaceLogo/> })}
-        {...(!issue.link ? {} : { link: issue.link })}
+        {...(!issueLink ? {} : { icon: <SpaceLogo/> })}
+        {...(!issueLink ? {} : { link: issueLink })}
       />
       <TwoProperties
         leftLabel="Project"
         leftText={(
           <P5>
-            {get(issue, ["project", "name"]) || "-"}
-            {issue.project?.link && (
+            {get(issue, ["projectRef", "name"]) || "-"}
+            {Boolean(projectLink) && (
               <>
-                {nbsp}<LinkIcon href={issue.project.link} />
+                {nbsp}<LinkIcon href={projectLink as string} />
               </>
             )}
           </P5>
         )}
         rightLabel="Issue ID"
-        rightText={issue.key}
+        rightText={`${issue.projectRef.key.key}-T-${issue.number}`}
       />
       <TwoProperties
         leftLabel="Status"
@@ -72,9 +76,9 @@ const IssueItem: FC<Props> = ({ issue, onClickTitle }) => {
       />
       <TwoProperties
         leftLabel="Created"
-        leftText={format(issue.createdAt)}
+        leftText={format(get(issue, ["creationTime", "iso"]))}
         rightLabel="Due Date"
-        rightText={format(issue.dueDate)}
+        rightText={format(get(issue, ["dueDate", "iso"]))}
       />
       {Boolean(size(issue.tags)) && (
         <Property label="Tags" text={<Tags tags={issue.tags}/>} />
