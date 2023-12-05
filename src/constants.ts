@@ -25,6 +25,12 @@ export const placeholders = {
 /** Space */
 export const BASE_URL = `${placeholders.URL}`;
 
+export const SCOPES = [
+  "global:Project.View",
+  "global:Project.Issues.View",
+  "global:Profile.View",
+];
+
 export const PROJECT_FIELDS = ["id", "name", "key(key)"];
 
 export const TAG_FIELDS = ["id", "archived", "name", "projectId", "parent"];

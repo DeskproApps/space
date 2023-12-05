@@ -17,7 +17,7 @@ import {
   getOrganizationService,
 } from "../../services/space";
 import { getQueryParams } from "../../utils";
-import { DEFAULT_ERROR } from "../../constants";
+import { SCOPES, DEFAULT_ERROR } from "../../constants";
 import type { OAuth2StaticCallbackUrl } from "@deskpro/app-sdk";
 import type { Maybe, TicketContext } from "../../types";
 
@@ -58,11 +58,7 @@ const useLogin = (): Result => {
         client_id: clientId,
         request_credentials: "default",
         state: key,
-        scope: [
-          "global:Project.View",
-          "global:Project.Issues.View",
-          "global:Profile.View",
-        ].join(" "),
+        scope: SCOPES.join(" "),
       })}`);
     }
   }, [callback, spaceUrl, clientId, key]);
