@@ -33,6 +33,8 @@ const LinkIssuesPage: FC = () => {
   const { issues, projects, isLoading } = useSearch(projectId, searchQuery);
   const ticketId = useMemo(() => get(context, ["data", "ticket", "id"]), [context]);
 
+  const onNavigateToCreate = useCallback(() => navigate("/issues/create"), [navigate]);
+
   const onChangeSelectedIssue = useCallback((issue: Issue) => {
     let newSelectedIssues = cloneDeep(selectedIssues);
 
@@ -100,6 +102,7 @@ const LinkIssuesPage: FC = () => {
       selectedIssues={selectedIssues}
       onLinkIssues={onLinkIssues}
       onChangeSelectedIssue={onChangeSelectedIssue}
+      onNavigateToCreate={onNavigateToCreate}
     />
   );
 };

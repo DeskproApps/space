@@ -1,12 +1,8 @@
 import isEmpty from "lodash/isEmpty";
-import isString from "lodash";
+import isString from "lodash/isString";
 import { proxyFetch } from "@deskpro/app-sdk";
-import {
-  BASE_URL,
-  placeholders,
-  ACCESS_TOKEN_PATH,
-  REFRESH_TOKEN_PATH,
-} from "../../constants";
+import { refreshAccessTokenService } from "./refreshAccessTokenService";
+import { BASE_URL, placeholders } from "../../constants";
 import { getQueryParams } from "../../utils";
 import { SpaceError } from "./SpaceError";
 import type { Request, FetchOptions } from "../../types";
@@ -33,6 +29,7 @@ const baseRequest: Request = async (client, {
     },
   };
 
+
   if (!isEmpty(data)) {
     options.body = isString(data) ? data as string : JSON.stringify(data);
     options.headers = {
@@ -44,24 +41,7 @@ const baseRequest: Request = async (client, {
   let res = await dpFetch(requestUrl, options);
 
   if (res.status === 401) {
-    const refreshData = new FormData();
-    refreshData.append("grant_type", "refresh_token");
-    refreshData.append("refresh_token", placeholders.REFRESH_TOKEN);
-
-    await dpFetch(`${placeholders.URL}/oauth/token`, {
-      method: "POST",
-      body: getQueryParams(refreshData),
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Authorization": `Basic __client_id+':'+client_secret.base64__`,
-      },
-    })
-      .then((res) => res.json())
-      .then(({ access_token, refresh_token }) => Promise.all([
-        client.setUserState(ACCESS_TOKEN_PATH, access_token, { backend: true }),
-        client.setUserState(REFRESH_TOKEN_PATH, refresh_token, { backend: true }),
-      ]));
-
+    await refreshAccessTokenService(client);
     res = await dpFetch(requestUrl, options);
   }
 

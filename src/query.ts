@@ -18,7 +18,6 @@ const QueryKey = {
   ISSUE: "issue",
   ISSUE_STATUSES: "issue_statuses",
   ISSUE_TAGS: "issue_tags",
-  PROJECT_MEMBERS: "project_members",
   LINKED_ISSUES: "linked_issues",
   ISSUE_MESSAGES: "issue_messages",
 }

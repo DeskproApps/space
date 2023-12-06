@@ -4,3 +4,4 @@ export { HomePage } from "./HomePage";
 export { LoginPage } from "./LoginPage";
 export { LinkIssuesPage } from "./LinkIssuesPage";
 export { ViewIssuePage } from "./ViewIssuePage";
+export { CreateIssuePage } from "./CreateIssuePage";

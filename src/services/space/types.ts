@@ -28,6 +28,13 @@ export type Project = components["schemas"]["PR_Project"];
 
 export type Issue = components["schemas"]["Issue"];
 
+export type IssueInput = Omit<
+  paths["/projects/{project}/planning/issues"]["post"]["requestBody"]["content"]["application/json"],
+  "assignee"
+> & {
+  assignee: Maybe<Member["id"]>,
+};
+
 export type IssueStatus = components["schemas"]["IssueStatus"];
 
 export type IssueTag = components["schemas"]["PlanningTag"];

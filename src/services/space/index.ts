@@ -6,3 +6,6 @@ export { getIssuesService } from "./getIssuesService";
 export { searchIssuesService } from "./searchIssuesService";
 export { getProjectsService } from "./getProjectsService";
 export { getIssueMessagesService } from "./getIssueMessagesService";
+export { getIssueStatusesService } from "./getIssueStatusesService";
+export { getTagsServices } from "./getTagsServices";
+export { createIssueService } from "./createIssueService";

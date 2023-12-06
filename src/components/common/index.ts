@@ -13,3 +13,5 @@ export { Markdown } from "./Markdown";
 export { Parent, Parents } from "./Parent";
 export { SubItem } from "./SubItem";
 export { Comment } from "./Comment";
+export { Navigation } from "./Navigation";
+export { TextArea } from "./TextArea";
