@@ -59,6 +59,7 @@ const IssueForm: FC<Props> = ({
       <Label htmlFor="project" label="Project" required>
         <Select
           id="project"
+          disabled={isEditMode}
           initValue={watch("project")}
           options={projectOptions}
           error={has(errors, ["project", "message"])}

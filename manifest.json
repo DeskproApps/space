@@ -49,7 +49,11 @@
   },
   "proxy": {
     "whitelist": [
-      { "url": "__space_url__/.*", "methods": ["GET", "POST"], "timeout": 20 }
+      {
+        "url": "__space_url__/.*",
+        "methods": ["GET", "POST", "PATCH", "DELETE"],
+        "timeout": 20
+      }
     ]
   }
 }

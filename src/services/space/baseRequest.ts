@@ -29,7 +29,6 @@ const baseRequest: Request = async (client, {
     },
   };
 
-
   if (!isEmpty(data)) {
     options.body = isString(data) ? data as string : JSON.stringify(data);
     options.headers = {

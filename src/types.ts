@@ -6,6 +6,8 @@ import type { Response, Issue } from "./services/space/types";
 /** Common types */
 export type Maybe<T> = T | undefined | null;
 
+export type Nothing = undefined;
+
 export type Dict<T> = Record<string, T>;
 
 export type Option<Value = unknown> = Omit<DropdownValueType<Value>, "subItems">;
@@ -14,7 +16,7 @@ export type Option<Value = unknown> = Omit<DropdownValueType<Value>, "subItems">
 export type DateTime = string;
 
 /** Request types */
-export type ApiRequestMethod = "GET" | "POST";
+export type ApiRequestMethod = "GET" | "POST" | "PATCH" | "DELETE";
 
 export type RequestParams = {
   url?: string,

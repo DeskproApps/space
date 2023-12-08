@@ -1,10 +1,12 @@
 import { createElement } from "react";
 import { z } from "zod";
 import get from "lodash/get";
+import map from "lodash/map";
 import size from "lodash/size";
+import difference from "lodash/difference";
 import { Member } from "@deskpro/app-sdk";
 import { getOption, getFullName } from "../../utils";
-import { format } from "../../utils/date";
+import { format, parse } from "../../utils/date";
 import { DATE_ON } from "../../constants";
 import { Status, Tag } from "../common";
 import type { Maybe } from "../../types";
@@ -31,11 +33,11 @@ const getInitValues = (issue?: Maybe<Issue>): FormValidationSchema => {
   return {
     project: issue?.projectRef.id || "",
     title: issue?.title || "",
-    description: "",
-    assignee: "",
-    status: "",
-    dueDate: undefined,
-    tags: [],
+    description: issue?.description || "",
+    assignee: get(issue, ["assignee", "id"]) || "",
+    status: get(issue, ["status", "id"]) || "",
+    dueDate: parse(get(issue, ["dueDate", "iso"])) || undefined,
+    tags: map(issue?.tags, "id") || [],
   };
 };
 
@@ -91,6 +93,19 @@ const getTagOptions = (tags?: IssueTag[]) => {
   ));
 };
 
+const getIssueTagsToUpdate = (issue: Issue, values: FormValidationSchema): {
+  add: Array<IssueTag["id"]>,
+  rem: Array<IssueTag["id"]>,
+} => {
+  const issueTags = map(get(issue, ["tags"], []) || [], "id");
+  const newTags = values.tags || [];
+
+  return {
+    add: difference(newTags, issueTags),
+    rem: difference(issueTags, newTags),
+  };
+};
+
 export {
   getInitValues,
   getTagOptions,
@@ -98,4 +113,5 @@ export {
   validationSchema,
   getStatusOptions,
   getAssigneeOptions,
+  getIssueTagsToUpdate,
 };

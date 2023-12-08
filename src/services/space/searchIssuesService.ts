@@ -13,11 +13,11 @@ const searchIssuesService = (
 ) => {
   return baseRequest<Pagination<Issue>>(client, {
     url: `/projects/${projectId}/planning/issues`,
-    queryParams: {
-      sorting: "TITLE",
-      descending: "false",
-      ...(!params?.q ? {} : { query: params.q }),
-    },
+    queryParams: [
+      `sorting=TITLE`,
+      `descending=false`,
+      !params?.q ? "" : `query=${encodeURIComponent(params.q)}`,
+    ].filter(Boolean).join("&"),
   });
 };
 
