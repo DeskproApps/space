@@ -1,4 +1,3 @@
-import get from "lodash/get";
 import { cleanup } from "@testing-library/react";
 import { render, mockProjects } from "../../../../testing";
 import { getProjectsService } from "../../../services/space";

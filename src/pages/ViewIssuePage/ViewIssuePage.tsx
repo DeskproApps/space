@@ -28,6 +28,13 @@ const ViewIssuePage: FC = () => {
         payload: { type: "unlink", issue },
       }],
     });
+    issue?.id && registerElement("edit", {
+      type: "edit_button",
+      payload: {
+        type: "changePage",
+        path: `/issues/edit/${issue.id}`,
+      },
+    });
   }, [issue]);
 
   if (isLoading) {

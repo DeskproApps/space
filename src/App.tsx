@@ -17,6 +17,7 @@ import {
   HomePage,
   LoginPage,
   ViewIssuePage,
+  EditIssuePage,
   LinkIssuesPage,
   LoadingAppPage,
   CreateIssuePage,
@@ -70,6 +71,7 @@ const App: FC = () => {
         <Route path="/issues/link" element={<LinkIssuesPage/>} />
         <Route path="/issues/view/:issueId" element={<ViewIssuePage/>} />
         <Route path="/issues/create" element={<CreateIssuePage/>}/>)
+        <Route path="/issues/edit/:issueId" element={<EditIssuePage/>}/>)
         <Route index element={<LoadingAppPage/>} />
       </Routes>
       {!isAdmin && (<><br/><br/><br/></>)}
