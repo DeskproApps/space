@@ -1,0 +1,999 @@
+{
+  "messages": [
+    {
+      "text": "__formatted comment__ *issue*\n\n* item 1\n* item 2\n* item 3",
+      "details": {
+        "className": "M2TextItemContent",
+        "markdown": true,
+        "mentions": null
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-12-04T17:42:27.973Z",
+        "timestamp": 1701711747973
+      },
+      "id": "13000013"
+    },
+    {
+      "text": "one comment",
+      "details": {
+        "className": "M2TextItemContent",
+        "markdown": false,
+        "mentions": null
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-12-04T17:42:10.710Z",
+        "timestamp": 1701711730710
+      },
+      "id": "12000012"
+    },
+    {
+      "text": "marked a sub-item as complete",
+      "details": {
+        "className": "MCMessage",
+        "style": "SUCCESS",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "checkbox-small",
+              "style": "SUCCESS"
+            }
+          },
+          "text": {
+            "content": "marked a sub-item as complete",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "https://deskprotest.jetbrains.space/p/main/issues/10",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-12-04T16:33:30.844Z",
+        "timestamp": 1701707610844
+      },
+      "id": "y00000y"
+    },
+    {
+      "text": "marked a sub-item as complete",
+      "details": {
+        "className": "MCMessage",
+        "style": "SUCCESS",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "checkbox-small",
+              "style": "SUCCESS"
+            }
+          },
+          "text": {
+            "content": "marked a sub-item as complete",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "https://deskprotest.jetbrains.space/p/main/issues/10",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-12-04T16:33:23.728Z",
+        "timestamp": 1701707603728
+      },
+      "id": "v00000v"
+    },
+    {
+      "text": "updated the description",
+      "details": {
+        "className": "MCMessage",
+        "style": "PRIMARY",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "issue-line-small",
+              "style": "PRIMARY"
+            }
+          },
+          "text": {
+            "content": "updated the description",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "https://deskprotest.jetbrains.space/p/main/issues/7?snapshot=E00000E&baseSnapshot=D00000D",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-12-01T18:05:47.161Z",
+        "timestamp": 1701453947161
+      },
+      "id": "e00000e"
+    },
+    {
+      "text": "updated the description",
+      "details": {
+        "className": "MCMessage",
+        "style": "PRIMARY",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "issue-line-small",
+              "style": "PRIMARY"
+            }
+          },
+          "text": {
+            "content": "updated the description",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "https://deskprotest.jetbrains.space/p/main/issues/7?snapshot=D00000D&baseSnapshot=C00000C",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-12-01T18:04:44.355Z",
+        "timestamp": 1701453884355
+      },
+      "id": "d00000d"
+    },
+    {
+      "text": "updated the description",
+      "details": {
+        "className": "MCMessage",
+        "style": "PRIMARY",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "issue-line-small",
+              "style": "PRIMARY"
+            }
+          },
+          "text": {
+            "content": "updated the description",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "https://deskprotest.jetbrains.space/p/main/issues/7?snapshot=C00000C&baseSnapshot=7000007",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-12-01T18:04:23.255Z",
+        "timestamp": 1701453863255
+      },
+      "id": "c00000c"
+    },
+    {
+      "text": "converted a sub-item into an issue",
+      "details": {
+        "className": "MCMessage",
+        "style": "PRIMARY",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "checkbox-small",
+              "style": "PRIMARY"
+            }
+          },
+          "text": {
+            "content": "converted a sub-item into an issue",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "https://deskprotest.jetbrains.space/p/main/issues/10",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-12-01T16:34:52.053Z",
+        "timestamp": 1701448492053
+      },
+      "id": "a00000a"
+    },
+    {
+      "text": "updated the due date",
+      "details": {
+        "className": "MCMessage",
+        "style": "PRIMARY",
+        "outline": {
+          "className": "MCOutlineV2",
+          "elements": [
+            {
+              "defaultText": "",
+              "details": {
+                "className": "MCIcon",
+                "name": "issue-line-small",
+                "style": "PRIMARY"
+              }
+            },
+            {
+              "defaultText": "updated the due date",
+              "details": {
+                "className": "MCInlineText",
+                "content": "updated the due date",
+                "markdown": false,
+                "style": "PRIMARY"
+              }
+            }
+          ]
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [
+                {
+                  "defaultText": "",
+                  "details": {
+                    "className": "MCParagraph",
+                    "accessory": null,
+                    "elements": [
+                      {
+                        "defaultText": "",
+                        "details": {
+                          "className": "MCInlineGroup",
+                          "elements": [
+                            {
+                              "defaultText": "[datetime://1703980800000?format=3&style=0&template=0](datetime://1703980800000?format=3&style=0&template=0)",
+                              "details": {
+                                "className": "MCInlineText",
+                                "content": "[datetime://1703980800000?format=3&style=0&template=0](datetime://1703980800000?format=3&style=0&template=0)",
+                                "markdown": true,
+                                "style": "PRIMARY"
+                              }
+                            }
+                          ],
+                          "accessory": null,
+                          "textSize": "SMALL"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "style": "PRIMARY",
+              "header": null,
+              "footer": null
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-11-27T09:21:02.006Z",
+        "timestamp": 1701076862006
+      },
+      "id": "V00000V"
+    },
+    {
+      "text": "Changed tags",
+      "details": {
+        "className": "MCMessage",
+        "style": "PRIMARY",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "label-outline-small",
+              "style": "PRIMARY"
+            }
+          },
+          "text": {
+            "content": "added a tag",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "[issuetag://jQ1rf0wjTms](issuetag://jQ1rf0wjTms)",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-11-27T09:20:56.515Z",
+        "timestamp": 1701076856515
+      },
+      "id": "U00000U"
+    },
+    {
+      "text": "Changed tags",
+      "details": {
+        "className": "MCMessage",
+        "style": "PRIMARY",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "label-outline-small",
+              "style": "PRIMARY"
+            }
+          },
+          "text": {
+            "content": "added a tag",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "[issuetag://2FUnnV1iyO8m](issuetag://2FUnnV1iyO8m)",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-11-27T09:20:54.258Z",
+        "timestamp": 1701076854258
+      },
+      "id": "T00000T"
+    },
+    {
+      "text": "Changed tags",
+      "details": {
+        "className": "MCMessage",
+        "style": "PRIMARY",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "label-outline-small",
+              "style": "PRIMARY"
+            }
+          },
+          "text": {
+            "content": "added a tag",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "[issuetag://16QR6Q2GkAIU](issuetag://16QR6Q2GkAIU)",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-11-27T09:20:50.490Z",
+        "timestamp": 1701076850490
+      },
+      "id": "S00000S"
+    },
+    {
+      "text": "added the issue to an issue board sprint",
+      "details": {
+        "className": "MCMessage",
+        "style": "PRIMARY",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "board-outline-small",
+              "style": "PRIMARY"
+            }
+          },
+          "text": {
+            "content": "added the issue to an issue board",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "[sprint://4O7fUR3MuUXF](sprint://4O7fUR3MuUXF)",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-11-26T20:39:39.842Z",
+        "timestamp": 1701031179842
+      },
+      "id": "P00000P"
+    },
+    {
+      "text": "marked a sub-item as complete",
+      "details": {
+        "className": "MCMessage",
+        "style": "SUCCESS",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "checkbox-small",
+              "style": "SUCCESS"
+            }
+          },
+          "text": {
+            "content": "marked a sub-item as complete",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "````` blocks configurator `````",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-11-20T13:46:35.889Z",
+        "timestamp": 1700487995889
+      },
+      "id": "M00000M"
+    },
+    {
+      "text": "reopened a sub-item",
+      "details": {
+        "className": "MCMessage",
+        "style": "PRIMARY",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "checkbox-small",
+              "style": "PRIMARY"
+            }
+          },
+          "text": {
+            "content": "reopened a sub-item",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "````` blocks configurator `````",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-11-20T13:46:35.065Z",
+        "timestamp": 1700487995065
+      },
+      "id": "L00000L"
+    },
+    {
+      "text": "Status: Open -> In progress",
+      "details": {
+        "className": "MCMessage",
+        "style": "PRIMARY",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "issue-line-small",
+              "style": "PRIMARY"
+            }
+          },
+          "text": {
+            "content": "updated the status",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "[issuestatus://3nuoYD3PXgjA](issuestatus://3nuoYD3PXgjA) → [issuestatus://1NOYKF1rKX9x](issuestatus://1NOYKF1rKX9x)",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-11-20T13:03:22.028Z",
+        "timestamp": 1700485402028
+      },
+      "id": "K00000K"
+    },
+    {
+      "text": "marked a sub-item as complete",
+      "details": {
+        "className": "MCMessage",
+        "style": "SUCCESS",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "checkbox-small",
+              "style": "SUCCESS"
+            }
+          },
+          "text": {
+            "content": "marked a sub-item as complete",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "````` blocks configurator `````",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-11-20T12:51:00.230Z",
+        "timestamp": 1700484660230
+      },
+      "id": "I00000I"
+    },
+    {
+      "text": "added the issue to an issue board sprint",
+      "details": {
+        "className": "MCMessage",
+        "style": "PRIMARY",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "board-outline-small",
+              "style": "PRIMARY"
+            }
+          },
+          "text": {
+            "content": "added the issue to an issue board",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "[sprint://DCfh61HiN10](sprint://DCfh61HiN10)",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-11-20T12:48:12.590Z",
+        "timestamp": 1700484492590
+      },
+      "id": "H00000H"
+    },
+    {
+      "text": "added a parent issue",
+      "details": {
+        "className": "MCMessage",
+        "style": "PRIMARY",
+        "outline": {
+          "className": "MCOutlineLegacy",
+          "icon": {
+            "defaultText": "",
+            "details": {
+              "className": "MCIcon",
+              "name": "issue-line-small",
+              "style": "PRIMARY"
+            }
+          },
+          "text": {
+            "content": "added a parent issue",
+            "markdown": false,
+            "accessory": null,
+            "style": "PRIMARY",
+            "size": "SMALL"
+          }
+        },
+        "content": [
+          {
+            "defaultText": "",
+            "details": {
+              "className": "MCSection",
+              "elements": [],
+              "style": null,
+              "header": null,
+              "footer": {
+                "content": "https://deskprotest.jetbrains.space/p/main/issues/8",
+                "markdown": true,
+                "accessory": null,
+                "style": "SECONDARY",
+                "size": "SMALL"
+              }
+            }
+          }
+        ],
+        "extension": {
+          "className": "IssueMCExtension"
+        }
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-11-20T12:45:57.063Z",
+        "timestamp": 1700484357063
+      },
+      "id": "F00000F"
+    },
+    {
+      "text": "created the issue",
+      "details": {
+        "className": "IssueCreatedDetails",
+        "issue": {
+          "id": "3R3ntR3bLJee"
+        },
+        "originMessage": null
+      },
+      "author": {
+        "name": "zpawn"
+      },
+      "created": {
+        "iso": "2023-11-20T12:44:55.016Z",
+        "timestamp": 1700484295016
+      },
+      "id": "C00000C"
+    }
+  ]
+}

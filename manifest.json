@@ -1,7 +1,7 @@
 {
   "name": "@deskpro-apps/space",
   "title": "Space",
-  "description": "",
+  "description": "View your Jetbrains Space issues from Deskpro and link them to tickets you are working on",
   "version": "0.0.9",
   "scope": "agent",
   "isSingleInstall": false,
@@ -49,7 +49,11 @@
   },
   "proxy": {
     "whitelist": [
-      { "url": "__space_url__/.*", "methods": ["GET", "POST"], "timeout": 20 }
+      {
+        "url": "__space_url__/.*",
+        "methods": ["GET", "POST", "PATCH", "DELETE"],
+        "timeout": 20
+      }
     ]
   }
 }

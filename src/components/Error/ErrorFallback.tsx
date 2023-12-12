@@ -1,3 +1,4 @@
+import get from "lodash/get";
 import { Stack } from "@deskpro/deskpro-ui";
 import { DEFAULT_ERROR } from "../../constants";
 import { SpaceError } from "../../services/space";
@@ -10,13 +11,14 @@ type Props = Omit<FallbackProps, "error"> & {
 };
 
 const ErrorFallback: FC<Props> = ({ error }) => {
-  const message = DEFAULT_ERROR;
+  let message = DEFAULT_ERROR;
 
   // eslint-disable-next-line no-console
   console.error(error);
 
   if (error instanceof SpaceError) {
-    //..
+    message = get(error, ["data", "error_description"])
+      || DEFAULT_ERROR;
   }
 
   return (

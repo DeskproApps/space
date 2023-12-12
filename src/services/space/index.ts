@@ -1,6 +1,15 @@
 export { SpaceError } from "./SpaceError";
 export { getAccessTokenService } from "./getAccessTokenService";
+export { refreshAccessTokenService } from "./refreshAccessTokenService";
 export { getOrganizationService } from "./getOrganizationService";
 export { getIssuesService } from "./getIssuesService";
 export { searchIssuesService } from "./searchIssuesService";
 export { getProjectsService } from "./getProjectsService";
+export { getIssueMessagesService } from "./getIssueMessagesService";
+export { getIssueStatusesService } from "./getIssueStatusesService";
+export { getTagsServices } from "./getTagsServices";
+export { createIssueService } from "./createIssueService";
+export { updateIssueService } from "./updateIssueService";
+export { addIssueTagService } from "./addIssueTagService";
+export { removeIssueTagService } from "./removeIssueTagService";
+export { updateIssueTagsService } from "./updateIssueTagsService";

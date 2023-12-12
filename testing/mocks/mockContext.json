@@ -7,7 +7,7 @@
   "data": {
     "ticket": {
       "id": "215",
-      "permalinkUrl": "https://linear-pr-1.ci.next.deskprodemo.comapp#/t/ticket/215",
+      "permalinkUrl": "https://deskprodemo.com/app#/t/ticket/215",
       "subject": "Big ticket",
       "status": "awaiting_agent",
       "creationSystem": "web.person.portal",
@@ -27,8 +27,8 @@
     "app": {
       "id": "35",
       "instanceId": "3",
-      "name": "@deskpro-apps/linear",
-      "title": "Linear"
+      "name": "@deskpro-apps/space",
+      "title": "Space"
     },
     "env": {
       "release": "0.0.0",

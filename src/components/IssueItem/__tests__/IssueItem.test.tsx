@@ -18,7 +18,7 @@ describe("IssueItem", () => {
   });
 
   test("render", async () => {
-    const { findByText, container } = renderIssueItem({ issue: mockIssues[0] as never });
+    const { findByText, container } = renderIssueItem({ issue: mockIssues[1] as never });
 
     expect(await findByText(/PageBuilder/i)).toBeInTheDocument();
     expect(container.querySelector('a[href="https://space.test/p/main/issues/7"]')).toBeInTheDocument();

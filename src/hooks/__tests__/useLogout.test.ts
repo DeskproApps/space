@@ -1,6 +1,9 @@
 import { cleanup, renderHook, act } from "@testing-library/react";
 import { useNavigate } from "react-router-dom";
-import { removeAccessTokenService } from "../../services/deskpro";
+import {
+  removeAccessTokenService,
+  removeRefreshTokenService,
+} from "../../services/deskpro";
 import { useLogout } from "../useLogout";
 import type { Result } from "../useLogout";
 
@@ -11,6 +14,7 @@ jest.mock('react-router-dom', () => ({
   useNavigate: jest.fn(),
 }));
 jest.mock("../../services/deskpro/removeAccessTokenService");
+jest.mock("../../services/deskpro/removeRefreshTokenService");
 
 describe("useLogout", () => {
   afterEach(() => {
@@ -18,10 +22,11 @@ describe("useLogout", () => {
     cleanup();
   });
 
-  test("should remove token and navigate to login page", async () => {
+  test("should remove tokens and navigate to login page", async () => {
     const mockNavigate = jest.fn();
     (useNavigate as jest.Mock).mockImplementation(() => mockNavigate);
     (removeAccessTokenService as jest.Mock).mockResolvedValueOnce("");
+    (removeRefreshTokenService as jest.Mock).mockResolvedValueOnce("");
 
     const { result } = renderLogoutHook();
 
@@ -30,6 +35,7 @@ describe("useLogout", () => {
     })
 
     expect(removeAccessTokenService).toHaveBeenCalled();
+    expect(removeRefreshTokenService).toHaveBeenCalled();
     expect(mockNavigate).toHaveBeenCalledWith("/login");
   });
 
@@ -37,6 +43,7 @@ describe("useLogout", () => {
     const mockNavigate = jest.fn();
     (useNavigate as jest.Mock).mockImplementation(() => mockNavigate);
     (removeAccessTokenService as jest.Mock).mockRejectedValueOnce("");
+    (removeRefreshTokenService as jest.Mock).mockResolvedValueOnce("");
 
     const { result } = renderLogoutHook();
 
@@ -45,8 +52,7 @@ describe("useLogout", () => {
     })
 
     expect(removeAccessTokenService).toHaveBeenCalled();
+    expect(removeRefreshTokenService).toHaveBeenCalled();
     expect(mockNavigate).toHaveBeenCalledWith("/login");
   });
-
-  test.todo("should navigate to login page if revoke token is failed");
 });

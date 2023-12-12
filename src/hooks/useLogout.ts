@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import noop from "lodash/noop";
 import { useDeskproAppClient } from "@deskpro/app-sdk";
-import { removeAccessTokenService } from "../services/deskpro";
+import { removeAccessTokenService, removeRefreshTokenService } from "../services/deskpro";
 
 export type Result = {
   isLoading: boolean,
@@ -21,7 +21,10 @@ const useLogout = (): Result => {
 
     setIsLoading(true);
 
-    return removeAccessTokenService(client)
+    return Promise.all([
+      removeAccessTokenService(client),
+      removeRefreshTokenService(client),
+    ])
       .catch(noop)
       .finally(() => {
         setIsLoading(false);

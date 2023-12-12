@@ -13,6 +13,7 @@ const getAccessTokenService = (
   data.append("grant_type", "authorization_code");
   data.append("code", code);
   data.append("redirect_uri", redirectUri);
+  data.append("access_type", "offline");
 
   return baseRequest<AccessToken>(client, {
     rawUrl: `${placeholders.URL}/oauth/token`,

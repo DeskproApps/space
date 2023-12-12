@@ -9,15 +9,15 @@ import {
   useInitialisedDeskproAppClient,
 } from "@deskpro/app-sdk";
 import {
-  getEntityListService,
-  setAccessTokenService,
+    getEntityListService,
+    setAccessTokenService, setRefreshTokenService,
 } from "../../services/deskpro";
 import {
   getAccessTokenService,
   getOrganizationService,
 } from "../../services/space";
 import { getQueryParams } from "../../utils";
-import { DEFAULT_ERROR } from "../../constants";
+import { SCOPES, DEFAULT_ERROR } from "../../constants";
 import type { OAuth2StaticCallbackUrl } from "@deskpro/app-sdk";
 import type { Maybe, TicketContext } from "../../types";
 
@@ -56,13 +56,10 @@ const useLogin = (): Result => {
         response_type: "code",
         redirect_uri: callback.callbackUrl,
         client_id: clientId,
+        access_type: "offline",
         request_credentials: "default",
         state: key,
-        scope: [
-          "global:Project.View",
-          "global:Project.Issues.View",
-          "global:Profile.View",
-        ].join(" "),
+        scope: SCOPES.join(" "),
       })}`);
     }
   }, [callback, spaceUrl, clientId, key]);
@@ -77,7 +74,10 @@ const useLogin = (): Result => {
 
     callback.poll()
       .then(({ token }) => getAccessTokenService(client, token, callback.callbackUrl))
-      .then(({ access_token }) => setAccessTokenService(client, access_token))
+      .then(({ access_token, refresh_token }) => Promise.all([
+          setAccessTokenService(client, access_token),
+          setRefreshTokenService(client, refresh_token),
+        ]))
       .then(() => getOrganizationService(client))
       .then((org) => !get(org, ["id"])
         ? Promise.reject()

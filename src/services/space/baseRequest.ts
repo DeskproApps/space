@@ -1,6 +1,7 @@
 import isEmpty from "lodash/isEmpty";
-import isString from "lodash";
+import isString from "lodash/isString";
 import { proxyFetch } from "@deskpro/app-sdk";
+import { refreshAccessTokenService } from "./refreshAccessTokenService";
 import { BASE_URL, placeholders } from "../../constants";
 import { getQueryParams } from "../../utils";
 import { SpaceError } from "./SpaceError";
@@ -36,7 +37,12 @@ const baseRequest: Request = async (client, {
     };
   }
 
-  const res = await dpFetch(requestUrl, options);
+  let res = await dpFetch(requestUrl, options);
+
+  if (res.status === 401) {
+    await refreshAccessTokenService(client);
+    res = await dpFetch(requestUrl, options);
+  }
 
   if (res.status < 200 || res.status > 399) {
     let errorData;

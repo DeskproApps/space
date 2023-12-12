@@ -17,6 +17,7 @@ export type SpaceAPIError = {
 export type AccessToken = {
   token_type: "Bearer",
   access_token: string,
+  refresh_token: string,
   expires_in: number,
   scope: string,
 };
@@ -27,6 +28,13 @@ export type Project = components["schemas"]["PR_Project"];
 
 export type Issue = components["schemas"]["Issue"];
 
+export type IssueInput = Omit<
+  paths["/projects/{project}/planning/issues"]["post"]["requestBody"]["content"]["application/json"],
+  "assignee"
+> & {
+  assignee: Maybe<Member["id"]>,
+};
+
 export type IssueStatus = components["schemas"]["IssueStatus"];
 
 export type IssueTag = components["schemas"]["PlanningTag"];
@@ -36,6 +44,12 @@ export type IssueQueryParams = paths["/projects/{project}/planning/issues"]["get
 export type MemberOnProject = components["schemas"]["ParticipantOnProject"];
 
 export type Member = components["schemas"]["TD_MemberProfile"];
+
+export type IssueSubItem = components["schemas"]["PlanItem"];
+
+export type Messages = components["schemas"]["GetMessagesResponse"]
+
+export type IssueComment = components["schemas"]["ChannelItemRecord"];
 
 export type DateAt = {
   iso: string,

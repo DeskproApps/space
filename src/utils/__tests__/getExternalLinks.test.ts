@@ -23,7 +23,7 @@ describe("utils", () => {
           mockProjects.data[0] as never,
           mockIssues[0] as never,
         );
-        expect(issueLink).toBe("https://space.test/p/main/issues/7");
+        expect(issueLink).toBe("https://space.test/p/main/issues/8");
       });
 
       test("should return undefined if something isn't pass", () => {
