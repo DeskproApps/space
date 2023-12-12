@@ -4,7 +4,7 @@ import { DEFAULT_ERROR } from "../../../constants";
 import type { FC, JSX } from "react";
 import type { Maybe } from "../../../types";
 
-type Props = {
+export type Props = {
   text?: Maybe<string|JSX.Element|Array<string|JSX.Element>>,
 }
 

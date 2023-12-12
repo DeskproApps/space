@@ -1,22 +1,30 @@
-import { baseRequest } from "./baseRequest";
+import { proxyFetch } from "@deskpro/app-sdk";
+import {
+  setAccessTokenService,
+  setRefreshTokenService,
+} from "../deskpro";
 import { placeholders } from "../../constants";
-import { getQueryParams } from "../../utils";
 import type { IDeskproClient } from "@deskpro/app-sdk";
 
-const refreshAccessTokenService = (client: IDeskproClient) => {
-  const data = new FormData();
-  data.append("grant_type", "refresh_token");
-  data.append("refresh_token", placeholders.REFRESH_TOKEN);
+const refreshAccessTokenService = async (client: IDeskproClient) => {
+  const dpFetch = await proxyFetch(client);
 
-  return baseRequest(client, {
-    rawUrl: `${placeholders.URL}/oauth/token`,
+  return dpFetch(`${placeholders.URL}/oauth/token`, {
     method: "POST",
+    body: [
+      "grant_type=refresh_token",
+      `refresh_token=${placeholders.REFRESH_TOKEN}`,
+    ].join("&"),
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
       "Authorization": `Basic __client_id+':'+client_secret.base64__`,
     },
-    data: getQueryParams(data),
-  });
+  })
+    .then((res) => res.json())
+    .then(({ access_token, refresh_token }) => Promise.all([
+      setAccessTokenService(client, access_token),
+      setRefreshTokenService(client, refresh_token),
+    ]));
 };
 
 export { refreshAccessTokenService };

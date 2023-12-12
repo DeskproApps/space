@@ -30,11 +30,10 @@ export const BASE_URL = `${placeholders.URL}`;
 
 export const SCOPES = [
   "global:Project.View",
-  "global:Project.Issues.View",
   "global:Profile.View",
+  "global:Project.Issues.View",
+  "global:Project.Issues.Create",
 ];
-
-export const PROJECT_FIELDS = ["id", "name", "key(key)"];
 
 export const TAG_FIELDS = ["id", "archived", "name", "projectId", "parent"];
 
@@ -48,6 +47,14 @@ export const COMMENT_FIELDS = [
   "created",
   "details",
   `author(name,details(user(${USER_FIELDS.join(",")})))`,
+];
+
+export const PROJECT_FIELDS = [
+  "id",
+  "name",
+  "key(key)",
+  `adminProfiles(${USER_FIELDS.join(",")})`,
+  `memberProfiles(${USER_FIELDS.join(",")})`,
 ];
 
 export const MESSAGE_FIELDS = [`messages(${COMMENT_FIELDS.join(",")})`];

@@ -10,3 +10,4 @@ export { addBlankTargetToLinks } from "./addBlankTargetToLinks";
 export { isIssue } from "./isIssue";
 export { isIssueComment } from "./isIssueComment";
 export { getFullName } from "./getFullName";
+export { getProjectMembers } from "./getProjectMembers";
