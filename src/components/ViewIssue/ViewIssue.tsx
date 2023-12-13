@@ -1,6 +1,6 @@
 import { HorizontalDivider } from "@deskpro/app-sdk";
 import { Container } from "../common";
-import { Info, SubItems, Comments } from "./blocks";
+import { Info, CustomFieldsView, SubItems, Comments } from "./blocks";
 import type { FC } from "react";
 import type { Maybe } from "../../types";
 import type { Issue, IssueComment } from "../../services/space/types";
@@ -10,26 +10,25 @@ type Props = {
   comments: IssueComment[],
 };
 
-const ViewIssue: FC<Props> = ({ issue, comments }) => {
-  return (
-    <>
-      <Container>
-        <Info issue={issue}/>
-      </Container>
+const ViewIssue: FC<Props> = ({ issue, comments }) => (
+  <>
+    <Container>
+      <Info issue={issue}/>
+      <CustomFieldsView fields={issue?.customFields}/>
+    </Container>
 
-      <HorizontalDivider/>
+    <HorizontalDivider/>
 
-      <Container>
-        <SubItems subItems={issue?.subItemsList} />
-      </Container>
+    <Container>
+      <SubItems subItems={issue?.subItemsList} />
+    </Container>
 
-      <HorizontalDivider/>
+    <HorizontalDivider/>
 
-      <Container>
-        <Comments comments={comments} />
-      </Container>
-    </>
-  );
-};
+    <Container>
+      <Comments comments={comments} />
+    </Container>
+  </>
+);
 
 export { ViewIssue };

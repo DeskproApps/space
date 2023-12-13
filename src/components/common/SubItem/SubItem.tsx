@@ -3,7 +3,8 @@ import { P5, Spinner, Checkbox } from "@deskpro/deskpro-ui";
 import { isIssue } from "../../../utils";
 import { Card } from "../Card";
 import type { FC } from "react";
-import type { IssueSubItem } from "../../../services/space/types";
+import type { Maybe } from "../../../types";
+import type { Issue, IssueSubItem } from "../../../services/space/types";
 
 type Props = {
   item: IssueSubItem,
@@ -13,11 +14,11 @@ type Props = {
 const SubItem: FC<Props> = ({ item, onComplete }) => {
   const boxSize = 14;
   const [isLoading, setIsLoading] = useState(false);
-  const itemName = isIssue(item?.issue)
-    ? item.issue.title
+  const itemName = isIssue(item?.issue as Maybe<Issue>)
+    ? item.issue?.title
     : item.simpleText;
-  const itemIsDone = isIssue(item?.issue)
-    ? Boolean(item.issue.status.resolved)
+  const itemIsDone = isIssue(item?.issue as Maybe<Issue>)
+    ? Boolean(item.issue?.status.resolved)
     : Boolean(item.simpleDone);
 
   const onChange = useCallback(() => {
