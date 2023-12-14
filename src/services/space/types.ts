@@ -1,3 +1,4 @@
+import { CustomFieldsMap } from "../../constants";
 import type { DateTime, Maybe } from "../../types";
 import type { components, paths } from "./schema";
 
@@ -25,15 +26,6 @@ export type AccessToken = {
 export type Organization = components["schemas"]["OrganizationRecord"];
 
 export type Project = components["schemas"]["PR_Project"];
-
-export type Issue = components["schemas"]["Issue"];
-
-export type IssueInput = Omit<
-  paths["/projects/{project}/planning/issues"]["post"]["requestBody"]["content"]["application/json"],
-  "assignee"
-> & {
-  assignee: Maybe<Member["id"]>,
-};
 
 export type IssueStatus = components["schemas"]["IssueStatus"];
 
@@ -64,3 +56,41 @@ export type DateOn = {
 };
 
 export type DateType = DateTime|DateAt|DateOn;
+
+export type CustomField = {
+  className: keyof typeof CustomFieldsMap,
+} & Maybe<(
+  | components["schemas"]["StringCFValue"]
+  | components["schemas"]["StringListCFValue"]
+  | components["schemas"]["IntCFValue"]
+  | components["schemas"]["IntListCFValue"]
+  | components["schemas"]["EnumCFValue"]
+  | components["schemas"]["EnumListCFValue"]
+  | components["schemas"]["BooleanCFValue"]
+  | Omit<components["schemas"]["DateCFValue"], "value"> & { value?: Maybe<DateAt> }
+  | Omit<components["schemas"]["DateTimeCFValue"], "value"> & { value?: DateOn }
+  | components["schemas"]["PercentageCFValue"]
+  | components["schemas"]["ProfileCFValue"]
+  | components["schemas"]["ProfileListCFValue"]
+  | components["schemas"]["TeamCFValue"]
+  | components["schemas"]["LocationCFValue"]
+  | components["schemas"]["ProjectCFValue"]
+  | components["schemas"]["UrlCFValue"]
+  | Omit<components["schemas"]["IssueCFValue"], "issue"> & { issue: Maybe<Issue> }
+  | Omit<components["schemas"]["IssueListCFValue"], "issues"> & { issues: Maybe<Issue[]> }
+  | components["schemas"]["AutonumberCFValue"]
+  | components["schemas"]["VcsCommitCFValue"]
+  | components["schemas"]["VcsCommitListCFValue"]
+)>;
+
+export type Issue = Omit<components["schemas"]["Issue"], "customFields"|"parents"> & {
+  parents?: Issue[],
+  customFields?: CustomField[],
+};
+
+export type IssueInput = Omit<
+  paths["/projects/{project}/planning/issues"]["post"]["requestBody"]["content"]["application/json"],
+  "assignee"
+> & {
+  assignee: Maybe<Member["id"]>,
+};

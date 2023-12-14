@@ -33,6 +33,9 @@ export const SCOPES = [
   "global:Profile.View",
   "global:Project.Issues.View",
   "global:Project.Issues.Create",
+  "global:Team.View",
+  "global:Locations.View",
+  "global:VcsRepository.Read",
 ];
 
 export const TAG_FIELDS = ["id", "archived", "name", "projectId", "parent"];
@@ -49,6 +52,8 @@ export const COMMENT_FIELDS = [
   `author(name,details(user(${USER_FIELDS.join(",")})))`,
 ];
 
+export const TEAM_FIELDS = ["id", "name"];
+
 export const PROJECT_FIELDS = [
   "id",
   "name",
@@ -62,13 +67,32 @@ export const MESSAGE_FIELDS = [`messages(${COMMENT_FIELDS.join(",")})`];
 export const SIMPLE_ISSUE_FIELDS = [
   "id",
   "title",
+  "number",
   `status(${STATUS_FIELDS.join(",")})`,
+  `projectRef(${PROJECT_FIELDS.join(",")})`,
 ];
 
 export const SUB_ITEM_FIELDS = [
   "id",
   "name",
   `root(children(id,simpleText,simpleDone,issue(${SIMPLE_ISSUE_FIELDS.join(",")})))`,
+];
+
+export const COMMIT_FIELDS = ["commitId", "message"];
+
+export const CUSTOM_FIELD_FIELDS = [
+  "href",
+  "value(id,value)",
+  "values(id,value)",
+  `profile(${USER_FIELDS.join(",")})`,
+  `profiles(${USER_FIELDS.join(",")})`,
+  `team(${TEAM_FIELDS.join(",")})`,
+  "location(id,name)",
+  "project(id,name)",
+  `issue(${SIMPLE_ISSUE_FIELDS.join(",")})`,
+  `issues(${SIMPLE_ISSUE_FIELDS.join(",")})`,
+  `commit(commit(${COMMIT_FIELDS.join(",")}))`,
+  `commits(commit(${COMMIT_FIELDS.join(",")}))`,
 ];
 
 export const ISSUE_FIELDS = [
@@ -85,6 +109,7 @@ export const ISSUE_FIELDS = [
   `assignee(${USER_FIELDS.join(",")})`,
   `status(${STATUS_FIELDS.join(",")})`,
   `subItemsList(${SUB_ITEM_FIELDS.join(",")})`,
+  `customFields(${CUSTOM_FIELD_FIELDS.join(",")})`,
 ];
 
 export const fields = {
@@ -94,3 +119,27 @@ export const fields = {
   ASSIGNEE: USER_FIELDS.join(","),
   STATUS: STATUS_FIELDS.join(","),
 };
+
+export enum CustomFieldsMap {
+  StringCFValue = "StringCFValue",
+  StringListCFValue = "StringListCFValue",
+  IntCFValue = "IntCFValue",
+  IntListCFValue = "IntListCFValue",
+  EnumCFValue = "EnumCFValue",
+  EnumListCFValue = "EnumListCFValue",
+  BooleanCFValue = "BooleanCFValue",
+  DateCFValue = "DateCFValue",
+  DateTimeCFValue = "DateTimeCFValue",
+  PercentageCFValue = "PercentageCFValue",
+  ProfileCFValue = "ProfileCFValue",
+  ProfileListCFValue = "ProfileListCFValue",
+  TeamCFValue = "TeamCFValue",
+  LocationCFValue = "LocationCFValue",
+  ProjectCFValue = "ProjectCFValue",
+  UrlCFValue = "UrlCFValue",
+  IssueCFValue = "IssueCFValue",
+  IssueListCFValue = "IssueListCFValue",
+  AutonumberCFValue = "AutonumberCFValue",
+  VcsCommitCFValue = "VcsCommitCFValue",
+  VcsCommitListCFValue = "VcsCommitListCFValue",
+}
