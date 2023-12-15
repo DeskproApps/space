@@ -1,0 +1,611 @@
+{
+  "id": "1mojTg2AhXjp",
+  "projectId": "kUysu1ZlRBm",
+  "projectRef": {
+    "id": "kUysu1ZlRBm",
+    "key": {
+      "key": "DP-SPACE"
+    },
+    "name": "Deskpro Space",
+    "memberProfiles": [
+      {
+        "id": "3vsk2Z3bsDx6",
+        "username": "davidtestacc0401",
+        "name": {
+          "firstName": "David",
+          "lastName": "Anjonrin-Ohu"
+        },
+        "avatar": null
+      },
+      {
+        "id": "1p7tyB1dXdBR",
+        "username": "jon.snow",
+        "name": {
+          "firstName": "Jon",
+          "lastName": "Snow"
+        },
+        "avatar": "2m7zCt3aLQxn"
+      },
+      {
+        "id": "3IVGHs3OPU3R",
+        "username": "alliser.thorne",
+        "name": {
+          "firstName": "Alliser",
+          "lastName": "Thorne"
+        },
+        "avatar": "3fzcdw2MVREC"
+      },
+      {
+        "id": "2Gw6me1D6hTb",
+        "username": "jeor.mormont",
+        "name": {
+          "firstName": "Jeor",
+          "lastName": "Mormont"
+        },
+        "avatar": "4WgLfX3wztf5"
+      }
+    ],
+    "adminProfiles": [
+      {
+        "id": "2wwNis4MCPQv",
+        "username": "missandei",
+        "name": {
+          "firstName": "Missandei",
+          "lastName": "."
+        },
+        "avatar": "26DURm1YWhiJ"
+      },
+      {
+        "id": "3vsk2Z3bsDx6",
+        "username": "davidtestacc0401",
+        "name": {
+          "firstName": "David",
+          "lastName": "Anjonrin-Ohu"
+        },
+        "avatar": null
+      }
+    ]
+  },
+  "number": 1,
+  "creationTime": {
+    "iso": "2023-11-28T09:21:16.622Z",
+    "timestamp": 1701163276622
+  },
+  "assignee": null,
+  "status": {
+    "id": "2jIXCa4ZCn07",
+    "archived": false,
+    "name": "Open",
+    "resolved": false,
+    "color": "1965b0"
+  },
+  "dueDate": null,
+  "tags": [],
+  "title": "Big issue with custom fields",
+  "subItemsList": {
+    "id": "3cnbVD2i1uF0",
+    "name": "Sub-items",
+    "root": {
+      "children": []
+    }
+  },
+  "parents": [],
+  "description": null,
+  "customFields": {
+    "custom text": {
+      "className": "StringCFValue",
+      "value": "aloha"
+    },
+    "Custom Text Multi": {
+      "className": "StringListCFValue",
+      "values": [
+        "one",
+        "two",
+        "three"
+      ]
+    },
+    "Custom Number": {
+      "className": "IntCFValue",
+      "value": 100500
+    },
+    "Custom Number Multi": {
+      "className": "IntListCFValue",
+      "values": [
+        100,
+        500,
+        125
+      ]
+    },
+    "Custom List": {
+      "className": "EnumCFValue",
+      "value": {
+        "id": "4E0ehX4CrhQ7",
+        "value": "item 2"
+      }
+    },
+    "Custom List Multi": {
+      "className": "EnumListCFValue",
+      "values": [
+        {
+          "id": "hISIV0I2C60",
+          "value": "item 01"
+        },
+        {
+          "id": "155idr0PMOml",
+          "value": "item 03"
+        },
+        {
+          "id": "1cXDC91nVHkD",
+          "value": "item 05"
+        }
+      ]
+    },
+    "Custom Checkbox": {
+      "className": "BooleanCFValue",
+      "value": false
+    },
+    "Custom Date": {
+      "className": "DateCFValue",
+      "value": {
+        "iso": "2023-12-23",
+        "year": 2023,
+        "month": 12,
+        "day": 23
+      }
+    },
+    "DateTime Custom": {
+      "className": "DateTimeCFValue",
+      "value": {
+        "iso": "2023-12-29T13:15:00.000Z",
+        "timestamp": 1703855700000
+      }
+    },
+    "Percentage Custom": {
+      "className": "PercentageCFValue",
+      "value": 55
+    },
+    "Member Custom": {
+      "className": "ProfileCFValue",
+      "profile": {
+        "id": "2wwNis4MCPQv",
+        "username": "missandei",
+        "name": {
+          "firstName": "Missandei",
+          "lastName": "."
+        },
+        "avatar": "26DURm1YWhiJ"
+      }
+    },
+    "Member Custom Multi": {
+      "className": "ProfileListCFValue",
+      "profiles": [
+        {
+          "id": "3vsk2Z3bsDx6",
+          "username": "davidtestacc0401",
+          "name": {
+            "firstName": "David",
+            "lastName": "Anjonrin-Ohu"
+          },
+          "avatar": null
+        },
+        {
+          "id": "2wwNis4MCPQv",
+          "username": "missandei",
+          "name": {
+            "firstName": "Missandei",
+            "lastName": "."
+          },
+          "avatar": "26DURm1YWhiJ"
+        },
+        {
+          "id": "3IVGHs3OPU3R",
+          "username": "alliser.thorne",
+          "name": {
+            "firstName": "Alliser",
+            "lastName": "Thorne"
+          },
+          "avatar": "3fzcdw2MVREC"
+        },
+        {
+          "id": "1p7tyB1dXdBR",
+          "username": "jon.snow",
+          "name": {
+            "firstName": "Jon",
+            "lastName": "Snow"
+          },
+          "avatar": "2m7zCt3aLQxn"
+        },
+        {
+          "id": "2Gw6me1D6hTb",
+          "username": "jeor.mormont",
+          "name": {
+            "firstName": "Jeor",
+            "lastName": "Mormont"
+          },
+          "avatar": "4WgLfX3wztf5"
+        }
+      ]
+    },
+    "Team Custom": {
+      "className": "TeamCFValue",
+      "team": {
+        "id": "13PVz80nvUZX",
+        "name": "Dev Team"
+      }
+    },
+    "Location Custom": {
+      "className": "LocationCFValue",
+      "location": {
+        "id": "X2KiN1gfhQK",
+        "name": "Deskpro Inc (type campus)"
+      }
+    },
+    "Project Custom": {
+      "className": "ProjectCFValue",
+      "project": {
+        "id": "kUysu1ZlRBm",
+        "name": "Deskpro Space"
+      }
+    },
+    "Link Custom": {
+      "className": "UrlCFValue",
+      "href": "https://www.london.gov.uk/who-we-are/what-mayor-does#:~:text=Sadiq%20Khan%20is%20the%20current,to%20improve%20London%20for%20all."
+    },
+    "Issue Custom": {
+      "className": "IssueCFValue",
+      "issue": {
+        "id": "4RrVBd3gf634",
+        "projectRef": {
+          "id": "kUysu1ZlRBm",
+          "key": {
+            "key": "DP-SPACE"
+          },
+          "name": "Deskpro Space",
+          "memberProfiles": [
+            {
+              "id": "3vsk2Z3bsDx6",
+              "username": "davidtestacc0401",
+              "name": {
+                "firstName": "David",
+                "lastName": "Anjonrin-Ohu"
+              },
+              "avatar": null
+            },
+            {
+              "id": "1p7tyB1dXdBR",
+              "username": "jon.snow",
+              "name": {
+                "firstName": "Jon",
+                "lastName": "Snow"
+              },
+              "avatar": "2m7zCt3aLQxn"
+            },
+            {
+              "id": "3IVGHs3OPU3R",
+              "username": "alliser.thorne",
+              "name": {
+                "firstName": "Alliser",
+                "lastName": "Thorne"
+              },
+              "avatar": "3fzcdw2MVREC"
+            },
+            {
+              "id": "2Gw6me1D6hTb",
+              "username": "jeor.mormont",
+              "name": {
+                "firstName": "Jeor",
+                "lastName": "Mormont"
+              },
+              "avatar": "4WgLfX3wztf5"
+            }
+          ],
+          "adminProfiles": [
+            {
+              "id": "2wwNis4MCPQv",
+              "username": "missandei",
+              "name": {
+                "firstName": "Missandei",
+                "lastName": "."
+              },
+              "avatar": "26DURm1YWhiJ"
+            },
+            {
+              "id": "3vsk2Z3bsDx6",
+              "username": "davidtestacc0401",
+              "name": {
+                "firstName": "David",
+                "lastName": "Anjonrin-Ohu"
+              },
+              "avatar": null
+            }
+          ]
+        },
+        "number": 3,
+        "status": {
+          "id": "2jIXCa4ZCn07",
+          "archived": false,
+          "name": "Open",
+          "resolved": false,
+          "color": "1965b0"
+        },
+        "title": "Two issue"
+      }
+    },
+    "Issue Multi Custom": {
+      "className": "IssueListCFValue",
+      "issues": [
+        {
+          "id": "1Hb7rA00cBqO",
+          "projectRef": {
+            "id": "kUysu1ZlRBm",
+            "key": {
+              "key": "DP-SPACE"
+            },
+            "name": "Deskpro Space",
+            "memberProfiles": [
+              {
+                "id": "3vsk2Z3bsDx6",
+                "username": "davidtestacc0401",
+                "name": {
+                  "firstName": "David",
+                  "lastName": "Anjonrin-Ohu"
+                },
+                "avatar": null
+              },
+              {
+                "id": "1p7tyB1dXdBR",
+                "username": "jon.snow",
+                "name": {
+                  "firstName": "Jon",
+                  "lastName": "Snow"
+                },
+                "avatar": "2m7zCt3aLQxn"
+              },
+              {
+                "id": "3IVGHs3OPU3R",
+                "username": "alliser.thorne",
+                "name": {
+                  "firstName": "Alliser",
+                  "lastName": "Thorne"
+                },
+                "avatar": "3fzcdw2MVREC"
+              },
+              {
+                "id": "2Gw6me1D6hTb",
+                "username": "jeor.mormont",
+                "name": {
+                  "firstName": "Jeor",
+                  "lastName": "Mormont"
+                },
+                "avatar": "4WgLfX3wztf5"
+              }
+            ],
+            "adminProfiles": [
+              {
+                "id": "2wwNis4MCPQv",
+                "username": "missandei",
+                "name": {
+                  "firstName": "Missandei",
+                  "lastName": "."
+                },
+                "avatar": "26DURm1YWhiJ"
+              },
+              {
+                "id": "3vsk2Z3bsDx6",
+                "username": "davidtestacc0401",
+                "name": {
+                  "firstName": "David",
+                  "lastName": "Anjonrin-Ohu"
+                },
+                "avatar": null
+              }
+            ]
+          },
+          "number": 2,
+          "status": {
+            "id": "2jIXCa4ZCn07",
+            "archived": false,
+            "name": "Open",
+            "resolved": false,
+            "color": "1965b0"
+          },
+          "title": "One issue"
+        },
+        {
+          "id": "4RrVBd3gf634",
+          "projectRef": {
+            "id": "kUysu1ZlRBm",
+            "key": {
+              "key": "DP-SPACE"
+            },
+            "name": "Deskpro Space",
+            "memberProfiles": [
+              {
+                "id": "3vsk2Z3bsDx6",
+                "username": "davidtestacc0401",
+                "name": {
+                  "firstName": "David",
+                  "lastName": "Anjonrin-Ohu"
+                },
+                "avatar": null
+              },
+              {
+                "id": "1p7tyB1dXdBR",
+                "username": "jon.snow",
+                "name": {
+                  "firstName": "Jon",
+                  "lastName": "Snow"
+                },
+                "avatar": "2m7zCt3aLQxn"
+              },
+              {
+                "id": "3IVGHs3OPU3R",
+                "username": "alliser.thorne",
+                "name": {
+                  "firstName": "Alliser",
+                  "lastName": "Thorne"
+                },
+                "avatar": "3fzcdw2MVREC"
+              },
+              {
+                "id": "2Gw6me1D6hTb",
+                "username": "jeor.mormont",
+                "name": {
+                  "firstName": "Jeor",
+                  "lastName": "Mormont"
+                },
+                "avatar": "4WgLfX3wztf5"
+              }
+            ],
+            "adminProfiles": [
+              {
+                "id": "2wwNis4MCPQv",
+                "username": "missandei",
+                "name": {
+                  "firstName": "Missandei",
+                  "lastName": "."
+                },
+                "avatar": "26DURm1YWhiJ"
+              },
+              {
+                "id": "3vsk2Z3bsDx6",
+                "username": "davidtestacc0401",
+                "name": {
+                  "firstName": "David",
+                  "lastName": "Anjonrin-Ohu"
+                },
+                "avatar": null
+              }
+            ]
+          },
+          "number": 3,
+          "status": {
+            "id": "2jIXCa4ZCn07",
+            "archived": false,
+            "name": "Open",
+            "resolved": false,
+            "color": "1965b0"
+          },
+          "title": "Two issue"
+        },
+        {
+          "id": "4S5zxv3fKSgK",
+          "projectRef": {
+            "id": "kUysu1ZlRBm",
+            "key": {
+              "key": "DP-SPACE"
+            },
+            "name": "Deskpro Space",
+            "memberProfiles": [
+              {
+                "id": "3vsk2Z3bsDx6",
+                "username": "davidtestacc0401",
+                "name": {
+                  "firstName": "David",
+                  "lastName": "Anjonrin-Ohu"
+                },
+                "avatar": null
+              },
+              {
+                "id": "1p7tyB1dXdBR",
+                "username": "jon.snow",
+                "name": {
+                  "firstName": "Jon",
+                  "lastName": "Snow"
+                },
+                "avatar": "2m7zCt3aLQxn"
+              },
+              {
+                "id": "3IVGHs3OPU3R",
+                "username": "alliser.thorne",
+                "name": {
+                  "firstName": "Alliser",
+                  "lastName": "Thorne"
+                },
+                "avatar": "3fzcdw2MVREC"
+              },
+              {
+                "id": "2Gw6me1D6hTb",
+                "username": "jeor.mormont",
+                "name": {
+                  "firstName": "Jeor",
+                  "lastName": "Mormont"
+                },
+                "avatar": "4WgLfX3wztf5"
+              }
+            ],
+            "adminProfiles": [
+              {
+                "id": "2wwNis4MCPQv",
+                "username": "missandei",
+                "name": {
+                  "firstName": "Missandei",
+                  "lastName": "."
+                },
+                "avatar": "26DURm1YWhiJ"
+              },
+              {
+                "id": "3vsk2Z3bsDx6",
+                "username": "davidtestacc0401",
+                "name": {
+                  "firstName": "David",
+                  "lastName": "Anjonrin-Ohu"
+                },
+                "avatar": null
+              }
+            ]
+          },
+          "number": 4,
+          "status": {
+            "id": "2jIXCa4ZCn07",
+            "archived": false,
+            "name": "Open",
+            "resolved": false,
+            "color": "1965b0"
+          },
+          "title": "Three issue"
+        }
+      ]
+    },
+    "Auto Number Custom": {
+      "className": "AutonumberCFValue",
+      "value": null
+    },
+    "VCS Commit Custom": {
+      "className": "VcsCommitCFValue",
+      "commit": {
+        "className": "CFCommitInfoBase.CFCommitInfo",
+        "commit": {
+          "commitId": "12ccd0d679213b1e3fe6dfcb425712e5ee3ac703",
+          "message": "All members can modify these files and this is a very very very very very very very very very very long long long long long long long long long long long long long long long long long commit message !!!"
+        }
+      }
+    },
+    "VCS Commit Multi Custom": {
+      "className": "VcsCommitListCFValue",
+      "commits": [
+        {
+          "className": "CFCommitInfoBase.CFCommitInfo",
+          "commit": {
+            "commitId": "18d974e89312a1c73277d5aa7bd6f94fb40af77e",
+            "message": "Test commit message"
+          }
+        },
+        {
+          "className": "CFCommitInfoBase.CFCommitInfo",
+          "commit": {
+            "commitId": "12ccd0d679213b1e3fe6dfcb425712e5ee3ac703",
+            "message": "All members can modify these files and this is a very very very very very very very very very very long long long long long long long long long long long long long long long long long commit message !!!"
+          }
+        },
+        {
+          "className": "CFCommitInfoBase.CFCommitInfo",
+          "commit": {
+            "commitId": "36f141485079365bd46bf2011eadf9403abaf0cb",
+            "message": "Initial commit"
+          }
+        }
+      ]
+    }
+  }
+}

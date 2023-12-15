@@ -5,5 +5,84 @@
   "assignee": "2wwNis4MCPQv",
   "status": "3nuoYD3PXgjA",
   "dueDate": "2023-12-22T22:00:00.000Z",
-  "tags": ["1fbZWo14TczB", "16QR6Q2GkAIU"]
+  "tags": ["1fbZWo14TczB", "16QR6Q2GkAIU"],
+  "customFields": {
+    "1lZ4bB2DbLbE": "some custom text",
+    "2gCoa44U7Ooo": [
+      {
+        "id": "bc47cf15-f5ca-4087-955f-977aa6b2569b",
+        "value": "item1"
+      },
+      {
+        "id": "2c3cb161-103d-4d36-8884-088fb67b1478",
+        "value": "item2"
+      },
+      {
+        "id": "deb0a429-95f9-435e-aa13-5440ab651389",
+        "value": "item3"
+      },
+      {
+        "id": "64dcbb6a-8480-432d-b949-1b0e8f6c9077",
+        "value": "item4"
+      },
+      {
+        "id": "1d886fb1-5610-4ed7-b5f4-4f4345cb639b",
+        "value": "item5"
+      }
+    ],
+    "1S6CxP14owHM": "100500",
+    "4QoBZH2f5Ppz": [
+      {
+        "id": "d06f4b0c-fe34-4e5f-9732-03cd9426f7a8",
+        "value": "1"
+      },
+      {
+        "id": "81b48beb-3c3a-4383-adbe-b6aaa290542e",
+        "value": "2"
+      },
+      {
+        "id": "42ddff71-ea4c-46cc-baa6-b5a0654f6449",
+        "value": "3"
+      },
+      {
+        "id": "137dab84-1259-442c-89bb-84810df9bec3",
+        "value": "4"
+      },
+      {
+        "id": "827253f4-db8d-49ec-a4c8-f87c62c1266f",
+        "value": "5"
+      }
+    ],
+    "vQR2h1gPxzk": { "id": "4E0ehX4CrhQ7", "value": "item 2" },
+    "1jzp3w0eMjb1": [
+      { "id": "hISIV0I2C60", "value": "item 01" },
+      { "id": "155idr0PMOml", "value": "item 03" },
+      { "id": "1cXDC91nVHkD", "value": "item 05" }
+    ],
+    "13Nmgh1t6Mln": true,
+    "1zAzn40tHz2a": "2023-12-23T22:00:00.000Z",
+    "2CR4aa2J8Z3K": "2024-01-01T13:15:00.000Z",
+    "3JyhbW3upSFI": "73",
+    "1J8EKe1Lh8Vb": "3vsk2Z3bsDx6",
+    "3OfM8O2UC2Sz": [
+      "1p7tyB1dXdBR",
+      "3IVGHs3OPU3R",
+      "2Gw6me1D6hTb"
+    ],
+    "3L0gLL46bR6c": "31KgHK4fhraG",
+    "I6gmC1eZKte": "2rsVJi4JFhMk",
+    "3EnuD84TT3nQ": "kUysu1ZlRBm",
+    "2AFb1615qzQD": "https://custom.link",
+    "3JAXW838M6Gx": "1Hb7rA00cBqO",
+    "2EYotk0tmAjF": [
+      "1Hb7rA00cBqO",
+      "4RrVBd3gf634",
+      "4S5zxv3fKSgK"
+    ],
+    "4cjHj944dIOc": "kUysu1ZlRBm/space-app/18d974e89312a1c73277d5aa7bd6f94fb40af77e",
+    "S9F2m20bO2o": [
+      "kUysu1ZlRBm/space-app/12ccd0d679213b1e3fe6dfcb425712e5ee3ac703",
+      "kUysu1ZlRBm/space-app/36f141485079365bd46bf2011eadf9403abaf0cb"
+    ]
+  }
 }

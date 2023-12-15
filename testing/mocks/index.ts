@@ -4,3 +4,5 @@ export { default as mockProjects } from "./mockProjects.json";
 export { default as mockOrganization } from "./mockOrganization.json";
 export { default as mockSearchIssues } from "./mockSearchIssues.json";
 export { default as mockIssueMessages } from "./mockIssueMessages.json";
+export { default as mockIssueWithCustomFields } from "./mockIssueWithCustomFields.json";
+export { default as mockCustomFieldsConfig } from "./mockCustomFieldsConfig.json";

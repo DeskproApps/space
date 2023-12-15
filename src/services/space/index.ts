@@ -13,3 +13,7 @@ export { updateIssueService } from "./updateIssueService";
 export { addIssueTagService } from "./addIssueTagService";
 export { removeIssueTagService } from "./removeIssueTagService";
 export { updateIssueTagsService } from "./updateIssueTagsService";
+export { getCustomFieldsConfigService } from "./getCustomFieldsConfigService";
+export { getTeamsService } from "./getTeamsService";
+export { getLocationsService } from "./getLocationsService";
+export { getCommitsService } from "./getCommitsService";

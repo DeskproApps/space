@@ -2,6 +2,8 @@ import { CustomFieldsMap } from "../../constants";
 import type { DateTime, Maybe } from "../../types";
 import type { components, paths } from "./schema";
 
+export type { components, paths } from "./schema";
+
 export type Response<T> = Promise<T>;
 
 export type Pagination<T> = {
@@ -24,6 +26,10 @@ export type AccessToken = {
 };
 
 export type Organization = components["schemas"]["OrganizationRecord"];
+
+export type Team = components["schemas"]["TD_Team"];
+
+export type Location = components["schemas"]["TD_Location"];
 
 export type Project = components["schemas"]["PR_Project"];
 
@@ -94,3 +100,5 @@ export type IssueInput = Omit<
 > & {
   assignee: Maybe<Member["id"]>,
 };
+
+export type CustomFieldData = components["schemas"]["CustomFieldData"];

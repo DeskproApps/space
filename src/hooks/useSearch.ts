@@ -5,11 +5,11 @@ import { useQueryWithClient } from "@deskpro/app-sdk";
 import {
   getProjectsService,
   searchIssuesService,
-} from "../../services/space";
-import { useIssues } from "../../hooks";
-import { QueryKey } from "../../query";
-import type { Maybe } from "../../types";
-import type { Project, Issue } from "../../services/space/types";
+} from "../services/space";
+import { useIssues } from "../hooks";
+import { QueryKey } from "../query";
+import type { Maybe } from "../types";
+import type { Project, Issue } from "../services/space/types";
 
 export type Result = {
   isLoading: boolean,

@@ -1,0 +1,468 @@
+[
+  {
+    "id": "1lZ4bB2DbLbE",
+    "name": "custom text",
+    "type": "STRING",
+    "multivalued": false,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "StringCFValue",
+      "value": null
+    },
+    "constraint": null,
+    "description": null,
+    "order": 0,
+    "archived": false
+  },
+  {
+    "id": "2gCoa44U7Ooo",
+    "name": "Custom Text Multi",
+    "type": "STRING",
+    "multivalued": true,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "StringListCFValue",
+      "values": []
+    },
+    "constraint": null,
+    "description": null,
+    "order": 1,
+    "archived": false
+  },
+  {
+    "id": "1S6CxP14owHM",
+    "name": "Custom Number",
+    "type": "INTEGER",
+    "multivalued": false,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "IntCFValue",
+      "value": null
+    },
+    "constraint": null,
+    "description": null,
+    "order": 2,
+    "archived": false
+  },
+  {
+    "id": "4QoBZH2f5Ppz",
+    "name": "Custom Number Multi",
+    "type": "INTEGER",
+    "multivalued": true,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "IntListCFValue",
+      "values": []
+    },
+    "constraint": null,
+    "description": null,
+    "order": 3,
+    "archived": false
+  },
+  {
+    "id": "vQR2h1gPxzk",
+    "name": "Custom List",
+    "type": "ENUM",
+    "multivalued": false,
+    "parameters": {
+      "className": "EnumCFParameters",
+      "values": [
+        {
+          "id": "BqjkX0jLJvw",
+          "value": "item 1",
+          "principal": {
+            "className": "CUserPrincipalDetails",
+            "user": {
+              "id": "2wwNis4MCPQv"
+            }
+          }
+        },
+        {
+          "id": "4E0ehX4CrhQ7",
+          "value": "item 2",
+          "principal": {
+            "className": "CUserPrincipalDetails",
+            "user": {
+              "id": "2wwNis4MCPQv"
+            }
+          }
+        },
+        {
+          "id": "1I9Wga1nqyly",
+          "value": "item 3",
+          "principal": {
+            "className": "CUserPrincipalDetails",
+            "user": {
+              "id": "2wwNis4MCPQv"
+            }
+          }
+        },
+        {
+          "id": "3g80y05JnkK",
+          "value": "item 4",
+          "principal": {
+            "className": "CUserPrincipalDetails",
+            "user": {
+              "id": "2wwNis4MCPQv"
+            }
+          }
+        },
+        {
+          "id": "3N822O3kav9H",
+          "value": "item 5",
+          "principal": {
+            "className": "CUserPrincipalDetails",
+            "user": {
+              "id": "2wwNis4MCPQv"
+            }
+          }
+        }
+      ]
+    },
+    "required": false,
+    "defaultValue": {
+      "className": "EnumCFValue",
+      "value": null
+    },
+    "constraint": null,
+    "description": null,
+    "order": 4,
+    "archived": false
+  },
+  {
+    "id": "1jzp3w0eMjb1",
+    "name": "Custom List Multi",
+    "type": "ENUM",
+    "multivalued": true,
+    "parameters": {
+      "className": "EnumCFParameters",
+      "values": [
+        {
+          "id": "hISIV0I2C60",
+          "value": "item 01",
+          "principal": {
+            "className": "CUserPrincipalDetails",
+            "user": {
+              "id": "2wwNis4MCPQv"
+            }
+          }
+        },
+        {
+          "id": "2Dx9ho2D1fyi",
+          "value": "item 02",
+          "principal": {
+            "className": "CUserPrincipalDetails",
+            "user": {
+              "id": "2wwNis4MCPQv"
+            }
+          }
+        },
+        {
+          "id": "155idr0PMOml",
+          "value": "item 03",
+          "principal": {
+            "className": "CUserPrincipalDetails",
+            "user": {
+              "id": "2wwNis4MCPQv"
+            }
+          }
+        },
+        {
+          "id": "2aoFHs3lk9BR",
+          "value": "item 04",
+          "principal": {
+            "className": "CUserPrincipalDetails",
+            "user": {
+              "id": "2wwNis4MCPQv"
+            }
+          }
+        },
+        {
+          "id": "1cXDC91nVHkD",
+          "value": "item 05",
+          "principal": {
+            "className": "CUserPrincipalDetails",
+            "user": {
+              "id": "2wwNis4MCPQv"
+            }
+          }
+        }
+      ]
+    },
+    "required": false,
+    "defaultValue": {
+      "className": "EnumListCFValue",
+      "values": []
+    },
+    "constraint": null,
+    "description": null,
+    "order": 5,
+    "archived": false
+  },
+  {
+    "id": "13Nmgh1t6Mln",
+    "name": "Custom Checkbox",
+    "type": "BOOLEAN",
+    "multivalued": false,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "BooleanCFValue",
+      "value": false
+    },
+    "constraint": null,
+    "description": null,
+    "order": 6,
+    "archived": false
+  },
+  {
+    "id": "1zAzn40tHz2a",
+    "name": "Custom Date",
+    "type": "DATE",
+    "multivalued": false,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "DateCFValue",
+      "value": null
+    },
+    "constraint": null,
+    "description": null,
+    "order": 7,
+    "archived": false
+  },
+  {
+    "id": "2CR4aa2J8Z3K",
+    "name": "DateTime Custom",
+    "type": "DATE_TIME",
+    "multivalued": false,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "DateTimeCFValue",
+      "value": null
+    },
+    "constraint": null,
+    "description": null,
+    "order": 8,
+    "archived": false
+  },
+  {
+    "id": "3JyhbW3upSFI",
+    "name": "Percentage Custom",
+    "type": "PERCENTAGE",
+    "multivalued": false,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "PercentageCFValue",
+      "value": null
+    },
+    "constraint": {
+      "className": "PercentageCFConstraint"
+    },
+    "description": null,
+    "order": 9,
+    "archived": false
+  },
+  {
+    "id": "1J8EKe1Lh8Vb",
+    "name": "Member Custom",
+    "type": "PROFILE",
+    "multivalued": false,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "ProfileCFValue",
+      "profile": null
+    },
+    "constraint": null,
+    "description": null,
+    "order": 10,
+    "archived": false
+  },
+  {
+    "id": "3OfM8O2UC2Sz",
+    "name": "Member Custom Multi",
+    "type": "PROFILE",
+    "multivalued": true,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "ProfileListCFValue",
+      "profiles": []
+    },
+    "constraint": null,
+    "description": null,
+    "order": 11,
+    "archived": false
+  },
+  {
+    "id": "3L0gLL46bR6c",
+    "name": "Team Custom",
+    "type": "TEAM",
+    "multivalued": false,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "TeamCFValue",
+      "team": null
+    },
+    "constraint": null,
+    "description": null,
+    "order": 12,
+    "archived": false
+  },
+  {
+    "id": "I6gmC1eZKte",
+    "name": "Location Custom",
+    "type": "LOCATION",
+    "multivalued": false,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "LocationCFValue",
+      "location": null
+    },
+    "constraint": null,
+    "description": null,
+    "order": 13,
+    "archived": false
+  },
+  {
+    "id": "3EnuD84TT3nQ",
+    "name": "Project Custom",
+    "type": "PROJECT",
+    "multivalued": false,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "ProjectCFValue",
+      "project": null
+    },
+    "constraint": null,
+    "description": null,
+    "order": 14,
+    "archived": false
+  },
+  {
+    "id": "2AFb1615qzQD",
+    "name": "Link Custom",
+    "type": "URL",
+    "multivalued": false,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "UrlCFValue",
+      "href": null
+    },
+    "constraint": null,
+    "description": null,
+    "order": 15,
+    "archived": false
+  },
+  {
+    "id": "3JAXW838M6Gx",
+    "name": "Issue Custom",
+    "type": "ISSUE",
+    "multivalued": false,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "IssueCFValue",
+      "issue": null
+    },
+    "constraint": null,
+    "description": null,
+    "order": 16,
+    "archived": false
+  },
+  {
+    "id": "2EYotk0tmAjF",
+    "name": "Issue Multi Custom",
+    "type": "ISSUE",
+    "multivalued": true,
+    "parameters": null,
+    "required": false,
+    "defaultValue": {
+      "className": "IssueListCFValue",
+      "issues": []
+    },
+    "constraint": null,
+    "description": null,
+    "order": 17,
+    "archived": false
+  },
+  {
+    "id": "4LBxWM4W5BbQ",
+    "name": "Auto Number Custom",
+    "type": "AUTONUMBER",
+    "multivalued": false,
+    "parameters": {
+      "className": "AutonumberCFParameters",
+      "prefix": "--==[ ",
+      "suffix": " ]==--"
+    },
+    "required": true,
+    "defaultValue": {
+      "className": "AutonumberCFValue",
+      "value": null
+    },
+    "constraint": null,
+    "description": null,
+    "order": 18,
+    "archived": false
+  },
+  {
+    "id": "4cjHj944dIOc",
+    "name": "VCS Commit Custom",
+    "type": "COMMIT",
+    "multivalued": false,
+    "parameters": {
+      "className": "VcsCommitCFParameters",
+      "vcsCFScope": {
+        "className": "VcsCFScope.Project",
+        "project": {
+          "id": "kUysu1ZlRBm"
+        }
+      }
+    },
+    "required": false,
+    "defaultValue": {
+      "className": "VcsCommitCFValue",
+      "commit": null
+    },
+    "constraint": null,
+    "description": null,
+    "order": 19,
+    "archived": false
+  },
+  {
+    "id": "S9F2m20bO2o",
+    "name": "VCS Commit Multi Custom",
+    "type": "COMMIT",
+    "multivalued": true,
+    "parameters": {
+      "className": "VcsCommitCFParameters",
+      "vcsCFScope": {
+        "className": "VcsCFScope.Project",
+        "project": {
+          "id": "kUysu1ZlRBm"
+        }
+      }
+    },
+    "required": false,
+    "defaultValue": {
+      "className": "VcsCommitListCFValue",
+      "commits": []
+    },
+    "constraint": null,
+    "description": null,
+    "order": 20,
+    "archived": false
+  }
+]
