@@ -20,11 +20,11 @@ import {
   useRegisterElements,
 } from "../../hooks";
 import { DEFAULT_ERROR } from "../../constants";
-import { getIssueValues, getIssueTagsToUpdate } from "../../components/IssueForm";
+import { getIssueTagsToUpdate } from "../../components/IssueForm";
 import { EditIssue } from "../../components";
 import type { FC } from "react";
 import type { Maybe, TicketContext } from "../../types";
-import type { FormValidationSchema } from "../../components/IssueForm";
+import type { IssueInput, Project } from "../../services/space/types";
 
 const EditIssuePage: FC = () => {
   const { issueId } = useParams();
@@ -40,15 +40,15 @@ const EditIssuePage: FC = () => {
     navigate(`/issues/view/${issue?.id}`);
   }, [navigate, issue]);
 
-  const onSubmit = useCallback((values: FormValidationSchema,) => {
-    if (!client || isEmpty(values) || !issue?.id || !ticketId) {
+  const onSubmit = useCallback((projectId: Project["id"], values: IssueInput) => {
+    if (!client || !projectId || isEmpty(values) || !issue?.id || !ticketId) {
       return Promise.resolve();
     }
 
     setError(null);
 
-    return updateIssueService(client, values.project, issue.id, getIssueValues(values))
-      .then(() => updateIssueTagsService(client, values.project, issue.id, getIssueTagsToUpdate(issue, values)))
+    return updateIssueService(client, projectId, issue.id, values)
+      .then(() => updateIssueTagsService(client, projectId, issue.id, getIssueTagsToUpdate(issue, values)))
       .then(() => setEntityService(client, ticketId, issue.id))
       .then(() => navigate(`/issues/view/${issue.id}`))
       .catch((err) => {

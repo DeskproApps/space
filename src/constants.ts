@@ -52,7 +52,9 @@ export const COMMENT_FIELDS = [
   `author(name,details(user(${USER_FIELDS.join(",")})))`,
 ];
 
-export const TEAM_FIELDS = ["id", "name"];
+export const TEAM_FIELDS = ["id", "name", "parent!"];
+
+export const REPOSITORY_FIELDS = ["id", "name"];
 
 export const PROJECT_FIELDS = [
   "id",
@@ -60,6 +62,7 @@ export const PROJECT_FIELDS = [
   "key(key)",
   `adminProfiles(${USER_FIELDS.join(",")})`,
   `memberProfiles(${USER_FIELDS.join(",")})`,
+  `repos(${REPOSITORY_FIELDS.join(",")})`,
 ];
 
 export const MESSAGE_FIELDS = [`messages(${COMMENT_FIELDS.join(",")})`];
@@ -78,7 +81,9 @@ export const SUB_ITEM_FIELDS = [
   `root(children(id,simpleText,simpleDone,issue(${SIMPLE_ISSUE_FIELDS.join(",")})))`,
 ];
 
-export const COMMIT_FIELDS = ["commitId", "message"];
+export const COMMIT_FIELDS = ["commitId", "message", "repository", "project(id)"];
+
+export const LOCATION_FIELDS = ["id", "name", "parent!"];
 
 export const CUSTOM_FIELD_FIELDS = [
   "href",
@@ -118,6 +123,8 @@ export const fields = {
   TAG: TAG_FIELDS.join(","),
   ASSIGNEE: USER_FIELDS.join(","),
   STATUS: STATUS_FIELDS.join(","),
+  TEAM: TEAM_FIELDS.join(","),
+  LOCATION: LOCATION_FIELDS.join(","),
 };
 
 export enum CustomFieldsMap {
@@ -142,4 +149,22 @@ export enum CustomFieldsMap {
   AutonumberCFValue = "AutonumberCFValue",
   VcsCommitCFValue = "VcsCommitCFValue",
   VcsCommitListCFValue = "VcsCommitListCFValue",
+}
+
+export enum CustomFieldsType {
+  STRING = "STRING",
+  INTEGER = "INTEGER",
+  ENUM = "ENUM",
+  BOOLEAN = "BOOLEAN",
+  DATE = "DATE",
+  DATE_TIME = "DATE_TIME",
+  PERCENTAGE = "PERCENTAGE",
+  PROFILE = "PROFILE",
+  TEAM = "TEAM",
+  LOCATION = "LOCATION",
+  PROJECT = "PROJECT",
+  URL = "URL",
+  AUTONUMBER = "AUTONUMBER",
+  ISSUE = "ISSUE",
+  COMMIT = "COMMIT",
 }

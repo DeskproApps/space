@@ -15,7 +15,7 @@ import {
   useAsyncError,
   useRegisterElements,
 } from "../../hooks";
-import { useSearch } from "./hooks";
+import { useSearch } from "../../hooks";
 import { LinkIssues } from "../../components";
 import type { FC } from "react";
 import type { Maybe, TicketContext } from "../../types";

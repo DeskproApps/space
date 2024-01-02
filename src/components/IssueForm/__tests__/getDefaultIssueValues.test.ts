@@ -1,13 +1,13 @@
 import pick from "lodash/pick";
 import cloneDeep from "lodash/cloneDeep";
-import { getIssueValues } from "../utils";
+import { getDefaultIssueValues } from "../utils";
 import mockValues from "./mockValues.json";
 
 describe("IssueForm", () => {
-  describe("getIssueValues", () => {
+  describe("getDefaultIssueValues", () => {
     test("should return required values", () => {
       const values = pick(cloneDeep(mockValues), ["title", "status"]);
-      expect(getIssueValues(values as never)).toStrictEqual({
+      expect(getDefaultIssueValues(values as never)).toStrictEqual({
         title: "Issue for Test",
         description: undefined,
         assignee: undefined,
@@ -18,7 +18,7 @@ describe("IssueForm", () => {
     });
 
     test("should return full issue values", () => {
-      expect(getIssueValues(mockValues as never)).toStrictEqual({
+      expect(getDefaultIssueValues(mockValues as never)).toStrictEqual({
         title: "Issue for Test",
         description: "Description __with__ _markdown_",
         assignee: "2wwNis4MCPQv",

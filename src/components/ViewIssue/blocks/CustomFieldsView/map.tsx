@@ -33,7 +33,7 @@ const map = ({ className, ...props }: CustomField): ReactNode => {
       CustomFieldsMap.StringCFValue,
       CustomFieldsMap.AutonumberCFValue,
     ), () => (
-      <SimpleSingleCustomField {...props as components["schemas"]["StringCFValue"]}/>
+      <SimpleSingleCustomField {...props as { value: string }}/>
     ))
     .with(P.union(
       CustomFieldsMap.StringListCFValue,

@@ -7,7 +7,7 @@ import {
   useInitialisedDeskproAppClient,
 } from "@deskpro/app-sdk";
 import { getEntityListService } from "../../services/deskpro";
-import { getOrganizationService } from "../../services/space";
+import { getOrganizationService, refreshAccessTokenService } from "../../services/space";
 import type { TicketContext } from "../../types";
 
 type UseCheckAuth = () => void;
@@ -23,6 +23,9 @@ const useCheckAuth: UseCheckAuth = () => {
     }
 
     getOrganizationService(client)
+      .catch(() =>
+        refreshAccessTokenService(client).then(() => getOrganizationService(client))
+      )
       .then(() => getEntityListService(client, ticketId))
       .then((entityIds) => navigate(size(entityIds) ? "/home" : "/issues/link"))
       .catch(() => navigate("/login"))

@@ -1,16 +1,16 @@
 import { cleanup, renderHook, waitFor } from "@testing-library/react";
-import { wrap, mockIssues, mockSearchIssues, mockProjects } from "../../../../testing";
+import { wrap, mockIssues, mockSearchIssues, mockProjects } from "../../../testing";
 import {
   getIssuesService,
   getProjectsService,
   searchIssuesService,
-} from "../../../services/space";
-import { useSearch } from "../hooks";
-import type { Result } from "../hooks";
+} from "../../services/space";
+import { useSearch } from "../useSearch";
+import type { Result } from "../useSearch";
 
-jest.mock("../../../services/space/getIssuesService");
-jest.mock("../../../services/space/getProjectsService");
-jest.mock("../../../services/space/searchIssuesService");
+jest.mock("../../services/space/getIssuesService");
+jest.mock("../../services/space/getProjectsService");
+jest.mock("../../services/space/searchIssuesService");
 
 const renderSearchHook = (project: string, q: string) => renderHook<Result, unknown>(
   () => useSearch(project, q),

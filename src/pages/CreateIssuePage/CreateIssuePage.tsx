@@ -14,11 +14,10 @@ import {
   useRegisterElements,
 } from "../../hooks";
 import { DEFAULT_ERROR } from "../../constants";
-import { getIssueValues } from "../../components/IssueForm";
 import { CreateIssue } from "../../components";
 import type { FC } from "react";
 import type { Maybe, TicketContext } from "../../types";
-import type { FormValidationSchema } from "../../components/IssueForm";
+import type { IssueInput, Project } from "../../services/space/types";
 
 const CreateIssuePage: FC = () => {
   const navigate = useNavigate();
@@ -32,25 +31,25 @@ const CreateIssuePage: FC = () => {
 
   const onCancel = useCallback(() => navigate("/home"), [navigate]);
 
-  const onSubmit = useCallback((values: FormValidationSchema) => {
-    if (!client || !ticketId || isEmpty(values)) {
+  const onSubmit = useCallback((projectId: Project["id"], values: IssueInput) => {
+    if (!client || !ticketId || !projectId || isEmpty(values)) {
       return Promise.resolve();
     }
 
     setError(null);
 
-    return createIssueService(client, values?.project, getIssueValues(values))
-        .then((issue) => setEntityService(client, ticketId, issue.id))
-        .then(() => navigate("/home"))
-        .catch((err) => {
-          const error = get(err, ["data", "error_description"]) || DEFAULT_ERROR;
+    return createIssueService(client, projectId, values)
+      .then((issue) => setEntityService(client, ticketId, issue.id))
+      .then(() => navigate("/home"))
+      .catch((err) => {
+        const error = get(err, ["data", "error_description"]) || DEFAULT_ERROR;
 
-          if (error) {
-            setError(error)
-          } else {
-            asyncErrorHandler(err);
-          }
-        })
+        if (error) {
+          setError(error)
+        } else {
+          asyncErrorHandler(err);
+        }
+      })
   }, [asyncErrorHandler, client, navigate, ticketId]);
 
   useSetTitle("Link Issue");

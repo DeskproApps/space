@@ -20,6 +20,9 @@ const QueryKey = {
   ISSUE_TAGS: "issue_tags",
   LINKED_ISSUES: "linked_issues",
   ISSUE_MESSAGES: "issue_messages",
+  CUSTOM_FIELDS: "custom_fields",
+  TEAM: "team",
+  LOCATION: "location",
 }
 
 export { queryClient, QueryKey };

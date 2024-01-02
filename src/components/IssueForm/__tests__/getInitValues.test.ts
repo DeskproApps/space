@@ -1,9 +1,9 @@
-import { getInitValues } from "../utils";
+import { getDefaultInitValues } from "../utils";
 
 describe("IssueForm", () => {
-  describe("getInitValues", () => {
+  describe("getDefaultInitValues", () => {
     test("should return init values for new issue", () => {
-      expect(getInitValues()).toStrictEqual({
+      expect(getDefaultInitValues()).toStrictEqual({
         project: "",
         title: "",
         description: "",

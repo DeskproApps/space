@@ -6,15 +6,21 @@
         "key": "MAIN"
       },
       "name": "Deskpro Apps",
+      "repos": [
+        {
+          "id": "3s75ru2l8b1K",
+          "name": "AppBuilder"
+        }
+      ],
       "memberProfiles": [
         {
           "id": "2wwNis4MCPQv",
-          "username": "zpawn",
+          "username": "missandei",
           "name": {
-            "firstName": "ilia",
-            "lastName": "makarov"
+            "firstName": "Missandei",
+            "lastName": "."
           },
-          "avatar": "iYa8y1aEcMz"
+          "avatar": "26DURm1YWhiJ"
         }
       ],
       "adminProfiles": [
@@ -23,18 +29,18 @@
           "username": "davidtestacc0401",
           "name": {
             "firstName": "David",
-            "lastName": "Test"
+            "lastName": "Anjonrin-Ohu"
           },
           "avatar": null
         },
         {
           "id": "2wwNis4MCPQv",
-          "username": "zpawn",
+          "username": "missandei",
           "name": {
-            "firstName": "ilia",
-            "lastName": "makarov"
+            "firstName": "Missandei",
+            "lastName": "."
           },
-          "avatar": "iYa8y1aEcMz"
+          "avatar": "26DURm1YWhiJ"
         }
       ]
     },
@@ -44,26 +50,72 @@
         "key": "DP-SPACE"
       },
       "name": "Deskpro Space",
+      "repos": [
+        {
+          "id": "4DoPPV3PWsDM",
+          "name": "repo-deskpro"
+        },
+        {
+          "id": "33oZdK4DlzSk",
+          "name": "space-app"
+        }
+      ],
       "memberProfiles": [
         {
           "id": "3vsk2Z3bsDx6",
           "username": "davidtestacc0401",
           "name": {
             "firstName": "David",
-            "lastName": "Test"
+            "lastName": "Anjonrin-Ohu"
           },
           "avatar": null
+        },
+        {
+          "id": "1p7tyB1dXdBR",
+          "username": "jon.snow",
+          "name": {
+            "firstName": "Jon",
+            "lastName": "Snow"
+          },
+          "avatar": "2m7zCt3aLQxn"
+        },
+        {
+          "id": "3IVGHs3OPU3R",
+          "username": "alliser.thorne",
+          "name": {
+            "firstName": "Alliser",
+            "lastName": "Thorne"
+          },
+          "avatar": "3fzcdw2MVREC"
+        },
+        {
+          "id": "2Gw6me1D6hTb",
+          "username": "jeor.mormont",
+          "name": {
+            "firstName": "Jeor",
+            "lastName": "Mormont"
+          },
+          "avatar": "4WgLfX3wztf5"
         }
       ],
       "adminProfiles": [
         {
           "id": "2wwNis4MCPQv",
-          "username": "zpawn",
+          "username": "missandei",
           "name": {
-            "firstName": "ilia",
-            "lastName": "makarov"
+            "firstName": "Missandei",
+            "lastName": "."
           },
-          "avatar": "iYa8y1aEcMz"
+          "avatar": "26DURm1YWhiJ"
+        },
+        {
+          "id": "3vsk2Z3bsDx6",
+          "username": "davidtestacc0401",
+          "name": {
+            "firstName": "David",
+            "lastName": "Anjonrin-Ohu"
+          },
+          "avatar": null
         }
       ]
     }

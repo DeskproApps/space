@@ -5,13 +5,13 @@ import { useQueryWithClient } from "@deskpro/app-sdk";
 import {
   getTagsServices,
   getProjectsService,
-  getIssueStatusesService,
-} from "../../services/space";
-import { QueryKey } from "../../query";
-import { getOptions, getProjectMembers } from "../../utils";
-import { getAssigneeOptions, getStatusOptions, getTagOptions } from "./utils";
-import type { Option } from "../../types";
-import type { Project, Member, IssueStatus, IssueTag } from "../../services/space/types";
+  getIssueStatusesService, getCustomFieldsConfigService,
+} from "../../../services/space";
+import { QueryKey } from "../../../query";
+import { getOptions, getProjectMembers } from "../../../utils";
+import { getAssigneeOptions, getStatusOptions, getTagOptions } from "../utils";
+import type { Option } from "../../../types";
+import type {Project, Member, IssueStatus, IssueTag, CustomFieldData} from "../../../services/space/types";
 
 type UseFormDeps = (projectId?: Project["id"]) => {
   isLoading: boolean,
@@ -19,6 +19,7 @@ type UseFormDeps = (projectId?: Project["id"]) => {
   assigneeOptions: Array<Option<Member["id"]>>,
   statusOptions: Array<Option<IssueStatus["id"]>>,
   tagOptions: Array<Option<IssueTag["id"]>>,
+  customFields: CustomFieldData[],
 };
 
 const useFormDeps: UseFormDeps = (projectId) => {
@@ -33,6 +34,12 @@ const useFormDeps: UseFormDeps = (projectId) => {
   const tags = useQueryWithClient(
     [QueryKey.ISSUE_TAGS, projectId as Project["id"]],
     (client) => getTagsServices(client, projectId as Project["id"]),
+    { enabled: Boolean(projectId) },
+  );
+
+  const customFields = useQueryWithClient(
+    [QueryKey.CUSTOM_FIELDS, projectId as Project["id"]],
+    (client) => getCustomFieldsConfigService(client, projectId as Project["id"]),
     { enabled: Boolean(projectId) },
   );
 
@@ -54,11 +61,17 @@ const useFormDeps: UseFormDeps = (projectId) => {
   }, [tags.data]);
 
   return {
-    isLoading: projects.isLoading,
+    isLoading: [
+      tags,
+      projects,
+      statuses,
+      customFields,
+    ].some(({ isLoading }) => isLoading) && Boolean(projectId),
     tagOptions,
     statusOptions,
     projectOptions,
     assigneeOptions,
+    customFields: customFields.data || [],
   };
 };
 

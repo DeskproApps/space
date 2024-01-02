@@ -12,7 +12,7 @@ const renderCreateIssue = (props?: Partial<Props>) => render((
     error={props?.error || null}
     onNavigateToLink={props?.onNavigateToLink || jest.fn()}
   />
-), { wrappers: { theme: true, router: true, query: true } });
+), { wrappers: { appSdk: true, router: true, query: true } });
 
 describe("CreateIssue", () => {
   afterEach(() => {
