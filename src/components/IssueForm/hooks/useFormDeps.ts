@@ -3,7 +3,7 @@ import get from "lodash/get";
 import find from "lodash/find";
 import { useQueryWithClient } from "@deskpro/app-sdk";
 import {
-  getTagsServices,
+  getTagsService,
   getProjectsService,
   getIssueStatusesService, getCustomFieldsConfigService,
 } from "../../../services/space";
@@ -33,7 +33,7 @@ const useFormDeps: UseFormDeps = (projectId) => {
 
   const tags = useQueryWithClient(
     [QueryKey.ISSUE_TAGS, projectId as Project["id"]],
-    (client) => getTagsServices(client, projectId as Project["id"]),
+    (client) => getTagsService(client, projectId as Project["id"]),
     { enabled: Boolean(projectId) },
   );
 

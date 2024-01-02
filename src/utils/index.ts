@@ -12,3 +12,4 @@ export { isIssueComment } from "./isIssueComment";
 export { getFullName } from "./getFullName";
 export { getProjectMembers } from "./getProjectMembers";
 export { getCommitIdentifier } from "./getCommitIdentifier";
+export { findDeskproTag } from "./findDeskproTag";

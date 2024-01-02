@@ -14,6 +14,7 @@ import {
   useSetTitle,
   useReplyBox,
   useAsyncError,
+  useDeskproTag,
   useRegisterElements,
   useLinkedAutoComment,
 } from "../../hooks";
@@ -30,6 +31,7 @@ const LinkIssuesPage: FC = () => {
   const { asyncErrorHandler } = useAsyncError();
   const { addLinkComment } = useLinkedAutoComment();
   const { setSelectionState } = useReplyBox();
+  const { addDeskproTag } = useDeskproTag();
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [projectId, setProjectId] = useState<Maybe<Project["id"]>>(null);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -67,13 +69,14 @@ const LinkIssuesPage: FC = () => {
     Promise.all([
       ...selectedIssues.map((issue) => setEntityService(client, ticketId, issue.id)),
       ...selectedIssues.map((issue) => addLinkComment(issue)),
+      ...selectedIssues.map((issue) => addDeskproTag(issue)),
       ...selectedIssues.map((issue) => setSelectionState(issue.id, true, "email")),
       ...selectedIssues.map((issue) => setSelectionState(issue.id, true, "note")),
     ])
       .then(() => navigate("/home"))
       .catch(asyncErrorHandler)
       .finally(() => setIsSubmitting(false));
-  }, [client, navigate, ticketId, selectedIssues, asyncErrorHandler, addLinkComment, setSelectionState]);
+  }, [client, navigate, ticketId, selectedIssues, asyncErrorHandler, addLinkComment, setSelectionState, addDeskproTag]);
 
   useSetTitle("Link Issue");
 

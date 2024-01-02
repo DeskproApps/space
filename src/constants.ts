@@ -32,13 +32,19 @@ export const SCOPES = [
   "global:Project.View",
   "global:Profile.View",
   "global:Project.Issues.View",
+  "global:Project.Issues.Edit",
   "global:Project.Issues.Create",
+  "global:Project.Issues.ManageTags",
   "global:Project.Issues.PostComments",
   "global:Team.View",
   "global:Locations.View",
   "global:VcsRepository.Read",
   "global:Channel.ViewMessages",
 ];
+
+export const DESKPRO_TAG = {
+  name: "Deskpro",
+};
 
 export const TAG_FIELDS = ["id", "archived", "name", "projectId", "parent"];
 

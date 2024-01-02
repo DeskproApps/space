@@ -11,3 +11,4 @@ export { useUnlinkIssue } from "./useUnlinkIssue";
 export { useSearch } from "./useSearch";
 export { useLinkedAutoComment } from "./useLinkedAutoComment";
 export { useReplyBox, ReplyBoxProvider } from "./useReplyBox";
+export { useDeskproTag } from "./useDeskproTag";

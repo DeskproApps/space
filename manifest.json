@@ -70,6 +70,15 @@
       "isRequired": false,
       "isBackendOnly": false,
       "order": 70
+    },
+    "add_deskpro_tag": {
+      "title": "Add \"Deskpro\" tag when creating or linking Issue",
+      "description": "Automatically adding a tag to indicate in Space that the issue is currently linked to a Deskpro ticket",
+      "type": "boolean",
+      "default": true,
+      "isRequired": false,
+      "isBackendOnly": false,
+      "order": 80
     }
   },
   "proxy": {
