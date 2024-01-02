@@ -1,4 +1,5 @@
-import { useParams } from "react-router-dom";
+import { useCallback } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { LoadingSpinner } from "@deskpro/app-sdk";
 import {
   useIssue,
@@ -10,8 +11,13 @@ import { ViewIssue } from "../../components";
 import type { FC } from "react";
 
 const ViewIssuePage: FC = () => {
+  const navigate = useNavigate();
   const { issueId } = useParams();
   const { issue, comments, isLoading } = useIssue(issueId);
+
+  const onNavigateToAddComment = useCallback(() => {
+    navigate(`/issues/${issueId}/comments/new`);
+  }, [navigate, issueId]);
 
   useSetTitle(getIssueKey(issue));
 
@@ -44,7 +50,11 @@ const ViewIssuePage: FC = () => {
   }
 
   return (
-    <ViewIssue issue={issue} comments={comments} />
+    <ViewIssue
+      issue={issue}
+      comments={comments}
+      onNavigateToAddComment={onNavigateToAddComment}
+    />
   );
 };
 

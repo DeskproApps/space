@@ -8,9 +8,10 @@ import type { Issue, IssueComment } from "../../services/space/types";
 type Props = {
   issue?: Maybe<Issue>,
   comments: IssueComment[],
+  onNavigateToAddComment: () => void,
 };
 
-const ViewIssue: FC<Props> = ({ issue, comments }) => (
+const ViewIssue: FC<Props> = ({ issue, comments, onNavigateToAddComment }) => (
   <>
     <Container>
       <Info issue={issue}/>
@@ -26,7 +27,7 @@ const ViewIssue: FC<Props> = ({ issue, comments }) => (
     <HorizontalDivider/>
 
     <Container>
-      <Comments comments={comments} />
+      <Comments comments={comments} onNavigateToAddComment={onNavigateToAddComment} />
     </Container>
   </>
 );

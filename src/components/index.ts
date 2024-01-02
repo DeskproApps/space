@@ -6,3 +6,4 @@ export { Home } from "./Home";
 export { ViewIssue } from "./ViewIssue";
 export { CreateIssue } from "./CreateIssue";
 export { EditIssue } from "./EditIssue";
+export { CreateIssueComment } from "./CreateIssueComment";

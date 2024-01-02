@@ -33,9 +33,11 @@ export const SCOPES = [
   "global:Profile.View",
   "global:Project.Issues.View",
   "global:Project.Issues.Create",
+  "global:Project.Issues.PostComments",
   "global:Team.View",
   "global:Locations.View",
   "global:VcsRepository.Read",
+  "global:Channel.ViewMessages",
 ];
 
 export const TAG_FIELDS = ["id", "archived", "name", "projectId", "parent"];
@@ -125,6 +127,7 @@ export const fields = {
   STATUS: STATUS_FIELDS.join(","),
   TEAM: TEAM_FIELDS.join(","),
   LOCATION: LOCATION_FIELDS.join(","),
+  COMMENT: COMMENT_FIELDS.join(","),
 };
 
 export enum CustomFieldsMap {

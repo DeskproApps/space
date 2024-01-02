@@ -22,7 +22,8 @@ export type RequestParams = {
   url?: string,
   rawUrl?: string,
   method?: ApiRequestMethod,
-  data?: Dict<string>|RequestInit["body"]|V2ProxyRequestInitBody["body"]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  data?: Dict<any>|RequestInit["body"]|V2ProxyRequestInitBody["body"]
   headers?: Dict<string>,
   queryParams?: string|Dict<string>|ParamKeyValuePair[],
 };

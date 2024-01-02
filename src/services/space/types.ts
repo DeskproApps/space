@@ -101,4 +101,6 @@ export type IssueInput = Omit<
   assignee: Maybe<Member["id"]>,
 };
 
+export type IssueCommentInput = components["schemas"]["ChatMessage.Text"];
+
 export type CustomFieldData = components["schemas"]["CustomFieldData"];

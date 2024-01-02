@@ -17,3 +17,4 @@ export { getCustomFieldsConfigService } from "./getCustomFieldsConfigService";
 export { getTeamsService } from "./getTeamsService";
 export { getLocationsService } from "./getLocationsService";
 export { getCommitsService } from "./getCommitsService";
+export { createIssueCommentService } from "./createIssueCommentService";

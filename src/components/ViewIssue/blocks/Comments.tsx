@@ -9,11 +9,15 @@ import type { IssueComment } from "../../../services/space/types";
 
 export type Props = {
   comments: IssueComment[],
+  onNavigateToAddComment: () => void,
 };
 
-const Comments: FC<Props> = ({ comments }) => (
+const Comments: FC<Props> = ({ comments, onNavigateToAddComment }) => (
   <>
-    <Title title={`Comments (${size(comments)})`}/>
+    <Title
+      title={`Comments (${size(comments)})`}
+      onClick={onNavigateToAddComment}
+    />
 
     {comments.map((comment) => (
       <Fragment key={comment.id}>
