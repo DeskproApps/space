@@ -45,6 +45,15 @@
       "isRequired": false,
       "isBackendOnly": true,
       "order": 40
+    },
+    "add_comment_when_linking": {
+      "title": "Leave a comment on the issue in Space when it is linked to a ticket in Deskpro",
+      "description": "",
+      "type": "boolean",
+      "default": true,
+      "isRequired": false,
+      "isBackendOnly": false,
+      "order": 50
     }
   },
   "proxy": {

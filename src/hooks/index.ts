@@ -9,3 +9,4 @@ export { useIssues } from "./useIssues";
 export { useIssue } from "./useIssue";
 export { useUnlinkIssue } from "./useUnlinkIssue";
 export { useSearch } from "./useSearch";
+export { useLinkedAutoComment } from "./useLinkedAutoComment";

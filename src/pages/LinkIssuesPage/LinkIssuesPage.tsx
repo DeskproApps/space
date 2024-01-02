@@ -14,6 +14,7 @@ import {
   useSetTitle,
   useAsyncError,
   useRegisterElements,
+  useLinkedAutoComment,
 } from "../../hooks";
 import { useSearch } from "../../hooks";
 import { LinkIssues } from "../../components";
@@ -26,6 +27,7 @@ const LinkIssuesPage: FC = () => {
   const { client } = useDeskproAppClient();
   const { context } = useDeskproLatestAppContext() as { context: TicketContext };
   const { asyncErrorHandler } = useAsyncError();
+  const { addLinkComment } = useLinkedAutoComment();
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [projectId, setProjectId] = useState<Maybe<Project["id"]>>(null);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -62,11 +64,12 @@ const LinkIssuesPage: FC = () => {
 
     Promise.all([
       ...selectedIssues.map((issue) => setEntityService(client, ticketId, issue.id)),
+      ...selectedIssues.map((issue) => addLinkComment(issue)),
     ])
       .then(() => navigate("/home"))
       .catch(asyncErrorHandler)
       .finally(() => setIsSubmitting(false));
-  }, [client, navigate, ticketId, selectedIssues, asyncErrorHandler]);
+  }, [client, navigate, ticketId, selectedIssues, asyncErrorHandler, addLinkComment]);
 
   useSetTitle("Link Issue");
 
