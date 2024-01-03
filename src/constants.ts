@@ -25,6 +25,10 @@ export const placeholders = {
   REFRESH_TOKEN: `[user[${REFRESH_TOKEN_PATH}]]`,
 };
 
+export const DESKPRO_TAG = {
+  name: "Deskpro",
+};
+
 /** Space */
 export const BASE_URL = `${placeholders.URL}`;
 
@@ -41,10 +45,6 @@ export const SCOPES = [
   "global:VcsRepository.Read",
   "global:Channel.ViewMessages",
 ];
-
-export const DESKPRO_TAG = {
-  name: "Deskpro",
-};
 
 export const TAG_FIELDS = ["id", "archived", "name", "projectId", "parent"];
 

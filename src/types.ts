@@ -64,6 +64,7 @@ export type EventPayload =
   | UnlinkPayload
 ;
 
+/** Space */
 export type EntityMetadata = {
   id: Issue["id"],
   key?: string,
@@ -73,5 +74,3 @@ export type EntityMetadata = {
   tags: Array<IssueTag["name"]>,
   assignee?: { username: string, name: string },
 };
-
-/** Space */
