@@ -13,3 +13,4 @@ export { getFullName } from "./getFullName";
 export { getProjectMembers } from "./getProjectMembers";
 export { getCommitIdentifier } from "./getCommitIdentifier";
 export { findDeskproTag } from "./findDeskproTag";
+export { getEntityMetadata } from "./getEntityMetadata";

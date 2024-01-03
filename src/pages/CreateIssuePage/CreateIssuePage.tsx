@@ -14,6 +14,7 @@ import {
   useRegisterElements,
   useLinkedAutoComment,
 } from "../../hooks";
+import { getEntityMetadata } from "../../utils";
 import { DEFAULT_ERROR } from "../../constants";
 import { CreateIssue } from "../../components";
 import type { FC } from "react";
@@ -42,7 +43,7 @@ const CreateIssuePage: FC = () => {
 
     return createIssueService(client, projectId, values)
       .then((issue) => Promise.all([
-        setEntityService(client, ticketId, issue.id),
+        setEntityService(client, ticketId, issue.id, getEntityMetadata(issue)),
         addLinkComment(issue),
       ]))
       .then(() => navigate("/home"))

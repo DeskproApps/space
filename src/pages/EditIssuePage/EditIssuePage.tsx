@@ -10,6 +10,7 @@ import {
 } from "@deskpro/app-sdk";
 import { setEntityService } from "../../services/deskpro";
 import {
+  getIssuesService,
   updateIssueService,
   updateIssueTagsService,
 } from "../../services/space";
@@ -19,6 +20,7 @@ import {
   useAsyncError,
   useRegisterElements,
 } from "../../hooks";
+import { getEntityMetadata } from "../../utils";
 import { DEFAULT_ERROR } from "../../constants";
 import { getIssueTagsToUpdate } from "../../components/IssueForm";
 import { EditIssue } from "../../components";
@@ -49,7 +51,8 @@ const EditIssuePage: FC = () => {
 
     return updateIssueService(client, projectId, issue.id, values)
       .then(() => updateIssueTagsService(client, projectId, issue.id, getIssueTagsToUpdate(issue, values)))
-      .then(() => setEntityService(client, ticketId, issue.id))
+      .then(() => getIssuesService(client, [issue.id]))
+      .then((issues) => setEntityService(client, ticketId, issue.id, getEntityMetadata(issues[0])))
       .then(() => navigate(`/issues/view/${issue.id}`))
       .catch((err) => {
         const error = get(err, ["data", "error_description"]) || DEFAULT_ERROR;
