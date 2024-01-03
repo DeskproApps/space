@@ -93,6 +93,8 @@ export const COMMIT_FIELDS = ["commitId", "message", "repository", "project(id)"
 
 export const LOCATION_FIELDS = ["id", "name", "parent!"];
 
+export const ATTACHMENT = ["id", "filename", "sizeBytes", "name"];
+
 export const CUSTOM_FIELD_FIELDS = [
   "href",
   "value(id,value)",
@@ -122,6 +124,7 @@ export const ISSUE_FIELDS = [
   `assignee(${USER_FIELDS.join(",")})`,
   `status(${STATUS_FIELDS.join(",")})`,
   `subItemsList(${SUB_ITEM_FIELDS.join(",")})`,
+  `attachments(details(${ATTACHMENT.join(",")}))`,
   `customFields(${CUSTOM_FIELD_FIELDS.join(",")})`,
 ];
 

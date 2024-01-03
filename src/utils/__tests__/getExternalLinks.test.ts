@@ -1,4 +1,4 @@
-import { getIssueLink, getProjectLink } from "../getExternalLinks";
+import { getIssueLink, getProjectLink, getAttachmentLink } from "../getExternalLinks";
 import { mockContext, mockIssues, mockProjects } from "../../../testing";
 
 describe("utils", () => {
@@ -31,6 +31,19 @@ describe("utils", () => {
         expect(getIssueLink(mockContext.settings)).toBeUndefined();
         expect(getIssueLink(null, mockProjects.data[0] as never)).toBeUndefined();
         expect(getIssueLink(null, null, mockIssues[1] as never)).toBeUndefined();
+      });
+    });
+
+    describe("getAttachmentLink", () => {
+      test("should return issue link", () => {
+        const issueLink = getAttachmentLink(mockContext.settings, "file-001");
+        expect(issueLink).toBe("https://space.test/d/file-001?f=0");
+      });
+
+      test("should return undefined if something isn't pass", () => {
+        expect(getAttachmentLink()).toBeUndefined();
+        expect(getAttachmentLink(mockContext.settings)).toBeUndefined();
+        expect(getAttachmentLink(null, "file-001")).toBeUndefined();
       });
     });
   });

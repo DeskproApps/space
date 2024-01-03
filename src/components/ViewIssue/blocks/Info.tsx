@@ -1,7 +1,9 @@
 import { useMemo } from "react";
 import get from "lodash/get";
+import map from "lodash/map";
 import size from "lodash/size";
-import { P5 } from "@deskpro/deskpro-ui";
+import { faFile } from "@fortawesome/free-regular-svg-icons";
+import { P5, Stack, AttachmentTag } from "@deskpro/deskpro-ui";
 import {
   Title,
   Member,
@@ -22,6 +24,7 @@ import {
   DeskproTickets,
 } from "../../common";
 import type { FC } from "react";
+import type { AnyIcon } from "@deskpro/deskpro-ui";
 import type { Maybe } from "../../../types";
 import type { Issue } from "../../../services/space/types";
 
@@ -30,7 +33,7 @@ export type Props = {
 };
 
 const Info: FC<Props> = ({ issue }) => {
-  const { getIssueLink, getProjectLink } = useExternalLinks();
+  const { getIssueLink, getProjectLink, getAttachmentLink } = useExternalLinks();
   const issueLink = getIssueLink(issue);
   const projectLink = getProjectLink(get(issue, ["projectRef"]));
   const fullName = useMemo(() => getFullName(get(issue, ["assignee"])), [issue]);
@@ -93,6 +96,22 @@ const Info: FC<Props> = ({ issue }) => {
         label="Assignee"
         text={!fullName ? "-" : (
           <Member name={fullName}/>
+        )}
+      />
+      <Property
+        label="Attachments"
+        text={!size(issue?.attachments) ? "-" : (
+          <Stack gap={6} wrap="wrap">
+            {map(issue?.attachments, (attach) => (
+              <AttachmentTag
+                key={get(attach, ["details", "id"])}
+                filename={get(attach, ["details", "filename"]) || get(attach, ["details", "name"])}
+                fileSize={get(attach, ["details", "sizeBytes"], 0) || 0}
+                icon={faFile as AnyIcon}
+                href={getAttachmentLink(get(attach, ["details", "id"], "")) as string}
+              />
+            ))}
+          </Stack>
         )}
       />
     </>
