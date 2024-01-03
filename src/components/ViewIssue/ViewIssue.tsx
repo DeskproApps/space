@@ -3,15 +3,25 @@ import { Container } from "../common";
 import { Info, CustomFieldsView, SubItems, Comments } from "./blocks";
 import type { FC } from "react";
 import type { Maybe } from "../../types";
-import type { Issue, IssueComment } from "../../services/space/types";
+import type { Issue, IssueComment, IssueSubItem } from "../../services/space/types";
 
 type Props = {
   issue?: Maybe<Issue>,
   comments: IssueComment[],
+  onCompleteItem: (
+    listId: Issue["subItemsList"]["id"],
+    itemId: IssueSubItem["id"],
+    resolved: boolean,
+  ) => Promise<unknown>,
   onNavigateToAddComment: () => void,
 };
 
-const ViewIssue: FC<Props> = ({ issue, comments, onNavigateToAddComment }) => (
+const ViewIssue: FC<Props> = ({
+  issue,
+  comments,
+  onCompleteItem,
+  onNavigateToAddComment,
+}) => (
   <>
     <Container>
       <Info issue={issue}/>
@@ -21,7 +31,10 @@ const ViewIssue: FC<Props> = ({ issue, comments, onNavigateToAddComment }) => (
     <HorizontalDivider/>
 
     <Container>
-      <SubItems subItems={issue?.subItemsList} />
+      <SubItems
+        subItems={issue?.subItemsList}
+        onCompleteItem={onCompleteItem}
+      />
     </Container>
 
     <HorizontalDivider/>
