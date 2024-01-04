@@ -193,6 +193,37 @@
         "title": "AppBuilder"
       }
     ],
-    "description": "1. **Purpose and Functionality:** The PageBuilder component is designed to facilitate the creation and editing of web pages."
+    "description": "1. **Purpose and Functionality:** The PageBuilder component is designed to facilitate the creation and editing of web pages.",
+    "attachments": [
+      {
+        "details": {
+          "className": "ImageAttachment",
+          "id": "2CEpuk1uf3A1",
+          "name": "avatar-alliser-thorne.jpeg"
+        }
+      },
+      {
+        "details": {
+          "className": "ImageAttachment",
+          "id": "3Kc3M73y9QpB",
+          "name": "avatar-jeor-mormont.jpeg"
+        }
+      },
+      {
+        "details": {
+          "className": "ImageAttachment",
+          "id": "47Tqq0nuQXu",
+          "name": "avatar-snow.jpeg"
+        }
+      },
+      {
+        "details": {
+          "className": "FileAttachment",
+          "id": "1IjOC42IHmOa",
+          "sizeBytes": 2808632,
+          "filename": "sam-css.pdf"
+        }
+      }
+    ]
   }
 ]

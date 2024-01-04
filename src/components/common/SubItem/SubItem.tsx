@@ -6,12 +6,17 @@ import type { FC } from "react";
 import type { Maybe } from "../../../types";
 import type { Issue, IssueSubItem } from "../../../services/space/types";
 
-type Props = {
+export type Props = {
   item: IssueSubItem,
-  onComplete?: () => Promise<void>,
+  listId?: Issue["subItemsList"]["id"],
+  onComplete?: (
+    listId: Issue["subItemsList"]["id"],
+    itemId: IssueSubItem["id"],
+    resolved: boolean,
+  ) => Promise<unknown>,
 };
 
-const SubItem: FC<Props> = ({ item, onComplete }) => {
+const SubItem: FC<Props> = ({ item, listId, onComplete }) => {
   const boxSize = 14;
   const [isLoading, setIsLoading] = useState(false);
   const itemName = isIssue(item?.issue as Maybe<Issue>)
@@ -22,9 +27,11 @@ const SubItem: FC<Props> = ({ item, onComplete }) => {
     : Boolean(item.simpleDone);
 
   const onChange = useCallback(() => {
-    setIsLoading(true);
-    onComplete && onComplete().finally(() => setIsLoading(false));
-  }, [onComplete]);
+    if (onComplete && listId && item.id) {
+      setIsLoading(true);
+      onComplete && onComplete(listId, item.id, !itemIsDone).finally(() => setIsLoading(false));
+    }
+  }, [onComplete, listId, item, itemIsDone]);
 
   return (
     <Card style={{ marginBottom: 7 }}>
@@ -36,7 +43,12 @@ const SubItem: FC<Props> = ({ item, onComplete }) => {
             </div>
           )
           : (
-            <Checkbox disabled size={boxSize} checked={itemIsDone} onChange={onChange}/>
+            <Checkbox
+              size={boxSize}
+              checked={itemIsDone}
+              onChange={onChange}
+              disabled={!onComplete}
+            />
           )
         }
       </Card.Media>
