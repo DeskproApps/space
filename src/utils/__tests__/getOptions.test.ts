@@ -20,7 +20,35 @@ describe("utils", () => {
       ]);
     });
 
-    test.todo("should return options with key");
+    test("should return options with key", () => {
+      expect(getOptions(mockProjects.data[1].memberProfiles, "username"))
+        .toStrictEqual([
+          {
+            key: "3vsk2Z3bsDx6",
+            value: "3vsk2Z3bsDx6",
+            label: "davidtestacc0401",
+            type: "value",
+          },
+          {
+            key: "1p7tyB1dXdBR",
+            value: "1p7tyB1dXdBR",
+            label: "jon.snow",
+            type: "value",
+          },
+          {
+            key: "3IVGHs3OPU3R",
+            value: "3IVGHs3OPU3R",
+            label: "alliser.thorne",
+            type: "value",
+          },
+          {
+            key: "2Gw6me1D6hTb",
+            value: "2Gw6me1D6hTb",
+            label: "jeor.mormont",
+            type: "value",
+          },
+        ]);
+    });
 
     test.each(
       [undefined, null, "", 0, true, false, {}],
