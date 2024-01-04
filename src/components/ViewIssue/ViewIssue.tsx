@@ -3,7 +3,12 @@ import { Container } from "../common";
 import { Info, CustomFieldsView, SubItems, Comments } from "./blocks";
 import type { FC } from "react";
 import type { Maybe } from "../../types";
-import type { Issue, IssueComment, IssueSubItem } from "../../services/space/types";
+import type {
+  Issue,
+  IssueComment,
+  IssueSubItem,
+  FieldVisibility,
+} from "../../services/space/types";
 
 type Props = {
   issue?: Maybe<Issue>,
@@ -14,17 +19,19 @@ type Props = {
     resolved: boolean,
   ) => Promise<unknown>,
   onNavigateToAddComment: () => void,
+  visibility: Record<FieldVisibility["field"], FieldVisibility["visible"]>,
 };
 
 const ViewIssue: FC<Props> = ({
   issue,
   comments,
+  visibility,
   onCompleteItem,
   onNavigateToAddComment,
 }) => (
   <>
     <Container>
-      <Info issue={issue}/>
+      <Info issue={issue} visibility={visibility}/>
       <CustomFieldsView fields={issue?.customFields}/>
     </Container>
 

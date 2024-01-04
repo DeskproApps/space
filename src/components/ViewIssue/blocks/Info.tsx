@@ -9,6 +9,7 @@ import {
   Member,
   Property,
   LinkIcon,
+  PropertyRow,
   TwoProperties,
 } from "@deskpro/app-sdk";
 import { useExternalLinks,  } from "../../../hooks";
@@ -26,13 +27,14 @@ import {
 import type { FC } from "react";
 import type { AnyIcon } from "@deskpro/deskpro-ui";
 import type { Maybe } from "../../../types";
-import type { Issue } from "../../../services/space/types";
+import type { Issue, FieldVisibility } from "../../../services/space/types";
 
 export type Props = {
   issue?: Maybe<Issue>,
+  visibility: Record<FieldVisibility["field"], FieldVisibility["visible"]>,
 };
 
-const Info: FC<Props> = ({ issue }) => {
+const Info: FC<Props> = ({ issue, visibility }) => {
   const { getIssueLink, getProjectLink, getAttachmentLink } = useExternalLinks();
   const issueLink = getIssueLink(issue);
   const projectLink = getProjectLink(get(issue, ["projectRef"]));
@@ -65,12 +67,20 @@ const Info: FC<Props> = ({ issue }) => {
           </P5>
         )}
       />
-      <TwoProperties
-        leftLabel="Issue ID"
-        leftText={getIssueKey(issue)}
-        rightLabel="Parent issues"
-        rightText={<Parents issues={issue?.parents}/>}
-      />
+      <PropertyRow>
+        <Property
+          label="Issue ID"
+          text={getIssueKey(issue)}
+          marginBottom={0}
+        />
+        {visibility.PARENT_ISSUES && (
+          <Property
+            label="Parent issues"
+            text={<Parents issues={issue?.parents}/>}
+            marginBottom={0}
+          />
+        )}
+      </PropertyRow>
       <TwoProperties
         leftLabel="Status"
         leftText={!issue?.status ? "-" : (
@@ -79,25 +89,35 @@ const Info: FC<Props> = ({ issue }) => {
         rightLabel="Deskpro Tickets"
         rightText={<DeskproTickets entityId={issue?.id}/>}
       />
-      <TwoProperties
-        leftLabel="Created"
-        leftText={format(get(issue, ["creationTime", "iso"]))}
-        rightLabel="Due Date"
-        rightText={format(get(issue, ["dueDate", "iso"]))}
-      />
-      <Property
-        label="Tags"
-        text={(!Array.isArray(issue?.tags) || !size(issue?.tags))
-          ? <P5>-</P5>
-          : <Tags tags={issue?.tags}/>
-        }
-      />
-      <Property
-        label="Assignee"
-        text={!fullName ? "-" : (
-          <Member name={fullName}/>
+      <PropertyRow>
+        <Property
+          label="Created"
+          text={format(get(issue, ["creationTime", "iso"]))}
+          marginBottom={0}
+        />
+        {visibility.DUE_DATE && (
+          <Property
+            label="Due Date"
+            text={format(get(issue, ["dueDate", "iso"]))}
+            marginBottom={0}
+          />
         )}
-      />
+      </PropertyRow>
+      {visibility.TAG && (
+        <Property
+          label="Tags"
+          text={(!Array.isArray(issue?.tags) || !size(issue?.tags))
+            ? <P5>-</P5>
+            : <Tags tags={issue?.tags}/>
+          }
+        />
+      )}
+      {visibility.ASSIGNEE && (
+        <Property
+          label="Assignee"
+          text={!fullName ? "-" : (<Member name={fullName}/>)}
+        />
+      )}
       <Property
         label="Attachments"
         text={!size(issue?.attachments) ? "-" : (

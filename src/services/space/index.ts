@@ -20,3 +20,4 @@ export { getCommitsService } from "./getCommitsService";
 export { createIssueCommentService } from "./createIssueCommentService";
 export { createTagService } from "./createTagService";
 export { updateChecklistItemCompleteService } from "./updateChecklistItemCompleteService";
+export { getFieldsVisibilityService } from "./getFieldsVisibilityService";

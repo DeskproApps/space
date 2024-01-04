@@ -23,6 +23,7 @@ const QueryKey = {
   CUSTOM_FIELDS: "custom_fields",
   TEAM: "team",
   LOCATION: "location",
+  FIELDS_VISIBILITY: "fields_visibility",
 }
 
 export { queryClient, QueryKey };

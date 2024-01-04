@@ -5,13 +5,26 @@ import { useQueryWithClient } from "@deskpro/app-sdk";
 import {
   getTagsService,
   getProjectsService,
-  getIssueStatusesService, getCustomFieldsConfigService,
+  getIssueStatusesService,
+  getFieldsVisibilityService,
+  getCustomFieldsConfigService,
 } from "../../../services/space";
 import { QueryKey } from "../../../query";
-import { getOptions, getProjectMembers } from "../../../utils";
+import {
+  getOptions,
+  getProjectMembers,
+  normalizeFieldsVisibility,
+} from "../../../utils";
 import { getAssigneeOptions, getStatusOptions, getTagOptions } from "../utils";
 import type { Option } from "../../../types";
-import type {Project, Member, IssueStatus, IssueTag, CustomFieldData} from "../../../services/space/types";
+import type {
+  Member,
+  Project,
+  IssueTag,
+  IssueStatus,
+  FieldVisibility,
+  CustomFieldData,
+} from "../../../services/space/types";
 
 type UseFormDeps = (projectId?: Project["id"]) => {
   isLoading: boolean,
@@ -20,15 +33,26 @@ type UseFormDeps = (projectId?: Project["id"]) => {
   statusOptions: Array<Option<IssueStatus["id"]>>,
   tagOptions: Array<Option<IssueTag["id"]>>,
   customFields: CustomFieldData[],
+  visibility: Record<FieldVisibility["field"], FieldVisibility["visible"]>,
 };
 
 const useFormDeps: UseFormDeps = (projectId) => {
   const projects = useQueryWithClient([QueryKey.PROJECTS], getProjectsService);
 
+  const fieldsVisibility = useQueryWithClient(
+    [QueryKey.FIELDS_VISIBILITY, projectId as Project["id"]],
+    (client) => getFieldsVisibilityService(client, projectId as Project["id"]),
+    { enabled: Boolean(projectId) },
+  );
+
+  const visibility = useMemo(() => {
+    return normalizeFieldsVisibility(fieldsVisibility.data);
+  }, [fieldsVisibility.data]);
+
   const statuses = useQueryWithClient(
     [QueryKey.ISSUE_STATUSES, projectId as Project["id"]],
     (client) => getIssueStatusesService(client, projectId as Project["id"]),
-    { enabled: Boolean(projectId) }
+    { enabled: Boolean(projectId) },
   );
 
   const tags = useQueryWithClient(
@@ -66,7 +90,9 @@ const useFormDeps: UseFormDeps = (projectId) => {
       projects,
       statuses,
       customFields,
+      fieldsVisibility,
     ].some(({ isLoading }) => isLoading) && Boolean(projectId),
+    visibility,
     tagOptions,
     statusOptions,
     projectOptions,

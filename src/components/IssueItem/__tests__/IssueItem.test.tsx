@@ -27,7 +27,5 @@ describe("IssueItem", () => {
     expect(await findByText(/MAIN-T-7/i)).toBeInTheDocument();
     expect(await findByText(/In Progress/i)).toBeInTheDocument();
     expect(await findByText(/20 Nov, 2023/i)).toBeInTheDocument();
-    expect(await findByText(/31 Dec, 2023/i)).toBeInTheDocument();
-    expect(await findByText(/ilia makarov/i)).toBeInTheDocument();
   });
 });

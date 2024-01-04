@@ -22,7 +22,7 @@ const ViewIssuePage: FC = () => {
   const { issueId } = useParams();
   const { client } = useDeskproAppClient();
   const { asyncErrorHandler } = useAsyncError();
-  const { issue, comments, isLoading } = useIssue(issueId);
+  const { issue, comments, visibility, isLoading } = useIssue(issueId);
 
   const onNavigateToAddComment = useCallback(() => {
     navigate(`/issues/${issueId}/comments/new`);
@@ -75,6 +75,7 @@ const ViewIssuePage: FC = () => {
   return (
     <ViewIssue
       issue={issue}
+      visibility={visibility}
       comments={comments}
       onCompleteItem={onCompleteItem}
       onNavigateToAddComment={onNavigateToAddComment}

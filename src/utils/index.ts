@@ -14,3 +14,4 @@ export { getProjectMembers } from "./getProjectMembers";
 export { getCommitIdentifier } from "./getCommitIdentifier";
 export { findDeskproTag } from "./findDeskproTag";
 export { getEntityMetadata } from "./getEntityMetadata";
+export { normalizeFieldsVisibility } from "./normalizeFieldsVisibility";
