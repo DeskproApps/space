@@ -2,7 +2,7 @@
   "name": "@deskpro-apps/space",
   "title": "Space",
   "description": "View your Jetbrains Space issues from Deskpro and link them to tickets you are working on",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,
