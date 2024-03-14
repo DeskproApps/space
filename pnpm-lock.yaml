@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   '@deskpro/app-sdk':
-    specifier: 3.0.14
-    version: 3.0.14(@babel/core@7.23.5)(@deskpro/deskpro-ui@7.15.0)(@types/react-dom@18.2.17)(@types/react@18.2.42)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(typescript@4.9.5)
+    specifier: ^3.0.18
+    version: 3.0.18(@babel/core@7.23.5)(@deskpro/deskpro-ui@7.18.4)(@types/react-dom@18.2.17)(@types/react@18.2.42)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(typescript@4.9.5)
   '@deskpro/deskpro-ui':
-    specifier: ^7.1.0
-    version: 7.15.0(@types/web@0.0.86)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
+    specifier: ^7.18.4
+    version: 7.18.4(@types/web@0.0.86)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
   '@fortawesome/free-solid-svg-icons':
     specifier: ^6.5.1
     version: 6.5.1
@@ -26,9 +26,6 @@ dependencies:
   date-fns:
     specifier: ^2.30.0
     version: 2.30.0
-  iframe-resizer:
-    specifier: ^4.3.9
-    version: 4.3.9
   javascript-time-ago:
     specifier: ^2.5.9
     version: 2.5.9
@@ -166,6 +163,9 @@ devDependencies:
   react-resize-observer:
     specifier: ^1.1.1
     version: 1.1.1(react@18.2.0)
+  resize-observer-polyfill:
+    specifier: ^1.5.1
+    version: 1.5.1
   rimraf:
     specifier: ^3.0.2
     version: 3.0.2
@@ -565,8 +565,8 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@deskpro/app-sdk@3.0.14(@babel/core@7.23.5)(@deskpro/deskpro-ui@7.15.0)(@types/react-dom@18.2.17)(@types/react@18.2.42)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(typescript@4.9.5):
-    resolution: {integrity: sha512-T0c7VnWa9lJuhN7sp+rKntSWFzHFJJCHROrXrYT/YSG83lYuuUAqAMgD4dIgAnfEjyXrWamb+sC8ALG37bnwEA==}
+  /@deskpro/app-sdk@3.0.18(@babel/core@7.23.5)(@deskpro/deskpro-ui@7.18.4)(@types/react-dom@18.2.17)(@types/react@18.2.42)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(typescript@4.9.5):
+    resolution: {integrity: sha512-hjmXu7Jz6rYeckJsVa7Hk4a2VnF2vhknluTpqtcwrphwESe0xIYMv2yMueObt6oPqA3yUAGHhjQ+A4UHNuFCQw==}
     engines: {node: ^16.0.0}
     peerDependencies:
       '@deskpro/deskpro-ui': ^7
@@ -575,7 +575,7 @@ packages:
       react: ^18
       react-dom: ^18
     dependencies:
-      '@deskpro/deskpro-ui': 7.15.0(@types/web@0.0.86)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
+      '@deskpro/deskpro-ui': 7.18.4(@types/web@0.0.86)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
       '@fortawesome/fontawesome-svg-core': 6.5.1
       '@fortawesome/free-brands-svg-icons': 6.5.1
       '@fortawesome/free-regular-svg-icons': 6.5.1
@@ -607,8 +607,8 @@ packages:
       - typescript
     dev: false
 
-  /@deskpro/deskpro-ui@7.15.0(@types/web@0.0.86)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11):
-    resolution: {integrity: sha512-v1UikHoRjY8M+zP0g+vnoWfJt+qIsfGVV8GukFsoocjsXa9t3ooJCKJyTUpJFXe3h7r7gA/rsTXvWFeoFU8n6Q==}
+  /@deskpro/deskpro-ui@7.18.4(@types/web@0.0.86)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11):
+    resolution: {integrity: sha512-Muk20cybVB/tGhekxf2swuE3YxHc7Jk1u+SDscuNg6LD59p6s1mYFC1HJPCv1M22CM/KFWe8m/5n5DIules8jg==}
     engines: {node: ^16.0.0}
     peerDependencies:
       '@typescript/lib-dom': npm:@types/web
@@ -1354,7 +1354,7 @@ packages:
       '@motionone/easing': 10.16.3
       '@motionone/types': 10.16.3
       '@motionone/utils': 10.16.3
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /@motionone/dom@10.12.0:
@@ -1365,14 +1365,14 @@ packages:
       '@motionone/types': 10.16.3
       '@motionone/utils': 10.16.3
       hey-listen: 1.0.8
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /@motionone/easing@10.16.3:
     resolution: {integrity: sha512-HWTMZbTmZojzwEuKT/xCdvoMPXjYSyQvuVM6jmM0yoGU6BWzsmYMeB4bn38UFf618fJCNtP9XeC/zxtKWfbr0w==}
     dependencies:
       '@motionone/utils': 10.16.3
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /@motionone/generators@10.16.4:
@@ -1380,7 +1380,7 @@ packages:
     dependencies:
       '@motionone/types': 10.16.3
       '@motionone/utils': 10.16.3
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /@motionone/types@10.16.3:
@@ -1392,7 +1392,7 @@ packages:
     dependencies:
       '@motionone/types': 10.16.3
       hey-listen: 1.0.8
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /@nodelib/fs.scandir@2.1.5:
@@ -3113,7 +3113,7 @@ packages:
       react: 18.2.0
       react-fast-compare: 2.0.4
       tiny-warning: 1.0.3
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /framer-motion@6.5.1(react-dom@18.2.0)(react@18.2.0):
@@ -3129,7 +3129,7 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       style-value-types: 5.0.0
-      tslib: 2.4.1
+      tslib: 2.6.2
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
     dev: false
@@ -3137,7 +3137,7 @@ packages:
   /framesync@6.0.1:
     resolution: {integrity: sha512-fUY88kXvGiIItgNC7wcTOl0SNRCVXMKSWW2Yzfmn7EKNc+MpCzcz9DhdHcdjbrtN3c6R4H5dTY2jiCpPdysEjA==}
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /fs-extra@8.1.0:
@@ -3383,11 +3383,6 @@ packages:
     dependencies:
       safer-buffer: 2.1.2
     dev: true
-
-  /iframe-resizer@4.3.9:
-    resolution: {integrity: sha512-MCt+V/THB4a9OcAdrWo5NsI2CRpeMM4ijhTfiLtsdgDJXWYXf62Ve8yO8rKGmYNs991zty/EolYOxActlkfU+A==}
-    engines: {node: '>=0.8.0'}
-    dev: false
 
   /ignore@5.3.0:
     resolution: {integrity: sha512-g7dmpshy+gD7mh88OC9NwSGTKoc3kyLAZQRU1mt53Aw/vnvfXnbC+F/7F7QoYVKbV+KNvJx8wArewKy1vXMtlg==}
@@ -4604,7 +4599,7 @@ packages:
       framesync: 6.0.1
       hey-listen: 1.0.8
       style-value-types: 5.0.0
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /postcss-value-parser@4.2.0:
@@ -4901,6 +4896,10 @@ packages:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
     dev: true
 
+  /resize-observer-polyfill@1.5.1:
+    resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
+    dev: true
+
   /resolve-cwd@3.0.0:
     resolution: {integrity: sha512-OrZaX2Mb+rJCpH/6CpSqt9xFVpN++x01XnN2ie9g6P5/3xelLAkXWVADpdz1IHD/KFfEXyE6V0U01OQ3UO2rEg==}
     engines: {node: '>=8'}
@@ -5189,7 +5188,7 @@ packages:
     resolution: {integrity: sha512-08yq36Ikn4kx4YU6RD7jWEv27v4V+PUsOGa4n/as8Et3CuODMJQ00ENeAVXAeydX4Z2j1XHZF1K2sX4mGl18fA==}
     dependencies:
       hey-listen: 1.0.8
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /styled-components@5.3.11(@babel/core@7.23.5)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0):
