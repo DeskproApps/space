@@ -32,4 +32,17 @@ const getProjectLink = (
   return `${spaceUrl}/p/${toLower(key)}`;
 };
 
-export { getIssueLink, getProjectLink };
+const getAttachmentLink = (
+  settings?: Maybe<Settings>,
+  attachId?: Maybe<string>,
+): Maybe<string> => {
+  const spaceUrl = get(settings, ["space_url"]);
+
+  if (!spaceUrl || !attachId) {
+    return;
+  }
+
+  return `${spaceUrl}/d/${attachId}?f=0`;
+};
+
+export { getIssueLink, getProjectLink, getAttachmentLink };

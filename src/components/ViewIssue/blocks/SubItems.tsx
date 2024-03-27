@@ -8,9 +8,14 @@ import type { Issue, IssueSubItem } from "../../../services/space/types";
 
 export type Props = {
   subItems?: Issue["subItemsList"],
+  onCompleteItem: (
+    listId: Issue["subItemsList"]["id"],
+    itemId: IssueSubItem["id"],
+    resolved: boolean,
+  ) => Promise<unknown>,
 };
 
-const SubItems: FC<Props> = ({ subItems }) => {
+const SubItems: FC<Props> = ({ subItems, onCompleteItem }) => {
   const items = get(subItems, ["root", "children"], []) || [];
 
   return (
@@ -20,7 +25,12 @@ const SubItems: FC<Props> = ({ subItems }) => {
         {(!Array.isArray(items) || !size(items))
           ? <NoFound text="No sub-items found"/>
           : items.map((item: IssueSubItem) => (
-            <SubItem key={item.id} item={item} />
+            <SubItem
+              key={item.id}
+              item={item}
+              listId={subItems?.id}
+              onComplete={onCompleteItem}
+            />
           ))
         }
       </Stack>

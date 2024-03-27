@@ -7,15 +7,15 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { ErrorBoundary } from "react-error-boundary";
 import { DeskproAppProvider, LoadingSpinner } from "@deskpro/app-sdk";
 import { queryClient } from "./query";
+import { ReplyBoxProvider } from "./hooks";
 import { App } from "./App";
 import { ErrorFallback } from "./components";
-import "iframe-resizer/js/iframeResizer.contentWindow.js";
 import "flatpickr/dist/themes/light.css";
 import "tippy.js/dist/tippy.css";
 import "simplebar/dist/simplebar.min.css";
 import "@deskpro/deskpro-ui/dist/deskpro-ui.css";
 import "@deskpro/deskpro-ui/dist/deskpro-custom-icons.css";
-import "@deskpro/deskpro-ui/dist/fonts/DpIcons/dp.css"
+import "@deskpro/deskpro-ui/dist/fonts/DpIcons/dp-icon-v2.css";
 
 TimeAgo.addDefaultLocale(en);
 
@@ -27,7 +27,9 @@ root.render((
         <QueryClientProvider client={queryClient}>
           <Suspense fallback={<LoadingSpinner/>}>
             <ErrorBoundary FallbackComponent={ErrorFallback}>
-              <App />
+              <ReplyBoxProvider>
+                <App />
+              </ReplyBoxProvider>
             </ErrorBoundary>
           </Suspense>
         </QueryClientProvider>
