@@ -5,13 +5,7 @@ import formatFNS from "date-fns/format";
 import formatISO from "date-fns/formatISO";
 import parseISO from "date-fns/parseISO";
 import { z } from "zod";
-import get from "lodash/get";
-import map from "lodash/map";
-import size from "lodash/size";
-import find from "lodash/find";
-import reduce from "lodash/reduce";
-import isEmpty from "lodash/isEmpty";
-import difference from "lodash/difference";
+import { get, map, size, find, reduce, isEmpty, difference } from "lodash";
 import { v4 as uuid } from "uuid";
 import { Member } from "@deskpro/app-sdk";
 import { getOption, getFullName, getCommitIdentifier } from "../../utils";
@@ -129,7 +123,6 @@ const getCustomInitValues = (
           ? null
           : `${project}/${repo}/${hash}`;
       })
-      // console.log(">>> init:", { customField, fieldValue, fieldName });
       .otherwise(() => null);
 
     if (formValue) {
@@ -188,10 +181,14 @@ const getCustomIssueValues = (
             values: (!Array.isArray(value) ? [] : value).map(({ value }) => value),
           },
         }))
-      .with({ type: CustomFieldsType.ENUM, multivalued: false }, () => ({
+      .with({ type: CustomFieldsType.ENUM, multivalued: false }, () => {
+        const option = find(get(customField, ["parameters", "values"], []), { id: value });
+
+        return !option ? undefined : {
           fieldId,
-          value: { className: "EnumCFValue", value: value },
-        }))
+          value: { className: "EnumCFValue", value: option },
+        };
+      })
       .with({ type: CustomFieldsType.ENUM, multivalued: true }, () => ({
           fieldId,
           value: {
