@@ -1,10 +1,14 @@
 import { cleanup } from "@testing-library/react";
-import { render, mockIssues } from "../../../../../testing";
+import { render, mockIssues, mockFieldsVisibility } from "../../../../../testing";
+import { normalizeFieldsVisibility } from "../../../../utils";
 import { Info } from "../Info";
 import type { Props } from "../Info";
 
 const renderInfo = (props?: Partial<Props>) => render((
-  <Info issue={props?.issue || mockIssues[1] as never} />
+  <Info
+    issue={props?.issue || mockIssues[1] as never}
+    visibility={props?.visibility || normalizeFieldsVisibility(mockFieldsVisibility as never)}
+  />
 ), { wrappers: { theme: true } });
 
 describe("ViewIssue", () => {
@@ -25,6 +29,11 @@ describe("ViewIssue", () => {
       expect(await findByText(/20 Nov, 2023/i)).toBeInTheDocument();
       expect(await findByText(/31 Dec, 2023/i)).toBeInTheDocument();
       expect(await findByText(/ilia makarov/i)).toBeInTheDocument();
+
+      expect(await findByText(/avatar-alliser-thorne.jpeg/i)).toBeInTheDocument();
+      expect(await findByText(/avatar-jeor-mormont.jpeg/i)).toBeInTheDocument();
+      expect(await findByText(/avatar-snow.jpeg/i)).toBeInTheDocument();
+      expect(await findByText(/sam-css.pdf/i)).toBeInTheDocument();
     });
   });
 });

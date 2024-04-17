@@ -36,8 +36,15 @@ describe("IssueForm", () => {
               fieldId: "vQR2h1gPxzk",
               value: {
                 className: "EnumCFValue",
-                value: { id: "4E0ehX4CrhQ7", value: "item 2" },
-              }
+                value: {
+                  id: "4E0ehX4CrhQ7",
+                  value: "item 2",
+                  principal: {
+                    className: "CUserPrincipalDetails",
+                    user: { id: "2wwNis4MCPQv" }
+                  }
+                },
+              },
             },
             {
               fieldId: "1jzp3w0eMjb1",

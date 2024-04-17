@@ -2,7 +2,7 @@ import { baseRequest } from "./baseRequest";
 import type { IDeskproClient } from "@deskpro/app-sdk";
 import type { Pagination, IssueTag, Project } from "./types";
 
-const getTagsServices = (
+const getTagsService = (
   client: IDeskproClient,
   projectId: Project["id"],
 ) => {
@@ -11,4 +11,4 @@ const getTagsServices = (
   });
 };
 
-export { getTagsServices };
+export { getTagsService };

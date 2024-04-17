@@ -1,0 +1,62 @@
+{
+  "id": "9wsqu1enJmW",
+  "systemIssueFieldVisibilities": [
+    {
+      "field": "PROJECT",
+      "visible": true
+    },
+    {
+      "field": "ASSIGNEE",
+      "visible": true
+    },
+    {
+      "field": "CREATED_BY",
+      "visible": true
+    },
+    {
+      "field": "STATUS",
+      "visible": true
+    },
+    {
+      "field": "TAG",
+      "visible": true
+    },
+    {
+      "field": "CREATION_TIME",
+      "visible": true
+    },
+    {
+      "field": "DUE_DATE",
+      "visible": true
+    },
+    {
+      "field": "TITLE",
+      "visible": true
+    },
+    {
+      "field": "DELETED",
+      "visible": true
+    },
+    {
+      "field": "PARENT_ISSUES",
+      "visible": true
+    },
+    {
+      "field": "CHECKLISTS",
+      "visible": true
+    },
+    {
+      "field": "BOARD",
+      "visible": true
+    },
+    {
+      "field": "SUBSCRIBER",
+      "visible": true
+    },
+    {
+      "field": "IMPORT_TRANSACTION",
+      "visible": true
+    }
+  ],
+  "archived": false
+}

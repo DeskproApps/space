@@ -104,3 +104,10 @@ export type IssueInput = Omit<
 export type IssueCommentInput = components["schemas"]["ChatMessage.Text"];
 
 export type CustomFieldData = components["schemas"]["CustomFieldData"];
+
+export type FieldVisibility = Required<components["schemas"]["IssueFieldVisibility"]>;
+
+export type FieldsVisibility = Omit<components["schemas"]["TrackerIssueFieldVisibility"], "systemIssueFieldVisibilities"> & {
+  systemIssueFieldVisibilities: FieldVisibility[],
+};
+

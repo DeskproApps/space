@@ -12,7 +12,9 @@ import {
   useSetTitle,
   useAsyncError,
   useRegisterElements,
+  useLinkedAutoComment,
 } from "../../hooks";
+import { getEntityMetadata } from "../../utils";
 import { DEFAULT_ERROR } from "../../constants";
 import { CreateIssue } from "../../components";
 import type { FC } from "react";
@@ -25,6 +27,7 @@ const CreateIssuePage: FC = () => {
   const { context } = useDeskproLatestAppContext() as { context: TicketContext };
   const [error, setError] = useState<Maybe<string|string[]>>(null);
   const { asyncErrorHandler } = useAsyncError();
+  const { addLinkComment } = useLinkedAutoComment();
   const ticketId = useMemo(() => get(context, ["data", "ticket", "id"]), [context]);
 
   const onNavigateToLink = useCallback(() => navigate("/issues/link"), [navigate]);
@@ -39,7 +42,10 @@ const CreateIssuePage: FC = () => {
     setError(null);
 
     return createIssueService(client, projectId, values)
-      .then((issue) => setEntityService(client, ticketId, issue.id))
+      .then((issue) => Promise.all([
+        setEntityService(client, ticketId, issue.id, getEntityMetadata(issue)),
+        addLinkComment(issue),
+      ]))
       .then(() => navigate("/home"))
       .catch((err) => {
         const error = get(err, ["data", "error_description"]) || DEFAULT_ERROR;
@@ -50,7 +56,7 @@ const CreateIssuePage: FC = () => {
           asyncErrorHandler(err);
         }
       })
-  }, [asyncErrorHandler, client, navigate, ticketId]);
+  }, [asyncErrorHandler, client, navigate, ticketId, addLinkComment]);
 
   useSetTitle("Link Issue");
 
