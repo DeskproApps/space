@@ -37,10 +37,14 @@ const baseRequest: Request = async (client, {
     };
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   let res = await dpFetch(requestUrl, options);
 
   if (res.status === 401) {
     await refreshAccessTokenService(client);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     res = await dpFetch(requestUrl, options);
   }
 

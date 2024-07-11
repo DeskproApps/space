@@ -10,7 +10,6 @@ import { queryClient } from "./query";
 import { ReplyBoxProvider } from "./hooks";
 import { App } from "./App";
 import { ErrorFallback } from "./components";
-
 import "flatpickr/dist/themes/light.css";
 import "tippy.js/dist/tippy.css";
 import "simplebar/dist/simplebar.min.css";
