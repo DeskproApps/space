@@ -3,6 +3,7 @@ import { getEntityListService } from "../../services/deskpro";
 import { getIssuesService } from "../../services/space";
 import { useLinkedIssues } from "../useLinkedIssues";
 import { wrap, mockIssues } from "../../../testing";
+import type { ReactElement } from "react";
 import type { Result } from "../useLinkedIssues";
 
 jest.mock("../../services/deskpro/getEntityListService");
@@ -10,7 +11,7 @@ jest.mock("../../services/space/getIssuesService");
 
 const renderLinkedIssuesHook = () => renderHook<Result, unknown>(
   () => useLinkedIssues(),
-  { wrapper: ({ children }) => wrap(children, { query: true, appSdk: true }) },
+  { wrapper: ({ children }) => wrap(children as ReactElement, { query: true, appSdk: true }) },
 );
 
 describe("useLinkedIssues", () => {

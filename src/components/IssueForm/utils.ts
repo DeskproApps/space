@@ -26,7 +26,7 @@ import type { FormValidationSchema, CustomFormValidationSchema } from "./types";
 
 const validationSchema = z.object({
   project: z.string().min(1),
-  title: z.string().min(1),
+  title: z.string()/*.min(1)*/,
   description: z.string().optional(),
   assignee: z.string().optional(),
   status: z.string().min(1),

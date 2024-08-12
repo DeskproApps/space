@@ -9,7 +9,7 @@ import { useIssues } from "./useIssues";
 import { getEntityListService } from "../services/deskpro";
 import { QueryKey } from "../query";
 import type { Issue } from "../services/space/types";
-import type { TicketContext } from "../types";
+import type { TicketContext, TicketData } from "../types";
 
 export type Result = {
   isLoading: boolean,
@@ -23,8 +23,8 @@ const useLinkedIssues: UseLinkedIssues = () => {
   const ticketId = useMemo(() => get(context, ["data", "ticket", "id"]), [context]);
 
   const linkedIds = useQueryWithClient(
-    [QueryKey.LINKED_ISSUES, ticketId],
-    (client) => getEntityListService(client, ticketId),
+    [QueryKey.LINKED_ISSUES, ticketId as TicketData["ticket"]["id"]],
+    (client) => getEntityListService(client, ticketId as TicketData["ticket"]["id"]),
     { enabled: Boolean(ticketId) },
   );
 

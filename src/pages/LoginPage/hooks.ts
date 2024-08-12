@@ -65,7 +65,7 @@ const useLogin = (): Result => {
   }, [callback, spaceUrl, clientId, key]);
 
   const poll = useCallback(() => {
-    if (!client || !callback?.poll) {
+    if (!client || !callback?.poll || !ticketId) {
       return;
     }
 

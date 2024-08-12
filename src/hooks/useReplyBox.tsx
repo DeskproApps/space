@@ -179,12 +179,12 @@ const ReplyBoxProvider: FC<PropsWithChildren> = ({ children }) => {
 
   useInitialisedDeskproAppClient((client) => {
     if (isCommentOnNote) {
-      registerReplyBoxNotesAdditionsTargetAction(client, ticketId, map(issues, "id"), issuesMap);
+      registerReplyBoxNotesAdditionsTargetAction(client, `${ticketId}`, map(issues, "id"), issuesMap);
       client.registerTargetAction(`${APP_PREFIX}OnReplyBoxNote`, "on_reply_box_note");
     }
 
     if (isCommentOnEmail) {
-      registerReplyBoxEmailsAdditionsTargetAction(client, ticketId, map(issues, "id"), issuesMap);
+      registerReplyBoxEmailsAdditionsTargetAction(client, `${ticketId}`, map(issues, "id"), issuesMap);
       client.registerTargetAction(`${APP_PREFIX}OnReplyBoxEmail`, "on_reply_box_email");
     }
   }, [issues, ticketId, isCommentOnNote, isCommentOnEmail, issuesMap]);
