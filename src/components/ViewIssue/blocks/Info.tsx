@@ -1,7 +1,4 @@
 import { useMemo } from "react";
-import get from "lodash/get";
-import map from "lodash/map";
-import size from "lodash/size";
 import { faFile } from "@fortawesome/free-regular-svg-icons";
 import { P5, Stack, AttachmentTag } from "@deskpro/deskpro-ui";
 import {
@@ -37,8 +34,8 @@ export type Props = {
 const Info: FC<Props> = ({ issue, visibility }) => {
   const { getIssueLink, getProjectLink, getAttachmentLink } = useExternalLinks();
   const issueLink = getIssueLink(issue);
-  const projectLink = getProjectLink(get(issue, ["projectRef"]));
-  const fullName = useMemo(() => getFullName(get(issue, ["assignee"])), [issue]);
+  const projectLink = getProjectLink(issue?.projectRef);
+  const fullName = useMemo(() => getFullName(issue?.assignee), [issue]);
 
   return (
     <>
@@ -52,13 +49,13 @@ const Info: FC<Props> = ({ issue, visibility }) => {
 
       <Property
         label="Description"
-        text={<Markdown text={get(issue, ["description"]) || "-"} />}
+        text={<Markdown text={issue?.description || "-"} />}
       />
       <Property
         label="Project"
         text={(
           <P5>
-            {get(issue, ["projectRef", "name"]) || "-"}
+            {issue?.projectRef.name || "-"}
             {Boolean(projectLink) && (
               <>
                 {nbsp}<LinkIcon href={projectLink as string} />
@@ -92,13 +89,13 @@ const Info: FC<Props> = ({ issue, visibility }) => {
       <PropertyRow>
         <Property
           label="Created"
-          text={format(get(issue, ["creationTime", "iso"]))}
+          text={format(issue?.creationTime?.iso)}
           marginBottom={0}
         />
         {visibility.DUE_DATE && (
           <Property
             label="Due Date"
-            text={format(get(issue, ["dueDate", "iso"]))}
+            text={format(issue?.dueDate?.iso)}
             marginBottom={0}
           />
         )}
@@ -106,7 +103,7 @@ const Info: FC<Props> = ({ issue, visibility }) => {
       {visibility.TAG && (
         <Property
           label="Tags"
-          text={(!Array.isArray(issue?.tags) || !size(issue?.tags))
+          text={!issue?.tags?.length
             ? <P5>-</P5>
             : <Tags tags={issue?.tags}/>
           }
@@ -120,15 +117,15 @@ const Info: FC<Props> = ({ issue, visibility }) => {
       )}
       <Property
         label="Attachments"
-        text={!size(issue?.attachments) ? "-" : (
+        text={!issue?.attachments?.length ? "-" : (
           <Stack gap={6} wrap="wrap">
-            {map(issue?.attachments, (attach) => (
+            {issue.attachments.map((attach) => (
               <AttachmentTag
-                key={get(attach, ["details", "id"])}
-                filename={get(attach, ["details", "filename"]) || get(attach, ["details", "name"])}
-                fileSize={get(attach, ["details", "sizeBytes"], 0) || 0}
+                key={attach?.details?.id}
+                filename={`${attach?.details?.filename || attach?.details?.name}`}
+                fileSize={attach?.details?.sizeBytes || 0}
                 icon={faFile as AnyIcon}
-                href={getAttachmentLink(get(attach, ["details", "id"], "")) as string}
+                href={getAttachmentLink(attach?.details?.id) as string}
               />
             ))}
           </Stack>

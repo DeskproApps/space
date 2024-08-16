@@ -1,6 +1,4 @@
 import { useMemo } from "react";
-import get from "lodash/get";
-import map from "lodash/map";
 import { useQueryWithClient } from "@deskpro/app-sdk";
 import {
   getProjectsService,
@@ -28,14 +26,14 @@ const useSearch: UseSearch = (projectId, q) => {
     { enabled: Boolean(projectId) && Boolean(q) },
   );
   const issueIds = useMemo(() => {
-    return map(get(searchIssues.data, ["data"], []) || [], "id");
+    return (Array.isArray(searchIssues.data?.data) ? searchIssues.data?.data ?? [] : []).map(({ id }) => id)
   }, [searchIssues.data]);
 
   const issues = useIssues(issueIds);
 
   return {
     isLoading: [searchIssues, issues].some(({ isLoading }) => isLoading) && Boolean(q),
-    projects: get(projects, ["data", "data"]) || [],
+    projects: Array.isArray(projects.data?.data) ? projects.data?.data ?? [] : [],
     issues: issues.issues,
   };
 };

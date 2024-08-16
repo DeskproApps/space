@@ -1,4 +1,4 @@
-import has from "lodash/has";
+import { has } from "lodash-es";
 import type { Maybe } from "../types";
 import type { Issue } from "../services/space/types";
 

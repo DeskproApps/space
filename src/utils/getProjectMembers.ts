@@ -1,15 +1,13 @@
-import get from "lodash/get";
-import size from "lodash/size";
 import type { Maybe } from "../types";
 import type { Project, Member } from "../services/space/types";
 
 const getProjectMembers = (project?: Maybe<Project>): Member[] => {
   const members = [
-    ...get(project, ["memberProfiles"], []) || [],
-    ...get(project, ["adminProfiles"], []) || [],
+    ...(Array.isArray(project?.memberProfiles) ? project?.memberProfiles ?? [] : []),
+    ...(Array.isArray(project?.adminProfiles) ? project?.adminProfiles ?? [] : []),
   ].filter(Boolean);
 
-  if (!size(members)) {
+  if (!members.length) {
     return [];
   }
 

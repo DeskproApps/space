@@ -1,6 +1,4 @@
 import { useMemo } from "react";
-import get from "lodash/get";
-import size from "lodash/size";
 import { useQueryWithClient } from "@deskpro/app-sdk";
 import { useIssues } from "./useIssues";
 import {
@@ -36,14 +34,14 @@ const useIssue: UseIssue = (issueId) => {
   );
 
   const comments = useMemo(() => {
-    if (!Array.isArray(messages.data?.messages) || !size(messages.data?.messages)) {
+    if (!messages.data?.messages?.length) {
       return [];
     }
 
-    return messages.data?.messages.filter(isIssueComment) as IssueComment[];
+    return messages.data?.messages.filter(isIssueComment) as unknown as IssueComment[];
   }, [messages.data?.messages]);
 
-  const projectId = useMemo(() => get(issues, [0, "projectId"]), [issues]);
+  const projectId = useMemo(() => issues[0]?.projectId, [issues]);
 
   const fieldsVisibility = useQueryWithClient(
     [QueryKey.FIELDS_VISIBILITY, projectId as Project["id"]],
@@ -58,7 +56,7 @@ const useIssue: UseIssue = (issueId) => {
   return {
     isLoading: [
       isLoading,
-      Boolean(issueId),
+      !issueId,
       messages.isLoading,
       fieldsVisibility.isLoading,
     ].every(Boolean),

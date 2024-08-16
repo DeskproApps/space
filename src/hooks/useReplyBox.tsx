@@ -1,8 +1,5 @@
 import { useMemo, useCallback, useContext, createContext } from "react";
-import get from "lodash/get";
-import size from "lodash/size";
-import map from "lodash/map";
-import truncate from "lodash/truncate";
+import { truncate } from "lodash-es";
 import { match } from "ts-pattern";
 import { useDebouncedCallback } from "use-debounce";
 import {
@@ -54,7 +51,7 @@ const registerReplyBoxNotesAdditionsTargetAction = (
     return;
   }
 
-  if (Array.isArray(issueIds) && !size(issueIds)) {
+  if (Array.isArray(issueIds) && !issueIds.length) {
     return client.deregisterTargetAction(`${APP_PREFIX}ReplyBoxNoteAdditions`);
   }
 
@@ -65,7 +62,7 @@ const registerReplyBoxNotesAdditionsTargetAction = (
         title: "Add to Space",
         payload: issueIds.map((issueId, idx) => {
           const issue = issuesMap[issueId];
-          const issueKey = getIssueKey(issue) || truncate(get(issue, ["title"], ""), { length: 20 }) || issue.id;
+          const issueKey = getIssueKey(issue) || truncate(issue.title, { length: 20 }) || issue.id;
           return {
             id: issueId,
             title: issueKey,
@@ -87,7 +84,7 @@ const registerReplyBoxEmailsAdditionsTargetAction = (
     return;
   }
 
-  if (Array.isArray(issueIds) && !size(issueIds)) {
+  if (Array.isArray(issueIds) && !issueIds.length) {
     return client.deregisterTargetAction(`${APP_PREFIX}ReplyBoxEmailAdditions`);
   }
 
@@ -100,7 +97,7 @@ const registerReplyBoxEmailsAdditionsTargetAction = (
         title: `Add to Space`,
         payload: issueIds.map((issueId, idx) => {
           const issue = issuesMap[issueId];
-          const issueKey = getIssueKey(issue) || truncate(get(issue, ["title"], ""), { length: 20 }) || issue.id;
+          const issueKey = getIssueKey(issue) || truncate(issue.title, { length: 20 }) || issue.id;
           return {
             id: issueId,
             title: issueKey,
@@ -129,9 +126,9 @@ const ReplyBoxProvider: FC<PropsWithChildren> = ({ children }) => {
       return acc;
     }, {}), [issues]);
 
-  const ticketId = get(context, ["data", "ticket", "id"]);
-  const isCommentOnNote = get(context, ["settings", "default_comment_on_ticket_note"]);
-  const isCommentOnEmail = get(context, ["settings", "default_comment_on_ticket_reply"]);
+  const ticketId = context.data?.ticket.id;
+  const isCommentOnNote = context.settings?.default_comment_on_ticket_note;
+  const isCommentOnEmail = context.settings?.default_comment_on_ticket_reply;
 
   const setSelectionState: SetSelectionState = useCallback((issueId, selected, type) => {
     if (!ticketId || !client) {
@@ -179,12 +176,12 @@ const ReplyBoxProvider: FC<PropsWithChildren> = ({ children }) => {
 
   useInitialisedDeskproAppClient((client) => {
     if (isCommentOnNote) {
-      registerReplyBoxNotesAdditionsTargetAction(client, `${ticketId}`, map(issues, "id"), issuesMap);
+      registerReplyBoxNotesAdditionsTargetAction(client, `${ticketId}`, issues.map(({ id }) => id), issuesMap);
       client.registerTargetAction(`${APP_PREFIX}OnReplyBoxNote`, "on_reply_box_note");
     }
 
     if (isCommentOnEmail) {
-      registerReplyBoxEmailsAdditionsTargetAction(client, `${ticketId}`, map(issues, "id"), issuesMap);
+      registerReplyBoxEmailsAdditionsTargetAction(client, `${ticketId}`, issues.map(({ id }) => id), issuesMap);
       client.registerTargetAction(`${APP_PREFIX}OnReplyBoxEmail`, "on_reply_box_email");
     }
   }, [issues, ticketId, isCommentOnNote, isCommentOnEmail, issuesMap]);
@@ -249,7 +246,7 @@ const ReplyBoxProvider: FC<PropsWithChildren> = ({ children }) => {
               .then((result) => {
 
                 if (result.isSuccess) {
-                  registerReplyBoxEmailsAdditionsTargetAction(client, ticketId, map(issues, "id"), issuesMap);
+                  registerReplyBoxEmailsAdditionsTargetAction(client, ticketId, issues.map(({ id }) => id), issuesMap);
                 }
               });
           }
@@ -263,7 +260,7 @@ const ReplyBoxProvider: FC<PropsWithChildren> = ({ children }) => {
             client?.setState(noteKey(subjectTicketId, selection.id), { id: selection.id, selected: selection.selected })
               .then((result) => {
                 if (result.isSuccess) {
-                  registerReplyBoxNotesAdditionsTargetAction(client, subjectTicketId, map(issues, "id"), issuesMap);
+                  registerReplyBoxNotesAdditionsTargetAction(client, subjectTicketId, issues.map(({ id }) => id), issuesMap);
                 }
               });
           }

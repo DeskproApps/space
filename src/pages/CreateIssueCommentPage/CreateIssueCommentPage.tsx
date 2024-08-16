@@ -1,5 +1,4 @@
 import { useState, useCallback } from "react";
-import get from "lodash/get";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSetTitle, useAsyncError } from "../../hooks";
 import { useDeskproAppClient } from "@deskpro/app-sdk";
@@ -34,7 +33,7 @@ const CreateIssueCommentPage: FC = () => {
     return createIssueCommentService(client, issueId, getValues(data))
       .then(() => navigate(`/issues/view/${issueId}`))
       .catch((err) => {
-        const error = get(err, ["data", "err"]) || DEFAULT_ERROR;
+        const error = err.data?.err || DEFAULT_ERROR;
 
         if (error) {
           setError(error);

@@ -1,4 +1,4 @@
-import noop from "lodash/noop";
+import { noop } from "lodash-es";
 import { Toggle } from "@deskpro/deskpro-ui";
 import type { FC } from "react";
 import type { components } from "../../../../../services/space/schema";

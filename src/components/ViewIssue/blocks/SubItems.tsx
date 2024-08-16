@@ -1,5 +1,3 @@
-import get from "lodash/get";
-import size from "lodash/size";
 import { Stack } from "@deskpro/deskpro-ui";
 import { Title } from "@deskpro/app-sdk";
 import { NoFound, SubItem } from "../../common";
@@ -16,13 +14,13 @@ export type Props = {
 };
 
 const SubItems: FC<Props> = ({ subItems, onCompleteItem }) => {
-  const items = get(subItems, ["root", "children"], []) || [];
+  const items = Array.isArray(subItems?.root?.children) ? subItems?.root?.children ?? [] : [];
 
   return (
     <>
-      <Title title={`Sub-items (${size(items)})`} />
+      <Title title={`Sub-items (${items.length})`} />
       <Stack vertical gap={10}>
-        {(!Array.isArray(items) || !size(items))
+        {!items.length
           ? <NoFound text="No sub-items found"/>
           : items.map((item: IssueSubItem) => (
             <SubItem

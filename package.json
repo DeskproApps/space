@@ -16,7 +16,7 @@
     "generate:types": "npx openapi-typescript ./src/services/space/space-open-api.json -o ./src/services/space/schema.d.ts"
   },
   "dependencies": {
-    "@deskpro/app-sdk": "^2.1.12",
+    "@deskpro/app-sdk": "2.1.12",
     "@deskpro/deskpro-ui": "^7.18.5",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@heroicons/react": "1.0.6",
@@ -25,7 +25,7 @@
     "date-fns": "^2.30.0",
     "iframe-resizer": "^4.4.5",
     "javascript-time-ago": "^2.5.9",
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "polished": "^4.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -50,7 +50,7 @@
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.1",
     "@types/jest": "^29.5.8",
-    "@types/lodash": "^4.14.201",
+    "@types/lodash-es": "^4.17.12",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@types/showdown": "^2.0.6",

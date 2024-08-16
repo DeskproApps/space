@@ -1,6 +1,4 @@
-import { useState, useMemo, useCallback } from "react";
-import get from "lodash/get";
-import isEmpty from "lodash/isEmpty";
+import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   useDeskproAppClient,
@@ -28,10 +26,10 @@ const useUnlinkIssue = (): Result => {
   const { deleteSelectionState } = useReplyBox();
   const { removeDeskproTag } = useDeskproTag();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const ticketId = useMemo(() => get(context, ["data", "ticket", "id"]), [context]);
+  const ticketId = context.data?.ticket.id;
 
   const unlink = useCallback((issue: Issue) => {
-    if (!client || isEmpty(issue) || !ticketId) {
+    if (!client || !issue || !ticketId) {
       return;
     }
 

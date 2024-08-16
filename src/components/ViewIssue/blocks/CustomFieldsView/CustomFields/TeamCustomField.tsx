@@ -1,4 +1,3 @@
-import get from "lodash/get";
 import { P5, Stack, IconV2 } from "@deskpro/deskpro-ui";
 import { NoValue } from "./NoValue";
 import type { FC } from "react";
@@ -7,7 +6,7 @@ import type { components } from "../../../../../services/space/schema";
 type Props = components["schemas"]["TeamCFValue"];
 
 const TeamCustomField: FC<Props> = ({ team }) => {
-  const name = get(team, ["name"]);
+  const name = team?.name;
 
   if (!name) {
     return (

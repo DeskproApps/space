@@ -1,6 +1,4 @@
 import { useMemo } from "react";
-import get from "lodash/get";
-import find from "lodash/find";
 import { useQueryWithClient } from "@deskpro/app-sdk";
 import {
   getTagsService,
@@ -67,12 +65,11 @@ const useFormDeps: UseFormDeps = (projectId) => {
     { enabled: Boolean(projectId) },
   );
 
-  const projectOptions = useMemo(() => {
-    return getOptions(get(projects.data, ["data"]))
-  }, [projects.data]);
+  const projectOptions = useMemo(() => getOptions(projects.data?.data), [projects.data]);
 
   const assigneeOptions = useMemo(() => {
-    const project = find(get(projects.data, ["data"]), { id: projectId });
+    const project = (Array.isArray(projects.data?.data) ? projects.data?.data ?? [] : [])
+      .find(({ id }) => projectId === id);
     const members = getProjectMembers(project);
 
     return getAssigneeOptions(members);
@@ -80,9 +77,7 @@ const useFormDeps: UseFormDeps = (projectId) => {
 
   const statusOptions = useMemo(() => getStatusOptions(statuses.data), [statuses.data]);
 
-  const tagOptions = useMemo(() => {
-    return getTagOptions(get(tags.data, ["data"]))
-  }, [tags.data]);
+  const tagOptions = useMemo(() => getTagOptions(tags.data?.data), [tags.data]);
 
   return {
     isLoading: [

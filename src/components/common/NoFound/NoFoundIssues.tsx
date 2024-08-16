@@ -1,4 +1,4 @@
-import size from "lodash/size";
+import { size } from "lodash-es";
 import { NoFound } from "./NoFound";
 import type { FC, ReactNode } from "react";
 import type { Issue } from "../../../services/space/types";

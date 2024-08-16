@@ -1,7 +1,5 @@
 import { createSearchParams } from "react-router-dom";
-import isEmpty from "lodash/isEmpty";
-import isString from "lodash/isString";
-import isPlainObject from "lodash/isPlainObject";
+import { isEmpty, isString, isPlainObject } from "lodash-es";
 import { isForm } from "./isForm";
 import type { ParamKeyValuePair } from "react-router-dom";
 import type { Dict, RequestParams } from "../types";

@@ -1,4 +1,4 @@
-import size from "lodash/size";
+import { size } from "lodash-es";
 import { useQueryWithClient } from "@deskpro/app-sdk";
 import { getIssuesService } from "../services/space";
 import { QueryKey } from "../query";

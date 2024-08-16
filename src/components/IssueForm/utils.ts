@@ -5,7 +5,7 @@ import formatFNS from "date-fns/format";
 import formatISO from "date-fns/formatISO";
 import parseISO from "date-fns/parseISO";
 import { z } from "zod";
-import { get, map, size, find, reduce, isEmpty, difference } from "lodash";
+import { get, map, find, reduce, isEmpty, difference } from "lodash-es";
 import { v4 as uuid } from "uuid";
 import { Member } from "@deskpro/app-sdk";
 import { getOption, getFullName, getCommitIdentifier } from "../../utils";
@@ -18,6 +18,7 @@ import type {
   Project,
   IssueTag,
   IssueInput,
+  CustomField,
   IssueStatus,
   CustomFieldData,
   Member as MemberType,
@@ -43,9 +44,9 @@ const getDefaultInitValues = (
     project: issue?.projectRef.id || "",
     title: issue?.title || "",
     description: issue?.description || "",
-    assignee: get(issue, ["assignee", "id"]) || "",
-    status: get(issue, ["status", "id"]) || "",
-    dueDate: parse(get(issue, ["dueDate", "iso"])) || undefined,
+    assignee: issue?.assignee?.id || "",
+    status: issue?.status.id || "",
+    dueDate: parse(issue?.dueDate?.iso) || undefined,
     tags: map(issue?.tags, "id") || [],
   };
 };
@@ -56,7 +57,7 @@ const getCustomInitValues = (
 ): CustomFormValidationSchema => {
   const customFields = get(issue, ["customFields"], {}) || {};
 
-  return reduce(customFields, (acc, fieldValue, fieldName) => {
+  return reduce(customFields, (acc, fieldValue: CustomField, fieldName) => {
     const customField = find(meta, { name: fieldName });
 
     const formValue = match(customField)
@@ -138,7 +139,7 @@ const getCustomInitValues = (
 const getDefaultIssueValues = (
   values: FormValidationSchema,
 ): Omit<IssueInput, "customFields"> => {
-  const dueDate = get(values, ["dueDate"]) || null;
+  const dueDate = values.dueDate || null;
 
   return {
     title: values.title,
@@ -154,7 +155,7 @@ const getCustomIssueValues = (
   values: CustomFormValidationSchema,
   meta: CustomFieldData[],
 ): Pick<IssueInput, "customFields"> => {
-  if (isEmpty(values) || !Array.isArray(meta) || !size(meta)) {
+  if (isEmpty(values) || !Array.isArray(meta) || !meta.length) {
     return { customFields: [] };
   }
 
@@ -298,7 +299,7 @@ const getProjectFromValues = (values: FormValidationSchema): Project["id"] => {
 };
 
 const getAssigneeOptions = (members?: MemberType[]) => {
-  if (!Array.isArray(members) || !size(members)) {
+  if (!Array.isArray(members) || !members.length) {
     return [];
   }
 
@@ -313,7 +314,7 @@ const getAssigneeOptions = (members?: MemberType[]) => {
 };
 
 const getStatusOptions = (statuses?: IssueStatus[]) => {
-  if (!Array.isArray(statuses) || !size(statuses)) {
+  if (!Array.isArray(statuses) || !statuses.length) {
     return [];
   }
 
@@ -325,7 +326,7 @@ const getStatusOptions = (statuses?: IssueStatus[]) => {
 };
 
 const getTagOptions = (tags?: IssueTag[]) => {
-  if (!Array.isArray(tags) || !size(tags)) {
+  if (!Array.isArray(tags) || !tags.length) {
     return [];
   }
 
@@ -340,7 +341,7 @@ const getIssueTagsToUpdate = (issue: Issue, values: IssueInput): {
   add: Array<IssueTag["id"]>,
   rem: Array<IssueTag["id"]>,
 } => {
-  const issueTags = map(get(issue, ["tags"], []) || [], "id");
+  const issueTags = issue.tags?.map(({ id }) => id);
   const newTags = values.tags || [];
 
   return {

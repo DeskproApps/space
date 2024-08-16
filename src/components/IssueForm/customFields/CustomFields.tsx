@@ -1,5 +1,3 @@
-import get from "lodash/get";
-import isNil from "lodash/isNil";
 import { Controller } from "react-hook-form";
 import { map } from "./map";
 import { CustomFieldsType } from "../../../constants";
@@ -18,14 +16,14 @@ type Props = {
 const CustomFields: FC<Props> = ({ control, customFields, projectId }) => (
   <>
     {customFields.map((field) => {
-      const fieldId = get(field, ["id"]);
-      const fieldName = get(field, ["name"]);
+      const fieldId = field.id;
+      const fieldName = field.name;
       const CustomField = map(field);
 
-      if (isNil(CustomField)) {
-        if (get(field, ["type"]) !== CustomFieldsType.AUTONUMBER) {
+      if (!CustomField) {
+        if (field.type !== CustomFieldsType.AUTONUMBER) {
           // eslint-disable-next-line no-console
-          console.warn(`Could not render field view, mapping missing for Space field type ${get(field, ["type"])}`);
+          console.warn(`Could not render field view, mapping missing for Space field type ${field.type}`);
         }
         return null;
       }

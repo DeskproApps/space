@@ -1,5 +1,4 @@
 import { useCallback } from "react";
-import get from "lodash/get";
 import { P5 } from "@deskpro/deskpro-ui";
 import {
   Title,
@@ -24,7 +23,7 @@ export type Props = {
 const IssueItem: FC<Props> = ({ issue, onClickTitle }) => {
   const { getIssueLink, getProjectLink } = useExternalLinks();
   const issueLink = getIssueLink(issue);
-  const projectLink = getProjectLink(get(issue, ["projectRef"]));
+  const projectLink = getProjectLink(issue.projectRef);
 
   const onClick = useCallback((e: MouseEvent) => {
     e.preventDefault();
@@ -35,8 +34,8 @@ const IssueItem: FC<Props> = ({ issue, onClickTitle }) => {
     <>
       <Title
         title={!onClickTitle
-          ? get(issue, ["title"])
-          : (<Link href="#" onClick={onClick}>{get(issue, ["title"])}</Link>)
+          ? issue.title
+          : (<Link href="#" onClick={onClick}>{issue.title}</Link>)
         }
         marginBottom={10}
         {...(!issueLink ? {} : { icon: <SpaceLogo/> })}
@@ -46,7 +45,7 @@ const IssueItem: FC<Props> = ({ issue, onClickTitle }) => {
         leftLabel="Project"
         leftText={(
           <P5>
-            {get(issue, ["projectRef", "name"]) || "-"}
+            {issue.projectRef.name || "-"}
             {Boolean(projectLink) && (
               <>
                 {nbsp}<LinkIcon href={projectLink as string} />
@@ -63,7 +62,7 @@ const IssueItem: FC<Props> = ({ issue, onClickTitle }) => {
           <Status status={issue.status}/>
         )}
         rightLabel="Created"
-        rightText={format(get(issue, ["creationTime", "iso"]))}
+        rightText={format(issue.creationTime?.iso)}
       />
       <Property
         label="Deskpro Tickets"

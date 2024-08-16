@@ -1,5 +1,4 @@
 import { z } from "zod";
-import get from "lodash/get";
 import type { IssueCommentInput } from "../../services/space/types";
 import type { FormValidationSchema } from "./types";
 
@@ -12,7 +11,7 @@ const getInitValues = () => ({
 });
 
 const getValues = (data: FormValidationSchema): IssueCommentInput => ({
-  text: get(data, ["comment"], ""),
+  text: data.comment,
 });
 
 export { validationSchema, getInitValues, getValues };

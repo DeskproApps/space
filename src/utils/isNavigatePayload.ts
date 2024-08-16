@@ -1,4 +1,4 @@
-import has from "lodash/has";
+import { has } from "lodash-es";
 import type { EventPayload, NavigateToChangePage } from "../types";
 
 const isNavigatePayload = (

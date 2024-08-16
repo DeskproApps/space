@@ -1,4 +1,3 @@
-import get from "lodash/get";
 import { Search, Select } from "@deskpro/app-sdk";
 import { getOptions } from "../../../utils";
 import { Label } from "../../common";
@@ -26,7 +25,7 @@ const Filters: FC<Props> = ({
       />
       <Label label="Project" required>
         <Select<Project["id"]>
-          initValue={get(projects, [0, "id"], "") || ""}
+          initValue={projects[0]?.id || ""}
           options={getOptions(projects)}
           onChange={onChangeProject as () => void}
         />

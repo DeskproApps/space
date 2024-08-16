@@ -1,4 +1,4 @@
-import size from "lodash/size";
+import { size } from "lodash-es";
 import { Stack } from "@deskpro/deskpro-ui";
 import { Button } from "../../common";
 import type { FC } from "react";

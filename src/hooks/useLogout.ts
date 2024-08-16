@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import noop from "lodash/noop";
+import { noop } from "lodash-es";
 import { useDeskproAppClient } from "@deskpro/app-sdk";
 import { removeAccessTokenService, removeRefreshTokenService } from "../services/deskpro";
 

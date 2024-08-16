@@ -1,4 +1,3 @@
-import get from "lodash/get";
 import { Stack } from "@deskpro/deskpro-ui";
 import { DEFAULT_ERROR } from "../../constants";
 import { SpaceError } from "../../services/space";
@@ -17,8 +16,7 @@ const ErrorFallback: FC<Props> = ({ error }) => {
   console.error(error);
 
   if (error instanceof SpaceError) {
-    message = get(error, ["data", "error_description"])
-      || DEFAULT_ERROR;
+    message = error.data?.error_description || DEFAULT_ERROR;
   }
 
   return (

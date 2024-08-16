@@ -1,5 +1,4 @@
-import find from "lodash/find";
-import toLower from "lodash/toLower";
+import { find, toLower } from "lodash-es";
 import { DESKPRO_TAG } from "../constants";
 import type { IssueTag } from "../services/space/types";
 

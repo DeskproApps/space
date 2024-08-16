@@ -1,4 +1,4 @@
-import size from "lodash/size";
+import { size } from "lodash-es";
 import { useInitialisedDeskproAppClient } from "@deskpro/app-sdk";
 
 const useSetBadgeCount = <T>(items: Array<T>) => {

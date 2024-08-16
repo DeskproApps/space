@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import get from "lodash/get";
 import { Select } from "@deskpro/app-sdk";
 import { getOptions } from "../../../../utils";
 import type { FC } from "react";
@@ -11,10 +10,12 @@ type EnumValue = components["schemas"]["CFEnumValue"];
 const EnumCustomField: FC<CustomFieldProps> = ({ field, formControl }) => {
   const { field: formControlField } = formControl;
   const items: EnumValue[] = useMemo(() => {
-    return get(field, ["parameters", "values"], []) || [];
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore - not match schema with real value from api
+    return field.parameters?.values || [];
   }, [field]);
   const options = getOptions(items, "value");
-  const value = get(formControlField, ["value", "id"]) || "";
+  const value = formControlField.value.id || "";
 
   return (
     <Select

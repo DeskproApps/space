@@ -1,5 +1,4 @@
-import pick from "lodash/pick";
-import cloneDeep from "lodash/cloneDeep";
+import { pick, cloneDeep } from "lodash-es";
 import { getDefaultIssueValues } from "../utils";
 import mockValues from "./mockValues.json";
 

@@ -1,5 +1,4 @@
-import isEmpty from "lodash/isEmpty";
-import isString from "lodash/isString";
+import { isEmpty, isString } from "lodash-es";
 import { proxyFetch } from "@deskpro/app-sdk";
 import { refreshAccessTokenService } from "./refreshAccessTokenService";
 import { BASE_URL, placeholders } from "../../constants";

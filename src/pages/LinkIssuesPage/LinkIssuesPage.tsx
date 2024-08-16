@@ -1,7 +1,5 @@
-import { useMemo, useState, useCallback, useEffect } from "react";
-import get from "lodash/get";
-import size from "lodash/size";
-import cloneDeep from "lodash/cloneDeep";
+import { useState, useCallback, useEffect } from "react";
+import { cloneDeep } from "lodash-es";
 import { useNavigate } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
 import {
@@ -22,13 +20,13 @@ import { useSearch } from "../../hooks";
 import { getEntityMetadata } from "../../utils";
 import { LinkIssues } from "../../components";
 import type { FC } from "react";
-import type { Maybe, TicketContext } from "../../types";
+import type { Maybe } from "../../types";
 import type { Project, Issue } from "../../services/space/types";
 
 const LinkIssuesPage: FC = () => {
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext() as { context: TicketContext };
+  const { context } = useDeskproLatestAppContext();
   const { asyncErrorHandler } = useAsyncError();
   const { addLinkComment } = useLinkedAutoComment();
   const { setSelectionState } = useReplyBox();
@@ -38,7 +36,7 @@ const LinkIssuesPage: FC = () => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [selectedIssues, setSelectedIssues] = useState<Issue[]>([]);
   const { issues, projects, isLoading } = useSearch(projectId, searchQuery);
-  const ticketId = useMemo(() => get(context, ["data", "ticket", "id"]), [context]);
+  const ticketId = context?.data?.ticket.id;
 
   const onNavigateToCreate = useCallback(() => navigate("/issues/create"), [navigate]);
 
@@ -61,7 +59,7 @@ const LinkIssuesPage: FC = () => {
   const onCancel = useCallback(() => navigate("/home"), [navigate]);
 
   const onLinkIssues = useCallback(() => {
-    if (!client || !ticketId || !size(selectedIssues)) {
+    if (!client || !ticketId || !selectedIssues.length) {
       return;
     }
 
@@ -90,12 +88,12 @@ const LinkIssuesPage: FC = () => {
   });
 
   useEffect(() => {
-    if (size(projects)) {
-      setProjectId(get(projects, [0, "id"]));
+    if (projects?.length > 0) {
+      setProjectId(projects[0].id);
     }
   }, [projects]);
 
-  if (!size(projects)) {
+  if (!projects.length) {
     return (
       <LoadingSpinner/>
     );

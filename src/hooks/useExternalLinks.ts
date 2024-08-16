@@ -1,5 +1,4 @@
-import { useMemo, useCallback } from "react";
-import get from "lodash/get";
+import { useCallback } from "react";
 import { useDeskproLatestAppContext } from "@deskpro/app-sdk";
 import { getIssueLink, getProjectLink, getAttachmentLink } from "../utils";
 import type { Maybe } from "../types";
@@ -15,7 +14,7 @@ type UseExternalLinks = () => Result;
 
 const useExternalLinks: UseExternalLinks = () => {
   const { context } = useDeskproLatestAppContext();
-  const settings = useMemo(() => get(context, ["settings"]), [context]);
+  const settings = context?.settings;
 
   const projectLink = useCallback((project?: Maybe<Project>) => {
     return getProjectLink(settings, project);

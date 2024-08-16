@@ -1,5 +1,3 @@
-import set from "lodash/set";
-import get from "lodash/get";
 import { getCustomIssueValues } from "../utils";
 import mockValues from "./mockValues.json";
 import { mockCustomFieldsConfig } from "../../../../testing";
@@ -7,8 +5,8 @@ import { mockCustomFieldsConfig } from "../../../../testing";
 describe("IssueForm", () => {
   describe("getCustomIssueValues", () => {
     test("should return required values", () => {
-      set(mockValues.customFields, ["1zAzn40tHz2a"], new Date(get(mockValues.customFields, ["1zAzn40tHz2a"])));
-      set(mockValues.customFields, ["2CR4aa2J8Z3K"], new Date(get(mockValues.customFields, ["2CR4aa2J8Z3K"])));
+      mockValues.customFields["1zAzn40tHz2a"] = new Date(mockValues.customFields["1zAzn40tHz2a"]) as unknown as string;
+      mockValues.customFields["2CR4aa2J8Z3K"] = new Date(mockValues.customFields["2CR4aa2J8Z3K"]) as unknown as string;
 
       expect(getCustomIssueValues(mockValues.customFields as never, mockCustomFieldsConfig as never[]))
         .toStrictEqual({

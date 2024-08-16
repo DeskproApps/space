@@ -1,4 +1,4 @@
-import size from "lodash/size";
+import { size } from "lodash-es";
 import { P5, Tag as TagUI, lightTheme, Stack } from "@deskpro/deskpro-ui";
 import type { FC } from "react";
 import type { Maybe } from "../../../types";

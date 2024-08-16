@@ -1,7 +1,4 @@
-import { useMemo, useState, useCallback } from "react";
-import get from "lodash/get";
-import map from "lodash/map";
-import isEmpty from "lodash/isEmpty";
+import { useState, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {
   LoadingSpinner,
@@ -25,25 +22,25 @@ import { DEFAULT_ERROR } from "../../constants";
 import { getIssueTagsToUpdate } from "../../components/IssueForm";
 import { EditIssue } from "../../components";
 import type { FC } from "react";
-import type { Maybe, TicketContext } from "../../types";
+import type { Maybe } from "../../types";
 import type { IssueInput, Project } from "../../services/space/types";
 
 const EditIssuePage: FC = () => {
   const { issueId } = useParams();
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext() as { context: TicketContext };
+  const { context } = useDeskproLatestAppContext();
   const { asyncErrorHandler } = useAsyncError();
   const [error, setError] = useState<Maybe<string|string[]>>(null);
   const { isLoading, issue } = useIssue(issueId);
-  const ticketId = useMemo(() => get(context, ["data", "ticket", "id"]), [context]);
+  const ticketId = context?.data?.ticket.id;
 
   const onCancel = useCallback(() => {
     navigate(`/issues/view/${issue?.id}`);
   }, [navigate, issue]);
 
   const onSubmit = useCallback((projectId: Project["id"], values: IssueInput) => {
-    if (!client || !projectId || isEmpty(values) || !issue?.id || !ticketId) {
+    if (!client || !projectId || !values || !issue?.id || !ticketId) {
       return Promise.resolve();
     }
 
@@ -55,10 +52,10 @@ const EditIssuePage: FC = () => {
       .then((issues) => setEntityService(client, ticketId, issue.id, getEntityMetadata(issues[0])))
       .then(() => navigate(`/issues/view/${issue.id}`))
       .catch((err) => {
-        const error = get(err, ["data", "error_description"]) || DEFAULT_ERROR;
+        const error = err?.data?.error_description || DEFAULT_ERROR;
 
         if (error) {
-          setError(Array.isArray(error) ? map(error, "message") : error)
+          setError(Array.isArray(error) ? error.map(({ message }) => message) : error)
         } else {
           asyncErrorHandler(err);
         }

@@ -1,6 +1,4 @@
-import { useCallback, useMemo } from "react";
-import get from "lodash/get";
-import noop from "lodash/noop";
+import { useCallback } from "react";
 import { useDeskproAppClient, useDeskproLatestAppContext } from "@deskpro/app-sdk";
 import {
   getTagsService,
@@ -21,13 +19,10 @@ type UseDeskproTag = () => {
 const useDeskproTag: UseDeskproTag = () => {
   const { client } = useDeskproAppClient();
   const { context } = useDeskproLatestAppContext() as { context: TicketContext };
-
-  const isAddDeskproTag = useMemo(() => {
-    return get(context, ["settings", "add_deskpro_tag"]) === true
-  }, [context]);
+  const isAddDeskproTag = context?.settings?.add_deskpro_tag === true;
 
   const addDeskproTag = useCallback((issue: Issue) => {
-    const projectId = get(issue, ["projectId"]);
+    const projectId = issue.projectId;
 
     if (!client || !isAddDeskproTag || !projectId) {
       return Promise.resolve();
@@ -42,22 +37,22 @@ const useDeskproTag: UseDeskproTag = () => {
           : createTagService(client, projectId, DESKPRO_TAG.name);
       })
       .then((dpTag) => addIssueTagService(client, projectId, issue.id, dpTag.id))
-      .catch(noop);
+      .catch(() => {});
   }, [client, isAddDeskproTag]);
 
   const removeDeskproTag = useCallback((issue: Issue) => {
-    const projectId = get(issue, ["projectId"]);
+    const projectId = issue.projectId;
 
     if (!client || !isAddDeskproTag || !projectId) {
       return Promise.resolve();
     }
 
-    const deskproTag = findDeskproTag(get(issue, ["tags"]));
+    const deskproTag = findDeskproTag(issue.tags);
 
     return (!deskproTag?.id
         ? Promise.resolve()
         : removeIssueTagService(client, projectId, issue.id, deskproTag.id)
-    ).catch(noop);
+    ).catch(() => {});
   }, [client, isAddDeskproTag]);
 
   return { addDeskproTag, removeDeskproTag };

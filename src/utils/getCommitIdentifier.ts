@@ -1,6 +1,4 @@
-import split from "lodash/split";
-import isEmpty from "lodash/isEmpty";
-import isString from "lodash/isString";
+import { split, isEmpty, isString } from "lodash-es";
 import type { Maybe } from "../types";
 
 type CommitIdentifier = {

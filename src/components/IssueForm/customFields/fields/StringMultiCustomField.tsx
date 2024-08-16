@@ -1,6 +1,5 @@
 import { useState } from "react";
-import size from "lodash/size";
-import filter from "lodash/filter";
+import { size, filter } from "lodash-es";
 import { v4 as uuid } from "uuid";
 import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useDebouncedCallback } from "use-debounce";
