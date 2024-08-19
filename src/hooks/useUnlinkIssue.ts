@@ -9,7 +9,6 @@ import { useLinkedAutoComment } from "./useLinkedAutoComment";
 import { useAsyncError } from "./useAsyncError";
 import { useReplyBox } from "./useReplyBox";
 import { useDeskproTag } from "./useDeskproTag";
-import type { TicketContext } from "../types";
 import type { Issue } from "../services/space/types";
 
 export type Result = {
@@ -20,13 +19,13 @@ export type Result = {
 const useUnlinkIssue = (): Result => {
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext() as { context: TicketContext };
+  const { context } = useDeskproLatestAppContext();
   const { asyncErrorHandler } = useAsyncError();
   const { addUnlinkComment } = useLinkedAutoComment();
   const { deleteSelectionState } = useReplyBox();
   const { removeDeskproTag } = useDeskproTag();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const ticketId = context.data?.ticket.id;
+  const ticketId = context?.data?.ticket.id;
 
   const unlink = useCallback((issue: Issue) => {
     if (!client || !issue || !ticketId) {

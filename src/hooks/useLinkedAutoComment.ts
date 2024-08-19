@@ -5,7 +5,6 @@ import {
 } from "@deskpro/app-sdk";
 import { createIssueCommentService } from "../services/space";
 import type { Issue, IssueComment } from "../services/space/types";
-import type { TicketContext } from "../types";
 
 export type Result = {
   isLoading: boolean,
@@ -23,12 +22,12 @@ const getUnlinkedMessage = (ticketId: string, link?: string): string => {
 
 const useLinkedAutoComment = (): Result => {
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext() as { context: TicketContext };
+  const { context } = useDeskproLatestAppContext();
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const isEnable = context?.settings?.add_comment_when_linking ?? false;
-  const ticketId = context.data?.ticket.id;
-  const permalink = context.data?.ticket.permalinkUrl;
+  const ticketId = context?.data?.ticket.id;
+  const permalink = context?.data?.ticket.permalinkUrl;
 
   const addLinkComment = useCallback((issue: Issue) => {
     if (!client || !isEnable || !ticketId) {

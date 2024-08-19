@@ -8,7 +8,6 @@ import {
 } from "../services/space";
 import { findDeskproTag } from "../utils";
 import { DESKPRO_TAG } from "../constants";
-import type { TicketContext } from "../types";
 import type { Issue } from "../services/space/types";
 
 type UseDeskproTag = () => {
@@ -18,7 +17,7 @@ type UseDeskproTag = () => {
 
 const useDeskproTag: UseDeskproTag = () => {
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext() as { context: TicketContext };
+  const { context } = useDeskproLatestAppContext();
   const isAddDeskproTag = context?.settings?.add_deskpro_tag === true;
 
   const addDeskproTag = useCallback((issue: Issue) => {
