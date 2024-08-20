@@ -15,7 +15,7 @@ const EnumCustomField: FC<CustomFieldProps> = ({ field, formControl }) => {
     return field.parameters?.values || [];
   }, [field]);
   const options = getOptions(items, "value");
-  const value = formControlField.value.id || "";
+  const value = formControlField?.value?.id || "";
 
   return (
     <Select

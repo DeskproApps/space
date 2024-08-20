@@ -20,8 +20,7 @@ const CommitMultiCustomField: FC<CustomFieldProps> = ({ field, formControl, proj
   );
 
   const repoOptions = useMemo(() => {
-    const project = (Array.isArray(projects?.data) ? projects?.data ?? [] : [])
-      .find(({ id }) => id === projectId);
+    const project = (projects?.data ?? []).find(({ id }) => id === projectId);
     const repos = project?.repos;
     return (Array.isArray(repos) ? repos : []).map(({ name }) => getOption(name, name));
   }, [projectId, projects]);

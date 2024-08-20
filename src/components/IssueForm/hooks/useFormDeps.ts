@@ -68,8 +68,7 @@ const useFormDeps: UseFormDeps = (projectId) => {
   const projectOptions = useMemo(() => getOptions(projects.data?.data), [projects.data]);
 
   const assigneeOptions = useMemo(() => {
-    const project = (Array.isArray(projects.data?.data) ? projects.data?.data ?? [] : [])
-      .find(({ id }) => projectId === id);
+    const project = (projects.data?.data ?? []).find(({ id }) => projectId === id);
     const members = getProjectMembers(project);
 
     return getAssigneeOptions(members);

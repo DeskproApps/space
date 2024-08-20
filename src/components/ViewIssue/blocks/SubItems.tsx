@@ -10,11 +10,11 @@ export type Props = {
     listId: Issue["subItemsList"]["id"],
     itemId: IssueSubItem["id"],
     resolved: boolean,
-  ) => Promise<unknown>,
+  ) => Promise<void>,
 };
 
 const SubItems: FC<Props> = ({ subItems, onCompleteItem }) => {
-  const items = Array.isArray(subItems?.root?.children) ? subItems?.root?.children ?? [] : [];
+  const items = subItems?.root?.children ?? [];
 
   return (
     <>

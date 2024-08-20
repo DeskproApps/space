@@ -3,8 +3,8 @@ import type { Project, Member } from "../services/space/types";
 
 const getProjectMembers = (project?: Maybe<Project>): Member[] => {
   const members = [
-    ...(Array.isArray(project?.memberProfiles) ? project?.memberProfiles ?? [] : []),
-    ...(Array.isArray(project?.adminProfiles) ? project?.adminProfiles ?? [] : []),
+    ...(project?.memberProfiles ?? []),
+    ...(project?.adminProfiles ?? []),
   ].filter(Boolean);
 
   if (!members.length) {

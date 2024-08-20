@@ -27,7 +27,7 @@ import type { FormValidationSchema, CustomFormValidationSchema } from "./types";
 
 const validationSchema = z.object({
   project: z.string().min(1),
-  title: z.string()/*.min(1)*/,
+  title: z.string().min(1),
   description: z.string().optional(),
   assignee: z.string().optional(),
   status: z.string().min(1),
@@ -299,11 +299,7 @@ const getProjectFromValues = (values: FormValidationSchema): Project["id"] => {
 };
 
 const getAssigneeOptions = (members?: MemberType[]) => {
-  if (!Array.isArray(members) || !members.length) {
-    return [];
-  }
-
-  return members.map((member) => {
+  return (members ?? []).map((member) => {
     const label = createElement(Member, {
       key: member.id,
       name: getFullName(member),
@@ -314,11 +310,7 @@ const getAssigneeOptions = (members?: MemberType[]) => {
 };
 
 const getStatusOptions = (statuses?: IssueStatus[]) => {
-  if (!Array.isArray(statuses) || !statuses.length) {
-    return [];
-  }
-
-  return statuses.map((status) => getOption(
+  return (statuses ?? []).map((status) => getOption(
     status.id,
     createElement(Status, { status }),
     status.name,
@@ -326,11 +318,7 @@ const getStatusOptions = (statuses?: IssueStatus[]) => {
 };
 
 const getTagOptions = (tags?: IssueTag[]) => {
-  if (!Array.isArray(tags) || !tags.length) {
-    return [];
-  }
-
-  return tags.map((tag) => getOption(
+  return (tags ?? []).map((tag) => getOption(
     tag.id,
     createElement(Tag, { tag, key: tag.id }),
     tag.name,

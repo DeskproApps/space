@@ -17,7 +17,7 @@ type Props = {
     listId: Issue["subItemsList"]["id"],
     itemId: IssueSubItem["id"],
     resolved: boolean,
-  ) => Promise<unknown>,
+  ) => Promise<void>,
   onNavigateToAddComment: () => void,
   visibility: Record<FieldVisibility["field"], FieldVisibility["visible"]>,
 };

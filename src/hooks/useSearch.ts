@@ -26,14 +26,14 @@ const useSearch: UseSearch = (projectId, q) => {
     { enabled: Boolean(projectId) && Boolean(q) },
   );
   const issueIds = useMemo(() => {
-    return (Array.isArray(searchIssues.data?.data) ? searchIssues.data?.data ?? [] : []).map(({ id }) => id)
+    return (searchIssues.data?.data ?? []).map(({ id }) => id);
   }, [searchIssues.data]);
 
   const issues = useIssues(issueIds);
 
   return {
     isLoading: [searchIssues, issues].some(({ isLoading }) => isLoading) && Boolean(q),
-    projects: Array.isArray(projects.data?.data) ? projects.data?.data ?? [] : [],
+    projects: projects.data?.data ?? [],
     issues: issues.issues,
   };
 };

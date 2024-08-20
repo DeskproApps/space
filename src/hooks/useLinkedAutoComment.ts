@@ -8,8 +8,8 @@ import type { Issue, IssueComment } from "../services/space/types";
 
 export type Result = {
   isLoading: boolean,
-  addLinkComment: (issue: Issue) => Promise<void|IssueComment>,
-  addUnlinkComment: (issue: Issue) => Promise<void|IssueComment>,
+  addLinkComment: (issue: Issue) => Promise<IssueComment>|null,
+  addUnlinkComment: (issue: Issue) => Promise<IssueComment>|null,
 };
 
 const getLinkedMessage = (ticketId: string, link?: string): string => {
@@ -31,7 +31,7 @@ const useLinkedAutoComment = (): Result => {
 
   const addLinkComment = useCallback((issue: Issue) => {
     if (!client || !isEnable || !ticketId) {
-      return Promise.resolve();
+      return null;
     }
 
     setIsLoading(true);
@@ -45,7 +45,7 @@ const useLinkedAutoComment = (): Result => {
 
   const addUnlinkComment = useCallback((issue: Issue) => {
     if (!client || !isEnable || !ticketId) {
-      return Promise.resolve();
+      return null;
     }
 
     setIsLoading(true)
