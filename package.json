@@ -35,7 +35,7 @@
     "react-time-ago": "^7.2.1",
     "showdown": "^2.1.0",
     "styled-components": "^5.3.11",
-    "use-debounce": "^10.0.0",
+    "use-debounce": "^10.0.3",
     "uuid": "^9.0.1",
     "zod": "^3.22.4"
   },
