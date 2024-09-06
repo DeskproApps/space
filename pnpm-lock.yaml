@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@deskpro/app-sdk':
         specifier: 3.0.14
-        version: 3.0.14(@babel/core@7.23.5)(@deskpro/deskpro-ui@7.15.0(@types/web@0.0.86)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.23.5)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)))(@types/react-dom@18.2.17)(@types/react@18.2.42)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)(typescript@4.9.5)
+        version: 3.0.14(@babel/core@7.23.5)(@deskpro/deskpro-ui@7.24.0(@types/web@0.0.86)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.23.5)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)))(@types/react-dom@18.2.17)(@types/react@18.2.42)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)(typescript@4.9.5)
       '@deskpro/deskpro-ui':
-        specifier: ^7.1.0
-        version: 7.15.0(@types/web@0.0.86)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.23.5)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+        specifier: ^7.24.0
+        version: 7.24.0(@types/web@0.0.86)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.23.5)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
       '@fortawesome/free-solid-svg-icons':
         specifier: ^6.5.1
         version: 6.5.1
@@ -406,8 +406,8 @@ packages:
       react: ^18
       react-dom: ^18
 
-  '@deskpro/deskpro-ui@7.15.0':
-    resolution: {integrity: sha512-v1UikHoRjY8M+zP0g+vnoWfJt+qIsfGVV8GukFsoocjsXa9t3ooJCKJyTUpJFXe3h7r7gA/rsTXvWFeoFU8n6Q==}
+  '@deskpro/deskpro-ui@7.24.0':
+    resolution: {integrity: sha512-K65aWGAda2FCRWUxwYzuVRhx447LGNdCNTShX8arcp7muZiokJrlLQxVTDy3lxmzfKx8QjEhGIvaEmhpAH/JsQ==}
     engines: {node: ^16.0.0}
     peerDependencies:
       '@typescript/lib-dom': npm:@types/web
@@ -525,6 +525,7 @@ packages:
   '@humanwhocodes/config-array@0.11.13':
     resolution: {integrity: sha512-JSBDMiDKSzQVngfRjOdFXgFfklaXI4K9nLF49Auh21lmBWRLIK3+xTErTWD4KU54pb6coM6ESE7Awz/FNU3zgQ==}
     engines: {node: '>=10.10.0'}
+    deprecated: Use @eslint/config-array instead
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -532,6 +533,7 @@ packages:
 
   '@humanwhocodes/object-schema@2.0.1':
     resolution: {integrity: sha512-dvuCeX5fC9dXgJn9t+X5atfmgQAzUOWqS1254Gh0m6i8wKd10ebXkfNKiRK+1GWi/yTvvLDHpoxLr0xxxeslWw==}
+    deprecated: Use @eslint/object-schema instead
 
   '@istanbuljs/load-nyc-config@1.1.0':
     resolution: {integrity: sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==}
@@ -1700,6 +1702,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   globals@11.12.0:
     resolution: {integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==}
@@ -1816,6 +1819,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -2605,6 +2609,7 @@ packages:
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rollup-plugin-copy@3.4.0:
@@ -3287,9 +3292,9 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@deskpro/app-sdk@3.0.14(@babel/core@7.23.5)(@deskpro/deskpro-ui@7.15.0(@types/web@0.0.86)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.23.5)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)))(@types/react-dom@18.2.17)(@types/react@18.2.42)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)(typescript@4.9.5)':
+  '@deskpro/app-sdk@3.0.14(@babel/core@7.23.5)(@deskpro/deskpro-ui@7.24.0(@types/web@0.0.86)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.23.5)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)))(@types/react-dom@18.2.17)(@types/react@18.2.42)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)(typescript@4.9.5)':
     dependencies:
-      '@deskpro/deskpro-ui': 7.15.0(@types/web@0.0.86)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.23.5)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
+      '@deskpro/deskpro-ui': 7.24.0(@types/web@0.0.86)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.23.5)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))
       '@fortawesome/fontawesome-svg-core': 6.5.1
       '@fortawesome/free-brands-svg-icons': 6.5.1
       '@fortawesome/free-regular-svg-icons': 6.5.1
@@ -3320,7 +3325,7 @@ snapshots:
       - react-native
       - typescript
 
-  '@deskpro/deskpro-ui@7.15.0(@types/web@0.0.86)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.23.5)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))':
+  '@deskpro/deskpro-ui@7.24.0(@types/web@0.0.86)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(@babel/core@7.23.5)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0))':
     dependencies:
       '@fortawesome/fontawesome-svg-core': 6.5.1
       '@fortawesome/free-solid-svg-icons': 6.5.1
@@ -3694,7 +3699,7 @@ snapshots:
       '@motionone/easing': 10.16.3
       '@motionone/types': 10.16.3
       '@motionone/utils': 10.16.3
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   '@motionone/dom@10.12.0':
     dependencies:
@@ -3703,18 +3708,18 @@ snapshots:
       '@motionone/types': 10.16.3
       '@motionone/utils': 10.16.3
       hey-listen: 1.0.8
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   '@motionone/easing@10.16.3':
     dependencies:
       '@motionone/utils': 10.16.3
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   '@motionone/generators@10.16.4':
     dependencies:
       '@motionone/types': 10.16.3
       '@motionone/utils': 10.16.3
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   '@motionone/types@10.16.3': {}
 
@@ -3722,7 +3727,7 @@ snapshots:
     dependencies:
       '@motionone/types': 10.16.3
       hey-listen: 1.0.8
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -4768,7 +4773,7 @@ snapshots:
       react: 18.2.0
       react-fast-compare: 2.0.4
       tiny-warning: 1.0.3
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   framer-motion@6.5.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
@@ -4779,13 +4784,13 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       style-value-types: 5.0.0
-      tslib: 2.4.1
+      tslib: 2.6.2
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
 
   framesync@6.0.1:
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   fs-extra@8.1.0:
     dependencies:
@@ -5713,7 +5718,7 @@ snapshots:
       framesync: 6.0.1
       hey-listen: 1.0.8
       style-value-types: 5.0.0
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   postcss-value-parser@4.2.0: {}
 
@@ -6044,7 +6049,7 @@ snapshots:
   style-value-types@5.0.0:
     dependencies:
       hey-listen: 1.0.8
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   styled-components@5.3.11(@babel/core@7.23.5)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0):
     dependencies:
