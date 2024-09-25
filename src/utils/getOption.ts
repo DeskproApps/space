@@ -1,4 +1,4 @@
-import startCase from "lodash/startCase";
+import { startCase } from "lodash-es";
 import type { DropdownValueType } from "@deskpro/deskpro-ui";
 import type { Option } from "../types";
 

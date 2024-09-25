@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import get from "lodash/get";
 import { Select, useQueryWithClient } from "@deskpro/app-sdk";
 import { searchIssuesService } from "../../../../services/space";
 import { QueryKey } from "../../../../query";
@@ -15,7 +14,7 @@ const IssueCustomField: FC<CustomFieldProps> = ({ field, formControl, projectId 
     { enabled: Boolean(projectId) },
   );
   const options = useMemo(() => getOptions(data?.data, "title"), [data]);
-  const isMulti = get(field, ["multivalued"]);
+  const isMulti = field.multivalued;
   const value = isMulti
     ? (!Array.isArray(formControlField.value) ? [] : formControlField.value)
     : (formControlField.value || "");

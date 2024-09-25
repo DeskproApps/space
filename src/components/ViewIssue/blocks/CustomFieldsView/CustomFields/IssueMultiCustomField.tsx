@@ -1,4 +1,4 @@
-import size from "lodash/size";
+import { size } from "lodash-es";
 import { NoValue } from "./NoValue";
 import { IssueCustomField } from "./IssueCustomField";
 import type { FC } from "react";

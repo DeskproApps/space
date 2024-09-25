@@ -1,7 +1,7 @@
 import type { To, ParamKeyValuePair } from "react-router-dom";
 import type { DropdownValueType } from "@deskpro/deskpro-ui";
-import type { Context, IDeskproClient, V2ProxyRequestInitBody } from "@deskpro/app-sdk";
-import type { Response, Issue } from "./services/space/types";
+import type { Context, IDeskproClient } from "@deskpro/app-sdk";
+import type { Response, Issue, Project, IssueTag, IssueStatus } from "./services/space/types";
 
 /** Common types */
 export type Maybe<T> = T | undefined | null;
@@ -23,7 +23,7 @@ export type RequestParams = {
   rawUrl?: string,
   method?: ApiRequestMethod,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data?: Dict<any>|RequestInit["body"]|V2ProxyRequestInitBody["body"]
+  data?: Dict<any>|RequestInit["body"];
   headers?: Dict<string>,
   queryParams?: string|Dict<string>|ParamKeyValuePair[],
 };
@@ -33,13 +33,14 @@ export type Request = <T>(
   params: RequestParams,
 ) => Response<T>;
 
-// V2ProxyRequestInit
-export type FetchOptions = Pick<RequestParams, "method"|"headers"> & V2ProxyRequestInitBody;
-
 /** Deskpro types */
 export type Settings = {
   space_url?: string,
   client_id?: string,
+  add_comment_when_linking?: boolean,
+  default_comment_on_ticket_reply?: boolean,
+  default_comment_on_ticket_note?: boolean,
+  add_deskpro_tag?: boolean,
 };
 
 export type TicketData = {
@@ -65,3 +66,12 @@ export type EventPayload =
 ;
 
 /** Space */
+export type EntityMetadata = {
+  id: Issue["id"],
+  key?: string,
+  title: Issue["title"],
+  project?: Project["name"],
+  status: IssueStatus["name"],
+  tags: Array<IssueTag["name"]>,
+  assignee?: { username: string, name: string },
+};

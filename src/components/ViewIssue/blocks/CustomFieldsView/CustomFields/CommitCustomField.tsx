@@ -1,16 +1,15 @@
-import get from "lodash/get";
-import truncate from "lodash/truncate";
+import { truncate } from "lodash-es";
 import { P5, Stack, IconV2 } from "@deskpro/deskpro-ui";
 import { Overflow } from "../../../../common";
 import { NoValue } from "./NoValue";
 import type { FC } from "react";
-import type { components } from "../../../../../services/space/schema";
+import type { CFCommit } from "../../../../../services/space/types";
 
-type Props = components["schemas"]["VcsCommitCFValue"];
+type Props = CFCommit;
 
 const CommitCustomField: FC<Props> = ({ commit }) => {
-  const hash = get(commit, ["commit", "commitId"]);
-  const message = get(commit, ["commit", "message"]);
+  const hash = commit?.commit?.commitId;
+  const message = commit?.commit?.message;
 
   if (!hash || !message) {
     return (

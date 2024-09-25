@@ -1,11 +1,8 @@
-import { useMemo, useCallback } from "react";
-import get from "lodash/get";
-import size from "lodash/size";
+import { useCallback } from "react";
 import { P5 } from "@deskpro/deskpro-ui";
 import {
   Title,
   Link,
-  Member,
   LinkIcon,
   Property,
   TwoProperties,
@@ -13,8 +10,8 @@ import {
 import { useExternalLinks } from "../../hooks";
 import { nbsp } from "../../constants";
 import { format } from "../../utils/date";
-import { getIssueKey, getFullName } from "../../utils";
-import { SpaceLogo, Status, DeskproTickets, Tags } from "../common";
+import { getIssueKey } from "../../utils";
+import { SpaceLogo, Status, DeskproTickets } from "../common";
 import type { FC, MouseEvent } from "react";
 import type { Issue } from "../../services/space/types";
 
@@ -26,8 +23,7 @@ export type Props = {
 const IssueItem: FC<Props> = ({ issue, onClickTitle }) => {
   const { getIssueLink, getProjectLink } = useExternalLinks();
   const issueLink = getIssueLink(issue);
-  const projectLink = getProjectLink(get(issue, ["projectRef"]));
-  const fullName = useMemo(() => getFullName(get(issue, ["assignee"])), [issue]);
+  const projectLink = getProjectLink(issue.projectRef);
 
   const onClick = useCallback((e: MouseEvent) => {
     e.preventDefault();
@@ -38,8 +34,8 @@ const IssueItem: FC<Props> = ({ issue, onClickTitle }) => {
     <>
       <Title
         title={!onClickTitle
-          ? get(issue, ["title"])
-          : (<Link href="#" onClick={onClick}>{get(issue, ["title"])}</Link>)
+          ? issue.title
+          : (<Link href="#" onClick={onClick}>{issue.title}</Link>)
         }
         marginBottom={10}
         {...(!issueLink ? {} : { icon: <SpaceLogo/> })}
@@ -49,7 +45,7 @@ const IssueItem: FC<Props> = ({ issue, onClickTitle }) => {
         leftLabel="Project"
         leftText={(
           <P5>
-            {get(issue, ["projectRef", "name"]) || "-"}
+            {issue.projectRef.name || "-"}
             {Boolean(projectLink) && (
               <>
                 {nbsp}<LinkIcon href={projectLink as string} />
@@ -65,24 +61,13 @@ const IssueItem: FC<Props> = ({ issue, onClickTitle }) => {
         leftText={!issue.status ? "-" : (
           <Status status={issue.status}/>
         )}
-        rightLabel="Deskpro Tickets"
-        rightText={<DeskproTickets entityId={issue.id}/>}
+        rightLabel="Created"
+        rightText={format(issue.creationTime?.iso)}
       />
-      <TwoProperties
-        leftLabel="Created"
-        leftText={format(get(issue, ["creationTime", "iso"]))}
-        rightLabel="Due Date"
-        rightText={format(get(issue, ["dueDate", "iso"]))}
+      <Property
+        label="Deskpro Tickets"
+        text={<DeskproTickets entityId={issue.id}/>}
       />
-      {Boolean(size(issue.tags)) && (
-        <Property label="Tags" text={<Tags tags={issue.tags}/>} />
-      )}
-      {Boolean(fullName) && (
-        <Property
-          label="Assignee"
-          text={<Member name={fullName}/>}
-        />
-      )}
     </>
   );
 };

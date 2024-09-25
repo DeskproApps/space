@@ -2,13 +2,14 @@ import { cleanup, renderHook } from "@testing-library/react";
 import { useExternalLinks } from "../useExternalLinks";
 import { getProjectsService } from "../../services/space";
 import { wrap, mockProjects, mockIssues } from "../../../testing";
+import type { ReactElement } from "react";
 import type { Result } from "../useExternalLinks";
 
 jest.mock("../../services/space/getProjectsService");
 
 const renderExternalLinksHook = () => renderHook<Result, unknown>(
   () => useExternalLinks(),
-  { wrapper: ({ children }) => wrap(children, { query: true, appSdk: true }) },
+  { wrapper: ({ children }) => wrap(children as ReactElement, { query: true, appSdk: true }) },
 );
 
 describe("useExternalLinks", () => {

@@ -1,14 +1,14 @@
 import { baseRequest } from "./baseRequest";
 import { fields } from "../../constants";
 import type { IDeskproClient } from "@deskpro/app-sdk";
-import type { Issue, components, IssueCommentInput } from "./types";
+import type { Issue, IssueComment, IssueCommentInput } from "./types";
 
 const createIssueCommentService = (
   client: IDeskproClient,
   issueId: Issue["id"],
   data: IssueCommentInput,
 ) => {
-  return baseRequest<components["schemas"]["ChannelItemRecord"]>(client, {
+  return baseRequest<IssueComment>(client, {
     url: `/chats/messages/send-message`,
     method: "POST",
     queryParams: {

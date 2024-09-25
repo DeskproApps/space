@@ -1,6 +1,4 @@
 import { Fragment } from "react";
-import get from "lodash/get";
-import size from "lodash/size";
 import { Title, HorizontalDivider } from "@deskpro/app-sdk";
 import { getFullName } from "../../../utils";
 import { Comment } from "../../common";
@@ -15,16 +13,16 @@ export type Props = {
 const Comments: FC<Props> = ({ comments, onNavigateToAddComment }) => (
   <>
     <Title
-      title={`Comments (${size(comments)})`}
+      title={`Comments (${comments.length || 0})`}
       onClick={onNavigateToAddComment}
     />
 
     {comments.map((comment) => (
       <Fragment key={comment.id}>
         <Comment
-          name={getFullName(get(comment, ["author", "details", "user"]))}
-          text={get(comment, ["text"])}
-          date={new Date(get(comment, ["created", "iso"]))}
+          name={getFullName(comment.author?.details?.user)}
+          text={comment.text}
+          {...(comment.created?.iso ? { date: new Date(comment.created?.iso) } : {})}
         />
         <HorizontalDivider style={{ marginBottom: 10 }} />
       </Fragment>

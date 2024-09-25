@@ -1,6 +1,4 @@
 import { useMemo, useState } from "react";
-import get from "lodash/get";
-import find from "lodash/find";
 import { useDebounce } from "use-debounce";
 import { Select, useQueryWithClient } from "@deskpro/app-sdk";
 import { getProjectsService, getCommitsService } from "../../../../services/space";
@@ -8,7 +6,6 @@ import { getOption } from "../../../../utils";
 import { QueryKey } from "../../../../query";
 import type { FC } from "react";
 import type { CustomFieldProps } from "../../types";
-import size from "lodash/size";
 
 const CommitMultiCustomField: FC<CustomFieldProps> = ({ field, formControl, projectId }) => {
   const { field: formControlField } = formControl;
@@ -23,13 +20,13 @@ const CommitMultiCustomField: FC<CustomFieldProps> = ({ field, formControl, proj
   );
 
   const repoOptions = useMemo(() => {
-    const project = find(projects?.data, { id: projectId });
-    const repos = get(project, ["repos"]);
+    const project = (projects?.data ?? []).find(({ id }) => id === projectId);
+    const repos = project?.repos;
     return (Array.isArray(repos) ? repos : []).map(({ name }) => getOption(name, name));
   }, [projectId, projects]);
 
   const commitOptions = useMemo(() => {
-    if (!Array.isArray(commits?.data) || !size(commits?.data)) {
+    if (!Array.isArray(commits?.data) || !commits?.data?.length) {
       return [];
     }
 

@@ -24,7 +24,7 @@ import { CustomFieldsMap } from "../../../../constants";
 import type { ReactNode } from "react";
 import type { Maybe } from "../../../../types";
 import type { components } from "../../../../services/space/schema";
-import type { Issue, CustomField, DateAt, DateOn } from "../../../../services/space/types";
+import type { Issue, CustomField, DateAt, DateOn, CFCommit, CFCommits } from "../../../../services/space/types";
 
 const map = ({ className, ...props }: CustomField): ReactNode => {
   return match(className)
@@ -84,10 +84,10 @@ const map = ({ className, ...props }: CustomField): ReactNode => {
       <IssueMultiCustomField {...props as Omit<components["schemas"]["IssueListCFValue"], "issues"> & { issues: Maybe<Issue[]> }}/>
     ))
     .with(CustomFieldsMap.VcsCommitCFValue, () => (
-      <CommitCustomField {...props as components["schemas"]["VcsCommitCFValue"]}/>
+      <CommitCustomField {...props as CFCommit}/>
     ))
     .with(CustomFieldsMap.VcsCommitListCFValue, () => (
-      <CommitMultiCustomField {...props as components["schemas"]["VcsCommitListCFValue"]}/>
+      <CommitMultiCustomField {...props as CFCommits}/>
     ))
     .otherwise(() => null);
 }

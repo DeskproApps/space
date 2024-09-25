@@ -1,6 +1,5 @@
 import { useMemo } from "react";
-import get from "lodash/get";
-import find from "lodash/find";
+import { find } from "lodash-es";
 import { Select, useQueryWithClient } from "@deskpro/app-sdk";
 import { getProjectsService } from "../../../../services/space";
 import { QueryKey } from "../../../../query";
@@ -13,14 +12,14 @@ const ProfileCustomField: FC<CustomFieldProps> = ({ field, formControl, projectI
   const projects = useQueryWithClient([QueryKey.PROJECTS], getProjectsService);
 
   const assigneeOptions = useMemo(() => {
-    const project = find(get(projects.data, ["data"]), { id: projectId });
+    const project = find(projects.data?.data, { id: projectId });
     const members = getProjectMembers(project);
 
     return getAssigneeOptions(members);
   }, [projects.data, projectId]);
 
   const { field: formControlField } = formControl;
-  const isMulti = get(field, ["multivalued"]);
+  const isMulti = field.multivalued;
   const value = isMulti
     ? (!Array.isArray(formControlField.value) ? [] : formControlField.value)
     : (formControlField.value || "");

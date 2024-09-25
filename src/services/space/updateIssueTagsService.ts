@@ -1,4 +1,4 @@
-import size from "lodash/size";
+import { size } from "lodash-es";
 import { addIssueTagService } from "./addIssueTagService";
 import { removeIssueTagService } from "./removeIssueTagService";
 import type { IDeskproClient } from "@deskpro/app-sdk";

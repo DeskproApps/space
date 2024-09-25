@@ -6,6 +6,7 @@ import {
   searchIssuesService,
 } from "../../services/space";
 import { useSearch } from "../useSearch";
+import type { ReactElement } from "react";
 import type { Result } from "../useSearch";
 
 jest.mock("../../services/space/getIssuesService");
@@ -14,7 +15,7 @@ jest.mock("../../services/space/searchIssuesService");
 
 const renderSearchHook = (project: string, q: string) => renderHook<Result, unknown>(
   () => useSearch(project, q),
-  { wrapper: ({ children }) => wrap(children, { query: true, appSdk: true }) },
+  { wrapper: ({ children }) => wrap(children as ReactElement, { query: true, appSdk: true }) },
 );
 
 describe("LinkIssuesPage", () => {

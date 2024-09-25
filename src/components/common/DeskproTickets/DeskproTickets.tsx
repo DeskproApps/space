@@ -1,5 +1,5 @@
 import { useState } from "react";
-import noop from "lodash/noop";
+import { noop } from "lodash-es";
 import { P5 } from "@deskpro/deskpro-ui";
 import { useInitialisedDeskproAppClient } from "@deskpro/app-sdk";
 import { getEntityAssociationCountService } from "../../../services/deskpro";

@@ -1,14 +1,12 @@
-import get from "lodash/get";
-import size from "lodash/size";
 import { NoValue } from "./NoValue";
 import { CommitCustomField } from "./CommitCustomField";
 import type { FC } from "react";
-import type { components } from "../../../../../services/space/schema";
+import type { CFCommits } from "../../../../../services/space/types";
 
-type Props = components["schemas"]["VcsCommitListCFValue"];
+type Props = CFCommits;
 
 const CommitMultiCustomField: FC<Props> = ({ commits }) => {
-  if (!Array.isArray(commits) || !size(commits)) {
+  if (!commits?.length) {
     return (
       <NoValue/>
     );
@@ -17,7 +15,7 @@ const CommitMultiCustomField: FC<Props> = ({ commits }) => {
   return (
     <>
       {commits.map((commit) => (
-        <CommitCustomField key={get(commit, ["commit", "commitId"])} commit={commit} />
+        <CommitCustomField key={commit?.commit?.commitId} commit={commit} />
       ))}
     </>
   );

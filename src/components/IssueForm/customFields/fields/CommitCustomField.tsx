@@ -1,8 +1,4 @@
 import { useMemo, useState, useEffect } from "react";
-import get from "lodash/get";
-import find from "lodash/find";
-import size from "lodash/size";
-import split from "lodash/split";
 import { useDebounce } from "use-debounce";
 import { Select, Search, useQueryWithClient } from "@deskpro/app-sdk";
 import { getProjectsService, getCommitsService } from "../../../../services/space";
@@ -13,7 +9,7 @@ import type { CustomFieldProps } from "../../types";
 
 const CommitCustomField: FC<CustomFieldProps> = ({ field, formControl, projectId }) => {
   const { field: formControlField } = formControl;
-  const [, selectedRepo, selectedCommit] = split(formControlField.value, "/");
+  const [, selectedRepo, selectedCommit] = `${formControlField.value}`.split("/");
   const [query, setQuery] = useState<string>("");
   const [searchCommit] = useDebounce(query, 1000);
   const [repo, setRepo] = useState<string>(selectedRepo || "");
@@ -25,13 +21,13 @@ const CommitCustomField: FC<CustomFieldProps> = ({ field, formControl, projectId
   );
 
   const repoOptions = useMemo(() => {
-    const project = find(projects?.data, { id: projectId });
-    const repos = get(project, ["repos"]);
+    const project = (projects?.data ?? []).find(({ id }) => id === projectId);
+    const repos = project?.repos;
     return (Array.isArray(repos) ? repos : []).map(({ name }) => getOption(name, name));
   }, [projectId, projects]);
 
   const commitOptions = useMemo(() => {
-    if (!Array.isArray(commits?.data) || !size(commits?.data)) {
+    if (!commits?.data?.length) {
       return [];
     }
 
@@ -41,7 +37,7 @@ const CommitCustomField: FC<CustomFieldProps> = ({ field, formControl, projectId
   }, [projectId, repo, commits?.data]);
 
   useEffect(() => {
-    const commit = find(commits?.data, { id: selectedCommit });
+    const commit = (commits?.data ?? []).find(({ id }) => id === selectedCommit)
     setQuery(`${commit?.message || ""}`);
   }, [commits?.data, selectedCommit]);
 
@@ -63,8 +59,8 @@ const CommitCustomField: FC<CustomFieldProps> = ({ field, formControl, projectId
         options={commitOptions}
         placeholder="Select commit"
         onChange={(value) => {
-          const [, , hash] = split(`${value}`, "/");
-          const commit = find(commits?.data, { id: hash });
+          const [, , hash] = `${value}`.split("/");
+          const commit = (commits?.data ?? []).find(({ id }) => id === hash);
           formControlField.onChange(value);
           setQuery(`${commit?.message}`);
         }}

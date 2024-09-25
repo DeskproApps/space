@@ -1,5 +1,4 @@
-import map from "lodash/map";
-import isEmpty from "lodash/isEmpty";
+import { map, isEmpty } from "lodash-es";
 import { Property } from "@deskpro/app-sdk";
 import { CustomField } from "./CustomField";
 import type { FC } from "react";

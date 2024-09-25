@@ -1,6 +1,4 @@
-import { useMemo, useState, useCallback } from "react";
-import get from "lodash/get";
-import isEmpty from "lodash/isEmpty";
+import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   useDeskproAppClient,
@@ -12,37 +10,43 @@ import {
   useSetTitle,
   useAsyncError,
   useRegisterElements,
+  useLinkedAutoComment,
 } from "../../hooks";
+import { getEntityMetadata } from "../../utils";
 import { DEFAULT_ERROR } from "../../constants";
 import { CreateIssue } from "../../components";
 import type { FC } from "react";
-import type { Maybe, TicketContext } from "../../types";
+import type { Maybe } from "../../types";
 import type { IssueInput, Project } from "../../services/space/types";
 
 const CreateIssuePage: FC = () => {
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext() as { context: TicketContext };
+  const { context } = useDeskproLatestAppContext();
   const [error, setError] = useState<Maybe<string|string[]>>(null);
   const { asyncErrorHandler } = useAsyncError();
-  const ticketId = useMemo(() => get(context, ["data", "ticket", "id"]), [context]);
+  const { addLinkComment } = useLinkedAutoComment();
+  const ticketId = context?.data?.ticket.id;
 
   const onNavigateToLink = useCallback(() => navigate("/issues/link"), [navigate]);
 
   const onCancel = useCallback(() => navigate("/home"), [navigate]);
 
   const onSubmit = useCallback((projectId: Project["id"], values: IssueInput) => {
-    if (!client || !ticketId || !projectId || isEmpty(values)) {
+    if (!client || !ticketId || !projectId || !values) {
       return Promise.resolve();
     }
 
     setError(null);
 
     return createIssueService(client, projectId, values)
-      .then((issue) => setEntityService(client, ticketId, issue.id))
+      .then((issue) => Promise.all([
+        setEntityService(client, ticketId, issue.id, getEntityMetadata(issue)),
+        addLinkComment(issue),
+      ]))
       .then(() => navigate("/home"))
       .catch((err) => {
-        const error = get(err, ["data", "error_description"]) || DEFAULT_ERROR;
+        const error = err?.data?.error_description || DEFAULT_ERROR;
 
         if (error) {
           setError(error)
@@ -50,7 +54,7 @@ const CreateIssuePage: FC = () => {
           asyncErrorHandler(err);
         }
       })
-  }, [asyncErrorHandler, client, navigate, ticketId]);
+  }, [asyncErrorHandler, client, navigate, ticketId, addLinkComment]);
 
   useSetTitle("Link Issue");
 

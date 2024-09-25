@@ -6,3 +6,6 @@ export { default as mockSearchIssues } from "./mockSearchIssues.json";
 export { default as mockIssueMessages } from "./mockIssueMessages.json";
 export { default as mockIssueWithCustomFields } from "./mockIssueWithCustomFields.json";
 export { default as mockCustomFieldsConfig } from "./mockCustomFieldsConfig.json";
+export { default as mockFieldsVisibility } from "./mockFieldsVisibility.json";
+export { default as mockTags } from "./mockTags.json";
+export { default as mockIssueStatuses } from "./mockIssueStatuses.json";

@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import has from "lodash/has";
+import { has } from "lodash-es";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input, Stack } from "@deskpro/deskpro-ui";
@@ -53,6 +53,7 @@ const IssueForm: FC<Props> = ({
     projectOptions,
     assigneeOptions,
     customFields,
+    visibility,
   } = useFormDeps(defaultForm.watch("project"));
 
   const customForm = useForm<CustomFormValidationSchema>({
@@ -123,15 +124,17 @@ const IssueForm: FC<Props> = ({
           <FieldHint>Markdown formatting is supported</FieldHint>
         </Label>
 
-        <Label htmlFor="assignee" label="Assignee">
-          <Select<Member["id"]>
-            id="assignee"
-            initValue={defaultForm.watch("assignee")}
-            options={assigneeOptions}
-            error={has(defaultForm, ["formState", "errors", "assignee", "message"])}
-            onChange={(value) => defaultForm.setValue("assignee", value as Member["id"])}
-          />
-        </Label>
+        {visibility.ASSIGNEE && (
+          <Label htmlFor="assignee" label="Assignee">
+            <Select<Member["id"]>
+              id="assignee"
+              initValue={defaultForm.watch("assignee")}
+              options={assigneeOptions}
+              error={has(defaultForm, ["formState", "errors", "assignee", "message"])}
+              onChange={(value) => defaultForm.setValue("assignee", value as Member["id"])}
+            />
+          </Label>
+        )}
 
         <Label htmlFor="status" label="Status" required>
           <Select
@@ -143,27 +146,31 @@ const IssueForm: FC<Props> = ({
           />
         </Label>
 
-        <Label htmlFor="dueDate" label="Due date">
-          <DateInput
-            id="dueDate"
-            placeholder="DD/MM/YYYY"
-            value={defaultForm.watch("dueDate") as Date}
-            error={has(defaultForm, ["formState", "errors", "dueDate", "message"])}
-            onChange={(date: [Date]) => defaultForm.setValue("dueDate", date[0])}
-          />
-        </Label>
+        {visibility.DUE_DATE && (
+          <Label htmlFor="dueDate" label="Due date">
+            <DateInput
+              id="dueDate"
+              placeholder="DD/MM/YYYY"
+              value={defaultForm.watch("dueDate") as Date}
+              error={has(defaultForm, ["formState", "errors", "dueDate", "message"])}
+              onChange={(date: [Date]) => defaultForm.setValue("dueDate", date[0])}
+            />
+          </Label>
+        )}
 
-        <Label htmlFor="tags" label="Tags">
-          <Select
-            id="tags"
-            initValue={defaultForm.watch("tags")}
-            closeOnSelect={false}
-            showInternalSearch
-            options={tagOptions}
-            error={has(defaultForm, ["formState", "errors", "tags", "message"])}
-            onChange={(value) => defaultForm.setValue("tags", value as Array<IssueTag["id"]>)}
-          />
-        </Label>
+        {visibility.TAG && (
+          <Label htmlFor="tags" label="Tags">
+            <Select
+              id="tags"
+              initValue={defaultForm.watch("tags")}
+              closeOnSelect={false}
+              showInternalSearch
+              options={tagOptions}
+              error={has(defaultForm, ["formState", "errors", "tags", "message"])}
+              onChange={(value) => defaultForm.setValue("tags", value as Array<IssueTag["id"]>)}
+            />
+          </Label>
+        )}
       </form>
 
       <form onSubmit={(e) => e.preventDefault()}>

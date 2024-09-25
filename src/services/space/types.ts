@@ -25,6 +25,20 @@ export type AccessToken = {
   scope: string,
 };
 
+export type DateAt = {
+  iso: string,
+  day: number,
+  month: number,
+  year: number,
+};
+
+export type DateOn = {
+  iso: DateTime,
+  timestamp: number,
+};
+
+export type DateType = DateTime|DateAt|DateOn;
+
 export type Organization = components["schemas"]["OrganizationRecord"];
 
 export type Team = components["schemas"]["TD_Team"];
@@ -47,21 +61,12 @@ export type IssueSubItem = components["schemas"]["PlanItem"];
 
 export type Messages = components["schemas"]["GetMessagesResponse"]
 
-export type IssueComment = components["schemas"]["ChannelItemRecord"];
-
-export type DateAt = {
-  iso: string,
-  day: number,
-  month: number,
-  year: number,
+export type IssueComment = Omit<components["schemas"]["ChannelItemRecord"], "author"|"created"> & {
+  created: null|DateAt|DateOn,
+  author: Omit<components["schemas"]["CPrincipal"], "details"> & {
+    details: components["schemas"]["CUserPrincipalDetails"],
+  },
 };
-
-export type DateOn = {
-  iso: DateTime,
-  timestamp: number,
-};
-
-export type DateType = DateTime|DateAt|DateOn;
 
 export type CustomField = {
   className: keyof typeof CustomFieldsMap,
@@ -89,9 +94,19 @@ export type CustomField = {
   | components["schemas"]["VcsCommitListCFValue"]
 )>;
 
-export type Issue = Omit<components["schemas"]["Issue"], "customFields"|"parents"> & {
+export type Attach = Omit<components["schemas"]["AttachmentInfo"], "details"> & {
+  details?: components["schemas"]["FileAttachment"]&components["schemas"]["ImageAttachment"],
+};
+
+export type Issue = Omit<
+  components["schemas"]["Issue"],
+  "customFields"|"parents"|"dueDate"|"creationTime"|"attachments"
+> & {
   parents?: Issue[],
   customFields?: CustomField[],
+  dueDate?: null|DateAt|DateOn,
+  creationTime?: null|DateAt|DateOn,
+  attachments: null|Attach[],
 };
 
 export type IssueInput = Omit<
@@ -104,3 +119,19 @@ export type IssueInput = Omit<
 export type IssueCommentInput = components["schemas"]["ChatMessage.Text"];
 
 export type CustomFieldData = components["schemas"]["CustomFieldData"];
+
+export type FieldVisibility = Required<components["schemas"]["IssueFieldVisibility"]>;
+
+export type FieldsVisibility = Omit<components["schemas"]["TrackerIssueFieldVisibility"], "systemIssueFieldVisibilities"> & {
+  systemIssueFieldVisibilities: FieldVisibility[],
+};
+
+export type CFCommit = Omit<components["schemas"]["VcsCommitCFValue"], "commit"> & {
+  commit: Omit<components["schemas"]["CFCommitInfoBase"], "commit"> & {
+    commit: components["schemas"]["CommitInfo"];
+  };
+};
+
+export type CFCommits = {
+  commits: Array<CFCommit["commit"]>,
+};

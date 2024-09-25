@@ -1,4 +1,4 @@
-import size from "lodash/size";
+import { size } from "lodash-es";
 import { P5 } from "@deskpro/deskpro-ui";
 import { LinkIcon } from "@deskpro/app-sdk";
 import { useExternalLinks } from "../../../hooks";

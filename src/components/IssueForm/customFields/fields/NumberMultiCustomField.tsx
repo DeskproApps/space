@@ -1,6 +1,5 @@
 import { useState } from "react";
-import size from "lodash/size";
-import filter from "lodash/filter";
+import { size, filter } from "lodash-es";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";

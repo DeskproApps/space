@@ -1,11 +1,10 @@
-import isEmpty from "lodash/isEmpty";
-import isString from "lodash/isString";
+import { isEmpty, isString } from "lodash-es";
 import { proxyFetch } from "@deskpro/app-sdk";
 import { refreshAccessTokenService } from "./refreshAccessTokenService";
 import { BASE_URL, placeholders } from "../../constants";
 import { getQueryParams } from "../../utils";
 import { SpaceError } from "./SpaceError";
-import type { Request, FetchOptions } from "../../types";
+import type { Request } from "../../types";
 
 const baseRequest: Request = async (client, {
   url,
@@ -21,7 +20,7 @@ const baseRequest: Request = async (client, {
   const params = getQueryParams(queryParams);
 
   const requestUrl = `${baseUrl}${isEmpty(params) ? "": `?${params}`}`;
-  const options: FetchOptions = {
+  const options: RequestInit = {
     method,
     headers: {
       "Authorization": `Bearer ${placeholders.ACCESS_TOKEN}`,
@@ -37,10 +36,14 @@ const baseRequest: Request = async (client, {
     };
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   let res = await dpFetch(requestUrl, options);
 
   if (res.status === 401) {
     await refreshAccessTokenService(client);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     res = await dpFetch(requestUrl, options);
   }
 

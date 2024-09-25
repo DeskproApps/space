@@ -1,0 +1,30 @@
+[
+  {
+    "id": "3nuoYD3PXgjA",
+    "archived": false,
+    "name": "Open",
+    "resolved": false,
+    "color": "1965b0"
+  },
+  {
+    "id": "1NOYKF1rKX9x",
+    "archived": false,
+    "name": "In progress",
+    "resolved": false,
+    "color": "882e72"
+  },
+  {
+    "id": "1arzDp0YVSgm",
+    "archived": false,
+    "name": "Done",
+    "resolved": true,
+    "color": "4eb265"
+  },
+  {
+    "id": "1A4Wqv2BuQ4I",
+    "archived": false,
+    "name": "Review",
+    "resolved": true,
+    "color": "882e72"
+  }
+]

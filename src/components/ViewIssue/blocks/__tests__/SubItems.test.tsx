@@ -6,6 +6,7 @@ import type { Props } from "../SubItems";
 const renderSubItems = (props?: Partial<Props>) => render((
   <SubItems
     subItems={props?.subItems || mockIssues[1].subItemsList as never}
+    onCompleteItem={props?.onCompleteItem || jest.fn()}
   />
 ), { wrappers: { theme: true } });
 

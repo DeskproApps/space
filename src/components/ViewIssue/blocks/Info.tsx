@@ -1,12 +1,12 @@
 import { useMemo } from "react";
-import get from "lodash/get";
-import size from "lodash/size";
-import { P5 } from "@deskpro/deskpro-ui";
+import { faFile } from "@fortawesome/free-regular-svg-icons";
+import { P5, Stack, AttachmentTag } from "@deskpro/deskpro-ui";
 import {
   Title,
   Member,
   Property,
   LinkIcon,
+  PropertyRow,
   TwoProperties,
 } from "@deskpro/app-sdk";
 import { useExternalLinks,  } from "../../../hooks";
@@ -22,18 +22,20 @@ import {
   DeskproTickets,
 } from "../../common";
 import type { FC } from "react";
+import type { AnyIcon } from "@deskpro/deskpro-ui";
 import type { Maybe } from "../../../types";
-import type { Issue } from "../../../services/space/types";
+import type { Issue, FieldVisibility } from "../../../services/space/types";
 
 export type Props = {
   issue?: Maybe<Issue>,
+  visibility: Record<FieldVisibility["field"], FieldVisibility["visible"]>,
 };
 
-const Info: FC<Props> = ({ issue }) => {
-  const { getIssueLink, getProjectLink } = useExternalLinks();
+const Info: FC<Props> = ({ issue, visibility }) => {
+  const { getIssueLink, getProjectLink, getAttachmentLink } = useExternalLinks();
   const issueLink = getIssueLink(issue);
-  const projectLink = getProjectLink(get(issue, ["projectRef"]));
-  const fullName = useMemo(() => getFullName(get(issue, ["assignee"])), [issue]);
+  const projectLink = getProjectLink(issue?.projectRef);
+  const fullName = useMemo(() => getFullName(issue?.assignee), [issue]);
 
   return (
     <>
@@ -47,13 +49,13 @@ const Info: FC<Props> = ({ issue }) => {
 
       <Property
         label="Description"
-        text={<Markdown text={get(issue, ["description"]) || "-"} />}
+        text={<Markdown text={issue?.description || "-"} />}
       />
       <Property
         label="Project"
         text={(
           <P5>
-            {get(issue, ["projectRef", "name"]) || "-"}
+            {issue?.projectRef.name || "-"}
             {Boolean(projectLink) && (
               <>
                 {nbsp}<LinkIcon href={projectLink as string} />
@@ -62,12 +64,20 @@ const Info: FC<Props> = ({ issue }) => {
           </P5>
         )}
       />
-      <TwoProperties
-        leftLabel="Issue ID"
-        leftText={getIssueKey(issue)}
-        rightLabel="Parent issues"
-        rightText={<Parents issues={issue?.parents}/>}
-      />
+      <PropertyRow>
+        <Property
+          label="Issue ID"
+          text={getIssueKey(issue)}
+          marginBottom={0}
+        />
+        {visibility.PARENT_ISSUES && (
+          <Property
+            label="Parent issues"
+            text={<Parents issues={issue?.parents}/>}
+            marginBottom={0}
+          />
+        )}
+      </PropertyRow>
       <TwoProperties
         leftLabel="Status"
         leftText={!issue?.status ? "-" : (
@@ -76,23 +86,49 @@ const Info: FC<Props> = ({ issue }) => {
         rightLabel="Deskpro Tickets"
         rightText={<DeskproTickets entityId={issue?.id}/>}
       />
-      <TwoProperties
-        leftLabel="Created"
-        leftText={format(get(issue, ["creationTime", "iso"]))}
-        rightLabel="Due Date"
-        rightText={format(get(issue, ["dueDate", "iso"]))}
-      />
+      <PropertyRow>
+        <Property
+          label="Created"
+          text={format(issue?.creationTime?.iso)}
+          marginBottom={0}
+        />
+        {visibility.DUE_DATE && (
+          <Property
+            label="Due Date"
+            text={format(issue?.dueDate?.iso)}
+            marginBottom={0}
+          />
+        )}
+      </PropertyRow>
+      {visibility.TAG && (
+        <Property
+          label="Tags"
+          text={!issue?.tags?.length
+            ? <P5>-</P5>
+            : <Tags tags={issue?.tags}/>
+          }
+        />
+      )}
+      {visibility.ASSIGNEE && (
+        <Property
+          label="Assignee"
+          text={!fullName ? "-" : (<Member name={fullName}/>)}
+        />
+      )}
       <Property
-        label="Tags"
-        text={(!Array.isArray(issue?.tags) || !size(issue?.tags))
-          ? <P5>-</P5>
-          : <Tags tags={issue?.tags}/>
-        }
-      />
-      <Property
-        label="Assignee"
-        text={!fullName ? "-" : (
-          <Member name={fullName}/>
+        label="Attachments"
+        text={!issue?.attachments?.length ? "-" : (
+          <Stack gap={6} wrap="wrap">
+            {issue.attachments.map((attach) => (
+              <AttachmentTag
+                key={attach?.details?.id}
+                filename={`${attach?.details?.filename || attach?.details?.name}`}
+                fileSize={attach?.details?.sizeBytes || 0}
+                icon={faFile as AnyIcon}
+                href={getAttachmentLink(attach?.details?.id) as string}
+              />
+            ))}
+          </Stack>
         )}
       />
     </>

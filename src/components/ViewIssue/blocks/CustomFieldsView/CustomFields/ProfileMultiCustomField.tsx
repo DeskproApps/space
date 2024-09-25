@@ -1,4 +1,4 @@
-import size from "lodash/size";
+import { size } from "lodash-es";
 import { P5, Stack } from "@deskpro/deskpro-ui";
 import { Member } from "@deskpro/app-sdk";
 import { getFullName } from "../../../../../utils";

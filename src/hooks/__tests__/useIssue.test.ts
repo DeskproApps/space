@@ -2,6 +2,7 @@ import { cleanup, renderHook, waitFor } from "@testing-library/react";
 import { getIssuesService, getIssueMessagesService } from "../../services/space";
 import { useIssue } from "../useIssue";
 import { wrap, mockIssues, mockIssueMessages } from "../../../testing";
+import { ReactElement } from "react";
 import type { Result } from "../useIssue";
 
 jest.mock("../../services/space/getIssuesService");
@@ -9,7 +10,7 @@ jest.mock("../../services/space/getIssueMessagesService");
 
 const renderIssueHook = (issueId?: string) => renderHook<Result, unknown>(
   () => useIssue(issueId),
-  { wrapper: ({ children }) => wrap(children, { query: true, appSdk: true }) },
+  { wrapper: ({ children }) => wrap(children as ReactElement, { query: true, appSdk: true }) },
 );
 
 describe("useIssue", () => {

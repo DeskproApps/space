@@ -1,4 +1,4 @@
-import noop from "lodash/noop";
+import { noop } from "lodash-es";
 import { faSearch, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { TwoButtonGroup } from "@deskpro/app-sdk";
 import type { FC } from "react";

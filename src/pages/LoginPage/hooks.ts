@@ -1,8 +1,6 @@
 import { useEffect, useState, useCallback, useMemo } from "react";
-import size from "lodash/size";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import get from "lodash/get";
 import {
   useDeskproAppClient,
   useDeskproLatestAppContext,
@@ -19,7 +17,7 @@ import {
 import { getQueryParams } from "../../utils";
 import { SCOPES, DEFAULT_ERROR } from "../../constants";
 import type { OAuth2StaticCallbackUrl } from "@deskpro/app-sdk";
-import type { Maybe, TicketContext } from "../../types";
+import type { Maybe } from "../../types";
 
 export type Result = {
   poll: () => void,
@@ -35,11 +33,11 @@ const useLogin = (): Result => {
   const [callback, setCallback] = useState<OAuth2StaticCallbackUrl|undefined>();
   const [authUrl, setAuthUrl] = useState<string|null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const { context } = useDeskproLatestAppContext() as { context: TicketContext };
+  const { context } = useDeskproLatestAppContext();
   const { client } = useDeskproAppClient();
-  const clientId = useMemo(() => get(context, ["settings", "client_id"]), [context]);
-  const spaceUrl = useMemo(() => get(context, ["settings", "space_url"]), [context]);
-  const ticketId = useMemo(() => get(context, ["data", "ticket", "id"]), [context]);
+  const clientId = context?.settings?.client_id;
+  const spaceUrl = context?.settings?.space_url;
+  const ticketId = context?.data?.ticket.id;
 
   useInitialisedDeskproAppClient(
     (client) => {
@@ -65,7 +63,7 @@ const useLogin = (): Result => {
   }, [callback, spaceUrl, clientId, key]);
 
   const poll = useCallback(() => {
-    if (!client || !callback?.poll) {
+    if (!client || !callback?.poll || !ticketId) {
       return;
     }
 
@@ -79,13 +77,13 @@ const useLogin = (): Result => {
           setRefreshTokenService(client, refresh_token),
         ]))
       .then(() => getOrganizationService(client))
-      .then((org) => !get(org, ["id"])
+      .then((org) => !org.id
         ? Promise.reject()
         : getEntityListService(client, ticketId))
-      .then((entityIds) => navigate(size(entityIds) ? "/home" : "/issues/link"))
+      .then((entityIds) => navigate(entityIds?.length ? "/home" : "/issues/link"))
       .catch((err) => {
         setIsLoading(false);
-        setError(get(err, ["data", "error_description"]) || DEFAULT_ERROR);
+        setError(err?.data?.error_description || DEFAULT_ERROR);
       });
   }, [client, callback, navigate, ticketId]);
 

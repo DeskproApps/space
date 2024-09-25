@@ -1,4 +1,4 @@
-import isEmpty from "lodash/isEmpty";
+import { isEmpty } from "lodash-es";
 import { P5, Stack, IconV2 } from "@deskpro/deskpro-ui";
 import { Link } from "@deskpro/app-sdk";
 import { useExternalLinks } from "../../../../../hooks";

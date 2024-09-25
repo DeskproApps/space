@@ -5,13 +5,7 @@ import formatFNS from "date-fns/format";
 import formatISO from "date-fns/formatISO";
 import parseISO from "date-fns/parseISO";
 import { z } from "zod";
-import get from "lodash/get";
-import map from "lodash/map";
-import size from "lodash/size";
-import find from "lodash/find";
-import reduce from "lodash/reduce";
-import isEmpty from "lodash/isEmpty";
-import difference from "lodash/difference";
+import { get, map, find, reduce, isEmpty, difference } from "lodash-es";
 import { v4 as uuid } from "uuid";
 import { Member } from "@deskpro/app-sdk";
 import { getOption, getFullName, getCommitIdentifier } from "../../utils";
@@ -24,6 +18,7 @@ import type {
   Project,
   IssueTag,
   IssueInput,
+  CustomField,
   IssueStatus,
   CustomFieldData,
   Member as MemberType,
@@ -49,9 +44,9 @@ const getDefaultInitValues = (
     project: issue?.projectRef.id || "",
     title: issue?.title || "",
     description: issue?.description || "",
-    assignee: get(issue, ["assignee", "id"]) || "",
-    status: get(issue, ["status", "id"]) || "",
-    dueDate: parse(get(issue, ["dueDate", "iso"])) || undefined,
+    assignee: issue?.assignee?.id || "",
+    status: issue?.status.id || "",
+    dueDate: parse(issue?.dueDate?.iso) || undefined,
     tags: map(issue?.tags, "id") || [],
   };
 };
@@ -62,7 +57,7 @@ const getCustomInitValues = (
 ): CustomFormValidationSchema => {
   const customFields = get(issue, ["customFields"], {}) || {};
 
-  return reduce(customFields, (acc, fieldValue, fieldName) => {
+  return reduce(customFields, (acc, fieldValue: CustomField, fieldName) => {
     const customField = find(meta, { name: fieldName });
 
     const formValue = match(customField)
@@ -129,7 +124,6 @@ const getCustomInitValues = (
           ? null
           : `${project}/${repo}/${hash}`;
       })
-      // console.log(">>> init:", { customField, fieldValue, fieldName });
       .otherwise(() => null);
 
     if (formValue) {
@@ -145,7 +139,7 @@ const getCustomInitValues = (
 const getDefaultIssueValues = (
   values: FormValidationSchema,
 ): Omit<IssueInput, "customFields"> => {
-  const dueDate = get(values, ["dueDate"]) || null;
+  const dueDate = values.dueDate || null;
 
   return {
     title: values.title,
@@ -161,7 +155,7 @@ const getCustomIssueValues = (
   values: CustomFormValidationSchema,
   meta: CustomFieldData[],
 ): Pick<IssueInput, "customFields"> => {
-  if (isEmpty(values) || !Array.isArray(meta) || !size(meta)) {
+  if (isEmpty(values) || !Array.isArray(meta) || !meta.length) {
     return { customFields: [] };
   }
 
@@ -188,10 +182,14 @@ const getCustomIssueValues = (
             values: (!Array.isArray(value) ? [] : value).map(({ value }) => value),
           },
         }))
-      .with({ type: CustomFieldsType.ENUM, multivalued: false }, () => ({
+      .with({ type: CustomFieldsType.ENUM, multivalued: false }, () => {
+        const option = find(get(customField, ["parameters", "values"], []), { id: value });
+
+        return !option ? undefined : {
           fieldId,
-          value: { className: "EnumCFValue", value: value },
-        }))
+          value: { className: "EnumCFValue", value: option },
+        };
+      })
       .with({ type: CustomFieldsType.ENUM, multivalued: true }, () => ({
           fieldId,
           value: {
@@ -301,11 +299,7 @@ const getProjectFromValues = (values: FormValidationSchema): Project["id"] => {
 };
 
 const getAssigneeOptions = (members?: MemberType[]) => {
-  if (!Array.isArray(members) || !size(members)) {
-    return [];
-  }
-
-  return members.map((member) => {
+  return (members ?? []).map((member) => {
     const label = createElement(Member, {
       key: member.id,
       name: getFullName(member),
@@ -316,11 +310,7 @@ const getAssigneeOptions = (members?: MemberType[]) => {
 };
 
 const getStatusOptions = (statuses?: IssueStatus[]) => {
-  if (!Array.isArray(statuses) || !size(statuses)) {
-    return [];
-  }
-
-  return statuses.map((status) => getOption(
+  return (statuses ?? []).map((status) => getOption(
     status.id,
     createElement(Status, { status }),
     status.name,
@@ -328,11 +318,7 @@ const getStatusOptions = (statuses?: IssueStatus[]) => {
 };
 
 const getTagOptions = (tags?: IssueTag[]) => {
-  if (!Array.isArray(tags) || !size(tags)) {
-    return [];
-  }
-
-  return tags.map((tag) => getOption(
+  return (tags ?? []).map((tag) => getOption(
     tag.id,
     createElement(Tag, { tag, key: tag.id }),
     tag.name,
@@ -343,7 +329,7 @@ const getIssueTagsToUpdate = (issue: Issue, values: IssueInput): {
   add: Array<IssueTag["id"]>,
   rem: Array<IssueTag["id"]>,
 } => {
-  const issueTags = map(get(issue, ["tags"], []) || [], "id");
+  const issueTags = issue.tags?.map(({ id }) => id);
   const newTags = values.tags || [];
 
   return {

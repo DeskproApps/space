@@ -1,5 +1,4 @@
-import React from "react";
-import isNull from "lodash/isNull";
+import { isNull } from "lodash-es";
 import { map } from "./map";
 import { NoValue } from "./CustomFields";
 import type { FC } from "react";
