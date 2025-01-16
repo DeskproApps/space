@@ -3,7 +3,7 @@
   "title": "Space",
   "description": "View your Jetbrains Space issues from Deskpro and link them to tickets you are working on",
   "appStoreUrl": "https://www.deskpro.com/product-embed/apps/jetbrain-space",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,
