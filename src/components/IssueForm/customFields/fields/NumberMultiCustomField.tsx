@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useDebouncedCallback } from "use-debounce";
 import { P5, Stack, Input, IconButton } from "@deskpro/deskpro-ui";
-import type { FC } from "react";
+import type { ChangeEvent, FC, KeyboardEvent } from "react";
 import type { CustomFieldProps } from "../../types";
 
 const Container = styled.div`
@@ -58,8 +58,8 @@ const NumberMultiCustomField: FC<CustomFieldProps> = ({ formControl }) => {
         inputsize="small"
         placeholder="Add value"
         value={numberValue}
-        onChange={(e) => setNumberValue(e.target.value)}
-        onKeyDown={(e) => ((e.key === 'Enter') && onAddValueToForm())}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => setNumberValue(e.target.value)}
+        onKeyDown={(e: KeyboardEvent) => ((e.key === 'Enter') && onAddValueToForm())}
         style={{ paddingRight: 0 }}
         rightIcon={
           <IconButton

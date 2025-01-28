@@ -16,12 +16,12 @@ export type Result = {
 type UseLinkedIssues = () => Result;
 
 const useLinkedIssues: UseLinkedIssues = () => {
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<{ ticket: { id: number } }, { client_id: string, space_url: string }>();
   const ticketId = context?.data?.ticket.id;
 
   const linkedIds = useQueryWithClient(
-    [QueryKey.LINKED_ISSUES, ticketId as TicketData["ticket"]["id"]],
-    (client) => getEntityListService(client, ticketId as TicketData["ticket"]["id"]),
+    [QueryKey.LINKED_ISSUES, String(ticketId)],
+    (client) => getEntityListService(client, String(ticketId)),
     { enabled: Boolean(ticketId) },
   );
 

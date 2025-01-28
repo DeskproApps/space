@@ -26,7 +26,7 @@ import type { Project, Issue } from "../../services/space/types";
 const LinkIssuesPage: FC = () => {
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<{ ticket: { id: number } }, { client_id: string, space_url: string }>();;
   const { asyncErrorHandler } = useAsyncError();
   const { addLinkComment } = useLinkedAutoComment();
   const { setSelectionState } = useReplyBox();
@@ -66,7 +66,7 @@ const LinkIssuesPage: FC = () => {
     setIsSubmitting(true);
 
     Promise.all([
-      ...selectedIssues.map((issue) => setEntityService(client, ticketId, issue.id, getEntityMetadata(issue))),
+      ...selectedIssues.map((issue) => setEntityService(client, String(ticketId), issue.id, getEntityMetadata(issue))),
       ...selectedIssues.map((issue) => addLinkComment(issue)),
       ...selectedIssues.map((issue) => addDeskproTag(issue)),
       ...selectedIssues.map((issue) => setSelectionState(issue.id, true, "email")),

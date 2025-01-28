@@ -13,7 +13,7 @@ export type Result = {
 type UseExternalLinks = () => Result;
 
 const useExternalLinks: UseExternalLinks = () => {
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<{ ticket: { id: number } }, { client_id: string, space_url: string }>();
   const settings = context?.settings;
 
   const projectLink = useCallback((project?: Maybe<Project>) => {

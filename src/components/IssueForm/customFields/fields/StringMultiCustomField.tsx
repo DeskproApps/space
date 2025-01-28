@@ -5,7 +5,7 @@ import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useDebouncedCallback } from "use-debounce";
 import { P5, Stack, Input, IconButton } from "@deskpro/deskpro-ui";
 import { Overflow } from "../../../common";
-import type { FC } from "react";
+import type { ChangeEvent, FC, KeyboardEvent } from "react";
 import type { CustomFieldProps } from "../../types";
 
 const StringMultiCustomField: FC<CustomFieldProps> = ({ formControl }) => {
@@ -48,8 +48,8 @@ const StringMultiCustomField: FC<CustomFieldProps> = ({ formControl }) => {
         inputsize="small"
         placeholder="Add value"
         value={stringValue}
-        onChange={(e) => setStringValue(e.target.value)}
-        onKeyDown={(e) => ((e.key === 'Enter') && onAddValueToForm())}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => setStringValue(e.target.value)}
+        onKeyDown={(e: KeyboardEvent) => ((e.key === 'Enter') && onAddValueToForm())}
         style={{ paddingRight: 0 }}
         rightIcon={
           <IconButton

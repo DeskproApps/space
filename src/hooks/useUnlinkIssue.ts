@@ -19,7 +19,7 @@ export type Result = {
 const useUnlinkIssue = (): Result => {
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<{ ticket: { id: number } }, { client_id: string, space_url: string }>();
   const { asyncErrorHandler } = useAsyncError();
   const { addUnlinkComment } = useLinkedAutoComment();
   const { deleteSelectionState } = useReplyBox();
@@ -35,7 +35,7 @@ const useUnlinkIssue = (): Result => {
     setIsLoading(true);
 
     Promise.all([
-      deleteEntityService(client, ticketId, issue.id),
+      deleteEntityService(client, String(ticketId), issue.id),
       addUnlinkComment(issue),
       removeDeskproTag(issue),
       deleteSelectionState(issue.id, "note"),

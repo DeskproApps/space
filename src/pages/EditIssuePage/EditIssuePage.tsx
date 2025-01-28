@@ -29,7 +29,7 @@ const EditIssuePage: FC = () => {
   const { issueId } = useParams();
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<{ ticket: { id: number } }, { client_id: string, space_url: string }>();
   const { asyncErrorHandler } = useAsyncError();
   const [error, setError] = useState<Maybe<string|string[]>>(null);
   const { isLoading, issue } = useIssue(issueId);
@@ -49,7 +49,7 @@ const EditIssuePage: FC = () => {
     return updateIssueService(client, projectId, issue.id, values)
       .then(() => updateIssueTagsService(client, projectId, issue.id, getIssueTagsToUpdate(issue, values)))
       .then(() => getIssuesService(client, [issue.id]))
-      .then((issues) => setEntityService(client, ticketId, issue.id, getEntityMetadata(issues[0])))
+      .then((issues) => setEntityService(client, String(ticketId), issue.id, getEntityMetadata(issues[0])))
       .then(() => navigate(`/issues/view/${issue.id}`))
       .catch((err) => {
         const error = err?.data?.error_description || DEFAULT_ERROR;

@@ -22,7 +22,7 @@ const getUnlinkedMessage = (ticketId: string, link?: string): string => {
 
 const useLinkedAutoComment = (): Result => {
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<{ ticket: { id: number, permalinkUrl: string } }, { client_id: string, space_url: string, add_comment_when_linking: boolean }>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const isEnable = context?.settings?.add_comment_when_linking ?? false;
@@ -38,7 +38,7 @@ const useLinkedAutoComment = (): Result => {
     return createIssueCommentService(
       client,
       issue.id,
-      { text: getLinkedMessage(ticketId, permalink) },
+      { text: getLinkedMessage(String(ticketId), permalink) },
     )
       .finally(() => setIsLoading(false));
   }, [client, isEnable, ticketId, permalink]);
@@ -52,7 +52,7 @@ const useLinkedAutoComment = (): Result => {
     return createIssueCommentService(
       client,
       issue.id,
-      { text: getUnlinkedMessage(ticketId, permalink) },
+      { text: getUnlinkedMessage(String(ticketId), permalink) },
     )
       .finally(() => setIsLoading(false));
   }, [client, isEnable, ticketId, permalink]);

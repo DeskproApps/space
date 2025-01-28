@@ -17,7 +17,7 @@ type UseDeskproTag = () => {
 
 const useDeskproTag: UseDeskproTag = () => {
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<{ ticket: { id: number } }, { client_id: string, space_url: string, add_deskpro_tag: boolean }>();
   const isAddDeskproTag = context?.settings?.add_deskpro_tag === true;
 
   const addDeskproTag = useCallback((issue: Issue) => {

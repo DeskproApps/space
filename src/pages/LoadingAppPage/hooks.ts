@@ -10,7 +10,7 @@ type UseCheckAuth = () => void;
 
 const useCheckAuth: UseCheckAuth = () => {
   const navigate = useNavigate();
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<{ ticket: { id: number } }, { client_id: string, space_url: string }>();
   const ticketId = context?.data?.ticket.id;
 
   useInitialisedDeskproAppClient((client) => {
@@ -22,7 +22,7 @@ const useCheckAuth: UseCheckAuth = () => {
       .catch(() =>
         refreshAccessTokenService(client).then(() => getOrganizationService(client))
       )
-      .then(() => getEntityListService(client, ticketId))
+      .then(() => getEntityListService(client, String(ticketId)))
       .then((entityIds) => navigate(entityIds?.length ? "/home" : "/issues/link"))
       .catch(() => navigate("/login"))
   }, [navigate, ticketId]);
