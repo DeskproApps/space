@@ -6,7 +6,6 @@ import { useIssues } from "./useIssues";
 import { getEntityListService } from "../services/deskpro";
 import { QueryKey } from "../query";
 import type { Issue } from "../services/space/types";
-import type { TicketData } from "../types";
 
 export type Result = {
   isLoading: boolean,
