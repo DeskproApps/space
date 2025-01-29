@@ -139,8 +139,8 @@ importers:
         specifier: 8.54.0
         version: 8.54.0
       eslint-config-prettier:
-        specifier: 8.10.0
-        version: 8.10.0(eslint@8.54.0)
+        specifier: 10.0.1
+        version: 10.0.1(eslint@8.54.0)
       eslint-plugin-react-hooks:
         specifier: 4.6.0
         version: 4.6.0(eslint@8.54.0)
@@ -1706,8 +1706,8 @@ packages:
     engines: {node: '>=6.0'}
     hasBin: true
 
-  eslint-config-prettier@8.10.0:
-    resolution: {integrity: sha512-SM8AMJdeQqRYT9O9zguiruQZaN7+z+E4eAP9oiLNGKMtomwaB1E9dcgUD6ZAn/eQAb52USbvezbiljfZUhbJcg==}
+  eslint-config-prettier@10.0.1:
+    resolution: {integrity: sha512-lZBts941cyJyeaooiKxAtzoPHTN+GbQTJFAIdQbRhA4/8whaAraEh47Whw/ZFfrjNSnlAxqfm9i0XVAEkULjCw==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
@@ -4985,7 +4985,7 @@ snapshots:
     optionalDependencies:
       source-map: 0.6.1
 
-  eslint-config-prettier@8.10.0(eslint@8.54.0):
+  eslint-config-prettier@10.0.1(eslint@8.54.0):
     dependencies:
       eslint: 8.54.0
 
