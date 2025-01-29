@@ -117,7 +117,7 @@ const ReplyBoxContext = createContext<ReturnUseReplyBox>({
 const useReplyBox = () => useContext<ReturnUseReplyBox>(ReplyBoxContext);
 
 const ReplyBoxProvider: FC<PropsWithChildren> = ({ children }) => {
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<{ ticket: { id: number } }, { client_id: string, space_url: string, default_comment_on_ticket_note: boolean, default_comment_on_ticket_reply: boolean }>();
   const { client } = useDeskproAppClient();
   const { issues } = useLinkedIssues();
   const issuesMap = useMemo(() => (Array.isArray(issues) ? issues : [])
@@ -136,16 +136,16 @@ const ReplyBoxProvider: FC<PropsWithChildren> = ({ children }) => {
     }
 
     if (type === "note" && isCommentOnNote) {
-      return client.setState(noteKey(ticketId, issueId), { id: issueId, selected })
-        .then(() => getEntityListService(client, ticketId))
-        .then((issueIds) => registerReplyBoxNotesAdditionsTargetAction(client, ticketId, issueIds, issuesMap))
+      return client.setState(noteKey(String(ticketId), issueId), { id: issueId, selected })
+        .then(() => getEntityListService(client, String(ticketId)))
+        .then((issueIds) => registerReplyBoxNotesAdditionsTargetAction(client, String(ticketId), issueIds, issuesMap))
         .catch(() => {})
     }
 
     if (type === "email" && isCommentOnEmail) {
-      return client?.setState(emailKey(ticketId, issueId), { id: issueId, selected })
-        .then(() => getEntityListService(client, ticketId))
-        .then((issueIds) => registerReplyBoxEmailsAdditionsTargetAction(client, ticketId, issueIds, issuesMap))
+      return client?.setState(emailKey(String(ticketId), issueId), { id: issueId, selected })
+        .then(() => getEntityListService(client, String(ticketId)))
+        .then((issueIds) => registerReplyBoxEmailsAdditionsTargetAction(client, String(ticketId), issueIds, issuesMap))
         .catch(() => {})
     }
   }, [client, ticketId, isCommentOnNote, isCommentOnEmail, issuesMap]);
@@ -156,7 +156,7 @@ const ReplyBoxProvider: FC<PropsWithChildren> = ({ children }) => {
     }
 
     const key = (type === "email") ? emailKey : noteKey;
-    return client?.getState<string>(key(ticketId, issueId))
+    return client?.getState<string>(key(String(ticketId), issueId))
   }, [client, ticketId]);
 
   const deleteSelectionState: DeleteSelectionState = useCallback((issueId, type) => {
@@ -166,11 +166,11 @@ const ReplyBoxProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const key = (type === "email") ? emailKey : noteKey;
 
-    return client.deleteState(key(ticketId, issueId))
-      .then(() => getEntityListService(client, ticketId))
+    return client.deleteState(key(String(ticketId), issueId))
+      .then(() => getEntityListService(client, String(ticketId)))
       .then((issueIds) => {
         const register = (type === "email") ? registerReplyBoxEmailsAdditionsTargetAction : registerReplyBoxNotesAdditionsTargetAction;
-        return register(client, ticketId, issueIds, issuesMap);
+        return register(client, String(ticketId), issueIds, issuesMap);
       })
   }, [client, ticketId, issuesMap]);
 
@@ -195,12 +195,12 @@ const ReplyBoxProvider: FC<PropsWithChildren> = ({ children }) => {
           return;
         }
 
-        if (subjectTicketId !== ticketId) {
+        if (String(subjectTicketId) !== String(ticketId)) {
           return;
         }
 
         client.setBlocking(true);
-        client.getState<{ id: string; selected: boolean }>(emailKey(ticketId, "*"))
+        client.getState<{ id: string; selected: boolean }>(emailKey(String(ticketId), "*"))
           .then((selections) => {
             const issueIds = selections
               .filter(({ data }) => data?.selected)
@@ -220,12 +220,12 @@ const ReplyBoxProvider: FC<PropsWithChildren> = ({ children }) => {
           return;
         }
 
-        if (subjectTicketId !== ticketId) {
+        if (String(subjectTicketId) !== String(ticketId)) {
           return;
         }
 
         client.setBlocking(true);
-        client.getState<{ id: string; selected: boolean }>(noteKey(ticketId, "*"))
+        client.getState<{ id: string; selected: boolean }>(noteKey(String(ticketId), "*"))
           .then((selections) => {
             const issueIds = selections
               .filter(({ data }) => data?.selected)
@@ -246,7 +246,7 @@ const ReplyBoxProvider: FC<PropsWithChildren> = ({ children }) => {
               .then((result) => {
 
                 if (result.isSuccess) {
-                  registerReplyBoxEmailsAdditionsTargetAction(client, ticketId, issues.map(({ id }) => id), issuesMap);
+                  registerReplyBoxEmailsAdditionsTargetAction(client, String(ticketId), issues.map(({ id }) => id), issuesMap);
                 }
               });
           }

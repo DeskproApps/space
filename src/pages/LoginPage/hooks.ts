@@ -7,8 +7,8 @@ import {
   useInitialisedDeskproAppClient,
 } from "@deskpro/app-sdk";
 import {
-    getEntityListService,
-    setAccessTokenService, setRefreshTokenService,
+  getEntityListService,
+  setAccessTokenService, setRefreshTokenService,
 } from "../../services/deskpro";
 import {
   getAccessTokenService,
@@ -21,7 +21,7 @@ import type { Maybe } from "../../types";
 
 export type Result = {
   poll: () => void,
-  authUrl: string|null,
+  authUrl: string | null,
   error: Maybe<string>,
   isLoading: boolean,
 };
@@ -30,10 +30,10 @@ const useLogin = (): Result => {
   const key = useMemo(() => uuidv4(), []);
   const navigate = useNavigate();
   const [error, setError] = useState<Maybe<string>>(null);
-  const [callback, setCallback] = useState<OAuth2StaticCallbackUrl|undefined>();
-  const [authUrl, setAuthUrl] = useState<string|null>(null);
+  const [callback, setCallback] = useState<OAuth2StaticCallbackUrl | undefined>();
+  const [authUrl, setAuthUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<{ ticket: { id: number } }, { client_id: string, space_url: string }>();
   const { client } = useDeskproAppClient();
   const clientId = context?.settings?.client_id;
   const spaceUrl = context?.settings?.space_url;
@@ -73,13 +73,13 @@ const useLogin = (): Result => {
     callback.poll()
       .then(({ token }) => getAccessTokenService(client, token, callback.callbackUrl))
       .then(({ access_token, refresh_token }) => Promise.all([
-          setAccessTokenService(client, access_token),
-          setRefreshTokenService(client, refresh_token),
-        ]))
+        setAccessTokenService(client, access_token),
+        setRefreshTokenService(client, refresh_token),
+      ]))
       .then(() => getOrganizationService(client))
       .then((org) => !org.id
         ? Promise.reject()
-        : getEntityListService(client, ticketId))
+        : getEntityListService(client, String(ticketId)))
       .then((entityIds) => navigate(entityIds?.length ? "/home" : "/issues/link"))
       .catch((err) => {
         setIsLoading(false);

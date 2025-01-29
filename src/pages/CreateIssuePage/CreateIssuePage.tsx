@@ -22,7 +22,7 @@ import type { IssueInput, Project } from "../../services/space/types";
 const CreateIssuePage: FC = () => {
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<{ ticket: { id: number } }, { client_id: string, space_url: string }>();
   const [error, setError] = useState<Maybe<string|string[]>>(null);
   const { asyncErrorHandler } = useAsyncError();
   const { addLinkComment } = useLinkedAutoComment();
@@ -41,7 +41,7 @@ const CreateIssuePage: FC = () => {
 
     return createIssueService(client, projectId, values)
       .then((issue) => Promise.all([
-        setEntityService(client, ticketId, issue.id, getEntityMetadata(issue)),
+        setEntityService(client, String(ticketId), issue.id, getEntityMetadata(issue)),
         addLinkComment(issue),
       ]))
       .then(() => navigate("/home"))
