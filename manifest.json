@@ -9,6 +9,7 @@
   "hasDevMode": true,
   "targets": [{ "target": "ticket_sidebar", "entrypoint": "index.html" }],
   "serveUrl": "https://apps-cdn.deskpro-service.com/__name__/__version__",
+  "secrets": "",
   "entityAssociations": {
     "linkedSpaceIssue": {
       "title": "Linked Space Issue",
@@ -17,6 +18,14 @@
     }
   },
   "settings": {
+    "use_deskpro_saas": {
+      "title": "One-Click Installation",
+      "type": "boolean",
+      "default": true,
+      "isRequired": false,
+      "isBackendOnly": false,
+      "order": 5
+    },
     "space_url": {
       "title": "Space Instance URL",
       "description": "Enter the URL of your Space instance, or \"https://<my_company>.jetbrains.space\"",
@@ -24,20 +33,23 @@
       "type": "string",
       "isRequired": true,
       "isBackendOnly": false,
+      "condition": "settings.use_deskpro_saas != true",
       "order": 10
     },
     "client_id": {
       "title": "Client ID",
       "type": "string",
-      "isRequired": true,
+      "isRequired": false,
       "isBackendOnly": false,
+      "condition": "settings.use_deskpro_saas != true",
       "order": 20
     },
     "client_secret": {
       "title": "Client Secret",
       "type": "string",
-      "isRequired": true,
+      "isRequired": false,
       "isBackendOnly": true,
+      "condition": "settings.use_deskpro_saas != true",
       "order": 30
     },
     "callback_url": {
@@ -46,6 +58,7 @@
       "options": { "entrypoint": "#/admin/callback" },
       "isRequired": false,
       "isBackendOnly": true,
+      "condition": "settings.use_deskpro_saas != true",
       "order": 40
     },
     "add_comment_when_linking": {
