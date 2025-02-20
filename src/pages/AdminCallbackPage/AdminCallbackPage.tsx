@@ -1,12 +1,9 @@
-import { useState, useMemo } from "react";
-import styled from "styled-components";
-import { v4 as uuidv4 } from "uuid";
+import { getQueryParams } from "../../utils";
 import { P1 } from "@deskpro/deskpro-ui";
-import {
-  LoadingSpinner,
-  CopyToClipboardInput,
-  useInitialisedDeskproAppClient,
-} from "@deskpro/app-sdk";
+import { SCOPES } from "../../constants";
+import { useState } from "react";
+import { CopyToClipboardInput, LoadingSpinner, OAuth2Result, useDeskproLatestAppContext, useInitialisedDeskproAppClient } from "@deskpro/app-sdk";
+import styled from "styled-components";
 import type { FC } from "react";
 import type { Maybe } from "../../types";
 
@@ -20,7 +17,7 @@ const Description = styled(P1)`
 
 export const AdminCallback: FC<Props> = ({ callbackUrl }) => {
   if (!callbackUrl) {
-    return (<LoadingSpinner/>);
+    return (<LoadingSpinner />);
   }
 
   return (
@@ -32,14 +29,35 @@ export const AdminCallback: FC<Props> = ({ callbackUrl }) => {
 };
 
 const AdminCallbackPage: FC = () => {
-  const [callbackUrl, setCallbackUrl] = useState<string|null>(null);
-  const key = useMemo(() => uuidv4(), []);
+  const [callbackUrl, setCallbackUrl] = useState<string | null>(null);
+  const { context } = useDeskproLatestAppContext<{ ticket: { id: number } }, { client_id: string, space_url: string }>();
 
-  useInitialisedDeskproAppClient((client) => {
-    client.oauth2()
-      .getAdminGenericCallbackUrl(key, /code=(?<token>[0-9a-f]+)/, /state=(?<key>.+)/)
-      .then(({ callbackUrl }) => setCallbackUrl(callbackUrl));
-  }, [key]);
+  const spaceUrl = context?.settings?.space_url;
+
+  useInitialisedDeskproAppClient(async (client) => {
+    const oauth2 = await client.startOauth2Local(
+      ({ callbackUrl, state }) => {
+        return `${spaceUrl}/oauth/auth?${getQueryParams({
+          response_type: "code",
+          redirect_uri: callbackUrl,
+          client_id: "xxx",
+          access_type: "offline",
+          request_credentials: "default",
+          state: state,
+          scope: SCOPES.join(" "),
+        })}`
+      },
+      /code=(?<code>[0-9a-f]+)/,
+      async (): Promise<OAuth2Result> => ({ data: { access_token: "", refresh_token: "" } })
+    );
+
+    const url = new URL(oauth2.authorizationUrl);
+    const redirectUri = url.searchParams.get("redirect_uri");
+
+    if (redirectUri) {
+      setCallbackUrl(redirectUri);
+    }
+  });
 
   return (
     <AdminCallback callbackUrl={callbackUrl} />
