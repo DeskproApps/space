@@ -16,7 +16,7 @@
     "generate:types": "npx openapi-typescript ./src/services/space/space-open-api.json -o ./src/services/space/schema.d.ts"
   },
   "dependencies": {
-    "@deskpro/app-sdk": "5.1.1",
+    "@deskpro/app-sdk": "6.0.3",
     "@deskpro/deskpro-ui": "^8.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@heroicons/react": "1.0.6",
