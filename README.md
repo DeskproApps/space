@@ -47,8 +47,7 @@ To make development easier and avoid version conflicts, we recommend using **Dev
 #### Getting Started with DevContainers
 1. Ensure that you have [Docker](https://www.docker.com/get-started) and [VS Code](https://code.visualstudio.com/) installed.
 2. Open the project in [VS Code](https://code.visualstudio.com/).
-3. If you have the **Remote - Containers** extension installed, [VS Code](https://code.visualstudio.com/) should automatically detect the `
-    .devcontainer` configuration in this project and prompt you to reopen the folder in the container.
+3. If you have the **Remote - Containers** extension installed, [VS Code](https://code.visualstudio.com/) should automatically detect the `.devcontainer` configuration in this project and prompt you to reopen the folder in the container.
 4. After opening the project in the DevContainer, run:
    ```bash
    pnpm start
